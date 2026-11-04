@@ -6,10 +6,10 @@
   'use strict';
 
   const C = {
-    bg: '#0f1115', bg2: '#151820', bg3: '#1b2029', line: '#2a3140', grid: '#2a3140', gridMinor: '#1b2029',
-    text: '#eceff4', muted: '#9aa4b2', dim: '#5d6675',
-    blue: '#58c4dd', orange: '#f0ac5f', yellow: '#ffd54f', teal: '#5cd0b3', green: '#83c167',
-    red: '#fc6255', purple: '#9a72ac', pink: '#e07a9f',
+    bg: '#f8f9fa', bg2: '#ffffff', bg3: '#f1f3f4', line: '#dadce0', grid: '#dadce0', gridMinor: '#e8eaed',
+    text: '#202124', muted: '#5f6368', dim: '#80868b',
+    blue: '#1a73e8', orange: '#e65100', yellow: '#c98400', teal: '#00897b', green: '#1e8e3e',
+    red: '#d93025', purple: '#9334e6', pink: '#d01884',
     gblue: '#4285f4', gred: '#ea4335', gyellow: '#fbbc04', ggreen: '#34a853'
   };
   const FONT = {
@@ -59,14 +59,14 @@
     const n = stops.length - 1, i = Math.min(n - 1, Math.floor(t * n)), f = t * n - i;
     return mixRgb(stops[i], stops[i + 1], f);
   }
-  const SEQ = ['#14243a', '#1d3a5f', '#58c4dd', '#5cd0b3', '#ffd54f'];
+  const SEQ = ['#e8f0fe', '#aecbfa', '#4285f4', '#34a853', '#fbbc04'];
   function seq(t, a) { const c = rampRgb(SEQ, t); return rgbStr(c[0], c[1], c[2], a); }
-  function diverge(v, a) {                 // v in [-1, 1]: red .. dark .. blue
+  function diverge(v, a) {                 // v in [-1, 1]: red .. dark .. blue (matches w_*.png)
     v = clamp(v, -1, 1);
-    const c = v < 0 ? mixRgb('#1a1d24', C.red, -v) : mixRgb('#1a1d24', C.blue, v);
+    const c = v < 0 ? mixRgb('#1a1d24', '#fc6255', -v) : mixRgb('#1a1d24', '#58c4dd', v);
     return rgbStr(c[0], c[1], c[2], a);
   }
-  function divergeRgb(v) { v = clamp(v, -1, 1); return v < 0 ? mixRgb('#1a1d24', C.red, -v) : mixRgb('#1a1d24', C.blue, v); }
+  function divergeRgb(v) { v = clamp(v, -1, 1); return v < 0 ? mixRgb('#1a1d24', '#fc6255', -v) : mixRgb('#1a1d24', '#58c4dd', v); }
 
   // ---------- formatting ----------
   const SUP = { '-': '⁻', '0': '⁰', '1': '¹', '2': '²', '3': '³', '4': '⁴', '5': '⁵', '6': '⁶', '7': '⁷', '8': '⁸', '9': '⁹' };
@@ -240,7 +240,7 @@
     for (let y = Math.ceil(v.y0 / sy) * sy; y <= v.y1 + 1e-9; y += sy) { const Y = Math.round(v.sy(y)) + 0.5; ctx.moveTo(v.px, Y); ctx.lineTo(v.px + v.pw, Y); }
     ctx.stroke();
     if (o.axes !== false) {
-      ctx.strokeStyle = o.axisColor || '#4a5466'; ctx.lineWidth = 1.5; ctx.beginPath();
+      ctx.strokeStyle = o.axisColor || '#9aa0a6'; ctx.lineWidth = 1.5; ctx.beginPath();
       if (v.x0 <= 0 && v.x1 >= 0) { const X = v.sx(0); ctx.moveTo(X, v.py); ctx.lineTo(X, v.py + v.ph); }
       if (v.y0 <= 0 && v.y1 >= 0) { const Y = v.sy(0); ctx.moveTo(v.px, Y); ctx.lineTo(v.px + v.pw, Y); }
       ctx.stroke();

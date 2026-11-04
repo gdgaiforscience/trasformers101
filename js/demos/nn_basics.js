@@ -123,13 +123,13 @@
       const P = U.data('protein'), ph = slide.querySelector('[data-role=protein-seq]');
       if (ph && P) {
         const AA = 'ACDEFGHIKLMNPQRSTVWY', seqs = P.seq.slice(0, 16).split('');
-        ph.innerHTML = seqs.map(a => `<span class="token-chip" style="background:rgba(131,193,103,.12);border-color:rgba(131,193,103,.5)">${a}<span class="tid">${AA.indexOf(a)}</span></span>`).join('') + '<span class="dim mono"> …</span>';
+        ph.innerHTML = seqs.map(a => `<span class="token-chip" style="background:#e6f4ea;border-color:#a8dab5">${a}<span class="tid">${AA.indexOf(a)}</span></span>`).join('') + '<span class="dim mono"> …</span>';
       }
     },
     draw() {
       const E = this.E; if (!E) return;
       const { ctx, w, h } = this.cv;
-      ctx.fillStyle = C.bg; ctx.fillRect(0, 0, w, h);
+      ctx.fillStyle = C.bg2; ctx.fillRect(0, 0, w, h);
       const n = Math.min(E.data[0].length, 400), lanes = E.data.length, lh = h / lanes;
       const cols = [C.blue, C.teal, C.purple, C.orange];
       E.data.forEach((ch, k) => {
@@ -333,7 +333,7 @@
       }
       if (this.hx !== null && this.hx >= v.x0 && this.hx <= v.x1) {
         const A = ACTS[this.sel], y = A.f(this.hx), X = v.sx(this.hx), Y = v.sy(y);
-        ctx.strokeStyle = 'rgba(236,239,244,.35)'; ctx.setLineDash([5, 6]); ctx.beginPath(); ctx.moveTo(X, v.py); ctx.lineTo(X, v.py + v.ph); ctx.stroke(); ctx.setLineDash([]);
+        ctx.strokeStyle = U.rgba(C.text, 0.3); ctx.setLineDash([5, 6]); ctx.beginPath(); ctx.moveTo(X, v.py); ctx.lineTo(X, v.py + v.ph); ctx.stroke(); ctx.setLineDash([]);
         U.circle(ctx, X, Y, 8, A.col, C.bg, 2);
         U.text(ctx, `z = ${fmtMinus(this.hx, 2)}  →  ${fmtMinus(y, 3)}`, X + 14, Y - 14, { size: 22, color: C.text, family: FONT.mono });
       }
@@ -447,9 +447,9 @@
     .mx-sym{font-size:56px;padding-top:30px}
     table.mx{border-collapse:separate;border-spacing:6px 4px;border-left:3px solid var(--muted);border-right:3px solid var(--muted);border-radius:10px;padding:2px 6px}
     table.mx td{font-size:30px;min-width:76px;text-align:center;padding:6px 8px;border-radius:8px;color:var(--text);transition:background .25s,color .25s}
-    table.mx td.w{color:var(--yellow)} table.mx td.w.hl{background:rgba(255,213,79,.18);box-shadow:0 0 0 2px rgba(255,213,79,.6) inset}
-    table.mx td.x{color:var(--blue)} table.mx td.x.hl{background:rgba(88,196,221,.16)}
-    table.mx td.b{color:var(--teal)} table.mx td.z{color:var(--dim)} table.mx td.z.on{color:var(--text)} table.mx td.z.hl{background:rgba(255,213,79,.18)}
+    table.mx td.w{color:var(--yellow)} table.mx td.w.hl{background:#fef7e0;box-shadow:0 0 0 2px #fdd663 inset}
+    table.mx td.x{color:var(--blue)} table.mx td.x.hl{background:#e8f0fe}
+    table.mx td.b{color:var(--teal)} table.mx td.z{color:var(--dim)} table.mx td.z.on{color:var(--text)} table.mx td.z.hl{background:#fef7e0}
     table.mx td.a{color:var(--dim)} table.mx td.a.on{color:var(--yellow);font-weight:700}
     `
   }));

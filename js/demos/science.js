@@ -49,9 +49,9 @@
     enter() { this.loop && this.loop.start(); },
     leave() { this.loop && this.loop.stop(); },
     colour(i) {
-      if (this.mode === 'rainbow') { const c = U.rampRgb(['#58c4dd', '#5cd0b3', '#83c167', '#ffd54f', '#f0ac5f', '#fc6255'], this.idxPath[i]); return c; }
+      if (this.mode === 'rainbow') { const c = U.rampRgb(['#4285f4', '#00897b', '#34a853', '#fbbc04', '#e65100', '#ea4335'], this.idxPath[i]); return c; }
       const s = this.ssPath[i];
-      return U.hexToRgb(s === 'H' ? C.pink : s === 'E' ? C.yellow : '#8a9bb0');
+      return U.hexToRgb(s === 'H' ? C.pink : s === 'E' ? '#f9ab00' : '#9aa0a6');
     },
     draw() {
       const { ctx, w, h } = this.cv; ctx.fillStyle = C.bg; ctx.fillRect(0, 0, w, h);
@@ -64,11 +64,12 @@
       ctx.lineCap = 'round';
       for (const i of segs) {
         const a = proj[i], b = proj[i + 1], z = (a[2] + b[2]) / 2, depth = clamp((1 - z) / 2, 0, 1);
-        const c = this.colour(i), shade = 0.35 + 0.65 * depth, ss = this.mode === 'ss' ? this.ssPath[i] : 'C';
+        const c = this.colour(i), fog = 0.38 + 0.62 * depth, ss = this.mode === 'ss' ? this.ssPath[i] : 'C';
         const width = (ss === 'H' ? 15 : ss === 'E' ? 13 : 6) * (0.65 + 0.5 * depth);
-        ctx.strokeStyle = `rgb(${c[0] * shade | 0},${c[1] * shade | 0},${c[2] * shade | 0})`; ctx.lineWidth = width;
+        const r = lerp(226, c[0], fog) | 0, g = lerp(230, c[1], fog) | 0, bl = lerp(236, c[2], fog) | 0;
+        ctx.strokeStyle = `rgb(${r},${g},${bl})`; ctx.lineWidth = width;
         ctx.beginPath(); ctx.moveTo(a[0], a[1]); ctx.lineTo(b[0], b[1]); ctx.stroke();
-        ctx.strokeStyle = `rgba(255,255,255,${0.18 * depth})`; ctx.lineWidth = width * 0.3;
+        ctx.strokeStyle = `rgba(255,255,255,${0.32 * depth})`; ctx.lineWidth = width * 0.3;
         ctx.beginPath(); ctx.moveTo(a[0], a[1] - width * 0.18); ctx.lineTo(b[0], b[1] - width * 0.18); ctx.stroke();
       }
       const lab = this.P ? `${this.P.name} · PDB ${this.P.pdb} · ${this.n} amino acids` : 'toy structure (protein data missing)';

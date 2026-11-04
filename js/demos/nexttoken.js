@@ -75,7 +75,7 @@
         row.lab.innerHTML = showToken(t.disp !== undefined ? t.disp : t.token);
         row.fill.style.transition = instant ? 'none' : '';
         row.fill.style.width = (100 * p / Math.max(maxP, 1e-9)) * 0.98 + '%';
-        row.fill.style.background = k === 0 ? C.yellow : C.blue;
+        row.fill.style.background = k === 0 ? C.gyellow : C.gblue;
         row.pct.textContent = fmtPct(p);
         row.r.classList.toggle('top', k === 0);
         shown += p;
@@ -109,9 +109,9 @@
   @keyframes blink{50%{opacity:0}}
   .nt-bars{display:flex;flex-direction:column;gap:6px}
   .nt-row{display:flex;align-items:center;gap:16px;transition:background .2s;border-radius:10px;padding:0 8px}
-  .nt-row.top .nt-lab{color:var(--yellow)} .nt-row.picked{background:rgba(240,172,95,.16)}
+  .nt-row.top .nt-lab{color:var(--yellow)} .nt-row.picked{background:#feefe3}
   .nt-lab{font-family:var(--mono);font-size:28px;text-align:right;white-space:pre;overflow:hidden;text-overflow:ellipsis;flex:0 0 auto}
-  .nt-track{flex:1 1 auto;height:60%;background:rgba(255,255,255,.035);border-radius:8px;overflow:hidden}
+  .nt-track{flex:1 1 auto;height:60%;background:var(--bg-3);border-radius:8px;overflow:hidden}
   .nt-fill{height:100%;width:0;border-radius:8px;transition:width .45s cubic-bezier(.2,.8,.2,1),background .3s}
   .nt-pct{font-family:var(--mono);font-size:24px;width:110px;text-align:right;color:var(--muted);flex:0 0 auto}
   .nt-row.top .nt-pct{color:var(--text)}

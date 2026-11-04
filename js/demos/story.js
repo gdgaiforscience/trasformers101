@@ -119,7 +119,7 @@
       ctx.fillStyle = C.bg; ctx.fillRect(0, 0, w, h);
       // era bands
       ERAS.forEach(([a, b, name, col]) => { const X0 = this.sx(a), X1 = this.sx(Math.min(b, 2027)); ctx.fillStyle = U.rgba(col, 0.05); ctx.fillRect(X0, 30, X1 - X0, h - 150); U.text(ctx, name, (X0 + X1) / 2, h - 96, { size: 17, color: U.rgba(col === C.muted ? C.text : col, 0.75), align: 'center' }); });
-      WINTERS.forEach(([a, b, name]) => { const X0 = this.sx(a), X1 = this.sx(b), cx = (X0 + X1) / 2; ctx.fillStyle = 'rgba(88,196,221,0.10)'; ctx.fillRect(X0, 30, X1 - X0, h - 150); const [w1, ...rest] = name.split(' '); U.text(ctx, '❄ ' + w1, cx, 54, { size: 17, color: C.blue, align: 'center' }); U.text(ctx, rest.join(' '), cx, 76, { size: 17, color: C.blue, align: 'center' }); });
+      WINTERS.forEach(([a, b, name]) => { const X0 = this.sx(a), X1 = this.sx(b), cx = (X0 + X1) / 2; ctx.fillStyle = U.rgba(C.gblue, 0.10); ctx.fillRect(X0, 30, X1 - X0, h - 150); const [w1, ...rest] = name.split(' '); U.text(ctx, '❄ ' + w1, cx, 54, { size: 17, color: C.blue, align: 'center' }); U.text(ctx, rest.join(' '), cx, 76, { size: 17, color: C.blue, align: 'center' }); });
       // axis
       ctx.strokeStyle = C.line; ctx.lineWidth = 2; ctx.beginPath(); ctx.moveTo(this.sx(1940), h - 120); ctx.lineTo(this.sx(2027), h - 120); ctx.stroke();
       [1940, 1950, 1960, 1970, 1980, 1990, 2000, 2010, 2015, 2020, 2025].forEach(y => { const X = this.sx(y); ctx.beginPath(); ctx.moveTo(X, h - 120); ctx.lineTo(X, h - 112); ctx.stroke(); U.text(ctx, String(y), X, h - 64, { size: 17, color: C.dim, align: 'center', family: FONT.mono }); });
@@ -312,25 +312,25 @@
       ctx.strokeStyle = grad; ctx.beginPath(); ctx.moveTo(x0, y0); ctx.lineTo(px, y0); ctx.stroke();
       STOPS.forEach((s, k) => {
         const [x, y] = this.pt(k), reached = k <= this.pos + 0.01, cur = Math.abs(k - this.pos) < 0.5;
-        ctx.save(); if (cur) { ctx.shadowColor = C.text; ctx.shadowBlur = 16; }
-        U.circle(ctx, x, y, cur ? 48 : 40, reached ? '#1b2029' : C.bg, reached ? C.text : C.line, cur ? 4 : 2.5); ctx.restore();
+        ctx.save(); if (cur) { ctx.shadowColor = 'rgba(60,64,67,0.22)'; ctx.shadowBlur = 16; }
+        U.circle(ctx, x, y, cur ? 48 : 40, reached ? C.bg2 : C.bg, reached ? C.blue : C.line, cur ? 4 : 2.5); ctx.restore();
         U.text(ctx, s[0], x, y + 14, { size: 40, align: 'center', alpha: reached ? 1 : 0.4 });
         U.text(ctx, s[1], x, y + (k % 2 ? 94 : -66), { size: 24, color: reached ? C.text : C.dim, align: 'center' });
       });
       // the travelling message (above the upper label row)
       const back = this.pos > 6.5, label = back ? 'Hi there!' : this.pos > 4.5 && this.pos <= 6.5 ? '[2202]' : '“hi”';
       const bw = 170, bh = 56, by = y0 - 168;
-      ctx.save(); ctx.shadowColor = back ? C.yellow : C.blue; ctx.shadowBlur = 22;
-      U.roundRect(ctx, px - bw / 2, by, bw, bh, 28); ctx.fillStyle = back ? U.rgba(C.yellow, 0.2) : U.rgba(C.blue, 0.2); ctx.fill(); ctx.strokeStyle = back ? C.yellow : C.blue; ctx.lineWidth = 2.5; ctx.stroke(); ctx.restore();
+      ctx.save(); ctx.shadowColor = back ? U.rgba(C.gyellow, 0.45) : U.rgba(C.gblue, 0.35); ctx.shadowBlur = 18;
+      U.roundRect(ctx, px - bw / 2, by, bw, bh, 28); ctx.fillStyle = back ? '#fef7e0' : '#e8f0fe'; ctx.fill(); ctx.strokeStyle = back ? C.gyellow : C.blue; ctx.lineWidth = 2.5; ctx.stroke(); ctx.restore();
       U.text(ctx, label, px, by + 38, { size: 28, color: C.text, align: 'center', family: FONT.mono });
     }
   });
 
   document.head.appendChild(Object.assign(document.createElement('style'), {
     textContent: `
-    .st-layer{display:flex;align-items:center;gap:18px;padding:14px 22px;margin:8px 0;border-radius:14px;border:1px solid var(--line);background:rgba(255,255,255,.02);cursor:pointer;transition:transform .2s,border-color .2s,background .2s;font-size:30px}
+    .st-layer{display:flex;align-items:center;gap:18px;padding:14px 22px;margin:8px 0;border-radius:14px;border:1px solid var(--line);background:var(--bg-2);box-shadow:0 1px 2px rgba(60,64,67,.06);cursor:pointer;transition:transform .2s,border-color .2s,background .2s;font-size:30px}
     .st-layer .st-ic{font-size:36px} .st-layer .st-name{flex:1} .st-layer .st-n{font-family:var(--mono);color:var(--dim);font-size:22px}
-    .st-layer.on{border-color:var(--c);background:color-mix(in srgb, var(--c) 14%, transparent);transform:translateX(18px)}
+    .st-layer.on{border-color:var(--c);background:color-mix(in srgb, var(--c) 11%, #ffffff);transform:translateX(18px)}
     `
   }));
 })();

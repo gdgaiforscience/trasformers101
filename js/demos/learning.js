@@ -180,11 +180,11 @@
       const Lmin = Math.log(0.0003), Lmax = Math.log(8);
       for (let X = v.px; X < v.px + v.pw; X += step) for (let Y = v.py; Y < v.py + v.ph; Y += step) {
         const L = lossOf(this.P, v.ix(X + step / 2), v.iy(Y + step / 2)), t = clamp((Math.log(L) - Lmin) / (Lmax - Lmin), 0, 1);
-        const band = Math.abs(((Math.log(L) * 2.2) % 1 + 1) % 1 - 0.5) < 0.04 ? 0.55 : 1;
-        const c = U.rampRgb(['#ffd54f', '#5cd0b3', '#58c4dd', '#1d3a5f', '#14243a'], t);
+        const band = Math.abs(((Math.log(L) * 2.2) % 1 + 1) % 1 - 0.5) < 0.04 ? 0.90 : 1;
+        const c = U.rampRgb(['#fef7e0', '#ceead6', '#a8dab5', '#aecbfa', '#669df6'], t);
         oc.fillStyle = U.rgbStr(c[0] * band, c[1] * band, c[2] * band); oc.fillRect(X, Y, step, step);
       }
-      U.grid(oc, v, { step: 0.5, labels: true, minor: false, color: 'rgba(15,17,21,.35)', axisColor: 'rgba(15,17,21,.6)' });
+      U.grid(oc, v, { step: 0.5, labels: true, minor: false, color: 'rgba(32,33,36,.12)', axisColor: 'rgba(32,33,36,.32)' });
       this.bg = off;
     },
     draw() {
@@ -195,8 +195,8 @@
       U.text(ctx, 'slope  w  →', v.px + v.pw, h - 12, { size: 20, color: C.muted, align: 'right' });
       ctx.save(); ctx.translate(22, v.py + 4); ctx.rotate(-Math.PI / 2); U.text(ctx, 'intercept  b  →', 0, 0, { size: 20, color: C.muted, align: 'right' }); ctx.restore();
       const [Wb, Bb] = ols(this.P);
-      U.circle(ctx, v.sx(Wb), v.sy(Bb), 7, null, C.bg, 3);
-      U.text(ctx, 'minimum', v.sx(Wb) + 10, v.sy(Bb) + 24, { size: 18, color: C.bg });
+      U.circle(ctx, v.sx(Wb), v.sy(Bb), 7, null, C.text, 3);
+      U.text(ctx, 'minimum', v.sx(Wb) + 10, v.sy(Bb) + 24, { size: 18, color: C.text });
       ctx.save(); ctx.beginPath(); ctx.rect(v.px, v.py, v.pw, v.ph); ctx.clip();
       ctx.strokeStyle = C.text; ctx.lineWidth = 2.5; ctx.beginPath();
       this.path.forEach((p, i) => { const X = v.sx(p[0]), Y = v.sy(p[1]); i ? ctx.lineTo(X, Y) : ctx.moveTo(X, Y); }); ctx.stroke();

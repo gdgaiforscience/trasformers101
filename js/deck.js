@@ -220,14 +220,14 @@
     Deck.presenter = w;
     w.document.open();
     w.document.write(`<!doctype html><html><head><title>Presenter · Inside the Black Box</title><style>
-      body{margin:0;background:#0f1115;color:#eceff4;font:16px/1.5 Roboto,system-ui,sans-serif;padding:22px 28px}
+      body{margin:0;background:#f8f9fa;color:#202124;font:16px/1.5 Roboto,system-ui,sans-serif;padding:22px 28px}
       .top{display:flex;justify-content:space-between;align-items:baseline;gap:20px}
-      #cur{font-size:28px;font-weight:500} #num{color:#9aa4b2;font-family:monospace;font-size:18px}
-      #timer{font-family:monospace;font-size:24px;color:#ffd54f} .behind{color:#fc6255}.ahead{color:#83c167}
-      #steps{color:#9aa4b2;margin:4px 0 12px} #next{color:#9aa4b2;margin-top:14px;font-size:18px}
-      #notes{font-size:21px;line-height:1.55;background:#151820;border:1px solid #2a3140;border-radius:12px;padding:18px 22px;margin-top:10px}
-      #notes b{color:#ffd54f;font-weight:500} #notes em{color:#58c4dd;font-style:normal}
-      .keys{color:#5d6675;font-size:13px;margin-top:16px} button{font-size:18px;margin-right:8px;background:#1b2029;color:#eceff4;border:1px solid #2a3140;border-radius:8px;padding:6px 14px;cursor:pointer}
+      #cur{font-size:28px;font-weight:500} #num{color:#5f6368;font-family:monospace;font-size:18px}
+      #timer{font-family:monospace;font-size:24px;color:#1a73e8} .behind{color:#d93025}.ahead{color:#1e8e3e}
+      #steps{color:#5f6368;margin:4px 0 12px} #next{color:#5f6368;margin-top:14px;font-size:18px}
+      #notes{font-size:21px;line-height:1.55;background:#ffffff;border:1px solid #dadce0;border-radius:12px;padding:18px 22px;margin-top:10px;box-shadow:0 1px 3px rgba(60,64,67,.08)}
+      #notes b{color:#1a73e8;font-weight:500} #notes em{color:#00897b;font-style:normal}
+      .keys{color:#80868b;font-size:13px;margin-top:16px} button{font-size:18px;margin-right:8px;background:#ffffff;color:#202124;border:1px solid #dadce0;border-radius:8px;padding:6px 14px;cursor:pointer}
       </style></head><body><div class="top"><div><span id="num"></span> <span id="cur"></span></div><div id="timer"></div></div>
       <div id="steps"></div><div><button id="bp">‹ prev</button><button id="bn">next ›</button><button id="bt">reset timer</button></div>
       <div id="notes"></div><div id="next"></div>

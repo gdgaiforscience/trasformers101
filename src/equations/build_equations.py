@@ -20,10 +20,10 @@ PREAMBLE = r"""
 \documentclass[border=1pt]{standalone}
 \usepackage{amsmath,amssymb,bm}
 \usepackage{xcolor}
-\definecolor{cW}{HTML}{FFD54F}\definecolor{cX}{HTML}{58C4DD}\definecolor{cB}{HTML}{5CD0B3}
-\definecolor{cL}{HTML}{FC6255}\definecolor{cG}{HTML}{83C167}\definecolor{cE}{HTML}{F0AC5F}
-\definecolor{cA}{HTML}{9A72AC}\definecolor{cT}{HTML}{ECEFF4}\definecolor{cM}{HTML}{9AA4B2}
-\definecolor{cP}{HTML}{E07A9F}
+\definecolor{cW}{HTML}{C98400}\definecolor{cX}{HTML}{1A73E8}\definecolor{cB}{HTML}{00897B}
+\definecolor{cL}{HTML}{D93025}\definecolor{cG}{HTML}{1E8E3E}\definecolor{cE}{HTML}{E65100}
+\definecolor{cA}{HTML}{9334E6}\definecolor{cT}{HTML}{202124}\definecolor{cM}{HTML}{5F6368}
+\definecolor{cP}{HTML}{D01884}
 \newcommand{\cw}[1]{\textcolor{cW}{#1}}\newcommand{\cx}[1]{\textcolor{cX}{#1}}
 \newcommand{\cb}[1]{\textcolor{cB}{#1}}\newcommand{\cl}[1]{\textcolor{cL}{#1}}
 \newcommand{\cg}[1]{\textcolor{cG}{#1}}\newcommand{\ce}[1]{\textcolor{cE}{#1}}
