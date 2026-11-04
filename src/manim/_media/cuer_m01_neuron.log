@@ -1,0 +1,597 @@
+/bin/sh: line 1: sox: command not found
+[10/29/26 04:06:04] WARNING  SoX could not be found!              __init__.py:10
+                                                                                
+                                 If you do not have SoX, proceed                
+                             here:                                              
+                                  - - -                                         
+                             http://sox.sourceforge.net/ - - -                  
+                                                                                
+                                 If you do (or think that you                   
+                             should) have SoX, double-check your                
+                                 path variables.                                
+                                                                                
+<frozen runpy>:128: RuntimeWarning: 'manim.__main__' found in sys.modules after import of package 'manim', but prior to execution of 'manim.__main__'; this may result in unpredictable behaviour
+Manim Community v0.20.1
+
+[10/29/26 04:06:05] INFO     Writing                     tex_file_writing.py:110
+                             \special{dvisvgm:raw <g                            
+                             id='unique000'>}0.9\special                        
+                             {dvisvgm:raw </g>} to                              
+                             /usr/local/google/home/butt                        
+                             erworthnat/HACK/Trasformers                        
+                             4Dummies/state_of_ai/src/ma                        
+                             nim/_media/cuerender_m01_ne                        
+                             uron/Tex/52063f250631084b.t                        
+                             ex                                                 
+[10/29/26 04:06:06] INFO     Writing                     tex_file_writing.py:110
+                             \special{dvisvgm:raw <g                            
+                             id='unique000'>}0.2\special                        
+                             {dvisvgm:raw </g>} to                              
+                             /usr/local/google/home/butt                        
+                             erworthnat/HACK/Trasformers                        
+                             4Dummies/state_of_ai/src/ma                        
+                             nim/_media/cuerender_m01_ne                        
+                             uron/Tex/6374c8699dc0f9fd.t                        
+                             ex                                                 
+[10/29/26 04:06:07] INFO     Writing                     tex_file_writing.py:110
+                             \special{dvisvgm:raw <g                            
+                             id='unique000'>}0.6\special                        
+                             {dvisvgm:raw </g>} to                              
+                             /usr/local/google/home/butt                        
+                             erworthnat/HACK/Trasformers                        
+                             4Dummies/state_of_ai/src/ma                        
+                             nim/_media/cuerender_m01_ne                        
+                             uron/Tex/707ae4025b15736e.t                        
+                             ex                                                 
+[10/29/26 04:06:08] INFO     Writing                     tex_file_writing.py:110
+                             \special{dvisvgm:raw <g                            
+                             id='unique000'>}x_1\special                        
+                             {dvisvgm:raw </g>} to                              
+                             /usr/local/google/home/butt                        
+                             erworthnat/HACK/Trasformers                        
+                             4Dummies/state_of_ai/src/ma                        
+                             nim/_media/cuerender_m01_ne                        
+                             uron/Tex/0cc6b31c6da98bf9.t                        
+                             ex                                                 
+[10/29/26 04:06:09] INFO     Writing                     tex_file_writing.py:110
+                             \special{dvisvgm:raw <g                            
+                             id='unique000'>}x_2\special                        
+                             {dvisvgm:raw </g>} to                              
+                             /usr/local/google/home/butt                        
+                             erworthnat/HACK/Trasformers                        
+                             4Dummies/state_of_ai/src/ma                        
+                             nim/_media/cuerender_m01_ne                        
+                             uron/Tex/0c17cee92c8774b9.t                        
+                             ex                                                 
+[10/29/26 04:06:10] INFO     Writing                     tex_file_writing.py:110
+                             \special{dvisvgm:raw <g                            
+                             id='unique000'>}x_3\special                        
+                             {dvisvgm:raw </g>} to                              
+                             /usr/local/google/home/butt                        
+                             erworthnat/HACK/Trasformers                        
+                             4Dummies/state_of_ai/src/ma                        
+                             nim/_media/cuerender_m01_ne                        
+                             uron/Tex/3b5a0c5372869923.t                        
+                             ex                                                 
+[10/29/26 04:06:12] INFO     Writing                     tex_file_writing.py:110
+                             \special{dvisvgm:raw <g                            
+                             id='unique000'>}\Sigma\spec                        
+                             ial{dvisvgm:raw </g>} to                           
+                             /usr/local/google/home/butt                        
+                             erworthnat/HACK/Trasformers                        
+                             4Dummies/state_of_ai/src/ma                        
+                             nim/_media/cuerender_m01_ne                        
+                             uron/Tex/27d2f0c8f16f01f0.t                        
+                             ex                                                 
+[10/29/26 04:06:13] INFO     Writing                     tex_file_writing.py:110
+                             \special{dvisvgm:raw <g                            
+                             id='unique000'>}+1.2\specia                        
+                             l{dvisvgm:raw </g>} to                             
+                             /usr/local/google/home/butt                        
+                             erworthnat/HACK/Trasformers                        
+                             4Dummies/state_of_ai/src/ma                        
+                             nim/_media/cuerender_m01_ne                        
+                             uron/Tex/92401333915ccfed.t                        
+                             ex                                                 
+[10/29/26 04:06:14] INFO     Writing                     tex_file_writing.py:110
+                             \special{dvisvgm:raw <g                            
+                             id='unique000'>}-0.8\specia                        
+                             l{dvisvgm:raw </g>} to                             
+                             /usr/local/google/home/butt                        
+                             erworthnat/HACK/Trasformers                        
+                             4Dummies/state_of_ai/src/ma                        
+                             nim/_media/cuerender_m01_ne                        
+                             uron/Tex/1b95b676316df93a.t                        
+                             ex                                                 
+[10/29/26 04:06:15] INFO     Writing                     tex_file_writing.py:110
+                             \special{dvisvgm:raw <g                            
+                             id='unique000'>}+0.5\specia                        
+                             l{dvisvgm:raw </g>} to                             
+                             /usr/local/google/home/butt                        
+                             erworthnat/HACK/Trasformers                        
+                             4Dummies/state_of_ai/src/ma                        
+                             nim/_media/cuerender_m01_ne                        
+                             uron/Tex/6764d5f8b5219dbc.t                        
+                             ex                                                 
+[10/29/26 04:06:16] INFO     Writing                     tex_file_writing.py:110
+                             \special{dvisvgm:raw <g                            
+                             id='unique000'>}b                                  
+                             \special{dvisvgm:raw                               
+                             </g>}\special{dvisvgm:raw                          
+                             <g id='unique001'>}=                               
+                             \special{dvisvgm:raw                               
+                             </g>}\special{dvisvgm:raw                          
+                             <g                                                 
+                             id='unique002'>}-0.2\specia                        
+                             l{dvisvgm:raw </g>} to                             
+                             /usr/local/google/home/butt                        
+                             erworthnat/HACK/Trasformers                        
+                             4Dummies/state_of_ai/src/ma                        
+                             nim/_media/cuerender_m01_ne                        
+                             uron/Tex/919b6313a01cb45c.t                        
+                             ex                                                 
+[10/29/26 04:06:17] INFO     Writing                     tex_file_writing.py:110
+                             \special{dvisvgm:raw <g                            
+                             id='unique000'>}\sigma\spec                        
+                             ial{dvisvgm:raw </g>} to                           
+                             /usr/local/google/home/butt                        
+                             erworthnat/HACK/Trasformers                        
+                             4Dummies/state_of_ai/src/ma                        
+                             nim/_media/cuerender_m01_ne                        
+                             uron/Tex/b6afccc7b45037e3.t                        
+                             ex                                                 
+[10/29/26 04:06:19] INFO     Writing                     tex_file_writing.py:110
+                             \special{dvisvgm:raw <g                            
+                             id='unique000'>}1\special{d                        
+                             visvgm:raw </g>} to                                
+                             /usr/local/google/home/butt                        
+                             erworthnat/HACK/Trasformers                        
+                             4Dummies/state_of_ai/src/ma                        
+                             nim/_media/cuerender_m01_ne                        
+                             uron/Tex/e6a566ad7d876b8c.t                        
+                             ex                                                 
+[10/29/26 04:06:20] INFO     Writing                     tex_file_writing.py:110
+                             \special{dvisvgm:raw <g                            
+                             id='unique000'>}\hat{y}\spe                        
+                             cial{dvisvgm:raw </g>} to                          
+                             /usr/local/google/home/butt                        
+                             erworthnat/HACK/Trasformers                        
+                             4Dummies/state_of_ai/src/ma                        
+                             nim/_media/cuerender_m01_ne                        
+                             uron/Tex/7caaffdca84fbfc2.t                        
+                             ex                                                 
+[10/29/26 04:06:21] INFO     Caching disabled.              cairo_renderer.py:83
+Animation 0: LaggedStart(Group), etc.:   0%|          | 0/27 [00:00<?, ?it/s]Animation 0: LaggedStart(Group), etc.:  19%|█▊        | 5/27 [00:00<00:00, 47.06it/s]Animation 0: LaggedStart(Group), etc.:  41%|████      | 11/27 [00:00<00:00, 51.47it/s]Animation 0: LaggedStart(Group), etc.:  70%|███████   | 19/27 [00:00<00:00, 58.13it/s]Animation 0: LaggedStart(Group), etc.:  93%|█████████▎| 25/27 [00:00<00:00, 56.61it/s]                                                                                      [10/29/26 04:06:24] INFO     Animation 0 : Partial      scene_file_writer.py:601
+                             movie file written in                              
+                             '/usr/local/google/home/bu                         
+                             tterworthnat/HACK/Trasform                         
+                             ers4Dummies/state_of_ai/sr                         
+                             c/manim/_media/cuerender_m                         
+                             01_neuron/videos/m01_neuro                         
+                             n/480p30/partial_movie_fil                         
+                             es/Neuron/uncached_00000.m                         
+                             p4'                                                
+                    INFO     Caching disabled.              cairo_renderer.py:83
+Animation 1: GrowFromCenter(Circle), etc.:   0%|          | 0/33 [00:00<?, ?it/s]Animation 1: GrowFromCenter(Circle), etc.:  18%|█▊        | 6/33 [00:00<00:00, 43.48it/s]Animation 1: GrowFromCenter(Circle), etc.:  39%|███▉      | 13/33 [00:00<00:00, 55.83it/s]Animation 1: GrowFromCenter(Circle), etc.:  64%|██████▎   | 21/33 [00:00<00:00, 65.49it/s]Animation 1: GrowFromCenter(Circle), etc.:  88%|████████▊ | 29/33 [00:00<00:00, 66.00it/s]                                                                                          [10/29/26 04:06:28] INFO     Animation 1 : Partial      scene_file_writer.py:601
+                             movie file written in                              
+                             '/usr/local/google/home/bu                         
+                             tterworthnat/HACK/Trasform                         
+                             ers4Dummies/state_of_ai/sr                         
+                             c/manim/_media/cuerender_m                         
+                             01_neuron/videos/m01_neuro                         
+                             n/480p30/partial_movie_fil                         
+                             es/Neuron/uncached_00001.m                         
+                             p4'                                                
+                    INFO     Caching disabled.              cairo_renderer.py:83
+Animation 2: FadeIn(MathTex('b = -0.2')), etc.:   0%|          | 0/21 [00:00<?, ?it/s]Animation 2: FadeIn(MathTex('b = -0.2')), etc.:  43%|████▎     | 9/21 [00:00<00:00, 87.86it/s]Animation 2: FadeIn(MathTex('b = -0.2')), etc.:  86%|████████▌ | 18/21 [00:00<00:00, 76.92it/s]                                                                                               [10/29/26 04:06:30] INFO     Animation 2 : Partial      scene_file_writer.py:601
+                             movie file written in                              
+                             '/usr/local/google/home/bu                         
+                             tterworthnat/HACK/Trasform                         
+                             ers4Dummies/state_of_ai/sr                         
+                             c/manim/_media/cuerender_m                         
+                             01_neuron/videos/m01_neuro                         
+                             n/480p30/partial_movie_fil                         
+                             es/Neuron/uncached_00002.m                         
+                             p4'                                                
+                    INFO     Caching disabled.              cairo_renderer.py:83
+Animation 3: Create(Axes of 2 submobjects), etc.:   0%|          | 0/30 [00:00<?, ?it/s]Animation 3: Create(Axes of 2 submobjects), etc.:  20%|██        | 6/30 [00:00<00:00, 57.43it/s]Animation 3: Create(Axes of 2 submobjects), etc.:  40%|████      | 12/30 [00:00<00:00, 57.40it/s]Animation 3: Create(Axes of 2 submobjects), etc.:  60%|██████    | 18/30 [00:00<00:00, 55.97it/s]Animation 3: Create(Axes of 2 submobjects), etc.:  80%|████████  | 24/30 [00:00<00:00, 52.81it/s]Animation 3: Create(Axes of 2 submobjects), etc.: 100%|██████████| 30/30 [00:00<00:00, 43.60it/s]                                                                                                 [10/29/26 04:06:33] INFO     Animation 3 : Partial      scene_file_writer.py:601
+                             movie file written in                              
+                             '/usr/local/google/home/bu                         
+                             tterworthnat/HACK/Trasform                         
+                             ers4Dummies/state_of_ai/sr                         
+                             c/manim/_media/cuerender_m                         
+                             01_neuron/videos/m01_neuro                         
+                             n/480p30/partial_movie_fil                         
+                             es/Neuron/uncached_00003.m                         
+                             p4'                                                
+                    INFO     Caching disabled.              cairo_renderer.py:83
+                    INFO     Animation 4 : Partial      scene_file_writer.py:601
+                             movie file written in                              
+                             '/usr/local/google/home/bu                         
+                             tterworthnat/HACK/Trasform                         
+                             ers4Dummies/state_of_ai/sr                         
+                             c/manim/_media/cuerender_m                         
+                             01_neuron/videos/m01_neuro                         
+                             n/480p30/partial_movie_fil                         
+                             es/Neuron/uncached_00004.m                         
+                             p4'                                                
+                    INFO     Writing                     tex_file_writing.py:110
+                             \special{dvisvgm:raw <g                            
+                             id='unique000'>}z                                  
+                             \special{dvisvgm:raw                               
+                             </g>}\special{dvisvgm:raw                          
+                             <g id='unique001'>}=                               
+                             \special{dvisvgm:raw                               
+                             </g>}\special{dvisvgm:raw                          
+                             <g id='unique002'>}1.08                            
+                             \special{dvisvgm:raw                               
+                             </g>}\special{dvisvgm:raw                          
+                             <g id='unique003'>}-                               
+                             \special{dvisvgm:raw                               
+                             </g>}\special{dvisvgm:raw                          
+                             <g id='unique004'>}0.16                            
+                             \special{dvisvgm:raw                               
+                             </g>}\special{dvisvgm:raw                          
+                             <g id='unique005'>}+                               
+                             \special{dvisvgm:raw                               
+                             </g>}\special{dvisvgm:raw                          
+                             <g id='unique006'>}0.30                            
+                             \special{dvisvgm:raw                               
+                             </g>}\special{dvisvgm:raw                          
+                             <g id='unique007'>}-                               
+                             \special{dvisvgm:raw                               
+                             </g>}\special{dvisvgm:raw                          
+                             <g id='unique008'>}0.20                            
+                             \special{dvisvgm:raw                               
+                             </g>}\special{dvisvgm:raw                          
+                             <g id='unique009'>}=                               
+                             \special{dvisvgm:raw                               
+                             </g>}\special{dvisvgm:raw                          
+                             <g                                                 
+                             id='unique010'>}1.02\specia                        
+                             l{dvisvgm:raw </g>} to                             
+                             /usr/local/google/home/butt                        
+                             erworthnat/HACK/Trasformers                        
+                             4Dummies/state_of_ai/src/ma                        
+                             nim/_media/cuerender_m01_ne                        
+                             uron/Tex/923f56e9e268e49f.t                        
+                             ex                                                 
+[10/29/26 04:06:35] INFO     Writing                     tex_file_writing.py:110
+                             \special{dvisvgm:raw <g                            
+                             id='unique000'>}1.08\specia                        
+                             l{dvisvgm:raw </g>} to                             
+                             /usr/local/google/home/butt                        
+                             erworthnat/HACK/Trasformers                        
+                             4Dummies/state_of_ai/src/ma                        
+                             nim/_media/cuerender_m01_ne                        
+                             uron/Tex/fcd87a2561c8cd55.t                        
+                             ex                                                 
+[10/29/26 04:06:36] INFO     Writing                     tex_file_writing.py:110
+                             \special{dvisvgm:raw <g                            
+                             id='unique000'>}-0.16\speci                        
+                             al{dvisvgm:raw </g>} to                            
+                             /usr/local/google/home/butt                        
+                             erworthnat/HACK/Trasformers                        
+                             4Dummies/state_of_ai/src/ma                        
+                             nim/_media/cuerender_m01_ne                        
+                             uron/Tex/ab322ec804aa0d02.t                        
+                             ex                                                 
+[10/29/26 04:06:37] INFO     Writing                     tex_file_writing.py:110
+                             \special{dvisvgm:raw <g                            
+                             id='unique000'>}0.30\specia                        
+                             l{dvisvgm:raw </g>} to                             
+                             /usr/local/google/home/butt                        
+                             erworthnat/HACK/Trasformers                        
+                             4Dummies/state_of_ai/src/ma                        
+                             nim/_media/cuerender_m01_ne                        
+                             uron/Tex/a24022743ce93376.t                        
+                             ex                                                 
+[10/29/26 04:06:38] INFO     Caching disabled.              cairo_renderer.py:83
+Animation 5: LaggedStart(Group):   0%|          | 0/78 [00:00<?, ?it/s]Animation 5: LaggedStart(Group):   8%|▊         | 6/78 [00:00<00:01, 54.89it/s]Animation 5: LaggedStart(Group):  15%|█▌        | 12/78 [00:00<00:01, 45.13it/s]Animation 5: LaggedStart(Group):  23%|██▎       | 18/78 [00:00<00:01, 50.69it/s]Animation 5: LaggedStart(Group):  31%|███       | 24/78 [00:00<00:01, 37.63it/s]Animation 5: LaggedStart(Group):  37%|███▋      | 29/78 [00:00<00:01, 39.04it/s]Animation 5: LaggedStart(Group):  44%|████▎     | 34/78 [00:00<00:01, 38.68it/s]Animation 5: LaggedStart(Group):  51%|█████▏    | 40/78 [00:00<00:00, 41.95it/s]Animation 5: LaggedStart(Group):  58%|█████▊    | 45/78 [00:01<00:00, 39.41it/s]Animation 5: LaggedStart(Group):  64%|██████▍   | 50/78 [00:01<00:00, 35.54it/s]Animation 5: LaggedStart(Group):  71%|███████   | 55/78 [00:01<00:00, 38.75it/s]Animation 5: LaggedStart(Group):  77%|███████▋  | 60/78 [00:01<00:00, 40.58it/s]Animation 5: LaggedStart(Group):  85%|████████▍ | 66/78 [00:01<00:00, 44.46it/s]Animation 5: LaggedStart(Group):  91%|█████████ | 71/78 [00:01<00:00, 42.21it/s]Animation 5: LaggedStart(Group):  97%|█████████▋| 76/78 [00:01<00:00, 42.67it/s]                                                                                [10/29/26 04:06:47] INFO     Animation 5 : Partial      scene_file_writer.py:601
+                             movie file written in                              
+                             '/usr/local/google/home/bu                         
+                             tterworthnat/HACK/Trasform                         
+                             ers4Dummies/state_of_ai/sr                         
+                             c/manim/_media/cuerender_m                         
+                             01_neuron/videos/m01_neuro                         
+                             n/480p30/partial_movie_fil                         
+                             es/Neuron/uncached_00005.m                         
+                             p4'                                                
+                    INFO     Caching disabled.              cairo_renderer.py:83
+Animation 6: Indicate(MathTex('\\Sigma')), etc.:   0%|          | 0/36 [00:00<?, ?it/s]Animation 6: Indicate(MathTex('\\Sigma')), etc.:   8%|▊         | 3/36 [00:00<00:01, 22.91it/s]Animation 6: Indicate(MathTex('\\Sigma')), etc.:  17%|█▋        | 6/36 [00:00<00:01, 22.87it/s]Animation 6: Indicate(MathTex('\\Sigma')), etc.:  25%|██▌       | 9/36 [00:00<00:01, 19.04it/s]Animation 6: Indicate(MathTex('\\Sigma')), etc.:  31%|███       | 11/36 [00:00<00:01, 18.16it/s]Animation 6: Indicate(MathTex('\\Sigma')), etc.:  42%|████▏     | 15/36 [00:00<00:00, 21.63it/s]Animation 6: Indicate(MathTex('\\Sigma')), etc.:  50%|█████     | 18/36 [00:00<00:00, 22.53it/s]Animation 6: Indicate(MathTex('\\Sigma')), etc.:  58%|█████▊    | 21/36 [00:00<00:00, 22.35it/s]Animation 6: Indicate(MathTex('\\Sigma')), etc.:  67%|██████▋   | 24/36 [00:01<00:00, 22.33it/s]Animation 6: Indicate(MathTex('\\Sigma')), etc.:  75%|███████▌  | 27/36 [00:01<00:00, 20.91it/s]Animation 6: Indicate(MathTex('\\Sigma')), etc.:  83%|████████▎ | 30/36 [00:01<00:00, 18.94it/s]Animation 6: Indicate(MathTex('\\Sigma')), etc.:  89%|████████▉ | 32/36 [00:01<00:00, 15.14it/s]Animation 6: Indicate(MathTex('\\Sigma')), etc.:  97%|█████████▋| 35/36 [00:01<00:00, 16.75it/s]                                                                                                [10/29/26 04:06:52] INFO     Animation 6 : Partial      scene_file_writer.py:601
+                             movie file written in                              
+                             '/usr/local/google/home/bu                         
+                             tterworthnat/HACK/Trasform                         
+                             ers4Dummies/state_of_ai/sr                         
+                             c/manim/_media/cuerender_m                         
+                             01_neuron/videos/m01_neuro                         
+                             n/480p30/partial_movie_fil                         
+                             es/Neuron/uncached_00006.m                         
+                             p4'                                                
+                    INFO     Caching disabled.              cairo_renderer.py:83
+Animation 7: ReplacementTransform(MathTexPart('-0.2')), etc.:   0%|          | 0/27 [00:00<?, ?it/s]Animation 7: ReplacementTransform(MathTexPart('-0.2')), etc.:  15%|█▍        | 4/27 [00:00<00:00, 34.54it/s]Animation 7: ReplacementTransform(MathTexPart('-0.2')), etc.:  30%|██▉       | 8/27 [00:00<00:00, 30.34it/s]Animation 7: ReplacementTransform(MathTexPart('-0.2')), etc.:  44%|████▍     | 12/27 [00:00<00:00, 28.09it/s]Animation 7: ReplacementTransform(MathTexPart('-0.2')), etc.:  59%|█████▉    | 16/27 [00:00<00:00, 29.92it/s]Animation 7: ReplacementTransform(MathTexPart('-0.2')), etc.:  74%|███████▍  | 20/27 [00:00<00:00, 32.42it/s]Animation 7: ReplacementTransform(MathTexPart('-0.2')), etc.:  89%|████████▉ | 24/27 [00:00<00:00, 33.08it/s]                                                                                                             [10/29/26 04:06:55] INFO     Animation 7 : Partial      scene_file_writer.py:601
+                             movie file written in                              
+                             '/usr/local/google/home/bu                         
+                             tterworthnat/HACK/Trasform                         
+                             ers4Dummies/state_of_ai/sr                         
+                             c/manim/_media/cuerender_m                         
+                             01_neuron/videos/m01_neuro                         
+                             n/480p30/partial_movie_fil                         
+                             es/Neuron/uncached_00007.m                         
+                             p4'                                                
+                    INFO     Caching disabled.              cairo_renderer.py:83
+Animation 8: Write(VGroup of 2 submobjects):   0%|          | 0/18 [00:00<?, ?it/s]                                                                                   [10/29/26 04:06:57] INFO     Animation 8 : Partial      scene_file_writer.py:601
+                             movie file written in                              
+                             '/usr/local/google/home/bu                         
+                             tterworthnat/HACK/Trasform                         
+                             ers4Dummies/state_of_ai/sr                         
+                             c/manim/_media/cuerender_m                         
+                             01_neuron/videos/m01_neuro                         
+                             n/480p30/partial_movie_fil                         
+                             es/Neuron/uncached_00008.m                         
+                             p4'                                                
+                    INFO     Caching disabled.              cairo_renderer.py:83
+Animation 9: Circumscribe(Group):   0%|          | 0/27 [00:00<?, ?it/s]                                                                        [10/29/26 04:06:59] INFO     Animation 9 : Partial      scene_file_writer.py:601
+                             movie file written in                              
+                             '/usr/local/google/home/bu                         
+                             tterworthnat/HACK/Trasform                         
+                             ers4Dummies/state_of_ai/sr                         
+                             c/manim/_media/cuerender_m                         
+                             01_neuron/videos/m01_neuro                         
+                             n/480p30/partial_movie_fil                         
+                             es/Neuron/uncached_00009.m                         
+                             p4'                                                
+                    INFO     Writing                     tex_file_writing.py:110
+                             \special{dvisvgm:raw <g                            
+                             id='unique000'>}1.02\specia                        
+                             l{dvisvgm:raw </g>} to                             
+                             /usr/local/google/home/butt                        
+                             erworthnat/HACK/Trasformers                        
+                             4Dummies/state_of_ai/src/ma                        
+                             nim/_media/cuerender_m01_ne                        
+                             uron/Tex/829a474bf8a5ed8d.t                        
+                             ex                                                 
+[10/29/26 04:07:00] INFO     Caching disabled.              cairo_renderer.py:83
+Animation 10: MoveAlongPath(Dot), etc.:   0%|          | 0/30 [00:00<?, ?it/s]Animation 10: MoveAlongPath(Dot), etc.:  27%|██▋       | 8/30 [00:00<00:00, 75.12it/s]Animation 10: MoveAlongPath(Dot), etc.:  53%|█████▎    | 16/30 [00:00<00:00, 60.99it/s]Animation 10: MoveAlongPath(Dot), etc.:  77%|███████▋  | 23/30 [00:00<00:00, 57.46it/s]Animation 10: MoveAlongPath(Dot), etc.: 100%|██████████| 30/30 [00:00<00:00, 61.36it/s]                                                                                       [10/29/26 04:07:04] INFO     Animation 10 : Partial     scene_file_writer.py:601
+                             movie file written in                              
+                             '/usr/local/google/home/bu                         
+                             tterworthnat/HACK/Trasform                         
+                             ers4Dummies/state_of_ai/sr                         
+                             c/manim/_media/cuerender_m                         
+                             01_neuron/videos/m01_neuro                         
+                             n/480p30/partial_movie_fil                         
+                             es/Neuron/uncached_00010.m                         
+                             p4'                                                
+                    INFO     Caching disabled.              cairo_renderer.py:83
+Animation 11: FadeIn(Dot):   0%|          | 0/9 [00:00<?, ?it/s]                                                                [10/29/26 04:07:05] INFO     Animation 11 : Partial     scene_file_writer.py:601
+                             movie file written in                              
+                             '/usr/local/google/home/bu                         
+                             tterworthnat/HACK/Trasform                         
+                             ers4Dummies/state_of_ai/sr                         
+                             c/manim/_media/cuerender_m                         
+                             01_neuron/videos/m01_neuro                         
+                             n/480p30/partial_movie_fil                         
+                             es/Neuron/uncached_00011.m                         
+                             p4'                                                
+                    INFO     Caching disabled.              cairo_renderer.py:83
+Animation 12: Create(DashedLine):   0%|          | 0/18 [00:00<?, ?it/s]                                                                        [10/29/26 04:07:07] INFO     Animation 12 : Partial     scene_file_writer.py:601
+                             movie file written in                              
+                             '/usr/local/google/home/bu                         
+                             tterworthnat/HACK/Trasform                         
+                             ers4Dummies/state_of_ai/sr                         
+                             c/manim/_media/cuerender_m                         
+                             01_neuron/videos/m01_neuro                         
+                             n/480p30/partial_movie_fil                         
+                             es/Neuron/uncached_00012.m                         
+                             p4'                                                
+                    INFO     Caching disabled.              cairo_renderer.py:83
+Animation 13: FadeIn(Dot):   0%|          | 0/8 [00:00<?, ?it/s]                                                                [10/29/26 04:07:08] INFO     Animation 13 : Partial     scene_file_writer.py:601
+                             movie file written in                              
+                             '/usr/local/google/home/bu                         
+                             tterworthnat/HACK/Trasform                         
+                             ers4Dummies/state_of_ai/sr                         
+                             c/manim/_media/cuerender_m                         
+                             01_neuron/videos/m01_neuro                         
+                             n/480p30/partial_movie_fil                         
+                             es/Neuron/uncached_00013.m                         
+                             p4'                                                
+                    INFO     Writing                     tex_file_writing.py:110
+                             \special{dvisvgm:raw <g                            
+                             id='unique000'>}0.73\specia                        
+                             l{dvisvgm:raw </g>} to                             
+                             /usr/local/google/home/butt                        
+                             erworthnat/HACK/Trasformers                        
+                             4Dummies/state_of_ai/src/ma                        
+                             nim/_media/cuerender_m01_ne                        
+                             uron/Tex/88da6858b1006353.t                        
+                             ex                                                 
+                    INFO     Caching disabled.              cairo_renderer.py:83
+Animation 14: Create(DashedLine), etc.:   0%|          | 0/21 [00:00<?, ?it/s]Animation 14: Create(DashedLine), etc.:  81%|████████  | 17/21 [00:00<00:00, 164.49it/s]                                                                                        [10/29/26 04:07:11] INFO     Animation 14 : Partial     scene_file_writer.py:601
+                             movie file written in                              
+                             '/usr/local/google/home/bu                         
+                             tterworthnat/HACK/Trasform                         
+                             ers4Dummies/state_of_ai/sr                         
+                             c/manim/_media/cuerender_m                         
+                             01_neuron/videos/m01_neuro                         
+                             n/480p30/partial_movie_fil                         
+                             es/Neuron/uncached_00014.m                         
+                             p4'                                                
+                    INFO     Caching disabled.              cairo_renderer.py:83
+Animation 15: _MethodAnimation(MathTex('0.73')), etc.:   0%|          | 0/42 [00:00<?, ?it/s]Animation 15: _MethodAnimation(MathTex('0.73')), etc.:  19%|█▉        | 8/42 [00:00<00:00, 75.79it/s]Animation 15: _MethodAnimation(MathTex('0.73')), etc.:  38%|███▊      | 16/42 [00:00<00:00, 57.87it/s]Animation 15: _MethodAnimation(MathTex('0.73')), etc.:  55%|█████▍    | 23/42 [00:00<00:00, 62.17it/s]Animation 15: _MethodAnimation(MathTex('0.73')), etc.:  71%|███████▏  | 30/42 [00:00<00:00, 61.27it/s]Animation 15: _MethodAnimation(MathTex('0.73')), etc.:  90%|█████████ | 38/42 [00:00<00:00, 62.88it/s]                                                                                                      [10/29/26 04:07:15] INFO     Animation 15 : Partial     scene_file_writer.py:601
+                             movie file written in                              
+                             '/usr/local/google/home/bu                         
+                             tterworthnat/HACK/Trasform                         
+                             ers4Dummies/state_of_ai/sr                         
+                             c/manim/_media/cuerender_m                         
+                             01_neuron/videos/m01_neuro                         
+                             n/480p30/partial_movie_fil                         
+                             es/Neuron/uncached_00015.m                         
+                             p4'                                                
+                    INFO     Caching disabled.              cairo_renderer.py:83
+Animation 16: Indicate(MathTex('0.73')):   0%|          | 0/18 [00:00<?, ?it/s]Animation 16: Indicate(MathTex('0.73')):  28%|██▊       | 5/18 [00:00<00:00, 49.83it/s]Animation 16: Indicate(MathTex('0.73')):  56%|█████▌    | 10/18 [00:00<00:00, 46.13it/s]Animation 16: Indicate(MathTex('0.73')):  83%|████████▎ | 15/18 [00:00<00:00, 43.13it/s]                                                                                        [10/29/26 04:07:16] INFO     Animation 16 : Partial     scene_file_writer.py:601
+                             movie file written in                              
+                             '/usr/local/google/home/bu                         
+                             tterworthnat/HACK/Trasform                         
+                             ers4Dummies/state_of_ai/sr                         
+                             c/manim/_media/cuerender_m                         
+                             01_neuron/videos/m01_neuro                         
+                             n/480p30/partial_movie_fil                         
+                             es/Neuron/uncached_00016.m                         
+                             p4'                                                
+                    INFO     Caching disabled.              cairo_renderer.py:83
+[10/29/26 04:07:17] INFO     Animation 17 : Partial     scene_file_writer.py:601
+                             movie file written in                              
+                             '/usr/local/google/home/bu                         
+                             tterworthnat/HACK/Trasform                         
+                             ers4Dummies/state_of_ai/sr                         
+                             c/manim/_media/cuerender_m                         
+                             01_neuron/videos/m01_neuro                         
+                             n/480p30/partial_movie_fil                         
+                             es/Neuron/uncached_00017.m                         
+                             p4'                                                
+                    INFO     Writing                     tex_file_writing.py:110
+                             \special{dvisvgm:raw <g                            
+                             id='unique000'>}z                                  
+                             \special{dvisvgm:raw                               
+                             </g>}\special{dvisvgm:raw                          
+                             <g id='unique001'>}=                               
+                             \special{dvisvgm:raw                               
+                             </g>}\special{dvisvgm:raw                          
+                             <g                                                 
+                             id='unique002'>}\mathbf{w}                         
+                             \special{dvisvgm:raw                               
+                             </g>}\special{dvisvgm:raw                          
+                             <g id='unique003'>}\cdot                           
+                             \special{dvisvgm:raw                               
+                             </g>}\special{dvisvgm:raw                          
+                             <g                                                 
+                             id='unique004'>}\mathbf{x}                         
+                             \special{dvisvgm:raw                               
+                             </g>}\special{dvisvgm:raw                          
+                             <g id='unique005'>}+                               
+                             \special{dvisvgm:raw                               
+                             </g>}\special{dvisvgm:raw                          
+                             <g                                                 
+                             id='unique006'>}b\special{d                        
+                             visvgm:raw </g>} to                                
+                             /usr/local/google/home/butt                        
+                             erworthnat/HACK/Trasformers                        
+                             4Dummies/state_of_ai/src/ma                        
+                             nim/_media/cuerender_m01_ne                        
+                             uron/Tex/e4d6d2529a8feacf.t                        
+                             ex                                                 
+[10/29/26 04:07:18] INFO     Caching disabled.              cairo_renderer.py:83
+Animation 18: FadeOut(VGroup of 9 submobjects):   0%|          | 0/15 [00:00<?, ?it/s]Animation 18: FadeOut(VGroup of 9 submobjects):  33%|███▎      | 5/15 [00:00<00:00, 43.28it/s]Animation 18: FadeOut(VGroup of 9 submobjects):  67%|██████▋   | 10/15 [00:00<00:00, 31.33it/s]Animation 18: FadeOut(VGroup of 9 submobjects):  93%|█████████▎| 14/15 [00:00<00:00, 27.60it/s]                                                                                               [10/29/26 04:07:20] INFO     Animation 18 : Partial     scene_file_writer.py:601
+                             movie file written in                              
+                             '/usr/local/google/home/bu                         
+                             tterworthnat/HACK/Trasform                         
+                             ers4Dummies/state_of_ai/sr                         
+                             c/manim/_media/cuerender_m                         
+                             01_neuron/videos/m01_neuro                         
+                             n/480p30/partial_movie_fil                         
+                             es/Neuron/uncached_00018.m                         
+                             p4'                                                
+                    INFO     Caching disabled.              cairo_renderer.py:83
+Animation 19: ReplacementTransform(MathTexPart('z')), etc.:   0%|          | 0/21 [00:00<?, ?it/s]Animation 19: ReplacementTransform(MathTexPart('z')), etc.:  19%|█▉        | 4/21 [00:00<00:00, 38.72it/s]Animation 19: ReplacementTransform(MathTexPart('z')), etc.:  48%|████▊     | 10/21 [00:00<00:00, 48.81it/s]Animation 19: ReplacementTransform(MathTexPart('z')), etc.:  76%|███████▌  | 16/21 [00:00<00:00, 52.53it/s]                                                                                                           [10/29/26 04:07:22] INFO     Animation 19 : Partial     scene_file_writer.py:601
+                             movie file written in                              
+                             '/usr/local/google/home/bu                         
+                             tterworthnat/HACK/Trasform                         
+                             ers4Dummies/state_of_ai/sr                         
+                             c/manim/_media/cuerender_m                         
+                             01_neuron/videos/m01_neuro                         
+                             n/480p30/partial_movie_fil                         
+                             es/Neuron/uncached_00019.m                         
+                             p4'                                                
+                    INFO     Caching disabled.              cairo_renderer.py:83
+                    INFO     Animation 20 : Partial     scene_file_writer.py:601
+                             movie file written in                              
+                             '/usr/local/google/home/bu                         
+                             tterworthnat/HACK/Trasform                         
+                             ers4Dummies/state_of_ai/sr                         
+                             c/manim/_media/cuerender_m                         
+                             01_neuron/videos/m01_neuro                         
+                             n/480p30/partial_movie_fil                         
+                             es/Neuron/uncached_00020.m                         
+                             p4'                                                
+                    INFO     Writing                     tex_file_writing.py:110
+                             \special{dvisvgm:raw <g                            
+                             id='unique000'>}\hat{y}                            
+                             \special{dvisvgm:raw                               
+                             </g>}\special{dvisvgm:raw                          
+                             <g id='unique001'>}=                               
+                             \special{dvisvgm:raw                               
+                             </g>}\special{dvisvgm:raw                          
+                             <g id='unique002'>}\sigma(                         
+                             \special{dvisvgm:raw                               
+                             </g>}\special{dvisvgm:raw                          
+                             <g                                                 
+                             id='unique003'>}\mathbf{w}                         
+                             \special{dvisvgm:raw                               
+                             </g>}\special{dvisvgm:raw                          
+                             <g id='unique004'>}\cdot                           
+                             \special{dvisvgm:raw                               
+                             </g>}\special{dvisvgm:raw                          
+                             <g                                                 
+                             id='unique005'>}\mathbf{x}                         
+                             \special{dvisvgm:raw                               
+                             </g>}\special{dvisvgm:raw                          
+                             <g id='unique006'>}+                               
+                             \special{dvisvgm:raw                               
+                             </g>}\special{dvisvgm:raw                          
+                             <g id='unique007'>}b                               
+                             \special{dvisvgm:raw                               
+                             </g>}\special{dvisvgm:raw                          
+                             <g                                                 
+                             id='unique008'>})\special{d                        
+                             visvgm:raw </g>} to                                
+                             /usr/local/google/home/butt                        
+                             erworthnat/HACK/Trasformers                        
+                             4Dummies/state_of_ai/src/ma                        
+                             nim/_media/cuerender_m01_ne                        
+                             uron/Tex/42464683e308e7d4.t                        
+                             ex                                                 
+[10/29/26 04:07:23] INFO     Caching disabled.              cairo_renderer.py:83
+Animation 21: TransformMatchingTex(Group):   0%|          | 0/36 [00:00<?, ?it/s]Animation 21: TransformMatchingTex(Group):  17%|█▋        | 6/36 [00:00<00:00, 57.38it/s]Animation 21: TransformMatchingTex(Group):  33%|███▎      | 12/36 [00:00<00:00, 43.53it/s]Animation 21: TransformMatchingTex(Group):  47%|████▋     | 17/36 [00:00<00:00, 43.75it/s]Animation 21: TransformMatchingTex(Group):  61%|██████    | 22/36 [00:00<00:00, 42.51it/s]Animation 21: TransformMatchingTex(Group):  75%|███████▌  | 27/36 [00:00<00:00, 42.31it/s]Animation 21: TransformMatchingTex(Group):  89%|████████▉ | 32/36 [00:00<00:00, 42.66it/s]                                                                                          [10/29/26 04:07:27] INFO     Animation 21 : Partial     scene_file_writer.py:601
+                             movie file written in                              
+                             '/usr/local/google/home/bu                         
+                             tterworthnat/HACK/Trasform                         
+                             ers4Dummies/state_of_ai/sr                         
+                             c/manim/_media/cuerender_m                         
+                             01_neuron/videos/m01_neuro                         
+                             n/480p30/partial_movie_fil                         
+                             es/Neuron/uncached_00021.m                         
+                             p4'                                                
+                    INFO     Caching disabled.              cairo_renderer.py:83
+Animation 22: Create(SurroundingRectangle):   0%|          | 0/24 [00:00<?, ?it/s]Animation 22: Create(SurroundingRectangle):  25%|██▌       | 6/24 [00:00<00:00, 53.66it/s]Animation 22: Create(SurroundingRectangle):  50%|█████     | 12/24 [00:00<00:00, 57.07it/s]Animation 22: Create(SurroundingRectangle):  75%|███████▌  | 18/24 [00:00<00:00, 48.90it/s]Animation 22: Create(SurroundingRectangle): 100%|██████████| 24/24 [00:00<00:00, 41.80it/s]                                                                                           [10/29/26 04:07:30] INFO     Animation 22 : Partial     scene_file_writer.py:601
+                             movie file written in                              
+                             '/usr/local/google/home/bu                         
+                             tterworthnat/HACK/Trasform                         
+                             ers4Dummies/state_of_ai/sr                         
+                             c/manim/_media/cuerender_m                         
+                             01_neuron/videos/m01_neuro                         
+                             n/480p30/partial_movie_fil                         
+                             es/Neuron/uncached_00022.m                         
+                             p4'                                                
+                    INFO     Caching disabled.              cairo_renderer.py:83
+                    INFO     Animation 23 : Partial     scene_file_writer.py:601
+                             movie file written in                              
+                             '/usr/local/google/home/bu                         
+                             tterworthnat/HACK/Trasform                         
+                             ers4Dummies/state_of_ai/sr                         
+                             c/manim/_media/cuerender_m                         
+                             01_neuron/videos/m01_neuro                         
+                             n/480p30/partial_movie_fil                         
+                             es/Neuron/uncached_00023.m                         
+                             p4'                                                
+                    INFO     Combining to Movie file.   scene_file_writer.py:753
+                    INFO                                scene_file_writer.py:904
+                             File ready at                                      
+                             '/usr/local/google/home/bu                         
+                             tterworthnat/HACK/Trasform                         
+                             ers4Dummies/state_of_ai/sr                         
+                             c/manim/_media/cuerender_m                         
+                             01_neuron/videos/m01_neuro                         
+                             n/480p30/Neuron.mp4'                               
+                                                                                
+                    INFO     Rendered Neuron                        scene.py:278
+                             Played 24 animations                               

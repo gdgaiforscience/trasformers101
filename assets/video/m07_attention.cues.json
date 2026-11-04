@@ -1,0 +1,30 @@
+[
+ {
+  "t": 0.0,
+  "label": "A sentence, split into tokens"
+ },
+ {
+  "t": 1.5,
+  "label": "Each token gets a query, a key and a value"
+ },
+ {
+  "t": 3.2,
+  "label": "“it” compares its query with every earlier key"
+ },
+ {
+  "t": 6.7,
+  "label": "Softmax turns the scores into attention weights: “wombat” wins"
+ },
+ {
+  "t": 8.7,
+  "label": "The weighted sum of values flows into “it”"
+ },
+ {
+  "t": 11.1,
+  "label": "Every token does this at once: the causal attention matrix"
+ },
+ {
+  "t": 16.7,
+  "label": "Attention(Q, K, V) = softmax(QKᵀ / √dₖ) V"
+ }
+]

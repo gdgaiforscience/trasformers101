@@ -1,0 +1,26 @@
+[
+ {
+  "t": 0.0,
+  "label": "A computational graph: x → ×w → σ → (ŷ − y)² → L"
+ },
+ {
+  "t": 2.6,
+  "label": "Forward pass: z = 1.0, ŷ = 0.731, L = 0.0723"
+ },
+ {
+  "t": 6.87,
+  "label": "Backward pass: local derivatives −0.538, 0.197 and 2"
+ },
+ {
+  "t": 12.0,
+  "label": "Chain rule: ∂L/∂w = (−0.538)(0.197)(2) ≈ −0.2115"
+ },
+ {
+  "t": 16.0,
+  "label": "Update: w ← 0.5 − η(−0.2115) ≈ 0.521 (η = 0.1)"
+ },
+ {
+  "t": 18.9,
+  "label": "Forward again: the loss drops from 0.0723 to 0.0680"
+ }
+]

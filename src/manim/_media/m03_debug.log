@@ -1,0 +1,451 @@
+/bin/sh: line 1: sox: command not found
+[10/29/26 03:13:09] WARNING  SoX could not be found!              __init__.py:10
+                                                                                
+                                 If you do not have SoX, proceed                
+                             here:                                              
+                                  - - -                                         
+                             http://sox.sourceforge.net/ - - -                  
+                                                                                
+                                 If you do (or think that you                   
+                             should) have SoX, double-check your                
+                                 path variables.                                
+                                                                                
+<frozen runpy>:128: RuntimeWarning: 'manim.__main__' found in sys.modules after import of package 'manim', but prior to execution of 'manim.__main__'; this may result in unpredictable behaviour
+Manim Community v0.20.1
+
+[10/29/26 03:13:12] INFO     Caching disabled.              cairo_renderer.py:83
+Animation 0: FadeIn(NumberPlane of 4 submobjects):   0%|          | 0/18 [00:00<?, ?it/s]                                                                                                             INFO     Animation 0 : Partial      scene_file_writer.py:601
+                             movie file written in                              
+                             '/usr/local/google/home/bu                         
+                             tterworthnat/HACK/Trasform                         
+                             ers4Dummies/state_of_ai/sr                         
+                             c/manim/_media/videos/m03_                         
+                             grid_warp/480p30/partial_m                         
+                             ovie_files/GridWarp/uncach                         
+                             ed_00000.mp4'                                      
+                    INFO     Caching disabled.              cairo_renderer.py:83
+Animation 1: Create(NumberPlane of 4 submobjects):   0%|          | 0/42 [00:00<?, ?it/s]Animation 1: Create(NumberPlane of 4 submobjects):  31%|███       | 13/42 [00:00<00:00, 115.89it/s]Animation 1: Create(NumberPlane of 4 submobjects):  60%|█████▉    | 25/42 [00:00<00:00, 65.02it/s] Animation 1: Create(NumberPlane of 4 submobjects):  79%|███████▊  | 33/42 [00:00<00:00, 46.83it/s]Animation 1: Create(NumberPlane of 4 submobjects):  93%|█████████▎| 39/42 [00:00<00:00, 38.26it/s]                                                                                                  [10/29/26 03:13:13] INFO     Animation 1 : Partial      scene_file_writer.py:601
+                             movie file written in                              
+                             '/usr/local/google/home/bu                         
+                             tterworthnat/HACK/Trasform                         
+                             ers4Dummies/state_of_ai/sr                         
+                             c/manim/_media/videos/m03_                         
+                             grid_warp/480p30/partial_m                         
+                             ovie_files/GridWarp/uncach                         
+                             ed_00001.mp4'                                      
+                    INFO     Caching disabled.              cairo_renderer.py:83
+Animation 2: LaggedStart(Group):   0%|          | 0/33 [00:00<?, ?it/s]Animation 2: LaggedStart(Group):  21%|██        | 7/33 [00:00<00:00, 66.35it/s]Animation 2: LaggedStart(Group):  42%|████▏     | 14/33 [00:00<00:00, 45.28it/s]Animation 2: LaggedStart(Group):  61%|██████    | 20/33 [00:00<00:00, 47.60it/s]Animation 2: LaggedStart(Group):  79%|███████▉  | 26/33 [00:00<00:00, 47.99it/s]Animation 2: LaggedStart(Group):  97%|█████████▋| 32/33 [00:00<00:00, 49.00it/s]                                                                                [10/29/26 03:13:14] INFO     Animation 2 : Partial      scene_file_writer.py:601
+                             movie file written in                              
+                             '/usr/local/google/home/bu                         
+                             tterworthnat/HACK/Trasform                         
+                             ers4Dummies/state_of_ai/sr                         
+                             c/manim/_media/videos/m03_                         
+                             grid_warp/480p30/partial_m                         
+                             ovie_files/GridWarp/uncach                         
+                             ed_00002.mp4'                                      
+                    INFO     Caching disabled.              cairo_renderer.py:83
+Animation 3: FadeIn(RoundedRectangle), etc.:   0%|          | 0/24 [00:00<?, ?it/s]Animation 3: FadeIn(RoundedRectangle), etc.:  29%|██▉       | 7/24 [00:00<00:00, 61.97it/s]Animation 3: FadeIn(RoundedRectangle), etc.:  58%|█████▊    | 14/24 [00:00<00:00, 64.53it/s]Animation 3: FadeIn(RoundedRectangle), etc.:  88%|████████▊ | 21/24 [00:00<00:00, 63.73it/s]                                                                                            [10/29/26 03:13:15] INFO     Animation 3 : Partial      scene_file_writer.py:601
+                             movie file written in                              
+                             '/usr/local/google/home/bu                         
+                             tterworthnat/HACK/Trasform                         
+                             ers4Dummies/state_of_ai/sr                         
+                             c/manim/_media/videos/m03_                         
+                             grid_warp/480p30/partial_m                         
+                             ovie_files/GridWarp/uncach                         
+                             ed_00003.mp4'                                      
+                    INFO     Caching disabled.              cairo_renderer.py:83
+Animation 4: _MethodAnimation(ValueTracker):   0%|          | 0/39 [00:00<?, ?it/s]Animation 4: _MethodAnimation(ValueTracker):  41%|████      | 16/39 [00:00<00:00, 157.47it/s]Animation 4: _MethodAnimation(ValueTracker):  82%|████████▏ | 32/39 [00:00<00:00, 130.79it/s]                                                                                                                 INFO     Animation 4 : Partial      scene_file_writer.py:601
+                             movie file written in                              
+                             '/usr/local/google/home/bu                         
+                             tterworthnat/HACK/Trasform                         
+                             ers4Dummies/state_of_ai/sr                         
+                             c/manim/_media/videos/m03_                         
+                             grid_warp/480p30/partial_m                         
+                             ovie_files/GridWarp/uncach                         
+                             ed_00004.mp4'                                      
+                    INFO     Caching disabled.              cairo_renderer.py:83
+Animation 5: _MethodAnimation(ValueTracker):   0%|          | 0/24 [00:00<?, ?it/s]Animation 5: _MethodAnimation(ValueTracker):  67%|██████▋   | 16/24 [00:00<00:00, 152.75it/s]                                                                                             [10/29/26 03:13:16] INFO     Animation 5 : Partial      scene_file_writer.py:601
+                             movie file written in                              
+                             '/usr/local/google/home/bu                         
+                             tterworthnat/HACK/Trasform                         
+                             ers4Dummies/state_of_ai/sr                         
+                             c/manim/_media/videos/m03_                         
+                             grid_warp/480p30/partial_m                         
+                             ovie_files/GridWarp/uncach                         
+                             ed_00005.mp4'                                      
+                    INFO     Caching disabled.              cairo_renderer.py:83
+Animation 6: FadeOut(DashedLine):   0%|          | 0/12 [00:00<?, ?it/s]                                                                                            INFO     Animation 6 : Partial      scene_file_writer.py:601
+                             movie file written in                              
+                             '/usr/local/google/home/bu                         
+                             tterworthnat/HACK/Trasform                         
+                             ers4Dummies/state_of_ai/sr                         
+                             c/manim/_media/videos/m03_                         
+                             grid_warp/480p30/partial_m                         
+                             ovie_files/GridWarp/uncach                         
+                             ed_00006.mp4'                                      
+                    INFO     Writing                     tex_file_writing.py:110
+                             \special{dvisvgm:raw <g                            
+                             id='unique000'>}W_1                                
+                             \special{dvisvgm:raw                               
+                             </g>}\special{dvisvgm:raw                          
+                             <g                                                 
+                             id='unique001'>}\mathbf{x}\                        
+                             special{dvisvgm:raw </g>}                          
+                             to                                                 
+                             /usr/local/google/home/butt                        
+                             erworthnat/HACK/Trasformers                        
+                             4Dummies/state_of_ai/src/ma                        
+                             nim/_media/Tex/e3aeed921e31                        
+                             5b5f.tex                                           
+[10/29/26 03:13:17] INFO     Writing                     tex_file_writing.py:110
+                             \special{dvisvgm:raw <g                            
+                             id='unique000'>}W_1                                
+                             \special{dvisvgm:raw                               
+                             </g>}\special{dvisvgm:raw                          
+                             <g                                                 
+                             id='unique001'>}\mathbf{x}                         
+                             \special{dvisvgm:raw                               
+                             </g>}\special{dvisvgm:raw                          
+                             <g id='unique002'>}+                               
+                             \special{dvisvgm:raw                               
+                             </g>}\special{dvisvgm:raw                          
+                             <g                                                 
+                             id='unique003'>}\mathbf{b}_                        
+                             1\special{dvisvgm:raw </g>}                        
+                             to                                                 
+                             /usr/local/google/home/butt                        
+                             erworthnat/HACK/Trasformers                        
+                             4Dummies/state_of_ai/src/ma                        
+                             nim/_media/Tex/d3347a27850b                        
+                             8ce8.tex                                           
+                    INFO     Writing                     tex_file_writing.py:110
+                             \special{dvisvgm:raw <g                            
+                             id='unique000'>}\tanh(                             
+                             \special{dvisvgm:raw                               
+                             </g>}\special{dvisvgm:raw                          
+                             <g id='unique001'>}W_1                             
+                             \special{dvisvgm:raw                               
+                             </g>}\special{dvisvgm:raw                          
+                             <g                                                 
+                             id='unique002'>}\mathbf{x}                         
+                             \special{dvisvgm:raw                               
+                             </g>}\special{dvisvgm:raw                          
+                             <g id='unique003'>}+                               
+                             \special{dvisvgm:raw                               
+                             </g>}\special{dvisvgm:raw                          
+                             <g                                                 
+                             id='unique004'>}\mathbf{b}_                        
+                             1 \special{dvisvgm:raw                             
+                             </g>}\special{dvisvgm:raw                          
+                             <g                                                 
+                             id='unique005'>})\special{d                        
+                             visvgm:raw </g>} to                                
+                             /usr/local/google/home/butt                        
+                             erworthnat/HACK/Trasformers                        
+                             4Dummies/state_of_ai/src/ma                        
+                             nim/_media/Tex/c71eec1b7c49                        
+                             692c.tex                                           
+[10/29/26 03:13:18] INFO     Caching disabled.              cairo_renderer.py:83
+Animation 7: FadeOut(VGroup of 2 submobjects), etc.:   0%|          | 0/17 [00:00<?, ?it/s]Animation 7: FadeOut(VGroup of 2 submobjects), etc.:  35%|███▌      | 6/17 [00:00<00:00, 51.49it/s]Animation 7: FadeOut(VGroup of 2 submobjects), etc.:  71%|███████   | 12/17 [00:00<00:00, 52.94it/s]                                                                                                                        INFO     Animation 7 : Partial      scene_file_writer.py:601
+                             movie file written in                              
+                             '/usr/local/google/home/bu                         
+                             tterworthnat/HACK/Trasform                         
+                             ers4Dummies/state_of_ai/sr                         
+                             c/manim/_media/videos/m03_                         
+                             grid_warp/480p30/partial_m                         
+                             ovie_files/GridWarp/uncach                         
+                             ed_00007.mp4'                                      
+                    INFO     Caching disabled.              cairo_renderer.py:83
+Animation 8: Homotopy(NumberPlane of 4 submobjects), etc.:   0%|          | 0/69 [00:00<?, ?it/s]Animation 8: Homotopy(NumberPlane of 4 submobjects), etc.:   1%|▏         | 1/69 [00:00<00:27,  2.44it/s]Animation 8: Homotopy(NumberPlane of 4 submobjects), etc.:   3%|▎         | 2/69 [00:00<00:27,  2.45it/s]Animation 8: Homotopy(NumberPlane of 4 submobjects), etc.:   4%|▍         | 3/69 [00:01<00:27,  2.40it/s]Animation 8: Homotopy(NumberPlane of 4 submobjects), etc.:   6%|▌         | 4/69 [00:01<00:26,  2.41it/s]Animation 8: Homotopy(NumberPlane of 4 submobjects), etc.:   7%|▋         | 5/69 [00:02<00:26,  2.42it/s]Animation 8: Homotopy(NumberPlane of 4 submobjects), etc.:   9%|▊         | 6/69 [00:02<00:25,  2.43it/s]Animation 8: Homotopy(NumberPlane of 4 submobjects), etc.:  10%|█         | 7/69 [00:02<00:25,  2.45it/s]Animation 8: Homotopy(NumberPlane of 4 submobjects), etc.:  12%|█▏        | 8/69 [00:03<00:24,  2.45it/s]Animation 8: Homotopy(NumberPlane of 4 submobjects), etc.:  13%|█▎        | 9/69 [00:03<00:24,  2.46it/s]Animation 8: Homotopy(NumberPlane of 4 submobjects), etc.:  14%|█▍        | 10/69 [00:04<00:23,  2.46it/s]Animation 8: Homotopy(NumberPlane of 4 submobjects), etc.:  16%|█▌        | 11/69 [00:04<00:23,  2.47it/s]Animation 8: Homotopy(NumberPlane of 4 submobjects), etc.:  17%|█▋        | 12/69 [00:04<00:23,  2.47it/s]Animation 8: Homotopy(NumberPlane of 4 submobjects), etc.:  19%|█▉        | 13/69 [00:05<00:22,  2.46it/s]Animation 8: Homotopy(NumberPlane of 4 submobjects), etc.:  20%|██        | 14/69 [00:05<00:22,  2.47it/s]Animation 8: Homotopy(NumberPlane of 4 submobjects), etc.:  22%|██▏       | 15/69 [00:06<00:21,  2.47it/s]Animation 8: Homotopy(NumberPlane of 4 submobjects), etc.:  23%|██▎       | 16/69 [00:06<00:21,  2.47it/s]Animation 8: Homotopy(NumberPlane of 4 submobjects), etc.:  25%|██▍       | 17/69 [00:06<00:21,  2.46it/s]Animation 8: Homotopy(NumberPlane of 4 submobjects), etc.:  26%|██▌       | 18/69 [00:07<00:20,  2.45it/s]Animation 8: Homotopy(NumberPlane of 4 submobjects), etc.:  28%|██▊       | 19/69 [00:07<00:20,  2.46it/s]Animation 8: Homotopy(NumberPlane of 4 submobjects), etc.:  29%|██▉       | 20/69 [00:08<00:19,  2.46it/s]Animation 8: Homotopy(NumberPlane of 4 submobjects), etc.:  30%|███       | 21/69 [00:08<00:19,  2.46it/s]Animation 8: Homotopy(NumberPlane of 4 submobjects), etc.:  32%|███▏      | 22/69 [00:08<00:19,  2.40it/s]Animation 8: Homotopy(NumberPlane of 4 submobjects), etc.:  33%|███▎      | 23/69 [00:09<00:19,  2.40it/s]Animation 8: Homotopy(NumberPlane of 4 submobjects), etc.:  35%|███▍      | 24/69 [00:09<00:18,  2.40it/s]Animation 8: Homotopy(NumberPlane of 4 submobjects), etc.:  36%|███▌      | 25/69 [00:10<00:18,  2.36it/s]Animation 8: Homotopy(NumberPlane of 4 submobjects), etc.:  38%|███▊      | 26/69 [00:10<00:18,  2.35it/s]Animation 8: Homotopy(NumberPlane of 4 submobjects), etc.:  39%|███▉      | 27/69 [00:11<00:17,  2.37it/s]Animation 8: Homotopy(NumberPlane of 4 submobjects), etc.:  41%|████      | 28/69 [00:11<00:17,  2.38it/s]Animation 8: Homotopy(NumberPlane of 4 submobjects), etc.:  42%|████▏     | 29/69 [00:11<00:16,  2.38it/s]Animation 8: Homotopy(NumberPlane of 4 submobjects), etc.:  43%|████▎     | 30/69 [00:12<00:16,  2.38it/s]Animation 8: Homotopy(NumberPlane of 4 submobjects), etc.:  45%|████▍     | 31/69 [00:12<00:15,  2.39it/s]Animation 8: Homotopy(NumberPlane of 4 submobjects), etc.:  46%|████▋     | 32/69 [00:13<00:15,  2.39it/s]Animation 8: Homotopy(NumberPlane of 4 submobjects), etc.:  48%|████▊     | 33/69 [00:13<00:15,  2.39it/s]Animation 8: Homotopy(NumberPlane of 4 submobjects), etc.:  49%|████▉     | 34/69 [00:14<00:14,  2.39it/s]Animation 8: Homotopy(NumberPlane of 4 submobjects), etc.:  51%|█████     | 35/69 [00:14<00:14,  2.40it/s]Animation 8: Homotopy(NumberPlane of 4 submobjects), etc.:  52%|█████▏    | 36/69 [00:14<00:13,  2.40it/s]Animation 8: Homotopy(NumberPlane of 4 submobjects), etc.:  54%|█████▎    | 37/69 [00:15<00:13,  2.40it/s]Animation 8: Homotopy(NumberPlane of 4 submobjects), etc.:  55%|█████▌    | 38/69 [00:15<00:12,  2.42it/s]Animation 8: Homotopy(NumberPlane of 4 submobjects), etc.:  57%|█████▋    | 39/69 [00:16<00:12,  2.40it/s]Animation 8: Homotopy(NumberPlane of 4 submobjects), etc.:  58%|█████▊    | 40/69 [00:16<00:12,  2.40it/s]Animation 8: Homotopy(NumberPlane of 4 submobjects), etc.:  59%|█████▉    | 41/69 [00:16<00:11,  2.39it/s]Animation 8: Homotopy(NumberPlane of 4 submobjects), etc.:  61%|██████    | 42/69 [00:17<00:11,  2.39it/s]Animation 8: Homotopy(NumberPlane of 4 submobjects), etc.:  62%|██████▏   | 43/69 [00:17<00:10,  2.38it/s]Animation 8: Homotopy(NumberPlane of 4 submobjects), etc.:  64%|██████▍   | 44/69 [00:18<00:10,  2.36it/s]Animation 8: Homotopy(NumberPlane of 4 submobjects), etc.:  65%|██████▌   | 45/69 [00:18<00:10,  2.36it/s]Animation 8: Homotopy(NumberPlane of 4 submobjects), etc.:  67%|██████▋   | 46/69 [00:19<00:09,  2.38it/s]Animation 8: Homotopy(NumberPlane of 4 submobjects), etc.:  68%|██████▊   | 47/69 [00:19<00:09,  2.38it/s]Animation 8: Homotopy(NumberPlane of 4 submobjects), etc.:  70%|██████▉   | 48/69 [00:19<00:08,  2.38it/s]Animation 8: Homotopy(NumberPlane of 4 submobjects), etc.:  71%|███████   | 49/69 [00:20<00:08,  2.39it/s]Animation 8: Homotopy(NumberPlane of 4 submobjects), etc.:  72%|███████▏  | 50/69 [00:20<00:07,  2.39it/s]Animation 8: Homotopy(NumberPlane of 4 submobjects), etc.:  74%|███████▍  | 51/69 [00:21<00:07,  2.34it/s]Animation 8: Homotopy(NumberPlane of 4 submobjects), etc.:  75%|███████▌  | 52/69 [00:21<00:07,  2.22it/s]Animation 8: Homotopy(NumberPlane of 4 submobjects), etc.:  77%|███████▋  | 53/69 [00:22<00:07,  2.27it/s]Animation 8: Homotopy(NumberPlane of 4 submobjects), etc.:  78%|███████▊  | 54/69 [00:22<00:06,  2.32it/s]Animation 8: Homotopy(NumberPlane of 4 submobjects), etc.:  80%|███████▉  | 55/69 [00:22<00:05,  2.35it/s]Animation 8: Homotopy(NumberPlane of 4 submobjects), etc.:  81%|████████  | 56/69 [00:23<00:05,  2.34it/s]Animation 8: Homotopy(NumberPlane of 4 submobjects), etc.:  83%|████████▎ | 57/69 [00:23<00:05,  2.32it/s]Animation 8: Homotopy(NumberPlane of 4 submobjects), etc.:  84%|████████▍ | 58/69 [00:24<00:04,  2.34it/s]Animation 8: Homotopy(NumberPlane of 4 submobjects), etc.:  86%|████████▌ | 59/69 [00:24<00:04,  2.36it/s]Animation 8: Homotopy(NumberPlane of 4 submobjects), etc.:  87%|████████▋ | 60/69 [00:25<00:03,  2.36it/s]Animation 8: Homotopy(NumberPlane of 4 submobjects), etc.:  88%|████████▊ | 61/69 [00:25<00:03,  2.32it/s]Animation 8: Homotopy(NumberPlane of 4 submobjects), etc.:  90%|████████▉ | 62/69 [00:25<00:02,  2.35it/s]Animation 8: Homotopy(NumberPlane of 4 submobjects), etc.:  91%|█████████▏| 63/69 [00:26<00:02,  2.36it/s]Animation 8: Homotopy(NumberPlane of 4 submobjects), etc.:  93%|█████████▎| 64/69 [00:26<00:02,  2.37it/s]Animation 8: Homotopy(NumberPlane of 4 submobjects), etc.:  94%|█████████▍| 65/69 [00:27<00:01,  2.38it/s]Animation 8: Homotopy(NumberPlane of 4 submobjects), etc.:  96%|█████████▌| 66/69 [00:27<00:01,  2.38it/s]Animation 8: Homotopy(NumberPlane of 4 submobjects), etc.:  97%|█████████▋| 67/69 [00:27<00:00,  2.40it/s]Animation 8: Homotopy(NumberPlane of 4 submobjects), etc.:  99%|█████████▊| 68/69 [00:28<00:00,  2.41it/s]Animation 8: Homotopy(NumberPlane of 4 submobjects), etc.: 100%|██████████| 69/69 [00:28<00:00,  2.42it/s]                                                                                                          [10/29/26 03:13:48] INFO     Animation 8 : Partial      scene_file_writer.py:601
+                             movie file written in                              
+                             '/usr/local/google/home/bu                         
+                             tterworthnat/HACK/Trasform                         
+                             ers4Dummies/state_of_ai/sr                         
+                             c/manim/_media/videos/m03_                         
+                             grid_warp/480p30/partial_m                         
+                             ovie_files/GridWarp/uncach                         
+                             ed_00008.mp4'                                      
+                    INFO     Caching disabled.              cairo_renderer.py:83
+                    INFO     Animation 9 : Partial      scene_file_writer.py:601
+                             movie file written in                              
+                             '/usr/local/google/home/bu                         
+                             tterworthnat/HACK/Trasform                         
+                             ers4Dummies/state_of_ai/sr                         
+                             c/manim/_media/videos/m03_                         
+                             grid_warp/480p30/partial_m                         
+                             ovie_files/GridWarp/uncach                         
+                             ed_00009.mp4'                                      
+                    INFO     Caching disabled.              cairo_renderer.py:83
+Animation 10: FadeOut(VGroup of 2 submobjects), etc.:   0%|          | 0/17 [00:00<?, ?it/s]Animation 10: FadeOut(VGroup of 2 submobjects), etc.:  24%|██▎       | 4/17 [00:00<00:00, 33.15it/s]Animation 10: FadeOut(VGroup of 2 submobjects), etc.:  47%|████▋     | 8/17 [00:00<00:00, 33.51it/s]Animation 10: FadeOut(VGroup of 2 submobjects), etc.:  71%|███████   | 12/17 [00:00<00:00, 33.65it/s]Animation 10: FadeOut(VGroup of 2 submobjects), etc.:  94%|█████████▍| 16/17 [00:00<00:00, 33.66it/s]                                                                                                     [10/29/26 03:13:49] INFO     Animation 10 : Partial     scene_file_writer.py:601
+                             movie file written in                              
+                             '/usr/local/google/home/bu                         
+                             tterworthnat/HACK/Trasform                         
+                             ers4Dummies/state_of_ai/sr                         
+                             c/manim/_media/videos/m03_                         
+                             grid_warp/480p30/partial_m                         
+                             ovie_files/GridWarp/uncach                         
+                             ed_00010.mp4'                                      
+                    INFO     Caching disabled.              cairo_renderer.py:83
+Animation 11: Homotopy(NumberPlane of 4 submobjects), etc.:   0%|          | 0/39 [00:00<?, ?it/s]Animation 11: Homotopy(NumberPlane of 4 submobjects), etc.:   3%|▎         | 1/39 [00:00<00:07,  5.36it/s]Animation 11: Homotopy(NumberPlane of 4 submobjects), etc.:   5%|▌         | 2/39 [00:00<00:07,  5.10it/s]Animation 11: Homotopy(NumberPlane of 4 submobjects), etc.:   8%|▊         | 3/39 [00:00<00:07,  5.07it/s]Animation 11: Homotopy(NumberPlane of 4 submobjects), etc.:  10%|█         | 4/39 [00:00<00:06,  5.01it/s]Animation 11: Homotopy(NumberPlane of 4 submobjects), etc.:  13%|█▎        | 5/39 [00:00<00:06,  4.98it/s]Animation 11: Homotopy(NumberPlane of 4 submobjects), etc.:  15%|█▌        | 6/39 [00:01<00:07,  4.71it/s]Animation 11: Homotopy(NumberPlane of 4 submobjects), etc.:  18%|█▊        | 7/39 [00:01<00:06,  4.84it/s]Animation 11: Homotopy(NumberPlane of 4 submobjects), etc.:  21%|██        | 8/39 [00:01<00:06,  4.88it/s]Animation 11: Homotopy(NumberPlane of 4 submobjects), etc.:  23%|██▎       | 9/39 [00:01<00:06,  4.97it/s]Animation 11: Homotopy(NumberPlane of 4 submobjects), etc.:  26%|██▌       | 10/39 [00:02<00:05,  4.94it/s]Animation 11: Homotopy(NumberPlane of 4 submobjects), etc.:  28%|██▊       | 11/39 [00:02<00:06,  4.49it/s]Animation 11: Homotopy(NumberPlane of 4 submobjects), etc.:  31%|███       | 12/39 [00:02<00:05,  4.56it/s]Animation 11: Homotopy(NumberPlane of 4 submobjects), etc.:  33%|███▎      | 13/39 [00:02<00:05,  4.70it/s]Animation 11: Homotopy(NumberPlane of 4 submobjects), etc.:  36%|███▌      | 14/39 [00:02<00:05,  4.86it/s]Animation 11: Homotopy(NumberPlane of 4 submobjects), etc.:  38%|███▊      | 15/39 [00:03<00:04,  4.93it/s]Animation 11: Homotopy(NumberPlane of 4 submobjects), etc.:  41%|████      | 16/39 [00:03<00:04,  5.05it/s]Animation 11: Homotopy(NumberPlane of 4 submobjects), etc.:  44%|████▎     | 17/39 [00:03<00:04,  5.08it/s]Animation 11: Homotopy(NumberPlane of 4 submobjects), etc.:  46%|████▌     | 18/39 [00:03<00:04,  5.06it/s]Animation 11: Homotopy(NumberPlane of 4 submobjects), etc.:  49%|████▊     | 19/39 [00:03<00:03,  5.13it/s]Animation 11: Homotopy(NumberPlane of 4 submobjects), etc.:  51%|█████▏    | 20/39 [00:04<00:03,  5.19it/s]Animation 11: Homotopy(NumberPlane of 4 submobjects), etc.:  54%|█████▍    | 21/39 [00:04<00:03,  5.20it/s]Animation 11: Homotopy(NumberPlane of 4 submobjects), etc.:  56%|█████▋    | 22/39 [00:04<00:03,  5.10it/s]Animation 11: Homotopy(NumberPlane of 4 submobjects), etc.:  59%|█████▉    | 23/39 [00:04<00:03,  5.09it/s]Animation 11: Homotopy(NumberPlane of 4 submobjects), etc.:  62%|██████▏   | 24/39 [00:04<00:02,  5.13it/s]Animation 11: Homotopy(NumberPlane of 4 submobjects), etc.:  64%|██████▍   | 25/39 [00:05<00:02,  5.16it/s]Animation 11: Homotopy(NumberPlane of 4 submobjects), etc.:  67%|██████▋   | 26/39 [00:05<00:02,  5.20it/s]Animation 11: Homotopy(NumberPlane of 4 submobjects), etc.:  69%|██████▉   | 27/39 [00:05<00:02,  5.20it/s]Animation 11: Homotopy(NumberPlane of 4 submobjects), etc.:  72%|███████▏  | 28/39 [00:05<00:02,  5.19it/s]Animation 11: Homotopy(NumberPlane of 4 submobjects), etc.:  74%|███████▍  | 29/39 [00:05<00:01,  5.24it/s]Animation 11: Homotopy(NumberPlane of 4 submobjects), etc.:  77%|███████▋  | 30/39 [00:05<00:01,  5.28it/s]Animation 11: Homotopy(NumberPlane of 4 submobjects), etc.:  79%|███████▉  | 31/39 [00:06<00:01,  5.24it/s]Animation 11: Homotopy(NumberPlane of 4 submobjects), etc.:  82%|████████▏ | 32/39 [00:06<00:01,  5.21it/s]Animation 11: Homotopy(NumberPlane of 4 submobjects), etc.:  85%|████████▍ | 33/39 [00:06<00:01,  5.17it/s]Animation 11: Homotopy(NumberPlane of 4 submobjects), etc.:  87%|████████▋ | 34/39 [00:06<00:00,  5.21it/s]Animation 11: Homotopy(NumberPlane of 4 submobjects), etc.:  90%|████████▉ | 35/39 [00:06<00:00,  5.24it/s]Animation 11: Homotopy(NumberPlane of 4 submobjects), etc.:  92%|█████████▏| 36/39 [00:07<00:00,  5.22it/s]Animation 11: Homotopy(NumberPlane of 4 submobjects), etc.:  95%|█████████▍| 37/39 [00:07<00:00,  4.78it/s]Animation 11: Homotopy(NumberPlane of 4 submobjects), etc.:  97%|█████████▋| 38/39 [00:07<00:00,  4.89it/s]Animation 11: Homotopy(NumberPlane of 4 submobjects), etc.: 100%|██████████| 39/39 [00:07<00:00,  5.00it/s]                                                                                                           [10/29/26 03:13:57] INFO     Animation 11 : Partial     scene_file_writer.py:601
+                             movie file written in                              
+                             '/usr/local/google/home/bu                         
+                             tterworthnat/HACK/Trasform                         
+                             ers4Dummies/state_of_ai/sr                         
+                             c/manim/_media/videos/m03_                         
+                             grid_warp/480p30/partial_m                         
+                             ovie_files/GridWarp/uncach                         
+                             ed_00011.mp4'                                      
+                    INFO     Caching disabled.              cairo_renderer.py:83
+                    INFO     Animation 12 : Partial     scene_file_writer.py:601
+                             movie file written in                              
+                             '/usr/local/google/home/bu                         
+                             tterworthnat/HACK/Trasform                         
+                             ers4Dummies/state_of_ai/sr                         
+                             c/manim/_media/videos/m03_                         
+                             grid_warp/480p30/partial_m                         
+                             ovie_files/GridWarp/uncach                         
+                             ed_00012.mp4'                                      
+                    INFO     Caching disabled.              cairo_renderer.py:83
+Animation 13: FadeOut(VGroup of 2 submobjects), etc.:   0%|          | 0/17 [00:00<?, ?it/s]Animation 13: FadeOut(VGroup of 2 submobjects), etc.:  41%|████      | 7/17 [00:00<00:00, 69.19it/s]Animation 13: FadeOut(VGroup of 2 submobjects), etc.:  88%|████████▊ | 15/17 [00:00<00:00, 71.13it/s]                                                                                                     [10/29/26 03:13:58] INFO     Animation 13 : Partial     scene_file_writer.py:601
+                             movie file written in                              
+                             '/usr/local/google/home/bu                         
+                             tterworthnat/HACK/Trasform                         
+                             ers4Dummies/state_of_ai/sr                         
+                             c/manim/_media/videos/m03_                         
+                             grid_warp/480p30/partial_m                         
+                             ovie_files/GridWarp/uncach                         
+                             ed_00013.mp4'                                      
+                    INFO     Caching disabled.              cairo_renderer.py:83
+Animation 14: Homotopy(NumberPlane of 4 submobjects), etc.:   0%|          | 0/72 [00:00<?, ?it/s]Animation 14: Homotopy(NumberPlane of 4 submobjects), etc.:   1%|▏         | 1/72 [00:00<00:19,  3.70it/s]Animation 14: Homotopy(NumberPlane of 4 submobjects), etc.:   3%|▎         | 2/72 [00:00<00:19,  3.57it/s]Animation 14: Homotopy(NumberPlane of 4 submobjects), etc.:   4%|▍         | 3/72 [00:00<00:18,  3.67it/s]Animation 14: Homotopy(NumberPlane of 4 submobjects), etc.:   6%|▌         | 4/72 [00:01<00:18,  3.74it/s]Animation 14: Homotopy(NumberPlane of 4 submobjects), etc.:   7%|▋         | 5/72 [00:01<00:18,  3.67it/s]Animation 14: Homotopy(NumberPlane of 4 submobjects), etc.:   8%|▊         | 6/72 [00:01<00:17,  3.76it/s]Animation 14: Homotopy(NumberPlane of 4 submobjects), etc.:  10%|▉         | 7/72 [00:01<00:16,  3.86it/s]Animation 14: Homotopy(NumberPlane of 4 submobjects), etc.:  11%|█         | 8/72 [00:02<00:16,  3.83it/s]Animation 14: Homotopy(NumberPlane of 4 submobjects), etc.:  12%|█▎        | 9/72 [00:02<00:16,  3.85it/s]Animation 14: Homotopy(NumberPlane of 4 submobjects), etc.:  14%|█▍        | 10/72 [00:02<00:15,  3.92it/s]Animation 14: Homotopy(NumberPlane of 4 submobjects), etc.:  15%|█▌        | 11/72 [00:02<00:15,  3.85it/s]Animation 14: Homotopy(NumberPlane of 4 submobjects), etc.:  17%|█▋        | 12/72 [00:03<00:15,  3.83it/s]Animation 14: Homotopy(NumberPlane of 4 submobjects), etc.:  18%|█▊        | 13/72 [00:03<00:15,  3.90it/s]Animation 14: Homotopy(NumberPlane of 4 submobjects), etc.:  19%|█▉        | 14/72 [00:03<00:14,  3.98it/s]Animation 14: Homotopy(NumberPlane of 4 submobjects), etc.:  21%|██        | 15/72 [00:03<00:14,  4.02it/s]Animation 14: Homotopy(NumberPlane of 4 submobjects), etc.:  22%|██▏       | 16/72 [00:04<00:13,  4.04it/s]Animation 14: Homotopy(NumberPlane of 4 submobjects), etc.:  24%|██▎       | 17/72 [00:04<00:13,  4.06it/s]Animation 14: Homotopy(NumberPlane of 4 submobjects), etc.:  25%|██▌       | 18/72 [00:04<00:13,  4.07it/s]Animation 14: Homotopy(NumberPlane of 4 submobjects), etc.:  26%|██▋       | 19/72 [00:04<00:12,  4.08it/s]Animation 14: Homotopy(NumberPlane of 4 submobjects), etc.:  28%|██▊       | 20/72 [00:05<00:12,  4.07it/s]Animation 14: Homotopy(NumberPlane of 4 submobjects), etc.:  29%|██▉       | 21/72 [00:05<00:13,  3.80it/s]Animation 14: Homotopy(NumberPlane of 4 submobjects), etc.:  31%|███       | 22/72 [00:05<00:13,  3.62it/s]Animation 14: Homotopy(NumberPlane of 4 submobjects), etc.:  32%|███▏      | 23/72 [00:05<00:13,  3.72it/s]Animation 14: Homotopy(NumberPlane of 4 submobjects), etc.:  33%|███▎      | 24/72 [00:06<00:12,  3.82it/s]Animation 14: Homotopy(NumberPlane of 4 submobjects), etc.:  35%|███▍      | 25/72 [00:06<00:12,  3.84it/s]Animation 14: Homotopy(NumberPlane of 4 submobjects), etc.:  36%|███▌      | 26/72 [00:06<00:11,  3.90it/s]Animation 14: Homotopy(NumberPlane of 4 submobjects), etc.:  38%|███▊      | 27/72 [00:06<00:11,  3.96it/s]Animation 14: Homotopy(NumberPlane of 4 submobjects), etc.:  39%|███▉      | 28/72 [00:07<00:10,  4.00it/s]Animation 14: Homotopy(NumberPlane of 4 submobjects), etc.:  40%|████      | 29/72 [00:07<00:10,  4.01it/s]Animation 14: Homotopy(NumberPlane of 4 submobjects), etc.:  42%|████▏     | 30/72 [00:07<00:10,  4.02it/s]Animation 14: Homotopy(NumberPlane of 4 submobjects), etc.:  43%|████▎     | 31/72 [00:07<00:10,  3.97it/s]Animation 14: Homotopy(NumberPlane of 4 submobjects), etc.:  44%|████▍     | 32/72 [00:08<00:10,  3.85it/s]Animation 14: Homotopy(NumberPlane of 4 submobjects), etc.:  46%|████▌     | 33/72 [00:08<00:10,  3.90it/s]Animation 14: Homotopy(NumberPlane of 4 submobjects), etc.:  47%|████▋     | 34/72 [00:08<00:09,  3.87it/s]Animation 14: Homotopy(NumberPlane of 4 submobjects), etc.:  49%|████▊     | 35/72 [00:09<00:09,  3.75it/s]Animation 14: Homotopy(NumberPlane of 4 submobjects), etc.:  50%|█████     | 36/72 [00:09<00:09,  3.82it/s]Animation 14: Homotopy(NumberPlane of 4 submobjects), etc.:  51%|█████▏    | 37/72 [00:09<00:09,  3.74it/s]Animation 14: Homotopy(NumberPlane of 4 submobjects), etc.:  53%|█████▎    | 38/72 [00:09<00:09,  3.71it/s]Animation 14: Homotopy(NumberPlane of 4 submobjects), etc.:  54%|█████▍    | 39/72 [00:10<00:08,  3.77it/s]Animation 14: Homotopy(NumberPlane of 4 submobjects), etc.:  56%|█████▌    | 40/72 [00:10<00:08,  3.80it/s]Animation 14: Homotopy(NumberPlane of 4 submobjects), etc.:  57%|█████▋    | 41/72 [00:10<00:08,  3.79it/s]Animation 14: Homotopy(NumberPlane of 4 submobjects), etc.:  58%|█████▊    | 42/72 [00:10<00:07,  3.80it/s]Animation 14: Homotopy(NumberPlane of 4 submobjects), etc.:  60%|█████▉    | 43/72 [00:11<00:07,  3.71it/s]Animation 14: Homotopy(NumberPlane of 4 submobjects), etc.:  61%|██████    | 44/72 [00:11<00:07,  3.66it/s]Animation 14: Homotopy(NumberPlane of 4 submobjects), etc.:  62%|██████▎   | 45/72 [00:11<00:07,  3.64it/s]Animation 14: Homotopy(NumberPlane of 4 submobjects), etc.:  64%|██████▍   | 46/72 [00:11<00:07,  3.71it/s]Animation 14: Homotopy(NumberPlane of 4 submobjects), etc.:  65%|██████▌   | 47/72 [00:12<00:06,  3.81it/s]Animation 14: Homotopy(NumberPlane of 4 submobjects), etc.:  67%|██████▋   | 48/72 [00:12<00:06,  3.84it/s]Animation 14: Homotopy(NumberPlane of 4 submobjects), etc.:  68%|██████▊   | 49/72 [00:12<00:05,  3.84it/s]Animation 14: Homotopy(NumberPlane of 4 submobjects), etc.:  69%|██████▉   | 50/72 [00:12<00:05,  3.89it/s]Animation 14: Homotopy(NumberPlane of 4 submobjects), etc.:  71%|███████   | 51/72 [00:13<00:05,  3.96it/s]Animation 14: Homotopy(NumberPlane of 4 submobjects), etc.:  72%|███████▏  | 52/72 [00:13<00:05,  3.97it/s]Animation 14: Homotopy(NumberPlane of 4 submobjects), etc.:  74%|███████▎  | 53/72 [00:13<00:04,  4.01it/s]Animation 14: Homotopy(NumberPlane of 4 submobjects), etc.:  75%|███████▌  | 54/72 [00:13<00:04,  4.00it/s]Animation 14: Homotopy(NumberPlane of 4 submobjects), etc.:  76%|███████▋  | 55/72 [00:14<00:04,  4.00it/s]Animation 14: Homotopy(NumberPlane of 4 submobjects), etc.:  78%|███████▊  | 56/72 [00:14<00:04,  3.95it/s]Animation 14: Homotopy(NumberPlane of 4 submobjects), etc.:  79%|███████▉  | 57/72 [00:14<00:03,  3.96it/s]Animation 14: Homotopy(NumberPlane of 4 submobjects), etc.:  81%|████████  | 58/72 [00:15<00:03,  3.64it/s]Animation 14: Homotopy(NumberPlane of 4 submobjects), etc.:  82%|████████▏ | 59/72 [00:15<00:03,  3.61it/s]Animation 14: Homotopy(NumberPlane of 4 submobjects), etc.:  83%|████████▎ | 60/72 [00:15<00:03,  3.71it/s]Animation 14: Homotopy(NumberPlane of 4 submobjects), etc.:  85%|████████▍ | 61/72 [00:15<00:02,  3.81it/s]Animation 14: Homotopy(NumberPlane of 4 submobjects), etc.:  86%|████████▌ | 62/72 [00:16<00:02,  3.66it/s]Animation 14: Homotopy(NumberPlane of 4 submobjects), etc.:  88%|████████▊ | 63/72 [00:16<00:02,  3.71it/s]Animation 14: Homotopy(NumberPlane of 4 submobjects), etc.:  89%|████████▉ | 64/72 [00:16<00:02,  3.71it/s]Animation 14: Homotopy(NumberPlane of 4 submobjects), etc.:  90%|█████████ | 65/72 [00:16<00:01,  3.77it/s]Animation 14: Homotopy(NumberPlane of 4 submobjects), etc.:  92%|█████████▏| 66/72 [00:17<00:01,  3.80it/s]Animation 14: Homotopy(NumberPlane of 4 submobjects), etc.:  93%|█████████▎| 67/72 [00:17<00:01,  3.76it/s]Animation 14: Homotopy(NumberPlane of 4 submobjects), etc.:  94%|█████████▍| 68/72 [00:17<00:01,  3.77it/s]Animation 14: Homotopy(NumberPlane of 4 submobjects), etc.:  96%|█████████▌| 69/72 [00:17<00:00,  3.82it/s]Animation 14: Homotopy(NumberPlane of 4 submobjects), etc.:  97%|█████████▋| 70/72 [00:18<00:00,  3.86it/s]Animation 14: Homotopy(NumberPlane of 4 submobjects), etc.:  99%|█████████▊| 71/72 [00:18<00:00,  3.85it/s]Animation 14: Homotopy(NumberPlane of 4 submobjects), etc.: 100%|██████████| 72/72 [00:18<00:00,  3.88it/s]                                                                                                           [10/29/26 03:14:17] INFO     Animation 14 : Partial     scene_file_writer.py:601
+                             movie file written in                              
+                             '/usr/local/google/home/bu                         
+                             tterworthnat/HACK/Trasform                         
+                             ers4Dummies/state_of_ai/sr                         
+                             c/manim/_media/videos/m03_                         
+                             grid_warp/480p30/partial_m                         
+                             ovie_files/GridWarp/uncach                         
+                             ed_00014.mp4'                                      
+                    INFO     Caching disabled.              cairo_renderer.py:83
+[10/29/26 03:14:18] INFO     Animation 15 : Partial     scene_file_writer.py:601
+                             movie file written in                              
+                             '/usr/local/google/home/bu                         
+                             tterworthnat/HACK/Trasform                         
+                             ers4Dummies/state_of_ai/sr                         
+                             c/manim/_media/videos/m03_                         
+                             grid_warp/480p30/partial_m                         
+                             ovie_files/GridWarp/uncach                         
+                             ed_00015.mp4'                                      
+                    INFO     Writing                     tex_file_writing.py:110
+                             \special{dvisvgm:raw <g                            
+                             id='unique000'>}W_2                                
+                             \special{dvisvgm:raw                               
+                             </g>}\special{dvisvgm:raw                          
+                             <g                                                 
+                             id='unique001'>}\mathbf{h}_                        
+                             1\special{dvisvgm:raw </g>}                        
+                             to                                                 
+                             /usr/local/google/home/butt                        
+                             erworthnat/HACK/Trasformers                        
+                             4Dummies/state_of_ai/src/ma                        
+                             nim/_media/Tex/fefaca0e6c6c                        
+                             6ecb.tex                                           
+                    INFO     Writing                     tex_file_writing.py:110
+                             \special{dvisvgm:raw <g                            
+                             id='unique000'>}W_2                                
+                             \special{dvisvgm:raw                               
+                             </g>}\special{dvisvgm:raw                          
+                             <g                                                 
+                             id='unique001'>}\mathbf{h}_                        
+                             1 \special{dvisvgm:raw                             
+                             </g>}\special{dvisvgm:raw                          
+                             <g id='unique002'>}+                               
+                             \special{dvisvgm:raw                               
+                             </g>}\special{dvisvgm:raw                          
+                             <g                                                 
+                             id='unique003'>}\mathbf{b}_                        
+                             2\special{dvisvgm:raw </g>}                        
+                             to                                                 
+                             /usr/local/google/home/butt                        
+                             erworthnat/HACK/Trasformers                        
+                             4Dummies/state_of_ai/src/ma                        
+                             nim/_media/Tex/4d11ec36b507                        
+                             6893.tex                                           
+[10/29/26 03:14:19] INFO     Writing                     tex_file_writing.py:110
+                             \special{dvisvgm:raw <g                            
+                             id='unique000'>}\tanh(                             
+                             \special{dvisvgm:raw                               
+                             </g>}\special{dvisvgm:raw                          
+                             <g id='unique001'>}W_2                             
+                             \special{dvisvgm:raw                               
+                             </g>}\special{dvisvgm:raw                          
+                             <g                                                 
+                             id='unique002'>}\mathbf{h}_                        
+                             1 \special{dvisvgm:raw                             
+                             </g>}\special{dvisvgm:raw                          
+                             <g id='unique003'>}+                               
+                             \special{dvisvgm:raw                               
+                             </g>}\special{dvisvgm:raw                          
+                             <g                                                 
+                             id='unique004'>}\mathbf{b}_                        
+                             2 \special{dvisvgm:raw                             
+                             </g>}\special{dvisvgm:raw                          
+                             <g                                                 
+                             id='unique005'>})\special{d                        
+                             visvgm:raw </g>} to                                
+                             /usr/local/google/home/butt                        
+                             erworthnat/HACK/Trasformers                        
+                             4Dummies/state_of_ai/src/ma                        
+                             nim/_media/Tex/5cbeaf69eb6c                        
+                             f25a.tex                                           
+                    INFO     Caching disabled.              cairo_renderer.py:83
+Animation 16: FadeOut(VGroup of 2 submobjects), etc.:   0%|          | 0/17 [00:00<?, ?it/s]Animation 16: FadeOut(VGroup of 2 submobjects), etc.:  35%|███▌      | 6/17 [00:00<00:00, 58.87it/s]Animation 16: FadeOut(VGroup of 2 submobjects), etc.:  71%|███████   | 12/17 [00:00<00:00, 57.83it/s]                                                                                                     [10/29/26 03:14:20] INFO     Animation 16 : Partial     scene_file_writer.py:601
+                             movie file written in                              
+                             '/usr/local/google/home/bu                         
+                             tterworthnat/HACK/Trasform                         
+                             ers4Dummies/state_of_ai/sr                         
+                             c/manim/_media/videos/m03_                         
+                             grid_warp/480p30/partial_m                         
+                             ovie_files/GridWarp/uncach                         
+                             ed_00016.mp4'                                      
+                    INFO     Caching disabled.              cairo_renderer.py:83
+Animation 17: Homotopy(NumberPlane of 4 submobjects), etc.:   0%|          | 0/69 [00:00<?, ?it/s]Animation 17: Homotopy(NumberPlane of 4 submobjects), etc.:   1%|▏         | 1/69 [00:00<00:28,  2.37it/s]Animation 17: Homotopy(NumberPlane of 4 submobjects), etc.:   3%|▎         | 2/69 [00:00<00:29,  2.30it/s]Animation 17: Homotopy(NumberPlane of 4 submobjects), etc.:   4%|▍         | 3/69 [00:01<00:28,  2.32it/s]Animation 17: Homotopy(NumberPlane of 4 submobjects), etc.:   6%|▌         | 4/69 [00:01<00:28,  2.31it/s]Animation 17: Homotopy(NumberPlane of 4 submobjects), etc.:   7%|▋         | 5/69 [00:02<00:27,  2.34it/s]Animation 17: Homotopy(NumberPlane of 4 submobjects), etc.:   9%|▊         | 6/69 [00:02<00:26,  2.35it/s]Animation 17: Homotopy(NumberPlane of 4 submobjects), etc.:  10%|█         | 7/69 [00:03<00:26,  2.33it/s]Animation 17: Homotopy(NumberPlane of 4 submobjects), etc.:  12%|█▏        | 8/69 [00:03<00:26,  2.32it/s]Animation 17: Homotopy(NumberPlane of 4 submobjects), etc.:  13%|█▎        | 9/69 [00:03<00:25,  2.32it/s]Animation 17: Homotopy(NumberPlane of 4 submobjects), etc.:  14%|█▍        | 10/69 [00:04<00:25,  2.34it/s]Animation 17: Homotopy(NumberPlane of 4 submobjects), etc.:  16%|█▌        | 11/69 [00:04<00:25,  2.32it/s]Animation 17: Homotopy(NumberPlane of 4 submobjects), etc.:  17%|█▋        | 12/69 [00:05<00:24,  2.30it/s]Animation 17: Homotopy(NumberPlane of 4 submobjects), etc.:  19%|█▉        | 13/69 [00:05<00:24,  2.29it/s]Animation 17: Homotopy(NumberPlane of 4 submobjects), etc.:  20%|██        | 14/69 [00:06<00:24,  2.29it/s]Animation 17: Homotopy(NumberPlane of 4 submobjects), etc.:  22%|██▏       | 15/69 [00:06<00:23,  2.28it/s]Animation 17: Homotopy(NumberPlane of 4 submobjects), etc.:  23%|██▎       | 16/69 [00:06<00:23,  2.27it/s]Animation 17: Homotopy(NumberPlane of 4 submobjects), etc.:  25%|██▍       | 17/69 [00:07<00:23,  2.26it/s]Animation 17: Homotopy(NumberPlane of 4 submobjects), etc.:  26%|██▌       | 18/69 [00:07<00:22,  2.25it/s]Animation 17: Homotopy(NumberPlane of 4 submobjects), etc.:  28%|██▊       | 19/69 [00:08<00:22,  2.20it/s]Animation 17: Homotopy(NumberPlane of 4 submobjects), etc.:  29%|██▉       | 20/69 [00:08<00:22,  2.20it/s]Animation 17: Homotopy(NumberPlane of 4 submobjects), etc.:  30%|███       | 21/69 [00:09<00:21,  2.22it/s]Animation 17: Homotopy(NumberPlane of 4 submobjects), etc.:  32%|███▏      | 22/69 [00:09<00:21,  2.15it/s]Animation 17: Homotopy(NumberPlane of 4 submobjects), etc.:  33%|███▎      | 23/69 [00:10<00:20,  2.21it/s]Animation 17: Homotopy(NumberPlane of 4 submobjects), etc.:  35%|███▍      | 24/69 [00:10<00:20,  2.23it/s]Animation 17: Homotopy(NumberPlane of 4 submobjects), etc.:  36%|███▌      | 25/69 [00:10<00:19,  2.27it/s]Animation 17: Homotopy(NumberPlane of 4 submobjects), etc.:  38%|███▊      | 26/69 [00:11<00:19,  2.26it/s]Animation 17: Homotopy(NumberPlane of 4 submobjects), etc.:  39%|███▉      | 27/69 [00:11<00:18,  2.25it/s]Animation 17: Homotopy(NumberPlane of 4 submobjects), etc.:  41%|████      | 28/69 [00:12<00:18,  2.26it/s]Animation 17: Homotopy(NumberPlane of 4 submobjects), etc.:  42%|████▏     | 29/69 [00:12<00:17,  2.22it/s]Animation 17: Homotopy(NumberPlane of 4 submobjects), etc.:  43%|████▎     | 30/69 [00:13<00:17,  2.26it/s]Animation 17: Homotopy(NumberPlane of 4 submobjects), etc.:  45%|████▍     | 31/69 [00:13<00:17,  2.23it/s]Animation 17: Homotopy(NumberPlane of 4 submobjects), etc.:  46%|████▋     | 32/69 [00:14<00:16,  2.28it/s]Animation 17: Homotopy(NumberPlane of 4 submobjects), etc.:  48%|████▊     | 33/69 [00:14<00:15,  2.30it/s]Animation 17: Homotopy(NumberPlane of 4 submobjects), etc.:  49%|████▉     | 34/69 [00:14<00:15,  2.31it/s]Animation 17: Homotopy(NumberPlane of 4 submobjects), etc.:  51%|█████     | 35/69 [00:15<00:14,  2.32it/s]Animation 17: Homotopy(NumberPlane of 4 submobjects), etc.:  52%|█████▏    | 36/69 [00:15<00:14,  2.31it/s]Animation 17: Homotopy(NumberPlane of 4 submobjects), etc.:  54%|█████▎    | 37/69 [00:16<00:13,  2.33it/s]Animation 17: Homotopy(NumberPlane of 4 submobjects), etc.:  55%|█████▌    | 38/69 [00:16<00:13,  2.33it/s]Animation 17: Homotopy(NumberPlane of 4 submobjects), etc.:  57%|█████▋    | 39/69 [00:17<00:12,  2.33it/s]Animation 17: Homotopy(NumberPlane of 4 submobjects), etc.:  58%|█████▊    | 40/69 [00:17<00:12,  2.33it/s]Animation 17: Homotopy(NumberPlane of 4 submobjects), etc.:  59%|█████▉    | 41/69 [00:17<00:11,  2.35it/s]Animation 17: Homotopy(NumberPlane of 4 submobjects), etc.:  61%|██████    | 42/69 [00:18<00:11,  2.35it/s]Animation 17: Homotopy(NumberPlane of 4 submobjects), etc.:  62%|██████▏   | 43/69 [00:18<00:11,  2.35it/s]Animation 17: Homotopy(NumberPlane of 4 submobjects), etc.:  64%|██████▍   | 44/69 [00:19<00:10,  2.33it/s]Animation 17: Homotopy(NumberPlane of 4 submobjects), etc.:  65%|██████▌   | 45/69 [00:19<00:10,  2.26it/s]Animation 17: Homotopy(NumberPlane of 4 submobjects), etc.:  67%|██████▋   | 46/69 [00:20<00:10,  2.22it/s]Animation 17: Homotopy(NumberPlane of 4 submobjects), etc.:  68%|██████▊   | 47/69 [00:20<00:10,  2.14it/s]Animation 17: Homotopy(NumberPlane of 4 submobjects), etc.:  70%|██████▉   | 48/69 [00:21<00:09,  2.10it/s]Animation 17: Homotopy(NumberPlane of 4 submobjects), etc.:  71%|███████   | 49/69 [00:21<00:09,  2.15it/s]Animation 17: Homotopy(NumberPlane of 4 submobjects), etc.:  72%|███████▏  | 50/69 [00:22<00:08,  2.17it/s]Animation 17: Homotopy(NumberPlane of 4 submobjects), etc.:  74%|███████▍  | 51/69 [00:22<00:08,  2.22it/s]Animation 17: Homotopy(NumberPlane of 4 submobjects), etc.:  75%|███████▌  | 52/69 [00:22<00:07,  2.25it/s]Animation 17: Homotopy(NumberPlane of 4 submobjects), etc.:  77%|███████▋  | 53/69 [00:23<00:06,  2.29it/s]Animation 17: Homotopy(NumberPlane of 4 submobjects), etc.:  78%|███████▊  | 54/69 [00:23<00:06,  2.26it/s]Animation 17: Homotopy(NumberPlane of 4 submobjects), etc.:  80%|███████▉  | 55/69 [00:24<00:06,  2.28it/s]Animation 17: Homotopy(NumberPlane of 4 submobjects), etc.:  81%|████████  | 56/69 [00:24<00:05,  2.27it/s]Animation 17: Homotopy(NumberPlane of 4 submobjects), etc.:  83%|████████▎ | 57/69 [00:25<00:05,  2.11it/s]Animation 17: Homotopy(NumberPlane of 4 submobjects), etc.:  84%|████████▍ | 58/69 [00:25<00:05,  2.12it/s]Animation 17: Homotopy(NumberPlane of 4 submobjects), etc.:  86%|████████▌ | 59/69 [00:26<00:04,  2.16it/s]Animation 17: Homotopy(NumberPlane of 4 submobjects), etc.:  87%|████████▋ | 60/69 [00:26<00:04,  2.21it/s]Animation 17: Homotopy(NumberPlane of 4 submobjects), etc.:  88%|████████▊ | 61/69 [00:27<00:03,  2.13it/s]Animation 17: Homotopy(NumberPlane of 4 submobjects), etc.:  90%|████████▉ | 62/69 [00:27<00:03,  2.20it/s]Animation 17: Homotopy(NumberPlane of 4 submobjects), etc.:  91%|█████████▏| 63/69 [00:27<00:02,  2.22it/s]Animation 17: Homotopy(NumberPlane of 4 submobjects), etc.:  93%|█████████▎| 64/69 [00:28<00:02,  2.19it/s]Animation 17: Homotopy(NumberPlane of 4 submobjects), etc.:  94%|█████████▍| 65/69 [00:28<00:01,  2.11it/s]Animation 17: Homotopy(NumberPlane of 4 submobjects), etc.:  96%|█████████▌| 66/69 [00:29<00:01,  2.04it/s]Animation 17: Homotopy(NumberPlane of 4 submobjects), etc.:  97%|█████████▋| 67/69 [00:29<00:00,  2.02it/s]Animation 17: Homotopy(NumberPlane of 4 submobjects), etc.:  99%|█████████▊| 68/69 [00:30<00:00,  1.96it/s]Animation 17: Homotopy(NumberPlane of 4 submobjects), etc.: 100%|██████████| 69/69 [00:31<00:00,  1.92it/s]                                                                                                           [10/29/26 03:14:52] INFO     Animation 17 : Partial     scene_file_writer.py:601
+                             movie file written in                              
+                             '/usr/local/google/home/bu                         
+                             tterworthnat/HACK/Trasform                         
+                             ers4Dummies/state_of_ai/sr                         
+                             c/manim/_media/videos/m03_                         
+                             grid_warp/480p30/partial_m                         
+                             ovie_files/GridWarp/uncach                         
+                             ed_00017.mp4'                                      
+                    INFO     Caching disabled.              cairo_renderer.py:83
+                    INFO     Animation 18 : Partial     scene_file_writer.py:601
+                             movie file written in                              
+                             '/usr/local/google/home/bu                         
+                             tterworthnat/HACK/Trasform                         
+                             ers4Dummies/state_of_ai/sr                         
+                             c/manim/_media/videos/m03_                         
+                             grid_warp/480p30/partial_m                         
+                             ovie_files/GridWarp/uncach                         
+                             ed_00018.mp4'                                      
+                    INFO     Caching disabled.              cairo_renderer.py:83
+Animation 19: FadeOut(VGroup of 2 submobjects), etc.:   0%|          | 0/17 [00:00<?, ?it/s]Animation 19: FadeOut(VGroup of 2 submobjects), etc.:  35%|███▌      | 6/17 [00:00<00:00, 48.35it/s]Animation 19: FadeOut(VGroup of 2 submobjects), etc.:  65%|██████▍   | 11/17 [00:00<00:00, 44.67it/s]Animation 19: FadeOut(VGroup of 2 submobjects), etc.: 100%|██████████| 17/17 [00:00<00:00, 49.18it/s]                                                                                                     [10/29/26 03:14:53] INFO     Animation 19 : Partial     scene_file_writer.py:601
+                             movie file written in                              
+                             '/usr/local/google/home/bu                         
+                             tterworthnat/HACK/Trasform                         
+                             ers4Dummies/state_of_ai/sr                         
+                             c/manim/_media/videos/m03_                         
+                             grid_warp/480p30/partial_m                         
+                             ovie_files/GridWarp/uncach                         
+                             ed_00019.mp4'                                      
+                    INFO     Caching disabled.              cairo_renderer.py:83
+Animation 20: Homotopy(NumberPlane of 4 submobjects), etc.:   0%|          | 0/39 [00:00<?, ?it/s]Animation 20: Homotopy(NumberPlane of 4 submobjects), etc.:   3%|▎         | 1/39 [00:00<00:08,  4.37it/s]Animation 20: Homotopy(NumberPlane of 4 submobjects), etc.:   5%|▌         | 2/39 [00:00<00:10,  3.63it/s]Animation 20: Homotopy(NumberPlane of 4 submobjects), etc.:   8%|▊         | 3/39 [00:00<00:09,  3.64it/s]Animation 20: Homotopy(NumberPlane of 4 submobjects), etc.:  10%|█         | 4/39 [00:01<00:09,  3.77it/s]Animation 20: Homotopy(NumberPlane of 4 submobjects), etc.:  13%|█▎        | 5/39 [00:01<00:08,  3.93it/s]Animation 20: Homotopy(NumberPlane of 4 submobjects), etc.:  15%|█▌        | 6/39 [00:01<00:08,  3.97it/s]Animation 20: Homotopy(NumberPlane of 4 submobjects), etc.:  18%|█▊        | 7/39 [00:01<00:07,  4.06it/s]Animation 20: Homotopy(NumberPlane of 4 submobjects), etc.:  21%|██        | 8/39 [00:02<00:07,  4.00it/s]Animation 20: Homotopy(NumberPlane of 4 submobjects), etc.:  23%|██▎       | 9/39 [00:02<00:07,  4.04it/s]Animation 20: Homotopy(NumberPlane of 4 submobjects), etc.:  26%|██▌       | 10/39 [00:02<00:07,  4.11it/s]Animation 20: Homotopy(NumberPlane of 4 submobjects), etc.:  28%|██▊       | 11/39 [00:02<00:06,  4.09it/s]Animation 20: Homotopy(NumberPlane of 4 submobjects), etc.:  31%|███       | 12/39 [00:02<00:06,  4.20it/s]Animation 20: Homotopy(NumberPlane of 4 submobjects), etc.:  33%|███▎      | 13/39 [00:03<00:06,  4.18it/s]Animation 20: Homotopy(NumberPlane of 4 submobjects), etc.:  36%|███▌      | 14/39 [00:03<00:05,  4.27it/s]Animation 20: Homotopy(NumberPlane of 4 submobjects), etc.:  38%|███▊      | 15/39 [00:03<00:05,  4.10it/s]Animation 20: Homotopy(NumberPlane of 4 submobjects), etc.:  41%|████      | 16/39 [00:03<00:05,  4.16it/s]Animation 20: Homotopy(NumberPlane of 4 submobjects), etc.:  44%|████▎     | 17/39 [00:04<00:05,  4.15it/s]Animation 20: Homotopy(NumberPlane of 4 submobjects), etc.:  46%|████▌     | 18/39 [00:04<00:05,  4.15it/s]Animation 20: Homotopy(NumberPlane of 4 submobjects), etc.:  49%|████▊     | 19/39 [00:04<00:04,  4.09it/s]Animation 20: Homotopy(NumberPlane of 4 submobjects), etc.:  51%|█████▏    | 20/39 [00:04<00:04,  4.01it/s]Animation 20: Homotopy(NumberPlane of 4 submobjects), etc.:  54%|█████▍    | 21/39 [00:05<00:04,  4.00it/s]Animation 20: Homotopy(NumberPlane of 4 submobjects), etc.:  56%|█████▋    | 22/39 [00:05<00:04,  4.12it/s]Animation 20: Homotopy(NumberPlane of 4 submobjects), etc.:  59%|█████▉    | 23/39 [00:05<00:03,  4.07it/s]Animation 20: Homotopy(NumberPlane of 4 submobjects), etc.:  62%|██████▏   | 24/39 [00:05<00:03,  4.07it/s]Animation 20: Homotopy(NumberPlane of 4 submobjects), etc.:  64%|██████▍   | 25/39 [00:06<00:03,  4.07it/s]Animation 20: Homotopy(NumberPlane of 4 submobjects), etc.:  67%|██████▋   | 26/39 [00:06<00:03,  4.12it/s]Animation 20: Homotopy(NumberPlane of 4 submobjects), etc.:  69%|██████▉   | 27/39 [00:06<00:02,  4.10it/s]Animation 20: Homotopy(NumberPlane of 4 submobjects), etc.:  72%|███████▏  | 28/39 [00:06<00:02,  4.36it/s]Animation 20: Homotopy(NumberPlane of 4 submobjects), etc.:  74%|███████▍  | 29/39 [00:07<00:02,  4.64it/s]Animation 20: Homotopy(NumberPlane of 4 submobjects), etc.:  77%|███████▋  | 30/39 [00:07<00:01,  4.82it/s]Animation 20: Homotopy(NumberPlane of 4 submobjects), etc.:  79%|███████▉  | 31/39 [00:07<00:01,  4.99it/s]Animation 20: Homotopy(NumberPlane of 4 submobjects), etc.:  82%|████████▏ | 32/39 [00:07<00:01,  5.04it/s]Animation 20: Homotopy(NumberPlane of 4 submobjects), etc.:  85%|████████▍ | 33/39 [00:07<00:01,  5.10it/s]Animation 20: Homotopy(NumberPlane of 4 submobjects), etc.:  87%|████████▋ | 34/39 [00:07<00:00,  5.17it/s]Animation 20: Homotopy(NumberPlane of 4 submobjects), etc.:  90%|████████▉ | 35/39 [00:08<00:00,  5.19it/s]Animation 20: Homotopy(NumberPlane of 4 submobjects), etc.:  92%|█████████▏| 36/39 [00:08<00:00,  5.24it/s]Animation 20: Homotopy(NumberPlane of 4 submobjects), etc.:  95%|█████████▍| 37/39 [00:08<00:00,  5.23it/s]Animation 20: Homotopy(NumberPlane of 4 submobjects), etc.:  97%|█████████▋| 38/39 [00:08<00:00,  5.23it/s]Animation 20: Homotopy(NumberPlane of 4 submobjects), etc.: 100%|██████████| 39/39 [00:08<00:00,  5.22it/s]                                                                                                           [10/29/26 03:15:02] INFO     Animation 20 : Partial     scene_file_writer.py:601
+                             movie file written in                              
+                             '/usr/local/google/home/bu                         
+                             tterworthnat/HACK/Trasform                         
+                             ers4Dummies/state_of_ai/sr                         
+                             c/manim/_media/videos/m03_                         
+                             grid_warp/480p30/partial_m                         
+                             ovie_files/GridWarp/uncach                         
+                             ed_00020.mp4'                                      
+                    INFO     Caching disabled.              cairo_renderer.py:83
+                    INFO     Animation 21 : Partial     scene_file_writer.py:601
+                             movie file written in                              
+                             '/usr/local/google/home/bu                         
+                             tterworthnat/HACK/Trasform                         
+                             ers4Dummies/state_of_ai/sr                         
+                             c/manim/_media/videos/m03_                         
+                             grid_warp/480p30/partial_m                         
+                             ovie_files/GridWarp/uncach                         
+                             ed_00021.mp4'                                      
+                    INFO     Caching disabled.              cairo_renderer.py:83
+Animation 22: FadeOut(VGroup of 2 submobjects), etc.:   0%|          | 0/17 [00:00<?, ?it/s]Animation 22: FadeOut(VGroup of 2 submobjects), etc.:  47%|████▋     | 8/17 [00:00<00:00, 73.29it/s]Animation 22: FadeOut(VGroup of 2 submobjects), etc.:  94%|█████████▍| 16/17 [00:00<00:00, 73.24it/s]                                                                                                     [10/29/26 03:15:03] INFO     Animation 22 : Partial     scene_file_writer.py:601
+                             movie file written in                              
+                             '/usr/local/google/home/bu                         
+                             tterworthnat/HACK/Trasform                         
+                             ers4Dummies/state_of_ai/sr                         
+                             c/manim/_media/videos/m03_                         
+                             grid_warp/480p30/partial_m                         
+                             ovie_files/GridWarp/uncach                         
+                             ed_00022.mp4'                                      
+                    INFO     Caching disabled.              cairo_renderer.py:83
+Animation 23: Homotopy(NumberPlane of 4 submobjects), etc.:   0%|          | 0/72 [00:00<?, ?it/s]Animation 23: Homotopy(NumberPlane of 4 submobjects), etc.:   1%|▏         | 1/72 [00:00<00:16,  4.32it/s]Animation 23: Homotopy(NumberPlane of 4 submobjects), etc.:   3%|▎         | 2/72 [00:00<00:16,  4.16it/s]Animation 23: Homotopy(NumberPlane of 4 submobjects), etc.:   4%|▍         | 3/72 [00:00<00:17,  3.91it/s]Animation 23: Homotopy(NumberPlane of 4 submobjects), etc.:   6%|▌         | 4/72 [00:00<00:16,  4.05it/s]Animation 23: Homotopy(NumberPlane of 4 submobjects), etc.:   7%|▋         | 5/72 [00:01<00:16,  4.02it/s]Animation 23: Homotopy(NumberPlane of 4 submobjects), etc.:   8%|▊         | 6/72 [00:01<00:16,  4.04it/s]Animation 23: Homotopy(NumberPlane of 4 submobjects), etc.:  10%|▉         | 7/72 [00:01<00:15,  4.10it/s]Animation 23: Homotopy(NumberPlane of 4 submobjects), etc.:  11%|█         | 8/72 [00:01<00:15,  4.09it/s]Animation 23: Homotopy(NumberPlane of 4 submobjects), etc.:  12%|█▎        | 9/72 [00:02<00:15,  4.12it/s]Animation 23: Homotopy(NumberPlane of 4 submobjects), etc.:  14%|█▍        | 10/72 [00:02<00:15,  4.13it/s]Animation 23: Homotopy(NumberPlane of 4 submobjects), etc.:  15%|█▌        | 11/72 [00:02<00:15,  3.86it/s]Animation 23: Homotopy(NumberPlane of 4 submobjects), etc.:  17%|█▋        | 12/72 [00:02<00:15,  3.92it/s]Animation 23: Homotopy(NumberPlane of 4 submobjects), etc.:  18%|█▊        | 13/72 [00:03<00:14,  3.98it/s]Animation 23: Homotopy(NumberPlane of 4 submobjects), etc.:  19%|█▉        | 14/72 [00:03<00:14,  4.03it/s]Animation 23: Homotopy(NumberPlane of 4 submobjects), etc.:  21%|██        | 15/72 [00:03<00:13,  4.09it/s]Animation 23: Homotopy(NumberPlane of 4 submobjects), etc.:  22%|██▏       | 16/72 [00:03<00:13,  4.13it/s]Animation 23: Homotopy(NumberPlane of 4 submobjects), etc.:  24%|██▎       | 17/72 [00:04<00:13,  4.19it/s]Animation 23: Homotopy(NumberPlane of 4 submobjects), etc.:  25%|██▌       | 18/72 [00:04<00:12,  4.23it/s]Animation 23: Homotopy(NumberPlane of 4 submobjects), etc.:  26%|██▋       | 19/72 [00:04<00:12,  4.21it/s]Animation 23: Homotopy(NumberPlane of 4 submobjects), etc.:  28%|██▊       | 20/72 [00:04<00:12,  4.19it/s]Animation 23: Homotopy(NumberPlane of 4 submobjects), etc.:  29%|██▉       | 21/72 [00:05<00:12,  4.15it/s]Animation 23: Homotopy(NumberPlane of 4 submobjects), etc.:  31%|███       | 22/72 [00:05<00:12,  4.14it/s]Animation 23: Homotopy(NumberPlane of 4 submobjects), etc.:  32%|███▏      | 23/72 [00:05<00:11,  4.12it/s]Animation 23: Homotopy(NumberPlane of 4 submobjects), etc.:  33%|███▎      | 24/72 [00:05<00:11,  4.16it/s]Animation 23: Homotopy(NumberPlane of 4 submobjects), etc.:  35%|███▍      | 25/72 [00:06<00:11,  4.18it/s]Animation 23: Homotopy(NumberPlane of 4 submobjects), etc.:  36%|███▌      | 26/72 [00:06<00:10,  4.21it/s]Animation 23: Homotopy(NumberPlane of 4 submobjects), etc.:  38%|███▊      | 27/72 [00:06<00:10,  4.18it/s]Animation 23: Homotopy(NumberPlane of 4 submobjects), etc.:  39%|███▉      | 28/72 [00:06<00:10,  4.20it/s]Animation 23: Homotopy(NumberPlane of 4 submobjects), etc.:  40%|████      | 29/72 [00:07<00:10,  4.23it/s]Animation 23: Homotopy(NumberPlane of 4 submobjects), etc.:  42%|████▏     | 30/72 [00:07<00:09,  4.26it/s]Animation 23: Homotopy(NumberPlane of 4 submobjects), etc.:  43%|████▎     | 31/72 [00:07<00:09,  4.24it/s]Animation 23: Homotopy(NumberPlane of 4 submobjects), etc.:  44%|████▍     | 32/72 [00:07<00:09,  4.18it/s]Animation 23: Homotopy(NumberPlane of 4 submobjects), etc.:  46%|████▌     | 33/72 [00:07<00:09,  4.19it/s]Animation 23: Homotopy(NumberPlane of 4 submobjects), etc.:  47%|████▋     | 34/72 [00:08<00:09,  4.16it/s]Animation 23: Homotopy(NumberPlane of 4 submobjects), etc.:  49%|████▊     | 35/72 [00:08<00:09,  4.07it/s]Animation 23: Homotopy(NumberPlane of 4 submobjects), etc.:  50%|█████     | 36/72 [00:08<00:09,  3.93it/s]Animation 23: Homotopy(NumberPlane of 4 submobjects), etc.:  51%|█████▏    | 37/72 [00:09<00:08,  3.94it/s]Animation 23: Homotopy(NumberPlane of 4 submobjects), etc.:  53%|█████▎    | 38/72 [00:09<00:08,  3.98it/s]Animation 23: Homotopy(NumberPlane of 4 submobjects), etc.:  54%|█████▍    | 39/72 [00:09<00:08,  3.86it/s]Animation 23: Homotopy(NumberPlane of 4 submobjects), etc.:  56%|█████▌    | 40/72 [00:09<00:08,  3.71it/s]Animation 23: Homotopy(NumberPlane of 4 submobjects), etc.:  57%|█████▋    | 41/72 [00:10<00:08,  3.72it/s]Animation 23: Homotopy(NumberPlane of 4 submobjects), etc.:  58%|█████▊    | 42/72 [00:10<00:07,  3.77it/s]Animation 23: Homotopy(NumberPlane of 4 submobjects), etc.:  60%|█████▉    | 43/72 [00:10<00:08,  3.49it/s]Animation 23: Homotopy(NumberPlane of 4 submobjects), etc.:  61%|██████    | 44/72 [00:10<00:07,  3.65it/s]Animation 23: Homotopy(NumberPlane of 4 submobjects), etc.:  62%|██████▎   | 45/72 [00:11<00:07,  3.77it/s]Animation 23: Homotopy(NumberPlane of 4 submobjects), etc.:  64%|██████▍   | 46/72 [00:11<00:06,  3.87it/s]Animation 23: Homotopy(NumberPlane of 4 submobjects), etc.:  65%|██████▌   | 47/72 [00:11<00:06,  3.79it/s]Animation 23: Homotopy(NumberPlane of 4 submobjects), etc.:  67%|██████▋   | 48/72 [00:11<00:06,  3.89it/s]Animation 23: Homotopy(NumberPlane of 4 submobjects), etc.:  68%|██████▊   | 49/72 [00:12<00:06,  3.59it/s]Animation 23: Homotopy(NumberPlane of 4 submobjects), etc.:  69%|██████▉   | 50/72 [00:12<00:05,  3.70it/s]Animation 23: Homotopy(NumberPlane of 4 submobjects), etc.:  71%|███████   | 51/72 [00:12<00:05,  3.81it/s]Animation 23: Homotopy(NumberPlane of 4 submobjects), etc.:  72%|███████▏  | 52/72 [00:13<00:05,  3.87it/s]Animation 23: Homotopy(NumberPlane of 4 submobjects), etc.:  74%|███████▎  | 53/72 [00:13<00:04,  3.95it/s]Animation 23: Homotopy(NumberPlane of 4 submobjects), etc.:  75%|███████▌  | 54/72 [00:13<00:04,  3.68it/s]Animation 23: Homotopy(NumberPlane of 4 submobjects), etc.:  76%|███████▋  | 55/72 [00:13<00:05,  3.38it/s]Animation 23: Homotopy(NumberPlane of 4 submobjects), etc.:  78%|███████▊  | 56/72 [00:14<00:04,  3.53it/s]Animation 23: Homotopy(NumberPlane of 4 submobjects), etc.:  79%|███████▉  | 57/72 [00:14<00:04,  3.66it/s]Animation 23: Homotopy(NumberPlane of 4 submobjects), etc.:  81%|████████  | 58/72 [00:14<00:03,  3.77it/s]Animation 23: Homotopy(NumberPlane of 4 submobjects), etc.:  82%|████████▏ | 59/72 [00:14<00:03,  3.82it/s]Animation 23: Homotopy(NumberPlane of 4 submobjects), etc.:  83%|████████▎ | 60/72 [00:15<00:03,  3.87it/s]Animation 23: Homotopy(NumberPlane of 4 submobjects), etc.:  85%|████████▍ | 61/72 [00:15<00:02,  3.84it/s]Animation 23: Homotopy(NumberPlane of 4 submobjects), etc.:  86%|████████▌ | 62/72 [00:15<00:02,  3.76it/s]Animation 23: Homotopy(NumberPlane of 4 submobjects), etc.:  88%|████████▊ | 63/72 [00:15<00:02,  3.75it/s]Animation 23: Homotopy(NumberPlane of 4 submobjects), etc.:  89%|████████▉ | 64/72 [00:16<00:02,  3.82it/s]Animation 23: Homotopy(NumberPlane of 4 submobjects), etc.:  90%|█████████ | 65/72 [00:16<00:01,  3.88it/s]Animation 23: Homotopy(NumberPlane of 4 submobjects), etc.:  92%|█████████▏| 66/72 [00:16<00:01,  3.94it/s]Animation 23: Homotopy(NumberPlane of 4 submobjects), etc.:  93%|█████████▎| 67/72 [00:16<00:01,  4.01it/s]Animation 23: Homotopy(NumberPlane of 4 submobjects), etc.:  94%|█████████▍| 68/72 [00:17<00:01,  3.87it/s]Animation 23: Homotopy(NumberPlane of 4 submobjects), etc.:  96%|█████████▌| 69/72 [00:17<00:00,  3.70it/s]Animation 23: Homotopy(NumberPlane of 4 submobjects), etc.:  97%|█████████▋| 70/72 [00:17<00:00,  3.79it/s]Animation 23: Homotopy(NumberPlane of 4 submobjects), etc.:  99%|█████████▊| 71/72 [00:18<00:00,  3.89it/s]Animation 23: Homotopy(NumberPlane of 4 submobjects), etc.: 100%|██████████| 72/72 [00:18<00:00,  3.99it/s]                                                                                                           [10/29/26 03:15:22] INFO     Animation 23 : Partial     scene_file_writer.py:601
+                             movie file written in                              
+                             '/usr/local/google/home/bu                         
+                             tterworthnat/HACK/Trasform                         
+                             ers4Dummies/state_of_ai/sr                         
+                             c/manim/_media/videos/m03_                         
+                             grid_warp/480p30/partial_m                         
+                             ovie_files/GridWarp/uncach                         
+                             ed_00023.mp4'                                      
+                    INFO     Caching disabled.              cairo_renderer.py:83
+                    INFO     Animation 24 : Partial     scene_file_writer.py:601
+                             movie file written in                              
+                             '/usr/local/google/home/bu                         
+                             tterworthnat/HACK/Trasform                         
+                             ers4Dummies/state_of_ai/sr                         
+                             c/manim/_media/videos/m03_                         
+                             grid_warp/480p30/partial_m                         
+                             ovie_files/GridWarp/uncach                         
+                             ed_00024.mp4'                                      
+                    INFO     Caching disabled.              cairo_renderer.py:83
+Animation 25: FadeOut(VGroup of 2 submobjects), etc.:   0%|          | 0/17 [00:00<?, ?it/s]Animation 25: FadeOut(VGroup of 2 submobjects), etc.:  29%|██▉       | 5/17 [00:00<00:00, 42.70it/s]Animation 25: FadeOut(VGroup of 2 submobjects), etc.:  59%|█████▉    | 10/17 [00:00<00:00, 43.53it/s]Animation 25: FadeOut(VGroup of 2 submobjects), etc.:  88%|████████▊ | 15/17 [00:00<00:00, 45.26it/s]                                                                                                     [10/29/26 03:15:23] INFO     Animation 25 : Partial     scene_file_writer.py:601
+                             movie file written in                              
+                             '/usr/local/google/home/bu                         
+                             tterworthnat/HACK/Trasform                         
+                             ers4Dummies/state_of_ai/sr                         
+                             c/manim/_media/videos/m03_                         
+                             grid_warp/480p30/partial_m                         
+                             ovie_files/GridWarp/uncach                         
+                             ed_00025.mp4'                                      
+                    INFO     Caching disabled.              cairo_renderer.py:83
+Animation 26: _MethodAnimation(NumberPlane of 4 submobjects), etc.:   0%|          | 0/39 [00:00<?, ?it/s]Animation 26: _MethodAnimation(NumberPlane of 4 submobjects), etc.:   5%|▌         | 2/39 [00:00<00:03, 12.26it/s]Animation 26: _MethodAnimation(NumberPlane of 4 submobjects), etc.:  10%|█         | 4/39 [00:00<00:03, 10.07it/s]Animation 26: _MethodAnimation(NumberPlane of 4 submobjects), etc.:  15%|█▌        | 6/39 [00:00<00:03,  9.40it/s]Animation 26: _MethodAnimation(NumberPlane of 4 submobjects), etc.:  18%|█▊        | 7/39 [00:00<00:03,  9.03it/s]Animation 26: _MethodAnimation(NumberPlane of 4 submobjects), etc.:  21%|██        | 8/39 [00:00<00:03,  8.74it/s]Animation 26: _MethodAnimation(NumberPlane of 4 submobjects), etc.:  23%|██▎       | 9/39 [00:01<00:03,  8.31it/s]Animation 26: _MethodAnimation(NumberPlane of 4 submobjects), etc.:  26%|██▌       | 10/39 [00:01<00:03,  8.33it/s]Animation 26: _MethodAnimation(NumberPlane of 4 submobjects), etc.:  28%|██▊       | 11/39 [00:01<00:03,  8.15it/s]Animation 26: _MethodAnimation(NumberPlane of 4 submobjects), etc.:  31%|███       | 12/39 [00:01<00:03,  7.94it/s]Animation 26: _MethodAnimation(NumberPlane of 4 submobjects), etc.:  36%|███▌      | 14/39 [00:01<00:02,  8.76it/s]Animation 26: _MethodAnimation(NumberPlane of 4 submobjects), etc.:  41%|████      | 16/39 [00:01<00:02,  9.92it/s]Animation 26: _MethodAnimation(NumberPlane of 4 submobjects), etc.:  46%|████▌     | 18/39 [00:01<00:01, 10.54it/s]Animation 26: _MethodAnimation(NumberPlane of 4 submobjects), etc.:  51%|█████▏    | 20/39 [00:02<00:01, 10.92it/s]Animation 26: _MethodAnimation(NumberPlane of 4 submobjects), etc.:  56%|█████▋    | 22/39 [00:02<00:01, 10.92it/s]Animation 26: _MethodAnimation(NumberPlane of 4 submobjects), etc.:  62%|██████▏   | 24/39 [00:02<00:01, 10.29it/s]Animation 26: _MethodAnimation(NumberPlane of 4 submobjects), etc.:  67%|██████▋   | 26/39 [00:02<00:01,  9.72it/s]Animation 26: _MethodAnimation(NumberPlane of 4 submobjects), etc.:  69%|██████▉   | 27/39 [00:02<00:01,  9.44it/s]Animation 26: _MethodAnimation(NumberPlane of 4 submobjects), etc.:  72%|███████▏  | 28/39 [00:02<00:01,  9.30it/s]Animation 26: _MethodAnimation(NumberPlane of 4 submobjects), etc.:  74%|███████▍  | 29/39 [00:03<00:01,  9.33it/s]Animation 26: _MethodAnimation(NumberPlane of 4 submobjects), etc.:  77%|███████▋  | 30/39 [00:03<00:00,  9.35it/s]Animation 26: _MethodAnimation(NumberPlane of 4 submobjects), etc.:  82%|████████▏ | 32/39 [00:03<00:00, 10.50it/s]Animation 26: _MethodAnimation(NumberPlane of 4 submobjects), etc.:  87%|████████▋ | 34/39 [00:03<00:00, 11.25it/s]Animation 26: _MethodAnimation(NumberPlane of 4 submobjects), etc.:  92%|█████████▏| 36/39 [00:03<00:00, 11.03it/s]Animation 26: _MethodAnimation(NumberPlane of 4 submobjects), etc.:  97%|█████████▋| 38/39 [00:03<00:00,  9.83it/s]                                                                                                                   [10/29/26 03:15:27] INFO     Animation 26 : Partial     scene_file_writer.py:601
+                             movie file written in                              
+                             '/usr/local/google/home/bu                         
+                             tterworthnat/HACK/Trasform                         
+                             ers4Dummies/state_of_ai/sr                         
+                             c/manim/_media/videos/m03_                         
+                             grid_warp/480p30/partial_m                         
+                             ovie_files/GridWarp/uncach                         
+                             ed_00026.mp4'                                      
+                    INFO     Caching disabled.              cairo_renderer.py:83
+Animation 27: Create(Line), etc.:   0%|          | 0/30 [00:00<?, ?it/s]                                                                        [10/29/26 03:15:28] INFO     Animation 27 : Partial     scene_file_writer.py:601
+                             movie file written in                              
+                             '/usr/local/google/home/bu                         
+                             tterworthnat/HACK/Trasform                         
+                             ers4Dummies/state_of_ai/sr                         
+                             c/manim/_media/videos/m03_                         
+                             grid_warp/480p30/partial_m                         
+                             ovie_files/GridWarp/uncach                         
+                             ed_00027.mp4'                                      
+                    INFO     Caching disabled.              cairo_renderer.py:83
+Animation 28: _MethodAnimation(Polygon), etc.:   0%|          | 0/24 [00:00<?, ?it/s]Animation 28: _MethodAnimation(Polygon), etc.:  17%|█▋        | 4/24 [00:00<00:00, 30.48it/s]Animation 28: _MethodAnimation(Polygon), etc.:  33%|███▎      | 8/24 [00:00<00:00, 23.15it/s]Animation 28: _MethodAnimation(Polygon), etc.:  46%|████▌     | 11/24 [00:00<00:00, 23.73it/s]Animation 28: _MethodAnimation(Polygon), etc.:  62%|██████▎   | 15/24 [00:00<00:00, 27.91it/s]Animation 28: _MethodAnimation(Polygon), etc.:  79%|███████▉  | 19/24 [00:00<00:00, 30.20it/s]Animation 28: _MethodAnimation(Polygon), etc.:  96%|█████████▌| 23/24 [00:00<00:00, 32.29it/s]                                                                                              [10/29/26 03:15:29] INFO     Animation 28 : Partial     scene_file_writer.py:601
+                             movie file written in                              
+                             '/usr/local/google/home/bu                         
+                             tterworthnat/HACK/Trasform                         
+                             ers4Dummies/state_of_ai/sr                         
+                             c/manim/_media/videos/m03_                         
+                             grid_warp/480p30/partial_m                         
+                             ovie_files/GridWarp/uncach                         
+                             ed_00028.mp4'                                      
+                    INFO     Caching disabled.              cairo_renderer.py:83
+                    INFO     Animation 29 : Partial     scene_file_writer.py:601
+                             movie file written in                              
+                             '/usr/local/google/home/bu                         
+                             tterworthnat/HACK/Trasform                         
+                             ers4Dummies/state_of_ai/sr                         
+                             c/manim/_media/videos/m03_                         
+                             grid_warp/480p30/partial_m                         
+                             ovie_files/GridWarp/uncach                         
+                             ed_00029.mp4'                                      
+                    INFO     Combining to Movie file.   scene_file_writer.py:753
+                    INFO                                scene_file_writer.py:904
+                             File ready at                                      
+                             '/usr/local/google/home/bu                         
+                             tterworthnat/HACK/Trasform                         
+                             ers4Dummies/state_of_ai/sr                         
+                             c/manim/_media/videos/m03_                         
+                             grid_warp/480p30/GridWarp.                         
+                             mp4'                                               
+                                                                                
+                    INFO     Rendered GridWarp                      scene.py:278
+                             Played 30 animations                               

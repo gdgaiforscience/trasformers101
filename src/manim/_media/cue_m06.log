@@ -1,0 +1,201 @@
+/bin/sh: line 1: sox: command not found
+[10/29/26 04:02:05] WARNING  SoX could not be found!              __init__.py:10
+                                                                                
+                                 If you do not have SoX, proceed                
+                             here:                                              
+                                  - - -                                         
+                             http://sox.sourceforge.net/ - - -                  
+                                                                                
+                                 If you do (or think that you                   
+                             should) have SoX, double-check your                
+                                 path variables.                                
+                                                                                
+<frozen runpy>:128: RuntimeWarning: 'manim.__main__' found in sys.modules after import of package 'manim', but prior to execution of 'manim.__main__'; this may result in unpredictable behaviour
+Manim Community v0.20.1
+
+Animation 0: FadeIn(VGroup of 2 submobjects), etc.:   0%|          | 0/1 [00:00<?, ?it/s]                                                                                         [10/29/26 04:02:07] INFO     Writing                     tex_file_writing.py:110
+                             \special{dvisvgm:raw <g                            
+                             id='unique000'>}6\special{d                        
+                             visvgm:raw </g>} to                                
+                             /usr/local/google/home/butt                        
+                             erworthnat/HACK/Trasformers                        
+                             4Dummies/state_of_ai/src/ma                        
+                             nim/_media/cuepass/Tex/5353                        
+                             eb619e9288a9.tex                                   
+[10/29/26 04:02:08] INFO     Writing                     tex_file_writing.py:110
+                             \special{dvisvgm:raw <g                            
+                             id='unique000'>}.\special{d                        
+                             visvgm:raw </g>} to                                
+                             /usr/local/google/home/butt                        
+                             erworthnat/HACK/Trasformers                        
+                             4Dummies/state_of_ai/src/ma                        
+                             nim/_media/cuepass/Tex/85b8                        
+                             d98e778e7c96.tex                                   
+[10/29/26 04:02:09] INFO     Writing                     tex_file_writing.py:110
+                             \special{dvisvgm:raw <g                            
+                             id='unique000'>}0\special{d                        
+                             visvgm:raw </g>} to                                
+                             /usr/local/google/home/butt                        
+                             erworthnat/HACK/Trasformers                        
+                             4Dummies/state_of_ai/src/ma                        
+                             nim/_media/cuepass/Tex/ab0d                        
+                             e9a363d86c5f.tex                                   
+[10/29/26 04:02:10] INFO     Writing                     tex_file_writing.py:110
+                             \special{dvisvgm:raw <g                            
+                             id='unique000'>}3\special{d                        
+                             visvgm:raw </g>} to                                
+                             /usr/local/google/home/butt                        
+                             erworthnat/HACK/Trasformers                        
+                             4Dummies/state_of_ai/src/ma                        
+                             nim/_media/cuepass/Tex/9ca7                        
+                             67606662f643.tex                                   
+                    INFO     Writing                     tex_file_writing.py:110
+                             \special{dvisvgm:raw <g                            
+                             id='unique000'>}5\special{d                        
+                             visvgm:raw </g>} to                                
+                             /usr/local/google/home/butt                        
+                             erworthnat/HACK/Trasformers                        
+                             4Dummies/state_of_ai/src/ma                        
+                             nim/_media/cuepass/Tex/8053                        
+                             5c2a91306081.tex                                   
+Animation 1: _MethodAnimation(ValueTracker), etc.:   0%|          | 0/1 [00:00<?, ?it/s]                                                                                        Animation 2: LaggedStart(Group):   0%|          | 0/1 [00:00<?, ?it/s]                                                                      [10/29/26 04:02:12] INFO     Writing                     tex_file_writing.py:110
+                             \special{dvisvgm:raw <g                            
+                             id='unique000'>}e^{z_i}\spe                        
+                             cial{dvisvgm:raw </g>} to                          
+                             /usr/local/google/home/butt                        
+                             erworthnat/HACK/Trasformers                        
+                             4Dummies/state_of_ai/src/ma                        
+                             nim/_media/cuepass/Tex/68da                        
+                             df49dc41f81b.tex                                   
+Animation 4: FadeTransform(Group), etc.:   0%|          | 0/1 [00:00<?, ?it/s]Animation 4: FadeTransform(Group), etc.: 100%|██████████| 1/1 [00:00<00:00,  9.83it/s]                                                                                      Animation 5: _MethodAnimation(ValueTracker):   0%|          | 0/1 [00:00<?, ?it/s][10/29/26 04:02:13] INFO     Writing                     tex_file_writing.py:110
+                             \special{dvisvgm:raw <g                            
+                             id='unique000'>}4\special{d                        
+                             visvgm:raw </g>} to                                
+                             /usr/local/google/home/butt                        
+                             erworthnat/HACK/Trasformers                        
+                             4Dummies/state_of_ai/src/ma                        
+                             nim/_media/cuepass/Tex/b6e1                        
+                             e0d35a22cf8a.tex                                   
+Animation 5: _MethodAnimation(ValueTracker): 100%|██████████| 1/1 [00:01<00:00,  1.29s/it]                                                                                          [10/29/26 04:02:14] INFO     Writing                     tex_file_writing.py:110
+                             \special{dvisvgm:raw <g                            
+                             id='unique000'>}\mathrm{sof                        
+                             tmax}(z)_i                                         
+                             \special{dvisvgm:raw                               
+                             </g>}\special{dvisvgm:raw                          
+                             <g id='unique001'>}=                               
+                             \special{dvisvgm:raw                               
+                             </g>}\special{dvisvgm:raw                          
+                             <g                                                 
+                             id='unique002'>}\frac{e^{z_                        
+                             i \special{dvisvgm:raw                             
+                             </g>}\special{dvisvgm:raw                          
+                             <g                                                 
+                             id='unique003'>}}}{\sum_j                          
+                             e^{z_j \special{dvisvgm:raw                        
+                             </g>}\special{dvisvgm:raw                          
+                             <g                                                 
+                             id='unique004'>}}}\special{                        
+                             dvisvgm:raw </g>} to                               
+                             /usr/local/google/home/butt                        
+                             erworthnat/HACK/Trasformers                        
+                             4Dummies/state_of_ai/src/ma                        
+                             nim/_media/cuepass/Tex/239b                        
+                             64fa49075013.tex                                   
+[10/29/26 04:02:16] INFO     Writing                     tex_file_writing.py:110
+                             \special{dvisvgm:raw <g                            
+                             id='unique000'>}9\special{d                        
+                             visvgm:raw </g>} to                                
+                             /usr/local/google/home/butt                        
+                             erworthnat/HACK/Trasformers                        
+                             4Dummies/state_of_ai/src/ma                        
+                             nim/_media/cuepass/Tex/f7c8                        
+                             a5ee0f168adf.tex                                   
+[10/29/26 04:02:17] INFO     Writing \% to               tex_file_writing.py:110
+                             /usr/local/google/home/butt                        
+                             erworthnat/HACK/Trasformers                        
+                             4Dummies/state_of_ai/src/ma                        
+                             nim/_media/cuepass/Tex/0887                        
+                             bfa395f836d2.tex                                   
+[10/29/26 04:02:18] INFO     Writing                     tex_file_writing.py:110
+                             \special{dvisvgm:raw <g                            
+                             id='unique000'>}8\special{d                        
+                             visvgm:raw </g>} to                                
+                             /usr/local/google/home/butt                        
+                             erworthnat/HACK/Trasformers                        
+                             4Dummies/state_of_ai/src/ma                        
+                             nim/_media/cuepass/Tex/2f82                        
+                             40ddc5f27b7f.tex                                   
+Animation 7: FadeTransform(Group), etc.:   0%|          | 0/1 [00:00<?, ?it/s]                                                                              Animation 8: FadeIn(VGroup of 5 submobjects), etc.:   0%|          | 0/1 [00:00<?, ?it/s]Animation 8: FadeIn(VGroup of 5 submobjects), etc.: 100%|██████████| 1/1 [00:00<00:00,  1.99it/s]                                                                                                 [10/29/26 04:02:21] INFO     Writing                     tex_file_writing.py:110
+                             \special{dvisvgm:raw <g                            
+                             id='unique000'>}\textstyle\                        
+                             sum = 1\special{dvisvgm:raw                        
+                             </g>} to                                           
+                             /usr/local/google/home/butt                        
+                             erworthnat/HACK/Trasformers                        
+                             4Dummies/state_of_ai/src/ma                        
+                             nim/_media/cuepass/Tex/46f4                        
+                             98da94710373.tex                                   
+Animation 9: ReplacementTransform(Rectangle), etc.:   0%|          | 0/1 [00:00<?, ?it/s]Animation 9: ReplacementTransform(Rectangle), etc.: 100%|██████████| 1/1 [00:00<00:00,  5.22it/s]                                                                                                 [10/29/26 04:02:22] INFO     Writing                     tex_file_writing.py:110
+                             \special{dvisvgm:raw <g                            
+                             id='unique000'>}\mathrm{sof                        
+                             tmax}(z)_i                                         
+                             \special{dvisvgm:raw                               
+                             </g>}\special{dvisvgm:raw                          
+                             <g id='unique001'>}=                               
+                             \special{dvisvgm:raw                               
+                             </g>}\special{dvisvgm:raw                          
+                             <g                                                 
+                             id='unique002'>}\frac{e^{z_                        
+                             i \special{dvisvgm:raw                             
+                             </g>}\special{dvisvgm:raw                          
+                             <g id='unique003'>}/T                              
+                             \special{dvisvgm:raw                               
+                             </g>}\special{dvisvgm:raw                          
+                             <g                                                 
+                             id='unique004'>}}}{\sum_j                          
+                             e^{z_j \special{dvisvgm:raw                        
+                             </g>}\special{dvisvgm:raw                          
+                             <g id='unique005'>}/T                              
+                             \special{dvisvgm:raw                               
+                             </g>}\special{dvisvgm:raw                          
+                             <g                                                 
+                             id='unique006'>}}}\special{                        
+                             dvisvgm:raw </g>} to                               
+                             /usr/local/google/home/butt                        
+                             erworthnat/HACK/Trasformers                        
+                             4Dummies/state_of_ai/src/ma                        
+                             nim/_media/cuepass/Tex/27a2                        
+                             8076e253f55e.tex                                   
+Animation 11: TransformMatchingTex(Group):   0%|          | 0/1 [00:00<?, ?it/s]Animation 11: TransformMatchingTex(Group): 100%|██████████| 1/1 [00:00<00:00,  6.71it/s]                                                                                        [10/29/26 04:02:24] INFO     Writing                     tex_file_writing.py:110
+                             \special{dvisvgm:raw <g                            
+                             id='unique000'>}2.5\special                        
+                             {dvisvgm:raw </g>} to                              
+                             /usr/local/google/home/butt                        
+                             erworthnat/HACK/Trasformers                        
+                             4Dummies/state_of_ai/src/ma                        
+                             nim/_media/cuepass/Tex/ef0e                        
+                             8f9d45edaba9.tex                                   
+[10/29/26 04:02:25] INFO     Writing                     tex_file_writing.py:110
+                             \special{dvisvgm:raw <g                            
+                             id='unique000'>}T                                  
+                             \special{dvisvgm:raw                               
+                             </g>}\special{dvisvgm:raw                          
+                             <g                                                 
+                             id='unique001'>}=\special{d                        
+                             visvgm:raw </g>} to                                
+                             /usr/local/google/home/butt                        
+                             erworthnat/HACK/Trasformers                        
+                             4Dummies/state_of_ai/src/ma                        
+                             nim/_media/cuepass/Tex/eb54                        
+                             c452e98f1171.tex                                   
+Animation 12: Create(Line), etc.:   0%|          | 0/1 [00:00<?, ?it/s]Animation 12: Create(Line), etc.: 100%|██████████| 1/1 [00:00<00:00,  4.91it/s]                                                                               Animation 13: Indicate(MathTexPart('/T')), etc.:   0%|          | 0/1 [00:00<?, ?it/s]Animation 13: Indicate(MathTexPart('/T')), etc.: 100%|██████████| 1/1 [00:00<00:00,  5.87it/s]                                                                                              Animation 14: _MethodAnimation(ValueTracker):   0%|          | 0/1 [00:00<?, ?it/s]Animation 14: _MethodAnimation(ValueTracker): 100%|██████████| 1/1 [00:00<00:00,  4.70it/s]                                                                                           Animation 16: _MethodAnimation(ValueTracker):   0%|          | 0/1 [00:00<?, ?it/s]Animation 16: _MethodAnimation(ValueTracker): 100%|██████████| 1/1 [00:00<00:00,  3.70it/s]                                                                                           Animation 18: _MethodAnimation(ValueTracker):   0%|          | 0/1 [00:00<?, ?it/s]Animation 18: _MethodAnimation(ValueTracker): 100%|██████████| 1/1 [00:00<00:00,  5.40it/s]                                                                                           [10/29/26 04:02:28] INFO                                scene_file_writer.py:904
+                             File ready at                                      
+                             '/usr/local/google/home/bu                         
+                             tterworthnat/HACK/Trasform                         
+                             ers4Dummies/state_of_ai/sr                         
+                             c/manim/_media/cuepass/ima                         
+                             ges/m06_softmax/Softmax_Ma                         
+                             nimCE_v0.20.1.png'                                 
+                                                                                
+                    INFO     Rendered Softmax                       scene.py:278
+                             Played 20 animations                               

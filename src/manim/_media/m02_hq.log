@@ -1,0 +1,399 @@
++ /usr/local/google/home/butterworthnat/miniforge3/envs/gdg/bin/python -m manim render -qh --frame_rate 30 --disable_caching --media_dir /usr/local/google/home/butterworthnat/HACK/Trasformers4Dummies/state_of_ai/src/manim/_media /usr/local/google/home/butterworthnat/HACK/Trasformers4Dummies/state_of_ai/src/manim/m02_layer_matrix.py LayerMatrix
+/bin/sh: line 1: sox: command not found
+[10/29/26 03:34:43] WARNING  SoX could not be found!              __init__.py:10
+                                                                                
+                                 If you do not have SoX, proceed                
+                             here:                                              
+                                  - - -                                         
+                             http://sox.sourceforge.net/ - - -                  
+                                                                                
+                                 If you do (or think that you                   
+                             should) have SoX, double-check your                
+                                 path variables.                                
+                                                                                
+<frozen runpy>:128: RuntimeWarning: 'manim.__main__' found in sys.modules after import of package 'manim', but prior to execution of 'manim.__main__'; this may result in unpredictable behaviour
+Manim Community v0.20.1
+
+[10/29/26 03:34:44] INFO     Caching disabled.              cairo_renderer.py:83
+Animation 0: LaggedStart(Group), etc.:   0%|          | 0/24 [00:00<?, ?it/s]Animation 0: LaggedStart(Group), etc.:  12%|█▎        | 3/24 [00:00<00:01, 19.43it/s]Animation 0: LaggedStart(Group), etc.:  29%|██▉       | 7/24 [00:00<00:00, 25.68it/s]Animation 0: LaggedStart(Group), etc.:  46%|████▌     | 11/24 [00:00<00:00, 29.38it/s]Animation 0: LaggedStart(Group), etc.:  67%|██████▋   | 16/24 [00:00<00:00, 34.66it/s]Animation 0: LaggedStart(Group), etc.:  83%|████████▎ | 20/24 [00:00<00:00, 35.14it/s]Animation 0: LaggedStart(Group), etc.: 100%|██████████| 24/24 [00:00<00:00, 28.01it/s]                                                                                      [10/29/26 03:34:55] INFO     Animation 0 : Partial      scene_file_writer.py:601
+                             movie file written in                              
+                             '/usr/local/google/home/bu                         
+                             tterworthnat/HACK/Trasform                         
+                             ers4Dummies/state_of_ai/sr                         
+                             c/manim/_media/videos/m02_                         
+                             layer_matrix/1080p30/parti                         
+                             al_movie_files/LayerMatrix                         
+                             /uncached_00000.mp4'                               
+                    INFO     Caching disabled.              cairo_renderer.py:83
+Animation 1: LaggedStart(Group), etc.:   0%|          | 0/36 [00:00<?, ?it/s]Animation 1: LaggedStart(Group), etc.:  17%|█▋        | 6/36 [00:00<00:00, 58.59it/s]Animation 1: LaggedStart(Group), etc.:  33%|███▎      | 12/36 [00:00<00:00, 50.90it/s]Animation 1: LaggedStart(Group), etc.:  50%|█████     | 18/36 [00:00<00:00, 52.84it/s]Animation 1: LaggedStart(Group), etc.:  67%|██████▋   | 24/36 [00:00<00:00, 50.96it/s]Animation 1: LaggedStart(Group), etc.:  83%|████████▎ | 30/36 [00:00<00:00, 52.88it/s]Animation 1: LaggedStart(Group), etc.: 100%|██████████| 36/36 [00:00<00:00, 45.59it/s]                                                                                      [10/29/26 03:35:11] INFO     Animation 1 : Partial      scene_file_writer.py:601
+                             movie file written in                              
+                             '/usr/local/google/home/bu                         
+                             tterworthnat/HACK/Trasform                         
+                             ers4Dummies/state_of_ai/sr                         
+                             c/manim/_media/videos/m02_                         
+                             layer_matrix/1080p30/parti                         
+                             al_movie_files/LayerMatrix                         
+                             /uncached_00001.mp4'                               
+                    INFO     Caching disabled.              cairo_renderer.py:83
+[10/29/26 03:35:12] INFO     Animation 2 : Partial      scene_file_writer.py:601
+                             movie file written in                              
+                             '/usr/local/google/home/bu                         
+                             tterworthnat/HACK/Trasform                         
+                             ers4Dummies/state_of_ai/sr                         
+                             c/manim/_media/videos/m02_                         
+                             layer_matrix/1080p30/parti                         
+                             al_movie_files/LayerMatrix                         
+                             /uncached_00002.mp4'                               
+/usr/local/google/home/butterworthnat/HACK/Trasformers4Dummies/state_of_ai/src/manim/m02_layer_matrix.py:112: DeprecationWarning: This method is not guaranteed to stay around. Please prefer setting the attribute normally or with Mobject.set().
+  lpar = MathTex(r"\left(" + tall + r"\right.", color=TEXT).set_height(top - bot + 0.1)
+/usr/local/google/home/butterworthnat/HACK/Trasformers4Dummies/state_of_ai/src/manim/m02_layer_matrix.py:113: DeprecationWarning: This method is not guaranteed to stay around. Please prefer setting the attribute normally or with Mobject.set().
+  rpar = MathTex(r"\left." + tall + r"\right)", color=TEXT).set_height(top - bot + 0.1)
+[10/29/26 03:35:13] INFO     Caching disabled.              cairo_renderer.py:83
+Animation 3: _MethodAnimation(Line), etc.:   0%|          | 0/24 [00:00<?, ?it/s]Animation 3: _MethodAnimation(Line), etc.:  21%|██        | 5/24 [00:00<00:00, 42.97it/s]Animation 3: _MethodAnimation(Line), etc.:  42%|████▏     | 10/24 [00:00<00:00, 29.27it/s]Animation 3: _MethodAnimation(Line), etc.:  58%|█████▊    | 14/24 [00:00<00:00, 28.80it/s]Animation 3: _MethodAnimation(Line), etc.:  75%|███████▌  | 18/24 [00:00<00:00, 26.28it/s]Animation 3: _MethodAnimation(Line), etc.:  88%|████████▊ | 21/24 [00:00<00:00, 24.13it/s]Animation 3: _MethodAnimation(Line), etc.: 100%|██████████| 24/24 [00:00<00:00, 25.03it/s]                                                                                          [10/29/26 03:35:23] INFO     Animation 3 : Partial      scene_file_writer.py:601
+                             movie file written in                              
+                             '/usr/local/google/home/bu                         
+                             tterworthnat/HACK/Trasform                         
+                             ers4Dummies/state_of_ai/sr                         
+                             c/manim/_media/videos/m02_                         
+                             layer_matrix/1080p30/parti                         
+                             al_movie_files/LayerMatrix                         
+                             /uncached_00003.mp4'                               
+                    INFO     Caching disabled.              cairo_renderer.py:83
+Animation 4: ReplacementTransform(MathTex('1.2')), etc.:   0%|          | 0/30 [00:00<?, ?it/s]Animation 4: ReplacementTransform(MathTex('1.2')), etc.:  17%|█▋        | 5/30 [00:00<00:00, 39.96it/s]Animation 4: ReplacementTransform(MathTex('1.2')), etc.:  37%|███▋      | 11/30 [00:00<00:00, 48.77it/s]Animation 4: ReplacementTransform(MathTex('1.2')), etc.:  53%|█████▎    | 16/30 [00:00<00:00, 48.47it/s]Animation 4: ReplacementTransform(MathTex('1.2')), etc.:  70%|███████   | 21/30 [00:00<00:00, 49.04it/s]Animation 4: ReplacementTransform(MathTex('1.2')), etc.:  87%|████████▋ | 26/30 [00:00<00:00, 39.79it/s]                                                                                                        [10/29/26 03:35:35] INFO     Animation 4 : Partial      scene_file_writer.py:601
+                             movie file written in                              
+                             '/usr/local/google/home/bu                         
+                             tterworthnat/HACK/Trasform                         
+                             ers4Dummies/state_of_ai/sr                         
+                             c/manim/_media/videos/m02_                         
+                             layer_matrix/1080p30/parti                         
+                             al_movie_files/LayerMatrix                         
+                             /uncached_00004.mp4'                               
+[10/29/26 03:35:36] INFO     Caching disabled.              cairo_renderer.py:83
+Animation 5: _MethodAnimation(Line), etc.:   0%|          | 0/12 [00:00<?, ?it/s]Animation 5: _MethodAnimation(Line), etc.:  25%|██▌       | 3/12 [00:00<00:00, 20.02it/s]Animation 5: _MethodAnimation(Line), etc.:  50%|█████     | 6/12 [00:00<00:00, 20.78it/s]Animation 5: _MethodAnimation(Line), etc.:  75%|███████▌  | 9/12 [00:00<00:00, 20.58it/s]                                                                                         [10/29/26 03:35:41] INFO     Animation 5 : Partial      scene_file_writer.py:601
+                             movie file written in                              
+                             '/usr/local/google/home/bu                         
+                             tterworthnat/HACK/Trasform                         
+                             ers4Dummies/state_of_ai/sr                         
+                             c/manim/_media/videos/m02_                         
+                             layer_matrix/1080p30/parti                         
+                             al_movie_files/LayerMatrix                         
+                             /uncached_00005.mp4'                               
+                    INFO     Caching disabled.              cairo_renderer.py:83
+Animation 6: ReplacementTransform(MathTex('-0.4')), etc.:   0%|          | 0/17 [00:00<?, ?it/s]Animation 6: ReplacementTransform(MathTex('-0.4')), etc.:  18%|█▊        | 3/17 [00:00<00:00, 26.21it/s]Animation 6: ReplacementTransform(MathTex('-0.4')), etc.:  53%|█████▎    | 9/17 [00:00<00:00, 40.23it/s]Animation 6: ReplacementTransform(MathTex('-0.4')), etc.:  82%|████████▏ | 14/17 [00:00<00:00, 43.30it/s]                                                                                                         [10/29/26 03:35:48] INFO     Animation 6 : Partial      scene_file_writer.py:601
+                             movie file written in                              
+                             '/usr/local/google/home/bu                         
+                             tterworthnat/HACK/Trasform                         
+                             ers4Dummies/state_of_ai/sr                         
+                             c/manim/_media/videos/m02_                         
+                             layer_matrix/1080p30/parti                         
+                             al_movie_files/LayerMatrix                         
+                             /uncached_00006.mp4'                               
+                    INFO     Caching disabled.              cairo_renderer.py:83
+Animation 7: _MethodAnimation(Line), etc.:   0%|          | 0/12 [00:00<?, ?it/s]Animation 7: _MethodAnimation(Line), etc.:  33%|███▎      | 4/12 [00:00<00:00, 29.62it/s]Animation 7: _MethodAnimation(Line), etc.:  58%|█████▊    | 7/12 [00:00<00:00, 24.33it/s]Animation 7: _MethodAnimation(Line), etc.:  83%|████████▎ | 10/12 [00:00<00:00, 22.39it/s]                                                                                          [10/29/26 03:35:53] INFO     Animation 7 : Partial      scene_file_writer.py:601
+                             movie file written in                              
+                             '/usr/local/google/home/bu                         
+                             tterworthnat/HACK/Trasform                         
+                             ers4Dummies/state_of_ai/sr                         
+                             c/manim/_media/videos/m02_                         
+                             layer_matrix/1080p30/parti                         
+                             al_movie_files/LayerMatrix                         
+                             /uncached_00007.mp4'                               
+                    INFO     Caching disabled.              cairo_renderer.py:83
+Animation 8: ReplacementTransform(MathTex('0.3')), etc.:   0%|          | 0/17 [00:00<?, ?it/s]Animation 8: ReplacementTransform(MathTex('0.3')), etc.:  24%|██▎       | 4/17 [00:00<00:00, 26.84it/s]Animation 8: ReplacementTransform(MathTex('0.3')), etc.:  41%|████      | 7/17 [00:00<00:00, 27.48it/s]Animation 8: ReplacementTransform(MathTex('0.3')), etc.:  65%|██████▍   | 11/17 [00:00<00:00, 31.63it/s]Animation 8: ReplacementTransform(MathTex('0.3')), etc.:  94%|█████████▍| 16/17 [00:00<00:00, 37.60it/s]                                                                                                        [10/29/26 03:36:00] INFO     Animation 8 : Partial      scene_file_writer.py:601
+                             movie file written in                              
+                             '/usr/local/google/home/bu                         
+                             tterworthnat/HACK/Trasform                         
+                             ers4Dummies/state_of_ai/sr                         
+                             c/manim/_media/videos/m02_                         
+                             layer_matrix/1080p30/parti                         
+                             al_movie_files/LayerMatrix                         
+                             /uncached_00008.mp4'                               
+                    INFO     Caching disabled.              cairo_renderer.py:83
+Animation 9: _MethodAnimation(Line), etc.:   0%|          | 0/12 [00:00<?, ?it/s]Animation 9: _MethodAnimation(Line), etc.:  17%|█▋        | 2/12 [00:00<00:00, 15.42it/s]Animation 9: _MethodAnimation(Line), etc.:  33%|███▎      | 4/12 [00:00<00:00, 16.93it/s]Animation 9: _MethodAnimation(Line), etc.:  50%|█████     | 6/12 [00:00<00:00, 16.77it/s]Animation 9: _MethodAnimation(Line), etc.:  67%|██████▋   | 8/12 [00:00<00:00, 16.41it/s]Animation 9: _MethodAnimation(Line), etc.:  92%|█████████▏| 11/12 [00:00<00:00, 17.81it/s]                                                                                          [10/29/26 03:36:06] INFO     Animation 9 : Partial      scene_file_writer.py:601
+                             movie file written in                              
+                             '/usr/local/google/home/bu                         
+                             tterworthnat/HACK/Trasform                         
+                             ers4Dummies/state_of_ai/sr                         
+                             c/manim/_media/videos/m02_                         
+                             layer_matrix/1080p30/parti                         
+                             al_movie_files/LayerMatrix                         
+                             /uncached_00009.mp4'                               
+                    INFO     Caching disabled.              cairo_renderer.py:83
+Animation 10: ReplacementTransform(MathTex('-0.9')), etc.:   0%|          | 0/17 [00:00<?, ?it/s]Animation 10: ReplacementTransform(MathTex('-0.9')), etc.:  35%|███▌      | 6/17 [00:00<00:00, 53.73it/s]Animation 10: ReplacementTransform(MathTex('-0.9')), etc.:  71%|███████   | 12/17 [00:00<00:00, 55.84it/s]                                                                                                          [10/29/26 03:36:13] INFO     Animation 10 : Partial     scene_file_writer.py:601
+                             movie file written in                              
+                             '/usr/local/google/home/bu                         
+                             tterworthnat/HACK/Trasform                         
+                             ers4Dummies/state_of_ai/sr                         
+                             c/manim/_media/videos/m02_                         
+                             layer_matrix/1080p30/parti                         
+                             al_movie_files/LayerMatrix                         
+                             /uncached_00010.mp4'                               
+                    INFO     Caching disabled.              cairo_renderer.py:83
+Animation 11: _MethodAnimation(Line), etc.:   0%|          | 0/15 [00:00<?, ?it/s]Animation 11: _MethodAnimation(Line), etc.:  20%|██        | 3/15 [00:00<00:00, 29.76it/s]Animation 11: _MethodAnimation(Line), etc.:  40%|████      | 6/15 [00:00<00:00, 29.84it/s]Animation 11: _MethodAnimation(Line), etc.:  60%|██████    | 9/15 [00:00<00:00, 25.42it/s]Animation 11: _MethodAnimation(Line), etc.:  87%|████████▋ | 13/15 [00:00<00:00, 25.32it/s]                                                                                           [10/29/26 03:36:19] INFO     Animation 11 : Partial     scene_file_writer.py:601
+                             movie file written in                              
+                             '/usr/local/google/home/bu                         
+                             tterworthnat/HACK/Trasform                         
+                             ers4Dummies/state_of_ai/sr                         
+                             c/manim/_media/videos/m02_                         
+                             layer_matrix/1080p30/parti                         
+                             al_movie_files/LayerMatrix                         
+                             /uncached_00011.mp4'                               
+                    INFO     Caching disabled.              cairo_renderer.py:83
+Animation 12: Create(VGroup of 2 submobjects), etc.:   0%|          | 0/30 [00:00<?, ?it/s]Animation 12: Create(VGroup of 2 submobjects), etc.:  27%|██▋       | 8/30 [00:00<00:00, 69.86it/s]Animation 12: Create(VGroup of 2 submobjects), etc.:  50%|█████     | 15/30 [00:00<00:00, 61.58it/s]Animation 12: Create(VGroup of 2 submobjects), etc.:  73%|███████▎  | 22/30 [00:00<00:00, 63.35it/s]Animation 12: Create(VGroup of 2 submobjects), etc.:  97%|█████████▋| 29/30 [00:00<00:00, 56.25it/s]                                                                                                    [10/29/26 03:36:31] INFO     Animation 12 : Partial     scene_file_writer.py:601
+                             movie file written in                              
+                             '/usr/local/google/home/bu                         
+                             tterworthnat/HACK/Trasform                         
+                             ers4Dummies/state_of_ai/sr                         
+                             c/manim/_media/videos/m02_                         
+                             layer_matrix/1080p30/parti                         
+                             al_movie_files/LayerMatrix                         
+                             /uncached_00012.mp4'                               
+                    INFO     Caching disabled.              cairo_renderer.py:83
+Animation 13: FadeIn(MathTex('+')), etc.:   0%|          | 0/27 [00:00<?, ?it/s]Animation 13: FadeIn(MathTex('+')), etc.:  22%|██▏       | 6/27 [00:00<00:00, 58.10it/s]Animation 13: FadeIn(MathTex('+')), etc.:  44%|████▍     | 12/27 [00:00<00:00, 50.38it/s]Animation 13: FadeIn(MathTex('+')), etc.:  70%|███████   | 19/27 [00:00<00:00, 55.00it/s]Animation 13: FadeIn(MathTex('+')), etc.:  96%|█████████▋| 26/27 [00:00<00:00, 58.76it/s]                                                                                         [10/29/26 03:36:43] INFO     Animation 13 : Partial     scene_file_writer.py:601
+                             movie file written in                              
+                             '/usr/local/google/home/bu                         
+                             tterworthnat/HACK/Trasform                         
+                             ers4Dummies/state_of_ai/sr                         
+                             c/manim/_media/videos/m02_                         
+                             layer_matrix/1080p30/parti                         
+                             al_movie_files/LayerMatrix                         
+                             /uncached_00013.mp4'                               
+                    INFO     Caching disabled.              cairo_renderer.py:83
+Animation 14: FadeIn(MathTex('\\sigma')), etc.:   0%|          | 0/24 [00:00<?, ?it/s]Animation 14: FadeIn(MathTex('\\sigma')), etc.:  25%|██▌       | 6/24 [00:00<00:00, 59.24it/s]Animation 14: FadeIn(MathTex('\\sigma')), etc.:  54%|█████▍    | 13/24 [00:00<00:00, 58.65it/s]Animation 14: FadeIn(MathTex('\\sigma')), etc.:  83%|████████▎ | 20/24 [00:00<00:00, 60.14it/s]                                                                                               [10/29/26 03:36:55] INFO     Animation 14 : Partial     scene_file_writer.py:601
+                             movie file written in                              
+                             '/usr/local/google/home/bu                         
+                             tterworthnat/HACK/Trasform                         
+                             ers4Dummies/state_of_ai/sr                         
+                             c/manim/_media/videos/m02_                         
+                             layer_matrix/1080p30/parti                         
+                             al_movie_files/LayerMatrix                         
+                             /uncached_00014.mp4'                               
+                    INFO     Caching disabled.              cairo_renderer.py:83
+[10/29/26 03:36:56] INFO     Animation 15 : Partial     scene_file_writer.py:601
+                             movie file written in                              
+                             '/usr/local/google/home/bu                         
+                             tterworthnat/HACK/Trasform                         
+                             ers4Dummies/state_of_ai/sr                         
+                             c/manim/_media/videos/m02_                         
+                             layer_matrix/1080p30/parti                         
+                             al_movie_files/LayerMatrix                         
+                             /uncached_00015.mp4'                               
+                    INFO     Caching disabled.              cairo_renderer.py:83
+Animation 16: Create(SurroundingRectangle), etc.:   0%|          | 0/15 [00:00<?, ?it/s]Animation 16: Create(SurroundingRectangle), etc.:  73%|███████▎  | 11/15 [00:00<00:00, 108.58it/s]                                                                                                  [10/29/26 03:37:03] INFO     Animation 16 : Partial     scene_file_writer.py:601
+                             movie file written in                              
+                             '/usr/local/google/home/bu                         
+                             tterworthnat/HACK/Trasform                         
+                             ers4Dummies/state_of_ai/sr                         
+                             c/manim/_media/videos/m02_                         
+                             layer_matrix/1080p30/parti                         
+                             al_movie_files/LayerMatrix                         
+                             /uncached_00016.mp4'                               
+[10/29/26 03:37:04] INFO     Caching disabled.              cairo_renderer.py:83
+Animation 17: LaggedStart(Group), etc.:   0%|          | 0/42 [00:00<?, ?it/s]Animation 17: LaggedStart(Group), etc.:   7%|▋         | 3/42 [00:00<00:01, 26.22it/s]Animation 17: LaggedStart(Group), etc.:  14%|█▍        | 6/42 [00:00<00:03, 10.07it/s]Animation 17: LaggedStart(Group), etc.:  19%|█▉        | 8/42 [00:00<00:03, 10.88it/s]Animation 17: LaggedStart(Group), etc.:  24%|██▍       | 10/42 [00:01<00:04,  6.86it/s]Animation 17: LaggedStart(Group), etc.:  26%|██▌       | 11/42 [00:01<00:05,  5.99it/s]Animation 17: LaggedStart(Group), etc.:  31%|███       | 13/42 [00:01<00:04,  7.10it/s]Animation 17: LaggedStart(Group), etc.:  33%|███▎      | 14/42 [00:01<00:03,  7.50it/s]Animation 17: LaggedStart(Group), etc.:  36%|███▌      | 15/42 [00:01<00:03,  7.33it/s]Animation 17: LaggedStart(Group), etc.:  40%|████      | 17/42 [00:02<00:02,  8.79it/s]Animation 17: LaggedStart(Group), etc.:  45%|████▌     | 19/42 [00:02<00:02,  9.73it/s]Animation 17: LaggedStart(Group), etc.:  50%|█████     | 21/42 [00:02<00:02,  9.74it/s]Animation 17: LaggedStart(Group), etc.:  55%|█████▍    | 23/42 [00:02<00:01,  9.56it/s]Animation 17: LaggedStart(Group), etc.:  57%|█████▋    | 24/42 [00:02<00:01,  9.16it/s]Animation 17: LaggedStart(Group), etc.:  62%|██████▏   | 26/42 [00:03<00:01,  8.45it/s]Animation 17: LaggedStart(Group), etc.:  67%|██████▋   | 28/42 [00:03<00:01, 10.04it/s]Animation 17: LaggedStart(Group), etc.:  71%|███████▏  | 30/42 [00:03<00:01,  7.77it/s]Animation 17: LaggedStart(Group), etc.:  76%|███████▌  | 32/42 [00:03<00:01,  8.63it/s]Animation 17: LaggedStart(Group), etc.:  79%|███████▊  | 33/42 [00:03<00:01,  8.76it/s]Animation 17: LaggedStart(Group), etc.:  83%|████████▎ | 35/42 [00:04<00:00,  9.31it/s]Animation 17: LaggedStart(Group), etc.:  86%|████████▌ | 36/42 [00:04<00:00,  6.57it/s]Animation 17: LaggedStart(Group), etc.:  88%|████████▊ | 37/42 [00:04<00:00,  6.72it/s]Animation 17: LaggedStart(Group), etc.:  93%|█████████▎| 39/42 [00:04<00:00,  8.51it/s]Animation 17: LaggedStart(Group), etc.:  95%|█████████▌| 40/42 [00:04<00:00,  6.82it/s]Animation 17: LaggedStart(Group), etc.: 100%|██████████| 42/42 [00:05<00:00,  7.38it/s]                                                                                       [10/29/26 03:37:29] INFO     Animation 17 : Partial     scene_file_writer.py:601
+                             movie file written in                              
+                             '/usr/local/google/home/bu                         
+                             tterworthnat/HACK/Trasform                         
+                             ers4Dummies/state_of_ai/sr                         
+                             c/manim/_media/videos/m02_                         
+                             layer_matrix/1080p30/parti                         
+                             al_movie_files/LayerMatrix                         
+                             /uncached_00017.mp4'                               
+                    INFO     Caching disabled.              cairo_renderer.py:83
+Animation 18: Create(SurroundingRectangle), etc.:   0%|          | 0/24 [00:00<?, ?it/s]Animation 18: Create(SurroundingRectangle), etc.:  21%|██        | 5/24 [00:00<00:00, 41.43it/s]Animation 18: Create(SurroundingRectangle), etc.:  42%|████▏     | 10/24 [00:00<00:00, 30.93it/s]Animation 18: Create(SurroundingRectangle), etc.:  58%|█████▊    | 14/24 [00:00<00:00, 32.47it/s]Animation 18: Create(SurroundingRectangle), etc.:  83%|████████▎ | 20/24 [00:00<00:00, 39.87it/s]                                                                                                 [10/29/26 03:37:41] INFO     Animation 18 : Partial     scene_file_writer.py:601
+                             movie file written in                              
+                             '/usr/local/google/home/bu                         
+                             tterworthnat/HACK/Trasform                         
+                             ers4Dummies/state_of_ai/sr                         
+                             c/manim/_media/videos/m02_                         
+                             layer_matrix/1080p30/parti                         
+                             al_movie_files/LayerMatrix                         
+                             /uncached_00018.mp4'                               
+                    INFO     Caching disabled.              cairo_renderer.py:83
+Animation 19: Write(VGroup of 2 submobjects):   0%|          | 0/15 [00:00<?, ?it/s]Animation 19: Write(VGroup of 2 submobjects):  20%|██        | 3/15 [00:00<00:00, 25.98it/s]Animation 19: Write(VGroup of 2 submobjects):  47%|████▋     | 7/15 [00:00<00:00, 31.55it/s]                                                                                            [10/29/26 03:37:49] INFO     Animation 19 : Partial     scene_file_writer.py:601
+                             movie file written in                              
+                             '/usr/local/google/home/bu                         
+                             tterworthnat/HACK/Trasform                         
+                             ers4Dummies/state_of_ai/sr                         
+                             c/manim/_media/videos/m02_                         
+                             layer_matrix/1080p30/parti                         
+                             al_movie_files/LayerMatrix                         
+                             /uncached_00019.mp4'                               
+                    INFO     Caching disabled.              cairo_renderer.py:83
+Animation 20: FadeOut(VGroup of 11 submobjects), etc.:   0%|          | 0/24 [00:00<?, ?it/s]Animation 20: FadeOut(VGroup of 11 submobjects), etc.:   8%|▊         | 2/24 [00:00<00:01, 13.45it/s]Animation 20: FadeOut(VGroup of 11 submobjects), etc.:  17%|█▋        | 4/24 [00:00<00:01, 12.52it/s]Animation 20: FadeOut(VGroup of 11 submobjects), etc.:  25%|██▌       | 6/24 [00:00<00:01,  9.14it/s]Animation 20: FadeOut(VGroup of 11 submobjects), etc.:  29%|██▉       | 7/24 [00:00<00:02,  7.54it/s]Animation 20: FadeOut(VGroup of 11 submobjects), etc.:  38%|███▊      | 9/24 [00:01<00:02,  6.59it/s]Animation 20: FadeOut(VGroup of 11 submobjects), etc.:  46%|████▌     | 11/24 [00:01<00:01,  8.05it/s]Animation 20: FadeOut(VGroup of 11 submobjects), etc.:  50%|█████     | 12/24 [00:01<00:01,  8.18it/s]Animation 20: FadeOut(VGroup of 11 submobjects), etc.:  58%|█████▊    | 14/24 [00:01<00:01,  9.88it/s]Animation 20: FadeOut(VGroup of 11 submobjects), etc.:  67%|██████▋   | 16/24 [00:01<00:00, 11.38it/s]Animation 20: FadeOut(VGroup of 11 submobjects), etc.:  75%|███████▌  | 18/24 [00:02<00:00,  7.06it/s]Animation 20: FadeOut(VGroup of 11 submobjects), etc.:  79%|███████▉  | 19/24 [00:02<00:00,  6.91it/s]Animation 20: FadeOut(VGroup of 11 submobjects), etc.:  83%|████████▎ | 20/24 [00:02<00:00,  7.10it/s]Animation 20: FadeOut(VGroup of 11 submobjects), etc.:  88%|████████▊ | 21/24 [00:02<00:00,  6.91it/s]Animation 20: FadeOut(VGroup of 11 submobjects), etc.:  96%|█████████▌| 23/24 [00:02<00:00,  7.90it/s]Animation 20: FadeOut(VGroup of 11 submobjects), etc.: 100%|██████████| 24/24 [00:03<00:00,  7.39it/s]                                                                                                      [10/29/26 03:38:03] INFO     Animation 20 : Partial     scene_file_writer.py:601
+                             movie file written in                              
+                             '/usr/local/google/home/bu                         
+                             tterworthnat/HACK/Trasform                         
+                             ers4Dummies/state_of_ai/sr                         
+                             c/manim/_media/videos/m02_                         
+                             layer_matrix/1080p30/parti                         
+                             al_movie_files/LayerMatrix                         
+                             /uncached_00020.mp4'                               
+                    INFO     Caching disabled.              cairo_renderer.py:83
+Animation 21: Write(MathTexPart('0.73')):   0%|          | 0/12 [00:00<?, ?it/s]Animation 21: Write(MathTexPart('0.73')):  67%|██████▋   | 8/12 [00:00<00:00, 77.50it/s]                                                                                        [10/29/26 03:38:09] INFO     Animation 21 : Partial     scene_file_writer.py:601
+                             movie file written in                              
+                             '/usr/local/google/home/bu                         
+                             tterworthnat/HACK/Trasform                         
+                             ers4Dummies/state_of_ai/sr                         
+                             c/manim/_media/videos/m02_                         
+                             layer_matrix/1080p30/parti                         
+                             al_movie_files/LayerMatrix                         
+                             /uncached_00021.mp4'                               
+                    INFO     Caching disabled.              cairo_renderer.py:83
+Animation 22: TransformFromCopy(MathTex('0.73')), etc.:   0%|          | 0/27 [00:00<?, ?it/s]Animation 22: TransformFromCopy(MathTex('0.73')), etc.:   7%|▋         | 2/27 [00:00<00:01, 14.03it/s]Animation 22: TransformFromCopy(MathTex('0.73')), etc.:  15%|█▍        | 4/27 [00:00<00:01, 11.77it/s]Animation 22: TransformFromCopy(MathTex('0.73')), etc.:  22%|██▏       | 6/27 [00:00<00:01, 12.23it/s]Animation 22: TransformFromCopy(MathTex('0.73')), etc.:  30%|██▉       | 8/27 [00:00<00:01, 13.49it/s]Animation 22: TransformFromCopy(MathTex('0.73')), etc.:  37%|███▋      | 10/27 [00:00<00:01, 11.31it/s]Animation 22: TransformFromCopy(MathTex('0.73')), etc.:  44%|████▍     | 12/27 [00:01<00:01,  9.81it/s]Animation 22: TransformFromCopy(MathTex('0.73')), etc.:  52%|█████▏    | 14/27 [00:01<00:01,  9.92it/s]Animation 22: TransformFromCopy(MathTex('0.73')), etc.:  59%|█████▉    | 16/27 [00:01<00:01,  9.01it/s]Animation 22: TransformFromCopy(MathTex('0.73')), etc.:  63%|██████▎   | 17/27 [00:01<00:01,  8.44it/s]Animation 22: TransformFromCopy(MathTex('0.73')), etc.:  70%|███████   | 19/27 [00:01<00:00,  9.05it/s]Animation 22: TransformFromCopy(MathTex('0.73')), etc.:  78%|███████▊  | 21/27 [00:02<00:00,  9.34it/s]Animation 22: TransformFromCopy(MathTex('0.73')), etc.:  85%|████████▌ | 23/27 [00:02<00:00, 10.33it/s]Animation 22: TransformFromCopy(MathTex('0.73')), etc.:  93%|█████████▎| 25/27 [00:02<00:00,  9.73it/s]Animation 22: TransformFromCopy(MathTex('0.73')), etc.: 100%|██████████| 27/27 [00:02<00:00,  9.91it/s]                                                                                                       [10/29/26 03:38:24] INFO     Animation 22 : Partial     scene_file_writer.py:601
+                             movie file written in                              
+                             '/usr/local/google/home/bu                         
+                             tterworthnat/HACK/Trasform                         
+                             ers4Dummies/state_of_ai/sr                         
+                             c/manim/_media/videos/m02_                         
+                             layer_matrix/1080p30/parti                         
+                             al_movie_files/LayerMatrix                         
+                             /uncached_00022.mp4'                               
+[10/29/26 03:38:25] INFO     Caching disabled.              cairo_renderer.py:83
+                    INFO     Animation 23 : Partial     scene_file_writer.py:601
+                             movie file written in                              
+                             '/usr/local/google/home/bu                         
+                             tterworthnat/HACK/Trasform                         
+                             ers4Dummies/state_of_ai/sr                         
+                             c/manim/_media/videos/m02_                         
+                             layer_matrix/1080p30/parti                         
+                             al_movie_files/LayerMatrix                         
+                             /uncached_00023.mp4'                               
+                    INFO     Caching disabled.              cairo_renderer.py:83
+Animation 24: FadeOut(MathTex('\\sigma( 1.02 ) = 0.73')), etc.:   0%|          | 0/9 [00:00<?, ?it/s]Animation 24: FadeOut(MathTex('\\sigma( 1.02 ) = 0.73')), etc.:  22%|██▏       | 2/9 [00:00<00:00, 16.44it/s]Animation 24: FadeOut(MathTex('\\sigma( 1.02 ) = 0.73')), etc.:  67%|██████▋   | 6/9 [00:00<00:00, 20.99it/s]Animation 24: FadeOut(MathTex('\\sigma( 1.02 ) = 0.73')), etc.: 100%|██████████| 9/9 [00:00<00:00, 23.69it/s]                                                                                                             [10/29/26 03:38:31] INFO     Animation 24 : Partial     scene_file_writer.py:601
+                             movie file written in                              
+                             '/usr/local/google/home/bu                         
+                             tterworthnat/HACK/Trasform                         
+                             ers4Dummies/state_of_ai/sr                         
+                             c/manim/_media/videos/m02_                         
+                             layer_matrix/1080p30/parti                         
+                             al_movie_files/LayerMatrix                         
+                             /uncached_00024.mp4'                               
+                    INFO     Caching disabled.              cairo_renderer.py:83
+Animation 25: Transform(SurroundingRectangle), etc.:   0%|          | 0/9 [00:00<?, ?it/s]Animation 25: Transform(SurroundingRectangle), etc.:  56%|█████▌    | 5/9 [00:00<00:00, 43.26it/s]                                                                                                  [10/29/26 03:38:34] INFO     Animation 25 : Partial     scene_file_writer.py:601
+                             movie file written in                              
+                             '/usr/local/google/home/bu                         
+                             tterworthnat/HACK/Trasform                         
+                             ers4Dummies/state_of_ai/sr                         
+                             c/manim/_media/videos/m02_                         
+                             layer_matrix/1080p30/parti                         
+                             al_movie_files/LayerMatrix                         
+                             /uncached_00025.mp4'                               
+                    INFO     Caching disabled.              cairo_renderer.py:83
+Animation 26: FadeIn(MathTex('0.58')), etc.:   0%|          | 0/11 [00:00<?, ?it/s]Animation 26: FadeIn(MathTex('0.58')), etc.:  27%|██▋       | 3/11 [00:00<00:00, 24.08it/s]Animation 26: FadeIn(MathTex('0.58')), etc.:  55%|█████▍    | 6/11 [00:00<00:00, 19.70it/s]Animation 26: FadeIn(MathTex('0.58')), etc.:  82%|████████▏ | 9/11 [00:00<00:00, 18.86it/s]Animation 26: FadeIn(MathTex('0.58')), etc.: 100%|██████████| 11/11 [00:00<00:00, 17.08it/s]                                                                                            [10/29/26 03:38:39] INFO     Animation 26 : Partial     scene_file_writer.py:601
+                             movie file written in                              
+                             '/usr/local/google/home/bu                         
+                             tterworthnat/HACK/Trasform                         
+                             ers4Dummies/state_of_ai/sr                         
+                             c/manim/_media/videos/m02_                         
+                             layer_matrix/1080p30/parti                         
+                             al_movie_files/LayerMatrix                         
+                             /uncached_00026.mp4'                               
+                    INFO     Caching disabled.              cairo_renderer.py:83
+Animation 27: Transform(SurroundingRectangle), etc.:   0%|          | 0/9 [00:00<?, ?it/s]Animation 27: Transform(SurroundingRectangle), etc.:  33%|███▎      | 3/9 [00:00<00:00, 27.63it/s]                                                                                                  [10/29/26 03:38:45] INFO     Animation 27 : Partial     scene_file_writer.py:601
+                             movie file written in                              
+                             '/usr/local/google/home/bu                         
+                             tterworthnat/HACK/Trasform                         
+                             ers4Dummies/state_of_ai/sr                         
+                             c/manim/_media/videos/m02_                         
+                             layer_matrix/1080p30/parti                         
+                             al_movie_files/LayerMatrix                         
+                             /uncached_00027.mp4'                               
+                    INFO     Caching disabled.              cairo_renderer.py:83
+Animation 28: FadeIn(MathTex('0.57')), etc.:   0%|          | 0/11 [00:00<?, ?it/s]Animation 28: FadeIn(MathTex('0.57')), etc.:  18%|█▊        | 2/11 [00:00<00:01,  8.63it/s]Animation 28: FadeIn(MathTex('0.57')), etc.:  27%|██▋       | 3/11 [00:00<00:00,  8.89it/s]Animation 28: FadeIn(MathTex('0.57')), etc.:  45%|████▌     | 5/11 [00:00<00:00, 10.80it/s]Animation 28: FadeIn(MathTex('0.57')), etc.:  64%|██████▎   | 7/11 [00:00<00:00, 11.37it/s]Animation 28: FadeIn(MathTex('0.57')), etc.:  82%|████████▏ | 9/11 [00:00<00:00,  9.90it/s]Animation 28: FadeIn(MathTex('0.57')), etc.: 100%|██████████| 11/11 [00:01<00:00,  7.92it/s]                                                                                            [10/29/26 03:38:51] INFO     Animation 28 : Partial     scene_file_writer.py:601
+                             movie file written in                              
+                             '/usr/local/google/home/bu                         
+                             tterworthnat/HACK/Trasform                         
+                             ers4Dummies/state_of_ai/sr                         
+                             c/manim/_media/videos/m02_                         
+                             layer_matrix/1080p30/parti                         
+                             al_movie_files/LayerMatrix                         
+                             /uncached_00028.mp4'                               
+                    INFO     Caching disabled.              cairo_renderer.py:83
+Animation 29: Transform(SurroundingRectangle), etc.:   0%|          | 0/9 [00:00<?, ?it/s]Animation 29: Transform(SurroundingRectangle), etc.:  56%|█████▌    | 5/9 [00:00<00:00, 46.69it/s]                                                                                                  [10/29/26 03:38:55] INFO     Animation 29 : Partial     scene_file_writer.py:601
+                             movie file written in                              
+                             '/usr/local/google/home/bu                         
+                             tterworthnat/HACK/Trasform                         
+                             ers4Dummies/state_of_ai/sr                         
+                             c/manim/_media/videos/m02_                         
+                             layer_matrix/1080p30/parti                         
+                             al_movie_files/LayerMatrix                         
+                             /uncached_00029.mp4'                               
+                    INFO     Caching disabled.              cairo_renderer.py:83
+Animation 30: FadeIn(MathTex('0.33')), etc.:   0%|          | 0/11 [00:00<?, ?it/s]Animation 30: FadeIn(MathTex('0.33')), etc.:  18%|█▊        | 2/11 [00:00<00:00, 10.71it/s]Animation 30: FadeIn(MathTex('0.33')), etc.:  36%|███▋      | 4/11 [00:00<00:00, 12.14it/s]Animation 30: FadeIn(MathTex('0.33')), etc.:  64%|██████▎   | 7/11 [00:00<00:00, 16.26it/s]Animation 30: FadeIn(MathTex('0.33')), etc.:  82%|████████▏ | 9/11 [00:00<00:00, 14.72it/s]Animation 30: FadeIn(MathTex('0.33')), etc.: 100%|██████████| 11/11 [00:00<00:00, 14.26it/s]                                                                                            [10/29/26 03:39:00] INFO     Animation 30 : Partial     scene_file_writer.py:601
+                             movie file written in                              
+                             '/usr/local/google/home/bu                         
+                             tterworthnat/HACK/Trasform                         
+                             ers4Dummies/state_of_ai/sr                         
+                             c/manim/_media/videos/m02_                         
+                             layer_matrix/1080p30/parti                         
+                             al_movie_files/LayerMatrix                         
+                             /uncached_00030.mp4'                               
+                    INFO     Caching disabled.              cairo_renderer.py:83
+Animation 31: FadeOut(SurroundingRectangle), etc.:   0%|          | 0/9 [00:00<?, ?it/s]Animation 31: FadeOut(SurroundingRectangle), etc.:  44%|████▍     | 4/9 [00:00<00:00, 39.20it/s]Animation 31: FadeOut(SurroundingRectangle), etc.: 100%|██████████| 9/9 [00:00<00:00, 41.58it/s]                                                                                                [10/29/26 03:39:05] INFO     Animation 31 : Partial     scene_file_writer.py:601
+                             movie file written in                              
+                             '/usr/local/google/home/bu                         
+                             tterworthnat/HACK/Trasform                         
+                             ers4Dummies/state_of_ai/sr                         
+                             c/manim/_media/videos/m02_                         
+                             layer_matrix/1080p30/parti                         
+                             al_movie_files/LayerMatrix                         
+                             /uncached_00031.mp4'                               
+                    INFO     Caching disabled.              cairo_renderer.py:83
+Animation 32: TransformFromCopy(MathTexPart('\\mathbf{a}')), etc.:   0%|          | 0/36 [00:00<?, ?it/s]Animation 32: TransformFromCopy(MathTexPart('\\mathbf{a}')), etc.:  17%|█▋        | 6/36 [00:00<00:00, 55.12it/s]Animation 32: TransformFromCopy(MathTexPart('\\mathbf{a}')), etc.:  33%|███▎      | 12/36 [00:00<00:00, 39.44it/s]Animation 32: TransformFromCopy(MathTexPart('\\mathbf{a}')), etc.:  58%|█████▊    | 21/36 [00:00<00:00, 50.47it/s]Animation 32: TransformFromCopy(MathTexPart('\\mathbf{a}')), etc.:  75%|███████▌  | 27/36 [00:00<00:00, 42.03it/s]Animation 32: TransformFromCopy(MathTexPart('\\mathbf{a}')), etc.:  89%|████████▉ | 32/36 [00:00<00:00, 35.53it/s]                                                                                                                  [10/29/26 03:39:21] INFO     Animation 32 : Partial     scene_file_writer.py:601
+                             movie file written in                              
+                             '/usr/local/google/home/bu                         
+                             tterworthnat/HACK/Trasform                         
+                             ers4Dummies/state_of_ai/sr                         
+                             c/manim/_media/videos/m02_                         
+                             layer_matrix/1080p30/parti                         
+                             al_movie_files/LayerMatrix                         
+                             /uncached_00032.mp4'                               
+                    INFO     Caching disabled.              cairo_renderer.py:83
+Animation 33: Create(SurroundingRectangle):   0%|          | 0/21 [00:00<?, ?it/s]Animation 33: Create(SurroundingRectangle):  29%|██▊       | 6/21 [00:00<00:00, 58.36it/s]Animation 33: Create(SurroundingRectangle):  86%|████████▌ | 18/21 [00:00<00:00, 92.08it/s]                                                                                           [10/29/26 03:39:29] INFO     Animation 33 : Partial     scene_file_writer.py:601
+                             movie file written in                              
+                             '/usr/local/google/home/bu                         
+                             tterworthnat/HACK/Trasform                         
+                             ers4Dummies/state_of_ai/sr                         
+                             c/manim/_media/videos/m02_                         
+                             layer_matrix/1080p30/parti                         
+                             al_movie_files/LayerMatrix                         
+                             /uncached_00033.mp4'                               
+                    INFO     Caching disabled.              cairo_renderer.py:83
+[10/29/26 03:39:32] INFO     Animation 34 : Partial     scene_file_writer.py:601
+                             movie file written in                              
+                             '/usr/local/google/home/bu                         
+                             tterworthnat/HACK/Trasform                         
+                             ers4Dummies/state_of_ai/sr                         
+                             c/manim/_media/videos/m02_                         
+                             layer_matrix/1080p30/parti                         
+                             al_movie_files/LayerMatrix                         
+                             /uncached_00034.mp4'                               
+                    INFO     Combining to Movie file.   scene_file_writer.py:753
+[10/29/26 03:39:33] INFO                                scene_file_writer.py:904
+                             File ready at                                      
+                             '/usr/local/google/home/bu                         
+                             tterworthnat/HACK/Trasform                         
+                             ers4Dummies/state_of_ai/sr                         
+                             c/manim/_media/videos/m02_                         
+                             layer_matrix/1080p30/Layer                         
+                             Matrix.mp4'                                        
+                                                                                
+                    INFO     Rendered LayerMatrix                   scene.py:278
+                             Played 35 animations                               
++ ffmpeg -nostdin -loglevel error -y -i /usr/local/google/home/butterworthnat/HACK/Trasformers4Dummies/state_of_ai/src/manim/_media/videos/m02_layer_matrix/1080p30/LayerMatrix.mp4 -an -c:v libx264 -pix_fmt yuv420p -crf 21 -movflags +faststart /usr/local/google/home/butterworthnat/HACK/Trasformers4Dummies/state_of_ai/assets/video/m02_layer_matrix.mp4
++ ffmpeg -nostdin -loglevel error -y -ss 21.850 -i /usr/local/google/home/butterworthnat/HACK/Trasformers4Dummies/state_of_ai/assets/video/m02_layer_matrix.mp4 -frames:v 1 -q:v 2 /usr/local/google/home/butterworthnat/HACK/Trasformers4Dummies/state_of_ai/assets/poster/m02_layer_matrix.jpg
++ ffmpeg -nostdin -loglevel error -y -ss 1.105 -i /usr/local/google/home/butterworthnat/HACK/Trasformers4Dummies/state_of_ai/assets/video/m02_layer_matrix.mp4 -frames:v 1 /usr/local/google/home/butterworthnat/HACK/Trasformers4Dummies/state_of_ai/src/manim/_media/check/m02_layer_matrix/f00_001.1s.png
++ ffmpeg -nostdin -loglevel error -y -ss 3.315 -i /usr/local/google/home/butterworthnat/HACK/Trasformers4Dummies/state_of_ai/assets/video/m02_layer_matrix.mp4 -frames:v 1 /usr/local/google/home/butterworthnat/HACK/Trasformers4Dummies/state_of_ai/src/manim/_media/check/m02_layer_matrix/f01_003.3s.png
++ ffmpeg -nostdin -loglevel error -y -ss 5.525 -i /usr/local/google/home/butterworthnat/HACK/Trasformers4Dummies/state_of_ai/assets/video/m02_layer_matrix.mp4 -frames:v 1 /usr/local/google/home/butterworthnat/HACK/Trasformers4Dummies/state_of_ai/src/manim/_media/check/m02_layer_matrix/f02_005.5s.png
++ ffmpeg -nostdin -loglevel error -y -ss 7.735 -i /usr/local/google/home/butterworthnat/HACK/Trasformers4Dummies/state_of_ai/assets/video/m02_layer_matrix.mp4 -frames:v 1 /usr/local/google/home/butterworthnat/HACK/Trasformers4Dummies/state_of_ai/src/manim/_media/check/m02_layer_matrix/f03_007.7s.png
++ ffmpeg -nostdin -loglevel error -y -ss 9.945 -i /usr/local/google/home/butterworthnat/HACK/Trasformers4Dummies/state_of_ai/assets/video/m02_layer_matrix.mp4 -frames:v 1 /usr/local/google/home/butterworthnat/HACK/Trasformers4Dummies/state_of_ai/src/manim/_media/check/m02_layer_matrix/f04_009.9s.png
++ ffmpeg -nostdin -loglevel error -y -ss 12.155 -i /usr/local/google/home/butterworthnat/HACK/Trasformers4Dummies/state_of_ai/assets/video/m02_layer_matrix.mp4 -frames:v 1 /usr/local/google/home/butterworthnat/HACK/Trasformers4Dummies/state_of_ai/src/manim/_media/check/m02_layer_matrix/f05_012.2s.png
++ ffmpeg -nostdin -loglevel error -y -ss 14.365 -i /usr/local/google/home/butterworthnat/HACK/Trasformers4Dummies/state_of_ai/assets/video/m02_layer_matrix.mp4 -frames:v 1 /usr/local/google/home/butterworthnat/HACK/Trasformers4Dummies/state_of_ai/src/manim/_media/check/m02_layer_matrix/f06_014.4s.png
++ ffmpeg -nostdin -loglevel error -y -ss 16.575 -i /usr/local/google/home/butterworthnat/HACK/Trasformers4Dummies/state_of_ai/assets/video/m02_layer_matrix.mp4 -frames:v 1 /usr/local/google/home/butterworthnat/HACK/Trasformers4Dummies/state_of_ai/src/manim/_media/check/m02_layer_matrix/f07_016.6s.png
++ ffmpeg -nostdin -loglevel error -y -ss 18.785 -i /usr/local/google/home/butterworthnat/HACK/Trasformers4Dummies/state_of_ai/assets/video/m02_layer_matrix.mp4 -frames:v 1 /usr/local/google/home/butterworthnat/HACK/Trasformers4Dummies/state_of_ai/src/manim/_media/check/m02_layer_matrix/f08_018.8s.png
++ ffmpeg -nostdin -loglevel error -y -ss 20.995 -i /usr/local/google/home/butterworthnat/HACK/Trasformers4Dummies/state_of_ai/assets/video/m02_layer_matrix.mp4 -frames:v 1 /usr/local/google/home/butterworthnat/HACK/Trasformers4Dummies/state_of_ai/src/manim/_media/check/m02_layer_matrix/f09_021.0s.png
++ ffmpeg -nostdin -loglevel error -y -ss 22.000 -i /usr/local/google/home/butterworthnat/HACK/Trasformers4Dummies/state_of_ai/assets/video/m02_layer_matrix.mp4 -frames:v 1 /usr/local/google/home/butterworthnat/HACK/Trasformers4Dummies/state_of_ai/src/manim/_media/check/m02_layer_matrix/f10_022.0s.png
+
+m02_layer_matrix: duration 22.10s, size 1.16 MB
+background check: OK (decodes to (15, 16, 21), nearest 8-bit YUV value to #0f1115)
+check frames in /usr/local/google/home/butterworthnat/HACK/Trasformers4Dummies/state_of_ai/src/manim/_media/check/m02_layer_matrix

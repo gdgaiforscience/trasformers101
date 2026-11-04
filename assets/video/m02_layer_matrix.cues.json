@@ -1,0 +1,26 @@
+[
+ {
+  "t": 0.0,
+  "label": "3 inputs → 4 neurons: 12 weights"
+ },
+ {
+  "t": 2.2,
+  "label": "Each neuron's incoming weights become one row of W"
+ },
+ {
+  "t": 7.4,
+  "label": "The inputs become the column x; add the bias b and apply σ"
+ },
+ {
+  "t": 10.4,
+  "label": "Row 1 · x + b = 1.02 and σ(1.02) ≈ 0.73: the neuron from before"
+ },
+ {
+  "t": 15.9,
+  "label": "The other rows give the other three neurons"
+ },
+ {
+  "t": 18.5,
+  "label": "A whole layer: a = σ(Wx + b)"
+ }
+]

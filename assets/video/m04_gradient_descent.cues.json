@@ -1,0 +1,18 @@
+[
+ {
+  "t": 0.0,
+  "label": "A loss curve with a global and a local minimum"
+ },
+ {
+  "t": 2.5,
+  "label": "Update rule: w ← w − η·dL/dw"
+ },
+ {
+  "t": 3.5,
+  "label": "η too big: the ball overshoots and bounces around"
+ },
+ {
+  "t": 9.6,
+  "label": "η just right: smaller and smaller steps into the minimum"
+ }
+]

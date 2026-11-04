@@ -1,0 +1,323 @@
++ /usr/local/google/home/butterworthnat/miniforge3/envs/gdg/bin/python -m manim render -ql --frame_rate 30 --disable_caching --media_dir /usr/local/google/home/butterworthnat/HACK/Trasformers4Dummies/state_of_ai/src/manim/_media /usr/local/google/home/butterworthnat/HACK/Trasformers4Dummies/state_of_ai/src/manim/m07_attention.py Attention
+/bin/sh: line 1: sox: command not found
+[10/29/26 03:42:48] WARNING  SoX could not be found!              __init__.py:10
+                                                                                
+                                 If you do not have SoX, proceed                
+                             here:                                              
+                                  - - -                                         
+                             http://sox.sourceforge.net/ - - -                  
+                                                                                
+                                 If you do (or think that you                   
+                             should) have SoX, double-check your                
+                                 path variables.                                
+                                                                                
+<frozen runpy>:128: RuntimeWarning: 'manim.__main__' found in sys.modules after import of package 'manim', but prior to execution of 'manim.__main__'; this may result in unpredictable behaviour
+Manim Community v0.20.1
+
+[10/29/26 03:42:51] INFO     Caching disabled.              cairo_renderer.py:83
+Animation 0: LaggedStart(Group):   0%|          | 0/45 [00:00<?, ?it/s]Animation 0: LaggedStart(Group):   9%|▉         | 4/45 [00:00<00:01, 34.62it/s]Animation 0: LaggedStart(Group):  18%|█▊        | 8/45 [00:00<00:01, 32.97it/s]Animation 0: LaggedStart(Group):  27%|██▋       | 12/45 [00:00<00:01, 23.76it/s]Animation 0: LaggedStart(Group):  33%|███▎      | 15/45 [00:00<00:01, 22.53it/s]Animation 0: LaggedStart(Group):  40%|████      | 18/45 [00:00<00:01, 21.86it/s]Animation 0: LaggedStart(Group):  49%|████▉     | 22/45 [00:00<00:01, 22.48it/s]Animation 0: LaggedStart(Group):  56%|█████▌    | 25/45 [00:01<00:01, 17.97it/s]Animation 0: LaggedStart(Group):  62%|██████▏   | 28/45 [00:01<00:00, 19.37it/s]Animation 0: LaggedStart(Group):  69%|██████▉   | 31/45 [00:01<00:00, 21.32it/s]Animation 0: LaggedStart(Group):  76%|███████▌  | 34/45 [00:01<00:00, 22.13it/s]Animation 0: LaggedStart(Group):  82%|████████▏ | 37/45 [00:01<00:00, 20.71it/s]Animation 0: LaggedStart(Group):  89%|████████▉ | 40/45 [00:01<00:00, 22.09it/s]Animation 0: LaggedStart(Group):  96%|█████████▌| 43/45 [00:02<00:00, 18.63it/s]                                                                                [10/29/26 03:42:56] INFO     Animation 0 : Partial      scene_file_writer.py:601
+                             movie file written in                              
+                             '/usr/local/google/home/bu                         
+                             tterworthnat/HACK/Trasform                         
+                             ers4Dummies/state_of_ai/sr                         
+                             c/manim/_media/videos/m07_                         
+                             attention/480p30/partial_m                         
+                             ovie_files/Attention/uncac                         
+                             hed_00000.mp4'                                     
+                    INFO     Caching disabled.              cairo_renderer.py:83
+Animation 1: FadeIn(MathTex('Q')), etc.:   0%|          | 0/17 [00:00<?, ?it/s]Animation 1: FadeIn(MathTex('Q')), etc.:  35%|███▌      | 6/17 [00:00<00:00, 58.96it/s]Animation 1: FadeIn(MathTex('Q')), etc.:  76%|███████▋  | 13/17 [00:00<00:00, 64.92it/s]                                                                                        [10/29/26 03:42:58] INFO     Animation 1 : Partial      scene_file_writer.py:601
+                             movie file written in                              
+                             '/usr/local/google/home/bu                         
+                             tterworthnat/HACK/Trasform                         
+                             ers4Dummies/state_of_ai/sr                         
+                             c/manim/_media/videos/m07_                         
+                             attention/480p30/partial_m                         
+                             ovie_files/Attention/uncac                         
+                             hed_00001.mp4'                                     
+                    INFO     Caching disabled.              cairo_renderer.py:83
+Animation 2: FadeIn(MathTex('K')), etc.:   0%|          | 0/17 [00:00<?, ?it/s]Animation 2: FadeIn(MathTex('K')), etc.:  59%|█████▉    | 10/17 [00:00<00:00, 90.90it/s]                                                                                        [10/29/26 03:43:00] INFO     Animation 2 : Partial      scene_file_writer.py:601
+                             movie file written in                              
+                             '/usr/local/google/home/bu                         
+                             tterworthnat/HACK/Trasform                         
+                             ers4Dummies/state_of_ai/sr                         
+                             c/manim/_media/videos/m07_                         
+                             attention/480p30/partial_m                         
+                             ovie_files/Attention/uncac                         
+                             hed_00002.mp4'                                     
+                    INFO     Caching disabled.              cairo_renderer.py:83
+Animation 3: FadeIn(MathTex('V')), etc.:   0%|          | 0/17 [00:00<?, ?it/s]Animation 3: FadeIn(MathTex('V')), etc.:  24%|██▎       | 4/17 [00:00<00:00, 34.71it/s]Animation 3: FadeIn(MathTex('V')), etc.:  47%|████▋     | 8/17 [00:00<00:00, 37.60it/s]Animation 3: FadeIn(MathTex('V')), etc.:  76%|███████▋  | 13/17 [00:00<00:00, 40.52it/s]                                                                                        [10/29/26 03:43:03] INFO     Animation 3 : Partial      scene_file_writer.py:601
+                             movie file written in                              
+                             '/usr/local/google/home/bu                         
+                             tterworthnat/HACK/Trasform                         
+                             ers4Dummies/state_of_ai/sr                         
+                             c/manim/_media/videos/m07_                         
+                             attention/480p30/partial_m                         
+                             ovie_files/Attention/uncac                         
+                             hed_00003.mp4'                                     
+                    INFO     Caching disabled.              cairo_renderer.py:83
+Animation 4: _MethodAnimation(RoundedRectangle), etc.:   0%|          | 0/18 [00:00<?, ?it/s]Animation 4: _MethodAnimation(RoundedRectangle), etc.:   6%|▌         | 1/18 [00:00<00:02,  6.17it/s]Animation 4: _MethodAnimation(RoundedRectangle), etc.:  17%|█▋        | 3/18 [00:00<00:01,  9.96it/s]Animation 4: _MethodAnimation(RoundedRectangle), etc.:  28%|██▊       | 5/18 [00:00<00:01, 10.67it/s]Animation 4: _MethodAnimation(RoundedRectangle), etc.:  44%|████▍     | 8/18 [00:00<00:00, 14.39it/s]Animation 4: _MethodAnimation(RoundedRectangle), etc.:  56%|█████▌    | 10/18 [00:00<00:00, 11.35it/s]Animation 4: _MethodAnimation(RoundedRectangle), etc.:  67%|██████▋   | 12/18 [00:01<00:00, 12.03it/s]Animation 4: _MethodAnimation(RoundedRectangle), etc.:  78%|███████▊  | 14/18 [00:01<00:00, 12.10it/s]Animation 4: _MethodAnimation(RoundedRectangle), etc.:  89%|████████▉ | 16/18 [00:01<00:00, 12.28it/s]                                                                                                      [10/29/26 03:43:06] INFO     Animation 4 : Partial      scene_file_writer.py:601
+                             movie file written in                              
+                             '/usr/local/google/home/bu                         
+                             tterworthnat/HACK/Trasform                         
+                             ers4Dummies/state_of_ai/sr                         
+                             c/manim/_media/videos/m07_                         
+                             attention/480p30/partial_m                         
+                             ovie_files/Attention/uncac                         
+                             hed_00004.mp4'                                     
+                    INFO     Writing                     tex_file_writing.py:110
+                             \special{dvisvgm:raw <g                            
+                             id='unique000'>}1.4\special                        
+                             {dvisvgm:raw </g>} to                              
+                             /usr/local/google/home/butt                        
+                             erworthnat/HACK/Trasformers                        
+                             4Dummies/state_of_ai/src/ma                        
+                             nim/_media/Tex/c5da8918b0e5                        
+                             cf1c.tex                                           
+[10/29/26 03:43:07] INFO     Caching disabled.              cairo_renderer.py:83
+Animation 5: _MethodAnimation(VGroup of 4 submobjects), etc.:   0%|          | 0/18 [00:00<?, ?it/s]Animation 5: _MethodAnimation(VGroup of 4 submobjects), etc.:  78%|███████▊  | 14/18 [00:00<00:00, 125.62it/s]                                                                                                              [10/29/26 03:43:09] INFO     Animation 5 : Partial      scene_file_writer.py:601
+                             movie file written in                              
+                             '/usr/local/google/home/bu                         
+                             tterworthnat/HACK/Trasform                         
+                             ers4Dummies/state_of_ai/sr                         
+                             c/manim/_media/videos/m07_                         
+                             attention/480p30/partial_m                         
+                             ovie_files/Attention/uncac                         
+                             hed_00005.mp4'                                     
+                    INFO     Caching disabled.              cairo_renderer.py:83
+Animation 6: _MethodAnimation(VGroup of 4 submobjects), etc.:   0%|          | 0/60 [00:00<?, ?it/s]Animation 6: _MethodAnimation(VGroup of 4 submobjects), etc.:  12%|█▏        | 7/60 [00:00<00:00, 57.40it/s]Animation 6: _MethodAnimation(VGroup of 4 submobjects), etc.:  22%|██▏       | 13/60 [00:00<00:00, 57.52it/s]Animation 6: _MethodAnimation(VGroup of 4 submobjects), etc.:  32%|███▏      | 19/60 [00:00<00:00, 51.28it/s]Animation 6: _MethodAnimation(VGroup of 4 submobjects), etc.:  42%|████▏     | 25/60 [00:00<00:00, 51.24it/s]Animation 6: _MethodAnimation(VGroup of 4 submobjects), etc.:  52%|█████▏    | 31/60 [00:00<00:00, 47.96it/s]Animation 6: _MethodAnimation(VGroup of 4 submobjects), etc.:  60%|██████    | 36/60 [00:00<00:00, 37.07it/s]Animation 6: _MethodAnimation(VGroup of 4 submobjects), etc.:  68%|██████▊   | 41/60 [00:00<00:00, 35.12it/s]Animation 6: _MethodAnimation(VGroup of 4 submobjects), etc.:  78%|███████▊  | 47/60 [00:01<00:00, 40.28it/s]Animation 6: _MethodAnimation(VGroup of 4 submobjects), etc.:  87%|████████▋ | 52/60 [00:01<00:00, 41.87it/s]Animation 6: _MethodAnimation(VGroup of 4 submobjects), etc.:  97%|█████████▋| 58/60 [00:01<00:00, 45.66it/s]                                                                                                             [10/29/26 03:43:15] INFO     Animation 6 : Partial      scene_file_writer.py:601
+                             movie file written in                              
+                             '/usr/local/google/home/bu                         
+                             tterworthnat/HACK/Trasform                         
+                             ers4Dummies/state_of_ai/sr                         
+                             c/manim/_media/videos/m07_                         
+                             attention/480p30/partial_m                         
+                             ovie_files/Attention/uncac                         
+                             hed_00006.mp4'                                     
+                    INFO     Caching disabled.              cairo_renderer.py:83
+Animation 7: FadeOut(VGroup of 4 submobjects):   0%|          | 0/9 [00:00<?, ?it/s]Animation 7: FadeOut(VGroup of 4 submobjects):  56%|█████▌    | 5/9 [00:00<00:00, 45.35it/s]                                                                                            [10/29/26 03:43:16] INFO     Animation 7 : Partial      scene_file_writer.py:601
+                             movie file written in                              
+                             '/usr/local/google/home/bu                         
+                             tterworthnat/HACK/Trasform                         
+                             ers4Dummies/state_of_ai/sr                         
+                             c/manim/_media/videos/m07_                         
+                             attention/480p30/partial_m                         
+                             ovie_files/Attention/uncac                         
+                             hed_00007.mp4'                                     
+                    INFO     Writing                     tex_file_writing.py:110
+                             \special{dvisvgm:raw <g                            
+                             id='unique000'>}0.04\specia                        
+                             l{dvisvgm:raw </g>} to                             
+                             /usr/local/google/home/butt                        
+                             erworthnat/HACK/Trasformers                        
+                             4Dummies/state_of_ai/src/ma                        
+                             nim/_media/Tex/f20526aa22e9                        
+                             53b3.tex                                           
+[10/29/26 03:43:17] INFO     Writing                     tex_file_writing.py:110
+                             \special{dvisvgm:raw <g                            
+                             id='unique000'>}0.63\specia                        
+                             l{dvisvgm:raw </g>} to                             
+                             /usr/local/google/home/butt                        
+                             erworthnat/HACK/Trasformers                        
+                             4Dummies/state_of_ai/src/ma                        
+                             nim/_media/Tex/1b3bf1d57c01                        
+                             bdeb.tex                                           
+[10/29/26 03:43:18] INFO     Writing                     tex_file_writing.py:110
+                             \special{dvisvgm:raw <g                            
+                             id='unique000'>}0.06\specia                        
+                             l{dvisvgm:raw </g>} to                             
+                             /usr/local/google/home/butt                        
+                             erworthnat/HACK/Trasformers                        
+                             4Dummies/state_of_ai/src/ma                        
+                             nim/_media/Tex/620882530cd9                        
+                             da5c.tex                                           
+[10/29/26 03:43:21] INFO     Caching disabled.              cairo_renderer.py:83
+Animation 8: FadeIn(Text('softmax')), etc.:   0%|          | 0/39 [00:00<?, ?it/s]Animation 8: FadeIn(Text('softmax')), etc.:   8%|▊         | 3/39 [00:00<00:01, 20.17it/s]Animation 8: FadeIn(Text('softmax')), etc.:  15%|█▌        | 6/39 [00:00<00:01, 20.79it/s]Animation 8: FadeIn(Text('softmax')), etc.:  23%|██▎       | 9/39 [00:00<00:01, 18.62it/s]Animation 8: FadeIn(Text('softmax')), etc.:  28%|██▊       | 11/39 [00:00<00:01, 16.16it/s]Animation 8: FadeIn(Text('softmax')), etc.:  33%|███▎      | 13/39 [00:00<00:02, 11.49it/s]Animation 8: FadeIn(Text('softmax')), etc.:  38%|███▊      | 15/39 [00:01<00:02,  9.35it/s]Animation 8: FadeIn(Text('softmax')), etc.:  44%|████▎     | 17/39 [00:01<00:02, 10.70it/s]Animation 8: FadeIn(Text('softmax')), etc.:  49%|████▊     | 19/39 [00:01<00:01, 11.68it/s]Animation 8: FadeIn(Text('softmax')), etc.:  54%|█████▍    | 21/39 [00:01<00:01, 12.65it/s]Animation 8: FadeIn(Text('softmax')), etc.:  59%|█████▉    | 23/39 [00:01<00:01, 12.55it/s]Animation 8: FadeIn(Text('softmax')), etc.:  64%|██████▍   | 25/39 [00:01<00:01, 13.18it/s]Animation 8: FadeIn(Text('softmax')), etc.:  72%|███████▏  | 28/39 [00:02<00:00, 14.92it/s]Animation 8: FadeIn(Text('softmax')), etc.:  77%|███████▋  | 30/39 [00:02<00:00, 14.33it/s]Animation 8: FadeIn(Text('softmax')), etc.:  82%|████████▏ | 32/39 [00:02<00:00, 13.99it/s]Animation 8: FadeIn(Text('softmax')), etc.:  87%|████████▋ | 34/39 [00:02<00:00, 15.12it/s]Animation 8: FadeIn(Text('softmax')), etc.:  97%|█████████▋| 38/39 [00:02<00:00, 19.51it/s]                                                                                           [10/29/26 03:43:29] INFO     Animation 8 : Partial      scene_file_writer.py:601
+                             movie file written in                              
+                             '/usr/local/google/home/bu                         
+                             tterworthnat/HACK/Trasform                         
+                             ers4Dummies/state_of_ai/sr                         
+                             c/manim/_media/videos/m07_                         
+                             attention/480p30/partial_m                         
+                             ovie_files/Attention/uncac                         
+                             hed_00008.mp4'                                     
+                    INFO     Caching disabled.              cairo_renderer.py:83
+Animation 9: Indicate(Text('wombat')), etc.:   0%|          | 0/21 [00:00<?, ?it/s]Animation 9: Indicate(Text('wombat')), etc.:   5%|▍         | 1/21 [00:00<00:04,  4.20it/s]Animation 9: Indicate(Text('wombat')), etc.:  10%|▉         | 2/21 [00:00<00:04,  4.22it/s]Animation 9: Indicate(Text('wombat')), etc.:  14%|█▍        | 3/21 [00:00<00:05,  3.12it/s]Animation 9: Indicate(Text('wombat')), etc.:  19%|█▉        | 4/21 [00:01<00:05,  3.03it/s]Animation 9: Indicate(Text('wombat')), etc.:  24%|██▍       | 5/21 [00:01<00:04,  3.46it/s]Animation 9: Indicate(Text('wombat')), etc.:  29%|██▊       | 6/21 [00:01<00:03,  4.37it/s]Animation 9: Indicate(Text('wombat')), etc.:  38%|███▊      | 8/21 [00:01<00:02,  4.61it/s]Animation 9: Indicate(Text('wombat')), etc.:  43%|████▎     | 9/21 [00:02<00:02,  5.00it/s]Animation 9: Indicate(Text('wombat')), etc.:  48%|████▊     | 10/21 [00:02<00:02,  5.48it/s]Animation 9: Indicate(Text('wombat')), etc.:  52%|█████▏    | 11/21 [00:02<00:01,  5.35it/s]Animation 9: Indicate(Text('wombat')), etc.:  57%|█████▋    | 12/21 [00:02<00:01,  4.88it/s]Animation 9: Indicate(Text('wombat')), etc.:  62%|██████▏   | 13/21 [00:02<00:01,  4.98it/s]Animation 9: Indicate(Text('wombat')), etc.:  67%|██████▋   | 14/21 [00:03<00:01,  5.47it/s]Animation 9: Indicate(Text('wombat')), etc.:  71%|███████▏  | 15/21 [00:03<00:01,  5.85it/s]Animation 9: Indicate(Text('wombat')), etc.:  76%|███████▌  | 16/21 [00:03<00:00,  6.49it/s]Animation 9: Indicate(Text('wombat')), etc.:  81%|████████  | 17/21 [00:03<00:00,  6.71it/s]Animation 9: Indicate(Text('wombat')), etc.:  86%|████████▌ | 18/21 [00:03<00:00,  7.21it/s]Animation 9: Indicate(Text('wombat')), etc.:  90%|█████████ | 19/21 [00:03<00:00,  7.12it/s]Animation 9: Indicate(Text('wombat')), etc.:  95%|█████████▌| 20/21 [00:03<00:00,  6.90it/s]Animation 9: Indicate(Text('wombat')), etc.: 100%|██████████| 21/21 [00:04<00:00,  6.59it/s]                                                                                            [10/29/26 03:43:34] INFO     Animation 9 : Partial      scene_file_writer.py:601
+                             movie file written in                              
+                             '/usr/local/google/home/bu                         
+                             tterworthnat/HACK/Trasform                         
+                             ers4Dummies/state_of_ai/sr                         
+                             c/manim/_media/videos/m07_                         
+                             attention/480p30/partial_m                         
+                             ovie_files/Attention/uncac                         
+                             hed_00009.mp4'                                     
+                    INFO     Caching disabled.              cairo_renderer.py:83
+Animation 10: LaggedStart(Group):   0%|          | 0/39 [00:00<?, ?it/s]Animation 10: LaggedStart(Group):  21%|██        | 8/39 [00:00<00:00, 72.10it/s]Animation 10: LaggedStart(Group):  41%|████      | 16/39 [00:00<00:00, 57.00it/s]Animation 10: LaggedStart(Group):  56%|█████▋    | 22/39 [00:00<00:00, 51.94it/s]Animation 10: LaggedStart(Group):  72%|███████▏  | 28/39 [00:00<00:00, 54.43it/s]Animation 10: LaggedStart(Group):  87%|████████▋ | 34/39 [00:00<00:00, 55.61it/s]                                                                                 [10/29/26 03:43:38] INFO     Animation 10 : Partial     scene_file_writer.py:601
+                             movie file written in                              
+                             '/usr/local/google/home/bu                         
+                             tterworthnat/HACK/Trasform                         
+                             ers4Dummies/state_of_ai/sr                         
+                             c/manim/_media/videos/m07_                         
+                             attention/480p30/partial_m                         
+                             ovie_files/Attention/uncac                         
+                             hed_00010.mp4'                                     
+                    INFO     Caching disabled.              cairo_renderer.py:83
+Animation 11: FadeOut(VGroup of 7 submobjects), etc.:   0%|          | 0/21 [00:00<?, ?it/s]Animation 11: FadeOut(VGroup of 7 submobjects), etc.:  10%|▉         | 2/21 [00:00<00:01, 12.01it/s]Animation 11: FadeOut(VGroup of 7 submobjects), etc.:  19%|█▉        | 4/21 [00:00<00:01, 11.78it/s]Animation 11: FadeOut(VGroup of 7 submobjects), etc.:  29%|██▊       | 6/21 [00:00<00:01,  9.29it/s]Animation 11: FadeOut(VGroup of 7 submobjects), etc.:  33%|███▎      | 7/21 [00:00<00:01,  8.00it/s]Animation 11: FadeOut(VGroup of 7 submobjects), etc.:  43%|████▎     | 9/21 [00:01<00:01,  8.09it/s]Animation 11: FadeOut(VGroup of 7 submobjects), etc.:  48%|████▊     | 10/21 [00:01<00:01,  7.67it/s]Animation 11: FadeOut(VGroup of 7 submobjects), etc.:  57%|█████▋    | 12/21 [00:01<00:01,  8.83it/s]Animation 11: FadeOut(VGroup of 7 submobjects), etc.:  67%|██████▋   | 14/21 [00:01<00:00,  9.98it/s]Animation 11: FadeOut(VGroup of 7 submobjects), etc.:  76%|███████▌  | 16/21 [00:01<00:00, 10.01it/s]Animation 11: FadeOut(VGroup of 7 submobjects), etc.:  86%|████████▌ | 18/21 [00:01<00:00, 10.71it/s]Animation 11: FadeOut(VGroup of 7 submobjects), etc.:  95%|█████████▌| 20/21 [00:02<00:00, 10.34it/s]                                                                                                     [10/29/26 03:43:41] INFO     Animation 11 : Partial     scene_file_writer.py:601
+                             movie file written in                              
+                             '/usr/local/google/home/bu                         
+                             tterworthnat/HACK/Trasform                         
+                             ers4Dummies/state_of_ai/sr                         
+                             c/manim/_media/videos/m07_                         
+                             attention/480p30/partial_m                         
+                             ovie_files/Attention/uncac                         
+                             hed_00011.mp4'                                     
+                    INFO     Caching disabled.              cairo_renderer.py:83
+                    INFO     Animation 12 : Partial     scene_file_writer.py:601
+                             movie file written in                              
+                             '/usr/local/google/home/bu                         
+                             tterworthnat/HACK/Trasform                         
+                             ers4Dummies/state_of_ai/sr                         
+                             c/manim/_media/videos/m07_                         
+                             attention/480p30/partial_m                         
+                             ovie_files/Attention/uncac                         
+                             hed_00012.mp4'                                     
+[10/29/26 03:43:42] INFO     Caching disabled.              cairo_renderer.py:83
+Animation 13: FadeOut(VGroup of 10 submobjects), etc.:   0%|          | 0/18 [00:00<?, ?it/s]Animation 13: FadeOut(VGroup of 10 submobjects), etc.:  11%|█         | 2/18 [00:00<00:01,  8.03it/s]Animation 13: FadeOut(VGroup of 10 submobjects), etc.:  22%|██▏       | 4/18 [00:00<00:01,  8.83it/s]Animation 13: FadeOut(VGroup of 10 submobjects), etc.:  28%|██▊       | 5/18 [00:00<00:01,  9.13it/s]Animation 13: FadeOut(VGroup of 10 submobjects), etc.:  39%|███▉      | 7/18 [00:00<00:01,  9.37it/s]Animation 13: FadeOut(VGroup of 10 submobjects), etc.:  44%|████▍     | 8/18 [00:00<00:01,  9.30it/s]Animation 13: FadeOut(VGroup of 10 submobjects), etc.:  56%|█████▌    | 10/18 [00:01<00:00, 10.06it/s]Animation 13: FadeOut(VGroup of 10 submobjects), etc.:  67%|██████▋   | 12/18 [00:01<00:00,  9.57it/s]Animation 13: FadeOut(VGroup of 10 submobjects), etc.:  72%|███████▏  | 13/18 [00:01<00:00,  8.19it/s]Animation 13: FadeOut(VGroup of 10 submobjects), etc.:  78%|███████▊  | 14/18 [00:01<00:00,  7.32it/s]Animation 13: FadeOut(VGroup of 10 submobjects), etc.:  83%|████████▎ | 15/18 [00:01<00:00,  6.59it/s]Animation 13: FadeOut(VGroup of 10 submobjects), etc.:  89%|████████▉ | 16/18 [00:02<00:00,  6.22it/s]Animation 13: FadeOut(VGroup of 10 submobjects), etc.:  94%|█████████▍| 17/18 [00:02<00:00,  4.61it/s]Animation 13: FadeOut(VGroup of 10 submobjects), etc.: 100%|██████████| 18/18 [00:02<00:00,  4.37it/s]                                                                                                      [10/29/26 03:43:48] INFO     Animation 13 : Partial     scene_file_writer.py:601
+                             movie file written in                              
+                             '/usr/local/google/home/bu                         
+                             tterworthnat/HACK/Trasform                         
+                             ers4Dummies/state_of_ai/sr                         
+                             c/manim/_media/videos/m07_                         
+                             attention/480p30/partial_m                         
+                             ovie_files/Attention/uncac                         
+                             hed_00013.mp4'                                     
+                    INFO     Caching disabled.              cairo_renderer.py:83
+Animation 14: ReplacementTransform(Text('The')), etc.:   0%|          | 0/36 [00:00<?, ?it/s]Animation 14: ReplacementTransform(Text('The')), etc.:   3%|▎         | 1/36 [00:00<00:04,  7.15it/s]Animation 14: ReplacementTransform(Text('The')), etc.:   6%|▌         | 2/36 [00:00<00:05,  6.63it/s]Animation 14: ReplacementTransform(Text('The')), etc.:   8%|▊         | 3/36 [00:00<00:06,  5.05it/s]Animation 14: ReplacementTransform(Text('The')), etc.:  11%|█         | 4/36 [00:00<00:06,  4.91it/s]Animation 14: ReplacementTransform(Text('The')), etc.:  14%|█▍        | 5/36 [00:00<00:06,  4.97it/s]Animation 14: ReplacementTransform(Text('The')), etc.:  17%|█▋        | 6/36 [00:01<00:06,  4.64it/s]Animation 14: ReplacementTransform(Text('The')), etc.:  19%|█▉        | 7/36 [00:01<00:06,  4.81it/s]Animation 14: ReplacementTransform(Text('The')), etc.:  22%|██▏       | 8/36 [00:01<00:05,  4.74it/s]Animation 14: ReplacementTransform(Text('The')), etc.:  25%|██▌       | 9/36 [00:01<00:06,  3.89it/s]Animation 14: ReplacementTransform(Text('The')), etc.:  28%|██▊       | 10/36 [00:02<00:06,  3.99it/s]Animation 14: ReplacementTransform(Text('The')), etc.:  31%|███       | 11/36 [00:02<00:06,  4.11it/s]Animation 14: ReplacementTransform(Text('The')), etc.:  33%|███▎      | 12/36 [00:02<00:05,  4.05it/s]Animation 14: ReplacementTransform(Text('The')), etc.:  36%|███▌      | 13/36 [00:02<00:05,  4.05it/s]Animation 14: ReplacementTransform(Text('The')), etc.:  39%|███▉      | 14/36 [00:03<00:05,  4.08it/s]Animation 14: ReplacementTransform(Text('The')), etc.:  42%|████▏     | 15/36 [00:03<00:04,  4.28it/s]Animation 14: ReplacementTransform(Text('The')), etc.:  44%|████▍     | 16/36 [00:03<00:04,  4.53it/s]Animation 14: ReplacementTransform(Text('The')), etc.:  47%|████▋     | 17/36 [00:03<00:04,  3.82it/s]Animation 14: ReplacementTransform(Text('The')), etc.:  50%|█████     | 18/36 [00:04<00:05,  3.51it/s]Animation 14: ReplacementTransform(Text('The')), etc.:  53%|█████▎    | 19/36 [00:04<00:04,  3.56it/s]Animation 14: ReplacementTransform(Text('The')), etc.:  56%|█████▌    | 20/36 [00:04<00:04,  3.75it/s]Animation 14: ReplacementTransform(Text('The')), etc.:  58%|█████▊    | 21/36 [00:04<00:03,  4.02it/s]Animation 14: ReplacementTransform(Text('The')), etc.:  61%|██████    | 22/36 [00:05<00:03,  4.53it/s]Animation 14: ReplacementTransform(Text('The')), etc.:  64%|██████▍   | 23/36 [00:05<00:02,  4.82it/s]Animation 14: ReplacementTransform(Text('The')), etc.:  67%|██████▋   | 24/36 [00:05<00:02,  5.14it/s]Animation 14: ReplacementTransform(Text('The')), etc.:  69%|██████▉   | 25/36 [00:05<00:02,  4.85it/s]Animation 14: ReplacementTransform(Text('The')), etc.:  72%|███████▏  | 26/36 [00:05<00:01,  5.35it/s]Animation 14: ReplacementTransform(Text('The')), etc.:  75%|███████▌  | 27/36 [00:06<00:01,  5.55it/s]Animation 14: ReplacementTransform(Text('The')), etc.:  81%|████████  | 29/36 [00:06<00:01,  6.50it/s]Animation 14: ReplacementTransform(Text('The')), etc.:  83%|████████▎ | 30/36 [00:06<00:00,  6.68it/s]Animation 14: ReplacementTransform(Text('The')), etc.:  86%|████████▌ | 31/36 [00:06<00:00,  6.04it/s]Animation 14: ReplacementTransform(Text('The')), etc.:  89%|████████▉ | 32/36 [00:06<00:00,  5.11it/s]Animation 14: ReplacementTransform(Text('The')), etc.:  92%|█████████▏| 33/36 [00:07<00:00,  4.76it/s]Animation 14: ReplacementTransform(Text('The')), etc.:  94%|█████████▍| 34/36 [00:07<00:00,  4.05it/s]Animation 14: ReplacementTransform(Text('The')), etc.:  97%|█████████▋| 35/36 [00:07<00:00,  3.65it/s]Animation 14: ReplacementTransform(Text('The')), etc.: 100%|██████████| 36/36 [00:07<00:00,  4.45it/s]                                                                                                      [10/29/26 03:44:00] INFO     Animation 14 : Partial     scene_file_writer.py:601
+                             movie file written in                              
+                             '/usr/local/google/home/bu                         
+                             tterworthnat/HACK/Trasform                         
+                             ers4Dummies/state_of_ai/sr                         
+                             c/manim/_media/videos/m07_                         
+                             attention/480p30/partial_m                         
+                             ovie_files/Attention/uncac                         
+                             hed_00014.mp4'                                     
+                    INFO     Caching disabled.              cairo_renderer.py:83
+Animation 15: ReplacementTransform(Rectangle), etc.:   0%|          | 0/30 [00:00<?, ?it/s]Animation 15: ReplacementTransform(Rectangle), etc.:  10%|█         | 3/30 [00:00<00:00, 27.31it/s]Animation 15: ReplacementTransform(Rectangle), etc.:  20%|██        | 6/30 [00:00<00:00, 25.19it/s]Animation 15: ReplacementTransform(Rectangle), etc.:  30%|███       | 9/30 [00:00<00:00, 24.13it/s]Animation 15: ReplacementTransform(Rectangle), etc.:  40%|████      | 12/30 [00:00<00:00, 24.58it/s]Animation 15: ReplacementTransform(Rectangle), etc.:  50%|█████     | 15/30 [00:00<00:00, 20.82it/s]Animation 15: ReplacementTransform(Rectangle), etc.:  60%|██████    | 18/30 [00:00<00:00, 20.12it/s]Animation 15: ReplacementTransform(Rectangle), etc.:  70%|███████   | 21/30 [00:00<00:00, 20.61it/s]Animation 15: ReplacementTransform(Rectangle), etc.:  80%|████████  | 24/30 [00:01<00:00, 21.69it/s]Animation 15: ReplacementTransform(Rectangle), etc.:  90%|█████████ | 27/30 [00:01<00:00, 21.91it/s]Animation 15: ReplacementTransform(Rectangle), etc.: 100%|██████████| 30/30 [00:01<00:00, 19.59it/s]                                                                                                    [10/29/26 03:44:04] INFO     Animation 15 : Partial     scene_file_writer.py:601
+                             movie file written in                              
+                             '/usr/local/google/home/bu                         
+                             tterworthnat/HACK/Trasform                         
+                             ers4Dummies/state_of_ai/sr                         
+                             c/manim/_media/videos/m07_                         
+                             attention/480p30/partial_m                         
+                             ovie_files/Attention/uncac                         
+                             hed_00015.mp4'                                     
+                    INFO     Caching disabled.              cairo_renderer.py:83
+Animation 16: Create(SurroundingRectangle):   0%|          | 0/12 [00:00<?, ?it/s]                                                                                  [10/29/26 03:44:05] INFO     Animation 16 : Partial     scene_file_writer.py:601
+                             movie file written in                              
+                             '/usr/local/google/home/bu                         
+                             tterworthnat/HACK/Trasform                         
+                             ers4Dummies/state_of_ai/sr                         
+                             c/manim/_media/videos/m07_                         
+                             attention/480p30/partial_m                         
+                             ovie_files/Attention/uncac                         
+                             hed_00016.mp4'                                     
+                    INFO     Caching disabled.              cairo_renderer.py:83
+Animation 17: LaggedStart(Group):   0%|          | 0/72 [00:00<?, ?it/s]Animation 17: LaggedStart(Group):   7%|▋         | 5/72 [00:00<00:01, 44.84it/s]Animation 17: LaggedStart(Group):  15%|█▌        | 11/72 [00:00<00:01, 51.96it/s]Animation 17: LaggedStart(Group):  24%|██▎       | 17/72 [00:00<00:01, 47.56it/s]Animation 17: LaggedStart(Group):  32%|███▏      | 23/72 [00:00<00:00, 49.72it/s]Animation 17: LaggedStart(Group):  40%|████      | 29/72 [00:00<00:00, 46.92it/s]Animation 17: LaggedStart(Group):  47%|████▋     | 34/72 [00:00<00:00, 45.56it/s]Animation 17: LaggedStart(Group):  54%|█████▍    | 39/72 [00:00<00:00, 45.93it/s]Animation 17: LaggedStart(Group):  61%|██████    | 44/72 [00:00<00:00, 40.97it/s]Animation 17: LaggedStart(Group):  68%|██████▊   | 49/72 [00:01<00:00, 39.76it/s]Animation 17: LaggedStart(Group):  75%|███████▌  | 54/72 [00:01<00:00, 31.30it/s]Animation 17: LaggedStart(Group):  81%|████████  | 58/72 [00:01<00:00, 25.57it/s]Animation 17: LaggedStart(Group):  85%|████████▍ | 61/72 [00:01<00:00, 25.02it/s]Animation 17: LaggedStart(Group):  90%|█████████ | 65/72 [00:01<00:00, 25.00it/s]Animation 17: LaggedStart(Group):  97%|█████████▋| 70/72 [00:02<00:00, 28.87it/s]                                                                                 [10/29/26 03:44:14] INFO     Animation 17 : Partial     scene_file_writer.py:601
+                             movie file written in                              
+                             '/usr/local/google/home/bu                         
+                             tterworthnat/HACK/Trasform                         
+                             ers4Dummies/state_of_ai/sr                         
+                             c/manim/_media/videos/m07_                         
+                             attention/480p30/partial_m                         
+                             ovie_files/Attention/uncac                         
+                             hed_00017.mp4'                                     
+[10/29/26 03:44:16] INFO     Caching disabled.              cairo_renderer.py:83
+Animation 18: Write(MathTex('\\mathrm{Attention}( Q , K , V )')):   0%|          | 0/30 [00:00<?, ?it/s]Animation 18: Write(MathTex('\\mathrm{Attention}( Q , K , V )')):  23%|██▎       | 7/30 [00:00<00:00, 53.64it/s]Animation 18: Write(MathTex('\\mathrm{Attention}( Q , K , V )')):  43%|████▎     | 13/30 [00:00<00:00, 26.93it/s]Animation 18: Write(MathTex('\\mathrm{Attention}( Q , K , V )')):  60%|██████    | 18/30 [00:00<00:00, 31.72it/s]Animation 18: Write(MathTex('\\mathrm{Attention}( Q , K , V )')):  77%|███████▋  | 23/30 [00:00<00:00, 35.43it/s]Animation 18: Write(MathTex('\\mathrm{Attention}( Q , K , V )')): 100%|██████████| 30/30 [00:00<00:00, 40.85it/s]                                                                                                                 [10/29/26 03:44:19] INFO     Animation 18 : Partial     scene_file_writer.py:601
+                             movie file written in                              
+                             '/usr/local/google/home/bu                         
+                             tterworthnat/HACK/Trasform                         
+                             ers4Dummies/state_of_ai/sr                         
+                             c/manim/_media/videos/m07_                         
+                             attention/480p30/partial_m                         
+                             ovie_files/Attention/uncac                         
+                             hed_00018.mp4'                                     
+                    INFO     Caching disabled.              cairo_renderer.py:83
+Animation 19: FadeIn(MathTexPart('=')), etc.:   0%|          | 0/21 [00:00<?, ?it/s]Animation 19: FadeIn(MathTexPart('=')), etc.:  57%|█████▋    | 12/21 [00:00<00:00, 119.67it/s]                                                                                              [10/29/26 03:44:22] INFO     Animation 19 : Partial     scene_file_writer.py:601
+                             movie file written in                              
+                             '/usr/local/google/home/bu                         
+                             tterworthnat/HACK/Trasform                         
+                             ers4Dummies/state_of_ai/sr                         
+                             c/manim/_media/videos/m07_                         
+                             attention/480p30/partial_m                         
+                             ovie_files/Attention/uncac                         
+                             hed_00019.mp4'                                     
+                    INFO     Caching disabled.              cairo_renderer.py:83
+Animation 20: TransformFromCopy(MathTexPart('Q')), etc.:   0%|          | 0/27 [00:00<?, ?it/s]Animation 20: TransformFromCopy(MathTexPart('Q')), etc.:  48%|████▊     | 13/27 [00:00<00:00, 123.19it/s]Animation 20: TransformFromCopy(MathTexPart('Q')), etc.:  96%|█████████▋| 26/27 [00:00<00:00, 85.08it/s]                                                                                                         [10/29/26 03:44:24] INFO     Animation 20 : Partial     scene_file_writer.py:601
+                             movie file written in                              
+                             '/usr/local/google/home/bu                         
+                             tterworthnat/HACK/Trasform                         
+                             ers4Dummies/state_of_ai/sr                         
+                             c/manim/_media/videos/m07_                         
+                             attention/480p30/partial_m                         
+                             ovie_files/Attention/uncac                         
+                             hed_00020.mp4'                                     
+                    INFO     Caching disabled.              cairo_renderer.py:83
+Animation 21: TransformFromCopy(MathTexPart('V')):   0%|          | 0/18 [00:00<?, ?it/s]                                                                                         [10/29/26 03:44:26] INFO     Animation 21 : Partial     scene_file_writer.py:601
+                             movie file written in                              
+                             '/usr/local/google/home/bu                         
+                             tterworthnat/HACK/Trasform                         
+                             ers4Dummies/state_of_ai/sr                         
+                             c/manim/_media/videos/m07_                         
+                             attention/480p30/partial_m                         
+                             ovie_files/Attention/uncac                         
+                             hed_00021.mp4'                                     
+                    INFO     Caching disabled.              cairo_renderer.py:83
+Animation 22: Create(RoundedRectangle), etc.:   0%|          | 0/27 [00:00<?, ?it/s]                                                                                    [10/29/26 03:44:29] INFO     Animation 22 : Partial     scene_file_writer.py:601
+                             movie file written in                              
+                             '/usr/local/google/home/bu                         
+                             tterworthnat/HACK/Trasform                         
+                             ers4Dummies/state_of_ai/sr                         
+                             c/manim/_media/videos/m07_                         
+                             attention/480p30/partial_m                         
+                             ovie_files/Attention/uncac                         
+                             hed_00022.mp4'                                     
+                    INFO     Caching disabled.              cairo_renderer.py:83
+[10/29/26 03:44:30] INFO     Animation 23 : Partial     scene_file_writer.py:601
+                             movie file written in                              
+                             '/usr/local/google/home/bu                         
+                             tterworthnat/HACK/Trasform                         
+                             ers4Dummies/state_of_ai/sr                         
+                             c/manim/_media/videos/m07_                         
+                             attention/480p30/partial_m                         
+                             ovie_files/Attention/uncac                         
+                             hed_00023.mp4'                                     
+                    INFO     Combining to Movie file.   scene_file_writer.py:753
+                    INFO                                scene_file_writer.py:904
+                             File ready at                                      
+                             '/usr/local/google/home/bu                         
+                             tterworthnat/HACK/Trasform                         
+                             ers4Dummies/state_of_ai/sr                         
+                             c/manim/_media/videos/m07_                         
+                             attention/480p30/Attention                         
+                             .mp4'                                              
+                                                                                
+                    INFO     Rendered Attention                     scene.py:278
+                             Played 24 animations                               
++ ffmpeg -nostdin -loglevel error -y -ss 0.800 -i /usr/local/google/home/butterworthnat/HACK/Trasformers4Dummies/state_of_ai/src/manim/_media/videos/m07_attention/480p30/Attention.mp4 -frames:v 1 /usr/local/google/home/butterworthnat/HACK/Trasformers4Dummies/state_of_ai/src/manim/_media/check/m07_attention/f00_000.8s.png
++ ffmpeg -nostdin -loglevel error -y -ss 2.400 -i /usr/local/google/home/butterworthnat/HACK/Trasformers4Dummies/state_of_ai/src/manim/_media/videos/m07_attention/480p30/Attention.mp4 -frames:v 1 /usr/local/google/home/butterworthnat/HACK/Trasformers4Dummies/state_of_ai/src/manim/_media/check/m07_attention/f01_002.4s.png
++ ffmpeg -nostdin -loglevel error -y -ss 4.000 -i /usr/local/google/home/butterworthnat/HACK/Trasformers4Dummies/state_of_ai/src/manim/_media/videos/m07_attention/480p30/Attention.mp4 -frames:v 1 /usr/local/google/home/butterworthnat/HACK/Trasformers4Dummies/state_of_ai/src/manim/_media/check/m07_attention/f02_004.0s.png
++ ffmpeg -nostdin -loglevel error -y -ss 5.600 -i /usr/local/google/home/butterworthnat/HACK/Trasformers4Dummies/state_of_ai/src/manim/_media/videos/m07_attention/480p30/Attention.mp4 -frames:v 1 /usr/local/google/home/butterworthnat/HACK/Trasformers4Dummies/state_of_ai/src/manim/_media/check/m07_attention/f03_005.6s.png
++ ffmpeg -nostdin -loglevel error -y -ss 7.200 -i /usr/local/google/home/butterworthnat/HACK/Trasformers4Dummies/state_of_ai/src/manim/_media/videos/m07_attention/480p30/Attention.mp4 -frames:v 1 /usr/local/google/home/butterworthnat/HACK/Trasformers4Dummies/state_of_ai/src/manim/_media/check/m07_attention/f04_007.2s.png
++ ffmpeg -nostdin -loglevel error -y -ss 8.800 -i /usr/local/google/home/butterworthnat/HACK/Trasformers4Dummies/state_of_ai/src/manim/_media/videos/m07_attention/480p30/Attention.mp4 -frames:v 1 /usr/local/google/home/butterworthnat/HACK/Trasformers4Dummies/state_of_ai/src/manim/_media/check/m07_attention/f05_008.8s.png
++ ffmpeg -nostdin -loglevel error -y -ss 10.400 -i /usr/local/google/home/butterworthnat/HACK/Trasformers4Dummies/state_of_ai/src/manim/_media/videos/m07_attention/480p30/Attention.mp4 -frames:v 1 /usr/local/google/home/butterworthnat/HACK/Trasformers4Dummies/state_of_ai/src/manim/_media/check/m07_attention/f06_010.4s.png
++ ffmpeg -nostdin -loglevel error -y -ss 12.000 -i /usr/local/google/home/butterworthnat/HACK/Trasformers4Dummies/state_of_ai/src/manim/_media/videos/m07_attention/480p30/Attention.mp4 -frames:v 1 /usr/local/google/home/butterworthnat/HACK/Trasformers4Dummies/state_of_ai/src/manim/_media/check/m07_attention/f07_012.0s.png
++ ffmpeg -nostdin -loglevel error -y -ss 13.600 -i /usr/local/google/home/butterworthnat/HACK/Trasformers4Dummies/state_of_ai/src/manim/_media/videos/m07_attention/480p30/Attention.mp4 -frames:v 1 /usr/local/google/home/butterworthnat/HACK/Trasformers4Dummies/state_of_ai/src/manim/_media/check/m07_attention/f08_013.6s.png
++ ffmpeg -nostdin -loglevel error -y -ss 15.200 -i /usr/local/google/home/butterworthnat/HACK/Trasformers4Dummies/state_of_ai/src/manim/_media/videos/m07_attention/480p30/Attention.mp4 -frames:v 1 /usr/local/google/home/butterworthnat/HACK/Trasformers4Dummies/state_of_ai/src/manim/_media/check/m07_attention/f09_015.2s.png
++ ffmpeg -nostdin -loglevel error -y -ss 16.800 -i /usr/local/google/home/butterworthnat/HACK/Trasformers4Dummies/state_of_ai/src/manim/_media/videos/m07_attention/480p30/Attention.mp4 -frames:v 1 /usr/local/google/home/butterworthnat/HACK/Trasformers4Dummies/state_of_ai/src/manim/_media/check/m07_attention/f10_016.8s.png
++ ffmpeg -nostdin -loglevel error -y -ss 18.400 -i /usr/local/google/home/butterworthnat/HACK/Trasformers4Dummies/state_of_ai/src/manim/_media/videos/m07_attention/480p30/Attention.mp4 -frames:v 1 /usr/local/google/home/butterworthnat/HACK/Trasformers4Dummies/state_of_ai/src/manim/_media/check/m07_attention/f11_018.4s.png
++ ffmpeg -nostdin -loglevel error -y -ss 20.000 -i /usr/local/google/home/butterworthnat/HACK/Trasformers4Dummies/state_of_ai/src/manim/_media/videos/m07_attention/480p30/Attention.mp4 -frames:v 1 /usr/local/google/home/butterworthnat/HACK/Trasformers4Dummies/state_of_ai/src/manim/_media/check/m07_attention/f12_020.0s.png
++ ffmpeg -nostdin -loglevel error -y -ss 21.600 -i /usr/local/google/home/butterworthnat/HACK/Trasformers4Dummies/state_of_ai/src/manim/_media/videos/m07_attention/480p30/Attention.mp4 -frames:v 1 /usr/local/google/home/butterworthnat/HACK/Trasformers4Dummies/state_of_ai/src/manim/_media/check/m07_attention/f13_021.6s.png
++ ffmpeg -nostdin -loglevel error -y -ss 22.300 -i /usr/local/google/home/butterworthnat/HACK/Trasformers4Dummies/state_of_ai/src/manim/_media/videos/m07_attention/480p30/Attention.mp4 -frames:v 1 /usr/local/google/home/butterworthnat/HACK/Trasformers4Dummies/state_of_ai/src/manim/_media/check/m07_attention/f14_022.3s.png
+
+m07_attention: duration 22.40s, size 0.60 MB
+background check: OK (decodes to (15, 16, 21), nearest 8-bit YUV value to #0f1115)
+check frames in /usr/local/google/home/butterworthnat/HACK/Trasformers4Dummies/state_of_ai/src/manim/_media/check/m07_attention

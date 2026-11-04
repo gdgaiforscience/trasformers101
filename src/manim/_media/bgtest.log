@@ -1,0 +1,36 @@
+/bin/sh: line 1: sox: command not found
+[10/29/26 03:19:42] WARNING  SoX could not be found!              __init__.py:10
+                                                                                
+                                 If you do not have SoX, proceed                
+                             here:                                              
+                                  - - -                                         
+                             http://sox.sourceforge.net/ - - -                  
+                                                                                
+                                 If you do (or think that you                   
+                             should) have SoX, double-check your                
+                                 path variables.                                
+                                                                                
+<frozen runpy>:128: RuntimeWarning: 'manim.__main__' found in sys.modules after import of package 'manim', but prior to execution of 'manim.__main__'; this may result in unpredictable behaviour
+Manim Community v0.20.1
+
+                    INFO     Caching disabled.              cairo_renderer.py:83
+[10/29/26 03:19:43] INFO     Animation 0 : Partial      scene_file_writer.py:601
+                             movie file written in                              
+                             '/usr/local/google/home/bu                         
+                             tterworthnat/HACK/Trasform                         
+                             ers4Dummies/state_of_ai/sr                         
+                             c/manim/_media/videos/_bgt                         
+                             est/1080p30/partial_movie_                         
+                             files/BgTest/uncached_0000                         
+                             0.mp4'                                             
+                    INFO     Combining to Movie file.   scene_file_writer.py:753
+                    INFO                                scene_file_writer.py:904
+                             File ready at                                      
+                             '/usr/local/google/home/bu                         
+                             tterworthnat/HACK/Trasform                         
+                             ers4Dummies/state_of_ai/sr                         
+                             c/manim/_media/videos/_bgt                         
+                             est/1080p30/BgTest.mp4'                            
+                                                                                
+                    INFO     Rendered BgTest                        scene.py:278
+                             Played 1 animations                                

@@ -1,0 +1,594 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Inside the Black Box — How AI Really Works · GDG AI for Science · October 2026</title>
+<link rel="stylesheet" href="css/deck.css">
+</head>
+<body>
+<div id="stage">
+
+<!-- ================================================================ 0 · OPENING -->
+<section class="slide title-slide" id="title" data-title="Inside the Black Box" data-chapter="Opening" data-minutes="0.5">
+  <div class="hero-video"><video data-src="assets/video/b01_hero_network.mp4" poster="assets/poster/b01_hero_network.jpg" data-autoplay data-restart="false" loop muted playsinline></video></div>
+  <div class="hero-shade"></div>
+  <div class="title-block">
+    <div class="kicker"><span class="gdg-dots"><i style="background:var(--g-blue)"></i><i style="background:var(--g-red)"></i><i style="background:var(--g-yellow)"></i><i style="background:var(--g-green)"></i></span>&nbsp; GDG AI for Science · October 2026</div>
+    <h1>Inside the<br><b>Black Box</b></h1>
+    <div class="tsub">How AI really works:<br>from one artificial neuron to Gemini,<br>and what it means for science</div>
+    <div class="tmeta">A visual, interactive tour · <span class="mono">→</span> to begin · <span class="mono">?</span> for presenter keys</div>
+  </div>
+  <aside class="notes"><p>Welcome. Let the hero animation run while people settle. <b>Every node is a neuron, every glowing pulse a number flowing through.</b> By the end of the hour everyone will know what those pulses are, and the six equations that make them learn.</p><p>Keys: <b>P</b> presenter window · <b>T</b> timer · <b>O</b> overview.</p></aside>
+</section>
+
+<section class="slide" id="hook" data-demo="hook" data-title="I typed “hi”" data-chapter="Opening" data-minutes="2">
+  <header><div class="kicker">Opening</div><h2 class="title">I typed “<em>hi</em>” into an AI…</h2></header>
+  <div class="body row" style="gap:70px">
+    <div class="col" style="flex:0.85">
+      <div class="chat">
+        <div class="bubble user">hi</div>
+        <div class="bubble ai step" data-order="3" data-action="reply"><span data-role="reply"></span><span class="nt-cursor">▍</span></div>
+      </div>
+      <p class="step big mt-m" data-order="2" data-action="count">For its first word it weighed <b class="c-yellow mono" data-role="count">0</b> possible tokens…</p>
+      <p class="step bigq mt-m" data-order="4">How does a pile of numbers <em>decide</em> that?</p>
+    </div>
+    <div class="col step" data-order="1" style="flex:1.15">
+      <div class="small muted">What a real model (Gemma 3, a small open cousin of Gemini) actually computed:</div>
+      <div data-role="nt" class="mt-s"></div>
+    </div>
+  </div>
+  <aside class="notes"><p><b>Step 1:</b> These are the model's real probabilities for its first word: <b>“Hi” 93%</b>, “Hello” 6%. Slide temperature up and the model gets more adventurous.</p><p><b>Step 2:</b> It weighed <b>262,144</b> possible tokens. <b>Step 3:</b> …and wrote “Hi there! How can I help you today?” one token at a time.</p><p><b>Step 4 (the question of the night):</b> How does a pile of numbers decide that? By the end we'll open the box completely.</p></aside>
+</section>
+
+<section class="slide" id="roadmap" data-title="Tonight’s journey" data-chapter="Opening" data-minutes="0.5">
+  <header><div class="kicker">Opening</div><h2 class="title">Tonight’s journey</h2></header>
+  <div class="body chapter-cards">
+    <div class="chapter-card"><div class="ci">🗺️</div><div class="cn">1</div><div class="ct">What is “AI” today?</div><div class="cd">The zoo & the state of play in 2026</div></div>
+    <div class="chapter-card"><div class="ci">⏳</div><div class="cn">2</div><div class="ct">How we got here</div><div class="cd">80 years of summers & winters</div></div>
+    <div class="chapter-card"><div class="ci">🏗️</div><div class="cn">3</div><div class="ct">The technology stack</div><div class="cd">From electricity to apps</div></div>
+    <div class="chapter-card" style="border-color:rgba(255,213,79,.55)"><div class="ci">🧠</div><div class="cn">4</div><div class="ct">Inside a neural network</div><div class="cd">Numbers, neurons, weights & tensors</div></div>
+    <div class="chapter-card" style="border-color:rgba(255,213,79,.55)"><div class="ci">⛰️</div><div class="cn">5</div><div class="ct">How machines learn</div><div class="cd">Loss, gradients & backpropagation</div></div>
+    <div class="chapter-card"><div class="ci">💬</div><div class="cn">6</div><div class="ct">From networks to Gemini</div><div class="cd">Embeddings, attention, scale</div></div>
+    <div class="chapter-card"><div class="ci">🔬</div><div class="cn">7</div><div class="ct">AI for science</div><div class="cd">Proteins, materials, weather & you</div></div>
+    <div class="chapter-card"><div class="ci">🧾</div><div class="cn">✓</div><div class="ct">The six equations</div><div class="cd">The whole story on one slide</div></div>
+  </div>
+  <aside class="notes"><p>The heart of the talk is chapters <b>4 and 5</b>: we'll build a neural network from scratch and watch it learn. Everything else is context. No maths background needed, but I won't hide the equations either. You'll see each one only after its picture.</p></aside>
+</section>
+
+<!-- ================================================================ 1 · WHAT IS AI -->
+<section class="slide" id="zoo" data-demo="zoo" data-title="What do we mean by “AI”?" data-chapter="1 · What is AI today?" data-minutes="2">
+  <header><div class="kicker"><span class="num">1</span>What is AI today?</div><h2 class="title">What do we mean by “AI”?</h2></header>
+  <div class="body row" style="gap:60px">
+    <div class="col" style="flex:1"><div data-role="rings" style="height:790px"></div></div>
+    <div class="col" style="flex:1;justify-content:center"><div data-role="info"></div>
+      <span class="step trigger" data-action="ml"></span><span class="step trigger" data-action="dl"></span><span class="step trigger" data-action="gen"></span>
+      <p class="small muted mt-m">Click a circle. Each one sits inside the one before it.</p>
+    </div>
+  </div>
+  <aside class="notes"><p>Russian dolls. <b>AI</b> is the whole field (1956). <b>Machine learning</b> means rules learned from data, not written by hand. <b>Deep learning</b> is ML with many-layered neural networks (the 2012 revolution). <b>Foundation models / generative AI</b> are giant pre-trained networks like Gemini.</p><p>Science point: if your data is a spreadsheet of a few hundred rows, the outer dolls (classical ML) often win. We return to this at the end.</p></aside>
+</section>
+
+<section class="slide" id="now" data-title="The state of play: October 2026" data-chapter="1 · What is AI today?" data-minutes="2.5">
+  <header><div class="kicker"><span class="num">1</span>What is AI today?</div><h2 class="title">The state of play: <em>October 2026</em></h2></header>
+  <div class="body" style="display:flex;flex-direction:column;justify-content:center">
+    <div class="grid-3" style="gap:30px">
+      <div class="card glow-blue step"><div class="icon">🌈</div><h3>Multimodal in & out</h3><p class="small">One model reads text, images, audio and video. Others <b>generate</b> images (Nano Banana), video with sound (Veo), music (Lyria) and explorable worlds (Genie 4).</p></div>
+      <div class="card glow-yellow step"><div class="icon">🤔</div><h3>Models that “think”</h3><p class="small">Trained with reinforcement learning to reason before answering. They spend extra computation on hard problems: IMO <b>gold-medal standard</b> in 2025.</p></div>
+      <div class="card glow-green step"><div class="icon">🛠️</div><h3>Agents</h3><p class="small">Models that <b>use tools</b>: write and run code, search, browse and operate software. Coding agents (Antigravity), Deep Research, robots.</p></div>
+      <div class="card glow-purple step"><div class="icon">📚</div><h3>Long context</h3><p class="small"><b>1,048,576 tokens</b> in one go, roughly ten novels, a codebase or hours of video at once.</p></div>
+      <div class="card glow-orange step"><div class="icon">🔓</div><h3>Open models</h3><p class="small">Open-weight models such as <b>Gemma 4</b> run on a laptop or phone. You can inspect them, fine-tune them and keep data private.</p></div>
+      <div class="card glow-red step"><div class="icon">🔬</div><h3>AI for science</h3><p class="small">200M+ predicted protein structures, millions of new crystals, better weather forecasts, new algorithms, AI “co-scientists”.</p></div>
+    </div>
+    <p class="small muted mt-m step">Flagship today: <b class="c-text">Gemini 4 Argon</b>, a sparse mixture-of-experts Transformer. Natively multimodal, 1M-token context, knowledge cutoff March 2026 <span class="tag">model card, Oct 2026</span></p>
+  </div>
+  <aside class="notes"><p>Six trends in one breath. Reveal them one by one, with one sentence each.</p><p>Watch the language: AI today is less “a chatbot” and more a <b>general-purpose engine</b> that sees, reasons, acts and does science. All verified from Google DeepMind model cards and docs (see docs/facts.md). Then: how did we get here?</p></aside>
+</section>
+
+<!-- ================================================================ 2 · HISTORY -->
+<section class="slide" id="timeline" data-demo="timeline" data-title="80 years in 3 minutes" data-chapter="2 · How we got here" data-minutes="3">
+  <header><div class="kicker"><span class="num">2</span>How we got here</div><h2 class="title">80 years of AI in 3 minutes</h2></header>
+  <div class="body" style="display:flex;flex-direction:column">
+    <div data-role="tl" style="height:640px"></div>
+    <div data-role="card" class="card mt-s" style="font-size:28px;min-height:92px;display:flex;align-items:center;gap:14px"></div>
+    <span class="step trigger" data-action="to:1960"></span><span class="step trigger" data-action="to:1975"></span>
+    <span class="step trigger" data-action="to:1990"></span><span class="step trigger" data-action="to:2009.5"></span>
+    <span class="step trigger" data-action="to:2016.5"></span><span class="step trigger" data-action="to:2021"></span>
+    <span class="step trigger" data-action="to:2024.6"></span><span class="step trigger" data-action="to:2026.9"></span>
+  </div>
+  <aside class="notes"><p>Press → to walk the yellow “hype” line forward.</p><ul><li><b>1943–60:</b> a neuron as maths; Turing; Dartmouth; the perceptron learns.</li><li><b>1969–75:</b> <i>Perceptrons</i>, the Lighthill report, the first winter.</li><li><b>1980s:</b> expert systems, and backprop (1986).</li><li><b>Late 80s:</b> the second winter.</li><li><b>2009–12:</b> ImageNet + GPUs → AlexNet.</li><li><b>2016–17:</b> AlphaGo, and the Transformer from Google.</li><li><b>2020–22:</b> GPT-3, AlphaFold 2, ChatGPT.</li><li><b>2024–26:</b> Nobel prizes, thinking models, Gemini 4.</li></ul><p>Hover any emoji for details. The line isn't data, it's a vibe: winters are real though.</p></aside>
+</section>
+
+<section class="slide" id="whynow" data-demo="whynow" data-title="Why now? Data × compute × algorithms" data-chapter="2 · How we got here" data-minutes="1.5">
+  <header><div class="kicker"><span class="num">2</span>How we got here</div><h2 class="title">Why now? <em>Compute</em> exploded</h2></header>
+  <div class="body row" style="gap:48px">
+    <div class="col" style="flex:1.7"><div data-role="chart" style="height:700px"></div><div data-role="ctl" class="controls mt-s"></div><span class="step trigger" data-action="linear"></span></div>
+    <div class="col" style="flex:1;gap:20px">
+      <div class="card"><h3>📚 Data</h3><p class="small">The internet, ImageNet (14M images), trillions of tokens of text & code</p></div>
+      <div class="card glow-purple"><h3>⚡ Compute</h3><p class="small">GPUs & TPUs: training compute grew <b>4–5× every year</b> since 2010, about <b>10 billion×</b> in 15 years</p></div>
+      <div class="card"><h3>💡 Algorithms</h3><p class="small">Backprop, ReLU, Adam, residual connections, attention, mixture-of-experts</p></div>
+      <div class="card eq-card"><img class="eq z14" src="assets/eq/compute.svg" alt="C ≈ 6ND"><div class="lbl">training FLOPs ≈ 6 × parameters × tokens<br>GPT-3: 6 × 175B × 300B ≈ 3×10²³</div></div>
+    </div>
+  </div>
+  <aside class="notes"><p>Each dot is a famous model: filled = compute reported in the paper, hollow = our estimate from 6·N·D. The purple band is Epoch AI's trend: <b>×4–5 per year</b>.</p><p><b>Step:</b> switch to <b>linear scale</b>. Everything before 2020 collapses onto the floor. That's what exponential growth looks like.</p><p>C ≈ 6ND: each token costs ~6 operations per parameter (2 forward, 4 backward).</p></aside>
+</section>
+
+<section class="slide" id="nobel" data-title="2024: AI wins two Nobel prizes" data-chapter="2 · How we got here" data-minutes="1">
+  <header><div class="kicker"><span class="num">2</span>How we got here</div><h2 class="title">2024: AI wins <em>two</em> Nobel prizes</h2></header>
+  <div class="body grid-2" style="align-content:center">
+    <div class="card glow-blue" style="padding:40px"><div class="icon">⚛️</div><h3>Physics</h3><p class="big" style="font-size:36px">John J. Hopfield & Geoffrey E. Hinton</p><p class="muted">“for foundational discoveries and inventions that enable machine learning with artificial neural networks”</p></div>
+    <div class="card glow-green" style="padding:40px"><div class="icon">🧬</div><h3>Chemistry</h3><p class="big" style="font-size:36px">David Baker · Demis Hassabis & John M. Jumper</p><p class="muted">“for computational protein design” · “for protein structure prediction” (AlphaFold)</p></div>
+  </div>
+  <p class="callout mt-m step">AI is no longer just a tool <i>for</i> science. It is now <b>part of how science is done</b>.</p>
+  <aside class="notes"><p>Exact Nobel citations (nobelprize.org). Hinton is one of the backprop authors from our timeline. AlphaFold comes back in chapter 7.</p></aside>
+</section>
+
+<!-- ================================================================ 3 · STACK -->
+<section class="slide" id="stack" data-demo="stack" data-title="The AI technology stack" data-chapter="3 · The technology stack" data-minutes="1.5">
+  <header><div class="kicker"><span class="num">3</span>The technology stack</div><h2 class="title">The AI technology stack</h2></header>
+  <div class="body row" style="gap:60px">
+    <div class="col" style="flex:0.85;justify-content:center"><div data-role="tower"></div></div>
+    <div class="col" style="flex:1.15;justify-content:center"><div data-role="detail"></div></div>
+    <span class="step trigger" data-action="layer:1"></span><span class="step trigger" data-action="layer:2"></span><span class="step trigger" data-action="layer:3"></span>
+    <span class="step trigger" data-action="layer:4"></span><span class="step trigger" data-action="layer:5"></span><span class="step trigger" data-action="layer:6"></span>
+  </div>
+  <aside class="notes"><p>Bottom to top: energy → chips → systems software → models → data & training → serving → apps & agents. Press → to climb.</p><p>Key line: <b>the model is just a pile of numbers (weights)</b>. Everything below exists to multiply them fast, and everything above makes them useful.</p></aside>
+</section>
+
+<section class="slide" id="journey" data-demo="journey" data-title="The journey of “hi”" data-chapter="3 · The technology stack" data-minutes="1.5">
+  <header><div class="kicker"><span class="num">3</span>The technology stack</div><h2 class="title">The 1-second journey of “<em>hi</em>”</h2></header>
+  <div class="body" style="display:flex;flex-direction:column;gap:30px">
+    <div data-role="line" style="height:380px"></div>
+    <div data-role="card" class="card" style="display:flex;gap:30px;align-items:flex-start;min-height:250px"></div>
+    <span class="step trigger" data-action="stop:1"></span><span class="step trigger" data-action="stop:2"></span><span class="step trigger" data-action="stop:3"></span><span class="step trigger" data-action="stop:4"></span>
+    <span class="step trigger" data-action="stop:5"></span><span class="step trigger" data-action="stop:6"></span><span class="step trigger" data-action="stop:7"></span><span class="step trigger" data-action="stop:8"></span>
+  </div>
+  <aside class="notes"><p>Nine stops, real numbers. The bit we'll open up for the rest of the talk is stops 5–7: <b>tokens → neural network → probabilities</b>. Everything else is plumbing that took 80 years of computer science.</p></aside>
+</section>
+
+<!-- ================================================================ 4 · INSIDE A NEURAL NETWORK -->
+<section class="slide" id="tensors" data-demo="tensors signals" data-title="Everything is numbers" data-chapter="4 · Inside a neural network" data-minutes="2">
+  <header><div class="kicker"><span class="num">4</span>Inside a neural network</div><h2 class="title">Step 0: to a computer, <em>everything is numbers</em></h2></header>
+  <div class="body row" style="gap:46px">
+    <div class="col" style="flex:0 0 640px">
+      <div data-role="photo" style="height:640px;border-radius:14px;overflow:hidden;border:1px solid var(--line)"></div>
+      <div data-role="photo-ctl" class="controls mt-s"></div>
+      <div data-role="photo-readout" class="readout mt-s">hover the photo · scroll to zoom</div>
+    </div>
+    <div class="col grid-2 cards-compact" style="gap:20px;align-content:start">
+      <div class="card"><h3>📷 A photo = a grid of pixels</h3><p class="small">Rear Admiral Grace Hopper, computing pioneer. Each pixel is 3 numbers (red, green, blue) from 0 to 255. Even this 64 × 75 version is <b class="c-yellow">14,400 numbers</b>.</p><img class="eq" src="assets/eq/image_tensor.svg" alt="image tensor"></div>
+      <div class="card step"><h3>🧠 A brain signal = numbers over time</h3><div data-role="eeg" style="height:170px"></div><p class="xs muted" style="margin:6px 0 0">EEG: 4 channels × 800 samples</p></div>
+      <div class="card step"><h3>🔤 Text = token IDs</h3><div data-role="text-tokens"></div></div>
+      <div class="card step"><h3>🧬 A protein = a sequence of amino acids</h3><div data-role="protein-seq"></div></div>
+    </div>
+  </div>
+  <aside class="notes"><p><b>Do this:</b> click “zoom into the eye”. As you zoom, the photo dissolves into numbers. This is all the computer ever sees.</p><p>Then reveal: brain signals, text (real Gemma token IDs, e.g. “The” = 818) and proteins are all just numbers too. <b>That's why one technology works on all of science.</b></p></aside>
+</section>
+
+<section class="slide" id="tensors2" data-title="Tensors: numbers in boxes" data-chapter="4 · Inside a neural network" data-minutes="1">
+  <header><div class="kicker"><span class="num">4</span>Inside a neural network</div><h2 class="title">Tensors: numbers stacked in boxes</h2></header>
+  <div class="body row" style="gap:44px">
+    <div class="col" style="flex:1.6;justify-content:center">
+      <div class="video-frame" style="border-radius:14px;overflow:hidden">
+        <video data-src="assets/video/b02_tensor_ranks.mp4" poster="assets/poster/b02_tensor_ranks.jpg" data-autoplay muted playsinline loop
+          data-cues='[{"t":0,"label":"a single number: a <b>scalar</b>"},{"t":2,"label":"a list: a <b>vector</b>"},{"t":4.5,"label":"a grid: a <b>matrix</b>"},{"t":7,"label":"a stack of grids: a 3D <b>tensor</b> (an RGB image!)"},{"t":9.5,"label":"a batch of images: a 4D <b>tensor</b>"}]'></video>
+        <div class="vcap"></div>
+        <div class="vmissing missing">🧊 Blender animation <b>b02_tensor_ranks.mp4</b> not rendered yet</div>
+      </div>
+    </div>
+    <div class="col" style="justify-content:center">
+      <table class="tbl">
+        <tr><th>name</th><th>shape</th><th>example</th></tr>
+        <tr><td>scalar</td><td class="mono">()</td><td>a temperature</td></tr>
+        <tr><td>vector</td><td class="mono">(640)</td><td>one token’s embedding</td></tr>
+        <tr><td>matrix</td><td class="mono">(640, 1024)</td><td>a layer’s weights</td></tr>
+        <tr><td>3D tensor</td><td class="mono">(600, 512, 3)</td><td>a colour photo</td></tr>
+        <tr><td>4D tensor</td><td class="mono">(32, 600, 512, 3)</td><td>a batch of 32 photos</td></tr>
+      </table>
+      <p class="callout blue mt-m small">A neural network is a machine that <b>transforms tensors into other tensors</b>. That's literally why Google's library is called Tensor<b>Flow</b>.</p>
+    </div>
+  </div>
+  <aside class="notes"><p>Tensor = a box of numbers with some number of axes (its “rank”). Every input, every layer, every output of a neural network is a tensor. GPUs and TPUs are machines built to crunch tensors.</p></aside>
+</section>
+
+<section class="slide video-slide" id="v-neuron" data-title="▶ A neuron (animation)" data-chapter="4 · Inside a neural network" data-minutes="0.5">
+  <div class="video-frame full"><video data-src="assets/video/m01_neuron.mp4" poster="assets/poster/m01_neuron.jpg" data-autoplay muted playsinline></video>
+    <div class="vmissing missing">🎬 manim animation <b>m01_neuron.mp4</b> not rendered yet</div>
+    <button class="btn small vbtn" onclick="Deck.toggleVideo(true)">↻ replay</button></div>
+  <aside class="notes"><p>Narrate: three inputs, each multiplied by its <b>weight</b> (blue = positive, red = negative). Add them up, add a <b>bias</b>, then squash with the <b>sigmoid</b>: 1.02 → 0.73. <b>A neuron is a weighted vote.</b> (K = pause, J = replay.)</p></aside>
+</section>
+
+<section class="slide" id="neuron" data-demo="neuron" data-title="One artificial neuron" data-chapter="4 · Inside a neural network" data-minutes="2.5">
+  <header><div class="kicker"><span class="num">4</span>Inside a neural network</div><h2 class="title">One artificial neuron: <em>a weighted vote</em></h2></header>
+  <div class="body row" style="gap:40px">
+    <div class="col" style="flex:1.25"><div data-role="plot" style="height:690px"></div><div data-role="acc" class="small mt-s"></div></div>
+    <div class="col" style="gap:16px">
+      <div data-role="diagram" style="height:270px"></div>
+      <div data-role="eq" class="eqline" style="font-size:36px"></div>
+      <div data-role="ctl" class="controls" style="flex-direction:column;align-items:flex-start;gap:6px"></div>
+      <div data-role="ctl2" class="controls"></div>
+      <p class="small muted">Iris flowers (Fisher, 1936). <span class="m c-blue">x</span>₁ = petal length, <span class="m c-blue">x</span>₂ = petal width. The yellow line is where the neuron is exactly 50 : 50.</p>
+    </div>
+  </div>
+  <aside class="notes"><p><b>Live:</b> it starts wrong on purpose: the neuron calls every flower “setosa” (50/100). Drag <b>b</b> up to about −4 and watch the yellow line sweep in: 100/100. Then drag w₁ and w₂: the line tilts, the colours (the neuron's confidence) follow, and the arrow <b>w</b> always points perpendicular to the line.</p><p>Switch to the <b>hard pair</b>: they overlap and no straight line is perfect. Press <b>“let it learn”</b> as a teaser for chapter 5: it climbs to 94/100 (the best any straight line can do here is 97). “reset” puts the bad line back.</p><p>Bottom line: <b>weights = what the neuron cares about; bias = how easily it fires</b>.</p></aside>
+</section>
+
+<section class="slide" id="activation" data-demo="activation" data-title="Why bend? Activation functions" data-chapter="4 · Inside a neural network" data-minutes="1">
+  <header><div class="kicker"><span class="num">4</span>Inside a neural network</div><h2 class="title">Why <em>bend</em>? Activation functions</h2></header>
+  <div class="body row" style="gap:48px">
+    <div class="col" style="flex:1.4"><div data-role="plot" style="height:640px"></div><div data-role="ctl" class="controls mt-s"></div></div>
+    <div class="col" style="gap:22px;justify-content:center">
+      <div data-role="note" class="big" style="font-size:32px;min-height:140px"></div>
+      <div class="row center-v" style="gap:30px"><img class="eq z12" src="assets/eq/sigmoid.svg" alt="sigmoid"><img class="eq z12" src="assets/eq/relu.svg" alt="ReLU"></div>
+      <div class="card glow-red"><h3>Without a bend, depth is useless</h3><img class="eq" src="assets/eq/collapse.svg" alt="collapse"><p class="small muted">Two straight-line steps in a row are just one straight-line step. The <b>nonlinearity</b> is what lets stacked layers do something new.</p></div>
+    </div>
+  </div>
+  <aside class="notes"><p>Flip through: step (1943, can't be trained), sigmoid, tanh, <b>ReLU</b> (the 2012 breakthrough workhorse) and GELU (used in Transformers like Gemma).</p><p>Key idea: stacking matrix multiplications without a bend collapses to a single matrix. <b>The bend is what makes deep learning deep.</b></p></aside>
+</section>
+
+<section class="slide video-slide" id="v-layer" data-title="▶ A layer is a matrix (animation)" data-chapter="4 · Inside a neural network" data-minutes="0.5">
+  <div class="video-frame full"><video data-src="assets/video/m02_layer_matrix.mp4" poster="assets/poster/m02_layer_matrix.jpg" data-autoplay muted playsinline></video>
+    <div class="vmissing missing">🎬 manim animation <b>m02_layer_matrix.mp4</b> not rendered yet</div>
+    <button class="btn small vbtn" onclick="Deck.toggleVideo(true)">↻ replay</button></div>
+  <aside class="notes"><p>Watch each neuron's weights slide into one row of a matrix. <b>A whole layer of neurons = one matrix multiplication.</b> That's why AI runs on chips built for matrix maths.</p></aside>
+</section>
+
+<section class="slide" id="layer" data-demo="layer" data-title="A layer is a matrix" data-chapter="4 · Inside a neural network" data-minutes="1.5">
+  <header><div class="kicker"><span class="num">4</span>Inside a neural network</div><h2 class="title">A whole layer = <em>one matrix multiplication</em></h2></header>
+  <div class="body row" style="gap:40px">
+    <div class="col" style="flex:0.8"><div data-role="net" style="height:620px"></div></div>
+    <div class="col" style="flex:1.2;gap:22px;justify-content:center">
+      <div data-role="matrix"></div>
+      <div data-role="dot" class="big mono" style="font-size:28px;min-height:84px"></div>
+      <div data-role="ctl" class="controls"></div>
+      <div class="row center-v" style="gap:40px"><img class="eq z14" src="assets/eq/layer.svg" alt="a = σ(Wx+b)"><img class="eq" src="assets/eq/layer_entry.svg" alt="entry"></div>
+    </div>
+  </div>
+  <aside class="notes"><p>Press <b>next neuron</b> four times: each row of W times the input column gives one neuron's sum. Hover any matrix entry to light up its wire. Press twice more: add the bias, then squash with σ.</p><p>Same numbers as the animation: row 1 gives 1.22, plus its bias −0.2 = <b>1.02</b>, and σ(1.02) = <b>0.73</b>. All four outputs (0.73, 0.58, 0.57, 0.33) match the video. GPUs and TPUs do millions of these dot products in parallel.</p></aside>
+</section>
+
+<section class="slide video-slide" id="v-warp" data-title="▶ Layers warp space (animation)" data-chapter="4 · Inside a neural network" data-minutes="0.5">
+  <div class="video-frame full"><video data-src="assets/video/m03_grid_warp.mp4" poster="assets/poster/m03_grid_warp.jpg" data-autoplay muted playsinline></video>
+    <div class="vmissing missing">🎬 manim animation <b>m03_grid_warp.mp4</b> not rendered yet</div>
+    <button class="btn small vbtn" onclick="Deck.toggleVideo(true)">↻ replay</button></div>
+  <aside class="notes"><p>The 3Blue1Brown picture of a layer: <b>stretch & rotate</b> the whole plane (W), <b>shift</b> it (b), then <b>bend</b> it (tanh). Two tangled classes end up separable by a straight line.</p></aside>
+</section>
+
+<section class="slide" id="warp" data-demo="warp" data-title="Layers warp space" data-chapter="4 · Inside a neural network" data-minutes="2.5">
+  <header><div class="kicker"><span class="num">4</span>Inside a neural network</div><h2 class="title">Tensor transformations: <em>a layer warps space</em></h2></header>
+  <div class="body row" style="gap:44px">
+    <div class="col" style="flex:0 0 790px"><div data-role="plot" style="height:790px"></div></div>
+    <div class="col" style="gap:20px">
+      <div data-role="eq"></div>
+      <p class="small muted">Drag the tips of <b class="c-green">î</b> and <b class="c-red">ĵ</b>: the first column of the matrix is where <b class="c-green">î</b> lands, the second is where <b class="c-red">ĵ</b> lands.</p>
+      <div data-role="ctl" class="controls" style="display:grid;grid-template-columns:1fr 1fr;gap:4px 24px"></div>
+      <div data-role="ctl2" class="controls"></div>
+      <div data-role="ctl3" class="controls"></div>
+      <p class="small">A layer with 640 inputs does exactly this in 640 dimensions: <b>stretch, rotate, shift, bend</b>.</p>
+      <span class="step trigger" data-action="rotate"></span><span class="step trigger" data-action="shear"></span><span class="step trigger" data-action="shift"></span><span class="step trigger" data-action="tanh"></span>
+    </div>
+  </div>
+  <aside class="notes"><p>Press → for: <b>rotate</b>, <b>shear</b>, <b>shift</b> (the bias), then <b>bend with tanh</b>. Watch the grid lines curve and everything squash into the dashed box.</p><p>Linear algebra in one line: a matrix moves î and ĵ, and the whole grid follows. det W = how much area grows. Hit “squash” to see det → 0 (information is destroyed).</p></aside>
+</section>
+
+<section class="slide" id="deep" data-demo="deep" data-title="Deep = many warps" data-chapter="4 · Inside a neural network" data-minutes="1.5">
+  <header><div class="kicker"><span class="num">4</span>Inside a neural network</div><h2 class="title">Deep learning = <em>warp, warp, warp</em>… until it’s simple</h2></header>
+  <div class="body row" style="gap:44px">
+    <div class="col" style="flex:0 0 800px"><div data-role="plot" style="height:790px"></div></div>
+    <div class="col" style="gap:24px;justify-content:center">
+      <div data-role="stage"></div>
+      <div data-role="ctl" class="controls"></div>
+      <img class="eq" src="assets/eq/deep.svg" alt="deep" style="max-width:100%">
+      <p class="small">A <b>trained</b> 2-2-2-2 network: only <b class="c-yellow">21 numbers</b>. Watch it unfold two tangled moons until a single straight line separates them, at 100% accuracy.</p>
+      <span class="step trigger" data-action="play"></span>
+    </div>
+  </div>
+  <aside class="notes"><p>Press → to play all 9 stages. Layer 1 squashes the plane into an S-shaped band, layer 2 unfolds it, and layer 3 pushes the two classes to opposite corners. The final straight line is the decision.</p><p><b>This is the central intuition of deep learning</b>: each layer makes the problem a bit simpler, until a straight line suffices. Big networks do it in thousands of dimensions.</p></aside>
+</section>
+
+<section class="slide" id="weights" data-demo="weights" data-title="Weights: the knobs" data-chapter="4 · Inside a neural network" data-minutes="1.5">
+  <header><div class="kicker"><span class="num">4</span>Inside a neural network</div><h2 class="title">Weights: <em>the knobs</em>. And there are a lot of them.</h2></header>
+  <div class="body row" style="gap:40px">
+    <div class="col" style="flex:1.25"><div data-role="img" style="height:600px;border-radius:12px;overflow:hidden;border:1px solid var(--line)"></div><div data-role="ctl" class="controls mt-s"></div><div data-role="desc" class="small mt-s"></div><span class="step trigger" data-action="zoom"></span></div>
+    <div class="col"><div class="small muted">How many knobs? (log scale)</div><div data-role="ladder" style="height:600px"></div><p class="small"><b class="c-yellow">Gemma 3 270M</b>: 268,098,176 numbers. 63% of them are the word table alone.</p></div>
+  </div>
+  <aside class="notes"><p>These are <b>real weights</b> from Gemma 3 270M: one pixel per number, blue positive, red negative. Press → to zoom all the way into the raw numbers. <b>This is what “knowledge” looks like in a neural network.</b> Nobody wrote these numbers; they were learned.</p><p>Right: the ladder of sizes, from our 3-knob neuron to hundreds of billions. Frontier model sizes (Gemini 4) are not disclosed.</p></aside>
+</section>
+
+<!-- ================================================================ 5 · LEARNING -->
+<section class="slide" id="loss" data-demo="loss" data-title="Measuring wrongness" data-chapter="5 · How machines learn" data-minutes="2">
+  <header><div class="kicker"><span class="num">5</span>How machines learn</div><h2 class="title">Learning step 1: <em>measure how wrong</em> you are</h2></header>
+  <div class="body row" style="gap:40px">
+    <div class="col" style="flex:1.3"><div data-role="plot" style="height:720px"></div></div>
+    <div class="col" style="gap:20px;justify-content:center">
+      <p class="small">The 8 planets. Can a machine rediscover a law of nature from data?</p>
+      <img class="eq" src="assets/eq/mse.svg" alt="loss">
+      <div data-role="loss"></div>
+      <div data-role="ctl" class="controls" style="flex-direction:column;align-items:flex-start;gap:4px"></div>
+      <div data-role="ctl2" class="controls"></div>
+      <div data-role="reveal" class="card glow-green kepler-reveal"><b class="c-green">w ≈ 1.50 → T² ∝ a³</b><br><span class="small">Kepler’s third law (1619), rediscovered by “minimising the loss”.</span><img class="eq" src="assets/eq/kepler.svg" alt="Kepler"></div>
+      <span class="step trigger" data-action="best"></span><span class="step trigger" data-action="raw"></span>
+    </div>
+  </div>
+  <aside class="notes"><p>Each red square is one planet's error, <b>squared</b>, literally drawn as a square. The loss L is their average area. Drag the yellow handles and the squares shrink and grow. <b>Learning = making the red squares as small as possible.</b></p><p>Press → for best fit: w = 1.498. That's <b>Kepler's third law</b>, discovered here by minimising a number. Press → again for raw axes: the straight line becomes the familiar curve.</p></aside>
+</section>
+
+<section class="slide video-slide" id="v-descent" data-title="▶ Gradient descent (animation)" data-chapter="5 · How machines learn" data-minutes="0.5">
+  <div class="video-frame full"><video data-src="assets/video/m04_gradient_descent.mp4" poster="assets/poster/m04_gradient_descent.jpg" data-autoplay muted playsinline></video>
+    <div class="vmissing missing">🎬 manim animation <b>m04_gradient_descent.mp4</b> not rendered yet</div>
+    <button class="btn small vbtn" onclick="Deck.toggleVideo(true)">↻ replay</button></div>
+  <aside class="notes"><p>The slope tells you which way is downhill. Take a step of size η. Too big a step and you overshoot. <b>Learning = rolling downhill on the loss.</b></p></aside>
+</section>
+
+<section class="slide" id="descent" data-demo="descent" data-title="Rolling downhill" data-chapter="5 · How machines learn" data-minutes="2">
+  <header><div class="kicker"><span class="num">5</span>How machines learn</div><h2 class="title">Learning step 2: <em>roll downhill</em> (gradient descent)</h2></header>
+  <div class="body row" style="gap:36px">
+    <div class="col" style="flex:1.35"><div data-role="plot" style="height:730px"></div></div>
+    <div class="col" style="gap:16px">
+      <img class="eq z12" src="assets/eq/gd.svg" alt="gradient descent">
+      <div data-role="readout" class="readout" style="font-size:22px;min-height:60px"></div>
+      <div data-role="ctl" class="controls"></div>
+      <div data-role="ctl2" class="controls"></div>
+      <div data-role="fitplot" style="height:200px"></div>
+      <div data-role="lossplot" style="height:170px"></div>
+      <span class="step trigger" data-action="play"></span><span class="step trigger" data-action="lr:0.6"></span><span class="step trigger" data-action="lr:0.8"></span>
+    </div>
+  </div>
+  <aside class="notes"><p>This map is the <b>loss landscape</b> for the Kepler problem: every point is a choice of (w, b), and colour = how wrong. The green arrow points downhill (the negative gradient).</p><p>Press →: roll with η = 0.1 (slow and steady). Press → for η = 0.6 (fast but zig-zags), then η = 0.8 (💥 diverges). Click anywhere on the map to drop the ball somewhere new.</p></aside>
+</section>
+
+<section class="slide video-slide" id="landscape" data-title="▶ Real loss landscapes (Blender)" data-chapter="5 · How machines learn" data-minutes="0.75">
+  <div class="video-frame full"><video data-src="assets/video/b03_loss_landscape.mp4" poster="assets/poster/b03_loss_landscape.jpg" data-autoplay muted playsinline loop></video>
+    <div class="vmissing missing">🧊 Blender animation <b>b03_loss_landscape.mp4</b> not rendered yet</div>
+    <div class="vcap" style="opacity:1">Gemma 3 has 268 million knobs, so its landscape has <b>268 million dimensions</b>. Same idea: roll downhill.</div></div>
+  <aside class="notes"><p>We can only draw 2 knobs as a landscape. Real networks have millions to trillions, but gradient descent doesn't care: it just needs the slope in every direction. That's the <b>gradient</b>. The next question is how to get it efficiently.</p></aside>
+</section>
+
+<section class="slide video-slide" id="v-backprop" data-title="▶ Backpropagation (animation)" data-chapter="5 · How machines learn" data-minutes="0.5">
+  <div class="video-frame full"><video data-src="assets/video/m05_backprop.mp4" poster="assets/poster/m05_backprop.jpg" data-autoplay muted playsinline></video>
+    <div class="vmissing missing">🎬 manim animation <b>m05_backprop.mp4</b> not rendered yet</div>
+    <button class="btn small vbtn" onclick="Deck.toggleVideo(true)">↻ replay</button></div>
+  <aside class="notes"><p>Forward: numbers flow left → right to a loss. Backward: <b>blame</b> flows right → left, multiplied at each step by the local slope. That's the <b>chain rule</b>.</p></aside>
+</section>
+
+<section class="slide" id="backprop" data-demo="backprop" data-title="Backpropagation" data-chapter="5 · How machines learn" data-minutes="2">
+  <header><div class="kicker"><span class="num">5</span>How machines learn</div><h2 class="title">Learning step 3: <em>backpropagation</em> assigns the blame</h2></header>
+  <div class="body" style="display:flex;flex-direction:column;gap:18px">
+    <div data-role="graph" style="height:470px"></div>
+    <div class="row" style="gap:40px;align-items:center">
+      <div class="col" style="flex:1.3"><div data-role="chain" class="eqline" style="font-size:32px;line-height:1.6;min-height:150px"></div></div>
+      <div class="col" style="flex:0.7;align-items:flex-end"><img class="eq z12" src="assets/eq/chain.svg" alt="chain rule"></div>
+    </div>
+    <div data-role="ctl" class="controls"></div>
+    <span class="step trigger" data-action="forward"></span><span class="step trigger" data-action="backward"></span><span class="step trigger" data-action="update"></span><span class="step trigger" data-action="auto"></span>
+  </div>
+  <aside class="notes"><p>Press →: <b>forward</b> (blue pulses compute ŷ and the loss), <b>backward</b> (green pulses carry ∂L back through each box), <b>nudge the weights</b> (w moves opposite its gradient and the loss drops), then <b>train ×20</b>.</p><p>Each box only needs its <i>local</i> slope; the chain rule multiplies them. That's how a 268-million-weight network gets all 268 million slopes in one backward pass.</p></aside>
+</section>
+
+<section class="slide" id="train" data-demo="train" data-title="Watch a network learn" data-chapter="5 · How machines learn" data-minutes="2.5">
+  <header><div class="kicker"><span class="num">5</span>How machines learn</div><h2 class="title">Put it together: <em>watch a network learn</em></h2></header>
+  <div class="body row" style="gap:36px">
+    <div class="col" style="flex:0 0 720px"><div data-role="boundary" style="height:720px"></div></div>
+    <div class="col" style="gap:14px">
+      <div data-role="net" style="height:400px"></div>
+      <div data-role="curve" style="height:120px"></div>
+      <div data-role="readout" class="readout"></div>
+      <div data-role="ctl" class="controls"></div>
+      <div data-role="ctl2" class="controls"></div>
+      <div data-role="ctl3" class="controls"></div>
+      <p class="xs muted">forward → loss → backward → update. Repeat. That loop is all of deep learning.</p>
+      <span class="step trigger" data-action="play"></span>
+    </div>
+  </div>
+  <aside class="notes"><p>Press → to train the spiral (the hardest). Every little square on the right is <b>one neuron's opinion</b> over the whole plane. Early neurons learn simple slants, later ones combine them into spirals.</p><p>Try: 1 hidden layer (struggles) vs 3; tanh vs ReLU; XOR with 1 neuron (impossible: can't draw it with a straight line!). This runs live in your browser: about 50 lines of maths, no libraries.</p></aside>
+</section>
+
+<!-- ================================================================ 6 · LLMs -->
+<section class="slide" id="embed" data-demo="embed" data-title="Words become vectors" data-chapter="6 · From networks to Gemini" data-minutes="1.5">
+  <header><div class="kicker"><span class="num">6</span>From networks to Gemini</div><h2 class="title">Words become vectors: a <em>map of meaning</em></h2></header>
+  <div class="body row" style="gap:36px">
+    <div class="col" style="flex:1.45"><div data-role="map" style="height:760px"></div></div>
+    <div class="col" style="gap:16px">
+      <img class="eq" src="assets/eq/embed.svg" alt="embedding">
+      <div data-role="ctl" class="controls"></div>
+      <div data-role="legend" class="legend"></div>
+      <div data-role="nn" class="small" style="min-height:120px"></div>
+      <div class="card"><h3 style="font-size:26px">Vector arithmetic (real results)</h3><div data-role="analogies"></div></div>
+      <span class="step trigger" data-action="find:Jupiter"></span>
+    </div>
+  </div>
+  <aside class="notes"><p>Each word token is a list of 640 numbers in Gemma, learned during training. This map squashes 640 dimensions to 2 (t-SNE): <b>planets cluster, elements cluster, emotions cluster</b>. Nobody told it what a planet is.</p><p>Press → to find <b>Jupiter</b>: its nearest neighbours out of all 262,144 tokens are Saturn, Venus, Neptune, Mars… and Zeus. Analogies: king − man + woman = queen; sodium − Na + K = potassium. 14 of 18 worked. Shown honestly with misses.</p></aside>
+</section>
+
+<section class="slide video-slide" id="v-attention" data-title="▶ Attention (animation)" data-chapter="6 · From networks to Gemini" data-minutes="0.5">
+  <div class="video-frame full"><video data-src="assets/video/m07_attention.mp4" poster="assets/poster/m07_attention.jpg" data-autoplay muted playsinline></video>
+    <div class="vmissing missing">🎬 manim animation <b>m07_attention.mp4</b> not rendered yet</div>
+    <button class="btn small vbtn" onclick="Deck.toggleVideo(true)">↻ replay</button></div>
+  <aside class="notes"><p>“The wombat crossed the road because it was hungry.” What is “it”? Each word sends a <b>query</b>, every earlier word offers a <b>key</b>, and matching pairs share their <b>values</b>. That's attention: words gathering context from other words.</p></aside>
+</section>
+
+<section class="slide" id="attention" data-demo="attention" data-title="Attention" data-chapter="6 · From networks to Gemini" data-minutes="2">
+  <header><div class="kicker"><span class="num">6</span>From networks to Gemini</div><h2 class="title">Attention: words <em>look at</em> other words</h2></header>
+  <div class="body" style="display:flex;flex-direction:column;gap:12px">
+    <div class="row center-v" style="gap:24px"><div data-role="sent"></div><div data-role="heads" class="controls" style="gap:10px 12px"></div></div>
+    <div data-role="attn" style="height:300px;position:relative"></div>
+    <div class="row" style="gap:40px">
+      <div class="col" style="flex:1.05;justify-content:center"><div data-role="headdesc" class="small" style="min-height:110px"></div><img class="eq mt-s" src="assets/eq/attention.svg" alt="attention"></div>
+      <div class="col"><div data-role="heat" style="height:390px"></div></div>
+    </div>
+    <span class="step trigger" data-action="head:previous"></span><span class="step trigger" data-action="head:first"></span>
+  </div>
+  <aside class="notes"><p><b>Real attention</b> from Gemma 3, validated against the model itself. Hover any word to see where it looks.</p><p>Starts on <b>layer 9, head 2</b>: from “it”, 51% of attention goes to “trophy”, only 8% to “suitcase”. The model has worked out what “it” refers to. Press → for a <b>previous-token</b> head (simple pattern) and an <b>attention sink</b> (parks on &lt;bos&gt; when there's nothing to look at).</p><p>Gemma has 18 layers × 4 heads = 72 of these, each specialised.</p></aside>
+</section>
+
+<section class="slide" id="llm3d" data-demo="llm3d" data-title="The whole Transformer in 3D" data-chapter="6 · From networks to Gemini" data-minutes="1">
+  <header><div class="kicker"><span class="num">6</span>From networks to Gemini</div><h2 class="title">The whole Transformer, <em>in 3D</em></h2></header>
+  <div class="body" style="display:flex;flex-direction:column;gap:16px">
+    <div class="embed-frame" data-role="frame" style="height:740px">
+      <div class="embed-cover">
+        <div style="font-size:84px">🧊</div>
+        <p class="big center">Every matrix multiply of a real language model, rendered in 3D</p>
+        <div class="controls"><button class="btn primary" data-embed="https://bbycroft.net/llm">Load bbycroft.net/llm (internet)</button><button class="btn" data-embed="https://poloclub.github.io/transformer-explainer/">Load Transformer Explainer (GPT-2 in your browser)</button></div>
+        <p class="small muted">Embeddings → (attention + MLP) × N layers → probabilities over the vocabulary</p>
+      </div>
+    </div>
+  </div>
+  <aside class="notes"><p>Brendan Bycroft's 3D walkthrough of nanoGPT and GPT-2/3 (needs internet). Zoom from the embedding table through attention heads (Q, K, V) and the MLP to the softmax.</p><p>Everything we built tonight, neurons, matrices, nonlinearities and attention, stacked dozens of times. Backup: Transformer Explainer runs GPT-2 live in the browser.</p></aside>
+</section>
+
+<section class="slide video-slide" id="v-softmax" data-title="▶ Softmax & temperature (animation)" data-chapter="6 · From networks to Gemini" data-minutes="0.5">
+  <div class="video-frame full"><video data-src="assets/video/m06_softmax.mp4" poster="assets/poster/m06_softmax.jpg" data-autoplay muted playsinline></video>
+    <div class="vmissing missing">🎬 manim animation <b>m06_softmax.mp4</b> not rendered yet</div>
+    <button class="btn small vbtn" onclick="Deck.toggleVideo(true)">↻ replay</button></div>
+  <aside class="notes"><p>Raw scores → exponentiate → divide by the total → probabilities that sum to 1. <b>Temperature</b> sharpens or flattens them.</p></aside>
+</section>
+
+<section class="slide" id="predict" data-demo="predict" data-title="Next-token prediction" data-chapter="6 · From networks to Gemini" data-minutes="1.5">
+  <header><div class="kicker"><span class="num">6</span>From networks to Gemini</div><h2 class="title">A language model is a <em>next-token predictor</em></h2></header>
+  <div class="body row" style="gap:50px">
+    <div class="col" style="flex:1.45"><div data-role="nt"></div></div>
+    <div class="col" style="gap:22px;justify-content:center">
+      <img class="eq z12" src="assets/eq/softmax.svg" alt="softmax">
+      <p class="small">262,144 scores → <b>softmax</b> → probabilities. Low <span class="m c-orange">T</span> = cautious, high <span class="m c-orange">T</span> = creative (or unhinged).</p>
+      <img class="eq" src="assets/eq/lm.svg" alt="chain of predictions">
+      <p class="small muted">Write one token, append it, predict again. Real outputs from Gemma 3 270M (pretrained). Small models also confidently make things up: try “largest planet”.</p>
+      <span class="step trigger" data-action="prompt:gold"></span><span class="step trigger" data-action="prompt:planet"></span>
+    </div>
+  </div>
+  <aside class="notes"><p>Great Barrier Reef → “Australia” 49%, “Queensland” 34%. Press → for <b>gold</b>: “Au” 32%, “gold” 23%. Slide T down to 0.3: Au shoots to ~75%.</p><p>Press → for <b>largest planet</b>: “Jupiter” is only 0.85% and the greedy text loops. <b>Prediction ≠ truth</b>: a hallucination in action. Big models are far better, but it's the same mechanism.</p></aside>
+</section>
+
+<section class="slide" id="scale" data-demo="scale" data-title="How LLMs are trained & scaled" data-chapter="6 · From networks to Gemini" data-minutes="1.5">
+  <header><div class="kicker"><span class="num">6</span>From networks to Gemini</div><h2 class="title">Training a giant: <em>predict, align, think</em> and scale</h2></header>
+  <div class="body row" style="gap:40px">
+    <div class="col" style="flex:0.8;gap:14px">
+      <div class="card glow-blue"><h3>① Pre-training</h3><p class="small">Predict the next token on trillions of tokens of text, code, images, audio. Weeks on thousands of TPUs.</p><img class="eq" src="assets/eq/xent.svg" alt="cross entropy" style="zoom:.8"></div>
+      <div class="card glow-yellow"><h3>② Post-training</h3><p class="small">Fine-tune on great example answers, then <b>reinforcement learning from human (and AI) feedback</b>. This is where “Hi there! How can I help?” comes from.</p></div>
+      <div class="card glow-green"><h3>③ Thinking</h3><p class="small">RL on problems with checkable answers (maths, code) teaches models to reason step by step before answering.</p></div>
+    </div>
+    <div class="col" style="gap:14px">
+      <div data-role="plot" style="height:560px"></div>
+      <div data-role="ctl" class="controls"></div>
+      <div data-role="out" class="small" style="min-height:70px"></div>
+      <div class="row center-v" style="gap:30px"><img class="eq" src="assets/eq/scaling.svg" alt="scaling law"><span class="xs muted">Chinchilla scaling law (Hoffmann et al. 2022; refit by Besiroglu et al. 2024)</span></div>
+      <span class="step trigger" data-action="C:21"></span><span class="step trigger" data-action="C:25.5"></span>
+    </div>
+  </div>
+  <aside class="notes"><p>Three stages: pre-train (learn the world), post-train (learn to be helpful and safe), think (learn to reason).</p><p>The scaling law: loss falls smoothly and predictably with parameters N and data D. For a fixed compute budget there's a sweet spot: about <b>20 tokens per parameter</b>. GPT-3 (175B on 300B tokens) was too big for its data; Chinchilla (70B on 1.4T) hit the sweet spot. Press → to change the budget.</p></aside>
+</section>
+
+<!-- ================================================================ 7 · SCIENCE -->
+<section class="slide" id="science" data-demo="protein" data-title="AI for science" data-chapter="7 · AI for science" data-minutes="2">
+  <header><div class="kicker"><span class="num">7</span>AI for science</div><h2 class="title">AI for science: <em>beyond chatbots</em></h2></header>
+  <div class="body row" style="gap:40px">
+    <div class="col" style="flex:0 0 700px"><div data-role="prot" style="height:700px"></div><div data-role="pctl" class="controls mt-s"></div></div>
+    <div class="col">
+      <div class="grid-2" style="gap:16px">
+        <div class="card step"><h3>🧬 AlphaFold</h3><p class="small">Protein structure from sequence. <b>200M+</b> predicted structures, free to all. AlphaFold 3 adds DNA, RNA and drugs.</p></div>
+        <div class="card step"><h3>💎 GNoME</h3><p class="small"><b>2.2 million</b> new crystal structures, ~380,000 predicted stable: candidate batteries, solar cells, superconductors.</p></div>
+        <div class="card step"><h3>🌦️ GenCast</h3><p class="small">15-day ensemble weather forecasts that beat the leading physics system on <b>97.2%</b> of targets.</p></div>
+        <div class="card step"><h3>🧮 AlphaEvolve</h3><p class="small">A Gemini coding agent found 4×4 complex matrix multiplication in <b>48 multiplications</b>, beating Strassen (1969).</p></div>
+        <div class="card step"><h3>🧑‍🔬 AI co-scientist</h3><p class="small">Multi-agent Gemini system that proposes and debates testable hypotheses (e.g. drug repurposing).</p></div>
+        <div class="card step"><h3>🧾 AlphaGenome</h3><p class="small">Reads up to <b>1 million DNA letters</b> and predicts how variants change gene regulation.</p></div>
+      </div>
+    </div>
+  </div>
+  <aside class="notes"><p>Left: a <b>real protein</b>, green fluorescent protein from a jellyfish (PDB 1EMA, the Nobel-winning glowing tag used in labs everywhere). Its 11 β-strands form a barrel. AlphaFold predicts shapes like this from the amino-acid sequence alone.</p><p>Reveal the six cards (all from published Nature papers or DeepMind posts; see docs/facts.md). Message: <b>the same maths</b>, multiply, bend, roll downhill, applied to nature's data.</p></aside>
+</section>
+
+<section class="slide" id="lab" data-demo="lab" data-title="Which AI should my lab use?" data-chapter="7 · AI for science" data-minutes="1">
+  <header><div class="kicker"><span class="num">7</span>AI for science</div><h2 class="title">Which AI should <em>my lab</em> use?</h2></header>
+  <div class="body row" style="gap:50px">
+    <div class="col" style="gap:30px;justify-content:center">
+      <div><div class="kicker">1 · What does your data look like?</div><div data-role="q1"></div></div>
+      <div><div class="kicker">2 · How many examples?</div><div data-role="q2"></div></div>
+      <div><div class="kicker">3 · What do you want to do?</div><div data-role="q3"></div></div>
+    </div>
+    <div class="col" style="justify-content:center"><div data-role="rec" class="card glow-green rec" style="padding:36px;min-height:420px"></div></div>
+  </div>
+  <aside class="notes"><p>Ask the audience for a real project and click through. Two takeaways: <b>small tabular data → classical ML</b> (put the GPU down), and <b>start from pre-trained models</b> rather than training from scratch.</p></aside>
+</section>
+
+<!-- ================================================================ WRAP -->
+<section class="slide" id="limits" data-title="What AI still gets wrong" data-chapter="Wrap-up" data-minutes="1.5">
+  <header><div class="kicker">Wrap-up</div><h2 class="title">What AI still gets <em>wrong</em></h2></header>
+  <div class="body grid-3" style="align-content:center">
+    <div class="card glow-red step"><div class="icon">🎭</div><h3>Hallucination</h3><p class="small">It predicts <i>plausible</i> tokens, not <i>true</i> ones. Always verify facts, citations and numbers.</p></div>
+    <div class="card glow-orange step"><div class="icon">⚖️</div><h3>Bias & data</h3><p class="small">Models inherit the gaps and biases of their training data, including scientific blind spots.</p></div>
+    <div class="card glow-yellow step"><div class="icon">⚡</div><h3>Energy & cost</h3><p class="small">Compute grows 4–5× a year. Efficiency (MoE, distillation, better chips) is a research field of its own.</p></div>
+    <div class="card glow-blue step"><div class="icon">📏</div><h3>Evaluation</h3><p class="small">Benchmarks leak into training data and saturate fast. Measuring real ability is hard.</p></div>
+    <div class="card glow-purple step"><div class="icon">🕳️</div><h3>The black box</h3><p class="small">We can see every weight, yet still struggle to explain <i>why</i>. Interpretability is wide open.</p></div>
+    <div class="card glow-green step"><div class="icon">🛡️</div><h3>Safety & misuse</h3><p class="small">Guardrails, watermarking (SynthID) and frontier-safety evaluations are part of every release.</p></div>
+  </div>
+  <aside class="notes"><p>Be honest: everything tonight was a probability machine. The planet example showed a hallucination live. For scientists: <b>use AI like a brilliant but overconfident postdoc</b>. Check its work.</p></aside>
+</section>
+
+<section class="slide title-slide" id="recap" data-title="The whole story in six equations" data-chapter="Wrap-up" data-minutes="1">
+  <div class="hero-video" style="opacity:.25"><video data-src="assets/video/b01_hero_network.mp4" data-autoplay data-restart="false" loop muted playsinline></video></div>
+  <div style="position:absolute;inset:0;padding:64px 96px">
+    <div class="kicker">Wrap-up</div><h2 class="title">The whole story in <em>six equations</em></h2>
+    <div class="grid-3 mt-l" style="gap:28px">
+      <div class="card eq-card step"><div class="lbl">① a layer: multiply, shift, bend</div><img class="eq z16" src="assets/eq/layer.svg" alt="layer"></div>
+      <div class="card eq-card step"><div class="lbl">② measure the error</div><img class="eq" src="assets/eq/mse.svg" alt="loss"></div>
+      <div class="card eq-card step"><div class="lbl">③ roll downhill</div><img class="eq z14" src="assets/eq/gd.svg" alt="gradient descent"></div>
+      <div class="card eq-card step"><div class="lbl">④ assign the blame (backprop)</div><img class="eq z12" src="assets/eq/chain.svg" alt="chain rule"></div>
+      <div class="card eq-card step"><div class="lbl">⑤ let words look at words</div><img class="eq z08" src="assets/eq/attention.svg" alt="attention"></div>
+      <div class="card eq-card step"><div class="lbl">⑥ turn scores into choices</div><img class="eq z12" src="assets/eq/softmax.svg" alt="softmax"></div>
+    </div>
+    <p class="bigq center mt-l step" style="font-size:52px">Multiply, bend, repeat. Measure the error, roll downhill, repeat.<br><em>Then do it at an absurd scale.</em></p>
+  </div>
+  <aside class="notes"><p>Back to the opening question: <b>how does a pile of numbers decide to say “Hi there”?</b> Reveal the six equations one by one, then the answer line. Then pause before the last line.</p></aside>
+</section>
+
+<section class="slide" id="qa" data-title="Resources & Q&A" data-chapter="Wrap-up" data-minutes="0">
+  <header><div class="kicker">Thank you · Questions?</div><h2 class="title">Keep exploring</h2></header>
+  <div class="body grid-2" style="gap:60px">
+    <ul class="clean links">
+      <li><a href="https://www.youtube.com/c/3blue1brown" target="_blank">3Blue1Brown: Neural networks series</a></li>
+      <li><a href="https://bbycroft.net/llm" target="_blank">bbycroft.net/llm: an LLM in 3D</a></li>
+      <li><a href="https://poloclub.github.io/transformer-explainer/" target="_blank">Transformer Explainer</a></li>
+      <li><a href="https://playground.tensorflow.org" target="_blank">TensorFlow Playground</a></li>
+      <li><a href="https://distill.pub" target="_blank">distill.pub: visual ML essays</a></li>
+      <li><a href="https://developers.google.com/machine-learning/crash-course" target="_blank">Google ML Crash Course</a></li>
+    </ul>
+    <ul class="clean links">
+      <li><a href="https://ai.google.dev/gemma" target="_blank">Gemma open models</a> (the model in tonight’s demos)</li>
+      <li><a href="https://aistudio.google.com" target="_blank">Google AI Studio</a> (try Gemini free)</li>
+      <li><a href="https://jax-ml.github.io/scaling-book/" target="_blank">How to Scale Your Model (TPUs & LLMs)</a></li>
+      <li><a href="https://alphafold.ebi.ac.uk" target="_blank">AlphaFold Protein Structure Database</a></li>
+      <li><a href="https://epoch.ai/data/notable-ai-models" target="_blank">Epoch AI: data on AI models</a></li>
+      <li>This deck: open <span class="mono">state_of_ai/index.html</span>. All demos run offline.</li>
+    </ul>
+  </div>
+  <p class="center muted mt-l">GDG AI for Science · thank you! 🙏</p>
+  <aside class="notes"><p>Q&A. Likely questions are in TALK_SCRIPT.md (Q&A bank).</p></aside>
+</section>
+
+</div>
+
+<!-- data (generated by src/python/*; each file sets window.AIDATA.<key>) -->
+<script src="data/next_token.js"></script>
+<script src="data/tokens.js"></script>
+<script src="data/hopper.js"></script>
+<script src="data/eeg.js"></script>
+<script src="data/iris.js"></script>
+<script src="data/warpnet.js"></script>
+<script src="data/weights.js"></script>
+<script src="data/kepler.js"></script>
+<script src="data/embeddings.js"></script>
+<script src="data/attention.js"></script>
+<script src="data/compute.js"></script>
+<script src="data/protein.js"></script>
+<!-- engine + demos -->
+<script src="js/lib/util.js"></script>
+<script src="js/lib/nn.js"></script>
+<script src="js/deck.js"></script>
+<script src="js/demos/nexttoken.js"></script>
+<script src="js/demos/story.js"></script>
+<script src="js/demos/nn_basics.js"></script>
+<script src="js/demos/warp.js"></script>
+<script src="js/demos/learning.js"></script>
+<script src="js/demos/llm.js"></script>
+<script src="js/demos/science.js"></script>
+</body>
+</html>

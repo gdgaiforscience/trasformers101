@@ -1,0 +1,150 @@
+/bin/sh: line 1: sox: command not found
+[10/29/26 03:54:12] WARNING  SoX could not be found!              __init__.py:10
+                                                                                
+                                 If you do not have SoX, proceed                
+                             here:                                              
+                                  - - -                                         
+                             http://sox.sourceforge.net/ - - -                  
+                                                                                
+                                 If you do (or think that you                   
+                             should) have SoX, double-check your                
+                                 path variables.                                
+                                                                                
+<frozen runpy>:128: RuntimeWarning: 'manim.__main__' found in sys.modules after import of package 'manim', but prior to execution of 'manim.__main__'; this may result in unpredictable behaviour
+Manim Community v0.20.1
+
+Animation 0: FadeIn(NumberPlane of 4 submobjects), etc.:   0%|          | 0/1 [00:00<?, ?it/s]                                                                                              Animation 1: LaggedStart(Group):   0%|          | 0/1 [00:00<?, ?it/s]                                                                      Animation 2: FadeIn(RoundedRectangle), etc.:   0%|          | 0/1 [00:00<?, ?it/s]                                                                                  Animation 3: _MethodAnimation(ValueTracker):   0%|          | 0/1 [00:00<?, ?it/s]                                                                                  Animation 4: _MethodAnimation(ValueTracker):   0%|          | 0/1 [00:00<?, ?it/s]                                                                                  Animation 5: FadeOut(DashedLine):   0%|          | 0/1 [00:00<?, ?it/s]                                                                       [10/29/26 03:54:20] INFO     Writing                     tex_file_writing.py:110
+                             \special{dvisvgm:raw <g                            
+                             id='unique000'>}W_1                                
+                             \special{dvisvgm:raw                               
+                             </g>}\special{dvisvgm:raw                          
+                             <g                                                 
+                             id='unique001'>}\mathbf{x}\                        
+                             special{dvisvgm:raw </g>}                          
+                             to                                                 
+                             /usr/local/google/home/butt                        
+                             erworthnat/HACK/Trasformers                        
+                             4Dummies/state_of_ai/src/ma                        
+                             nim/_media/cuepass/Tex/e3ae                        
+                             ed921e315b5f.tex                                   
+[10/29/26 03:54:21] INFO     Writing                     tex_file_writing.py:110
+                             \special{dvisvgm:raw <g                            
+                             id='unique000'>}W_1                                
+                             \special{dvisvgm:raw                               
+                             </g>}\special{dvisvgm:raw                          
+                             <g                                                 
+                             id='unique001'>}\mathbf{x}                         
+                             \special{dvisvgm:raw                               
+                             </g>}\special{dvisvgm:raw                          
+                             <g id='unique002'>}+                               
+                             \special{dvisvgm:raw                               
+                             </g>}\special{dvisvgm:raw                          
+                             <g                                                 
+                             id='unique003'>}\mathbf{b}_                        
+                             1\special{dvisvgm:raw </g>}                        
+                             to                                                 
+                             /usr/local/google/home/butt                        
+                             erworthnat/HACK/Trasformers                        
+                             4Dummies/state_of_ai/src/ma                        
+                             nim/_media/cuepass/Tex/d334                        
+                             7a27850b8ce8.tex                                   
+[10/29/26 03:54:22] INFO     Writing                     tex_file_writing.py:110
+                             \special{dvisvgm:raw <g                            
+                             id='unique000'>}\tanh(                             
+                             \special{dvisvgm:raw                               
+                             </g>}\special{dvisvgm:raw                          
+                             <g id='unique001'>}W_1                             
+                             \special{dvisvgm:raw                               
+                             </g>}\special{dvisvgm:raw                          
+                             <g                                                 
+                             id='unique002'>}\mathbf{x}                         
+                             \special{dvisvgm:raw                               
+                             </g>}\special{dvisvgm:raw                          
+                             <g id='unique003'>}+                               
+                             \special{dvisvgm:raw                               
+                             </g>}\special{dvisvgm:raw                          
+                             <g                                                 
+                             id='unique004'>}\mathbf{b}_                        
+                             1 \special{dvisvgm:raw                             
+                             </g>}\special{dvisvgm:raw                          
+                             <g                                                 
+                             id='unique005'>})\special{d                        
+                             visvgm:raw </g>} to                                
+                             /usr/local/google/home/butt                        
+                             erworthnat/HACK/Trasformers                        
+                             4Dummies/state_of_ai/src/ma                        
+                             nim/_media/cuepass/Tex/c71e                        
+                             ec1b7c49692c.tex                                   
+Animation 6: FadeOut(VGroup of 2 submobjects), etc.:   0%|          | 0/1 [00:00<?, ?it/s]                                                                                          Animation 7: VecHomotopy(NumberPlane of 4 submobjects), etc.:   0%|          | 0/1 [00:00<?, ?it/s]Animation 7: VecHomotopy(NumberPlane of 4 submobjects), etc.: 100%|██████████| 1/1 [00:00<00:00,  7.01it/s]                                                                                                           Animation 9: FadeOut(VGroup of 2 submobjects), etc.:   0%|          | 0/1 [00:00<?, ?it/s]                                                                                          Animation 10: VecHomotopy(NumberPlane of 4 submobjects), etc.:   0%|          | 0/1 [00:00<?, ?it/s]Animation 10: VecHomotopy(NumberPlane of 4 submobjects), etc.: 100%|██████████| 1/1 [00:00<00:00,  5.82it/s]                                                                                                            Animation 12: FadeOut(VGroup of 2 submobjects), etc.:   0%|          | 0/1 [00:00<?, ?it/s]                                                                                           Animation 13: VecHomotopy(NumberPlane of 4 submobjects), etc.:   0%|          | 0/1 [00:00<?, ?it/s]Animation 13: VecHomotopy(NumberPlane of 4 submobjects), etc.: 100%|██████████| 1/1 [00:00<00:00,  5.81it/s]                                                                                                            [10/29/26 03:54:27] INFO     Writing                     tex_file_writing.py:110
+                             \special{dvisvgm:raw <g                            
+                             id='unique000'>}W_2                                
+                             \special{dvisvgm:raw                               
+                             </g>}\special{dvisvgm:raw                          
+                             <g                                                 
+                             id='unique001'>}\mathbf{h}_                        
+                             1\special{dvisvgm:raw </g>}                        
+                             to                                                 
+                             /usr/local/google/home/butt                        
+                             erworthnat/HACK/Trasformers                        
+                             4Dummies/state_of_ai/src/ma                        
+                             nim/_media/cuepass/Tex/fefa                        
+                             ca0e6c6c6ecb.tex                                   
+[10/29/26 03:54:28] INFO     Writing                     tex_file_writing.py:110
+                             \special{dvisvgm:raw <g                            
+                             id='unique000'>}W_2                                
+                             \special{dvisvgm:raw                               
+                             </g>}\special{dvisvgm:raw                          
+                             <g                                                 
+                             id='unique001'>}\mathbf{h}_                        
+                             1 \special{dvisvgm:raw                             
+                             </g>}\special{dvisvgm:raw                          
+                             <g id='unique002'>}+                               
+                             \special{dvisvgm:raw                               
+                             </g>}\special{dvisvgm:raw                          
+                             <g                                                 
+                             id='unique003'>}\mathbf{b}_                        
+                             2\special{dvisvgm:raw </g>}                        
+                             to                                                 
+                             /usr/local/google/home/butt                        
+                             erworthnat/HACK/Trasformers                        
+                             4Dummies/state_of_ai/src/ma                        
+                             nim/_media/cuepass/Tex/4d11                        
+                             ec36b5076893.tex                                   
+[10/29/26 03:54:29] INFO     Writing                     tex_file_writing.py:110
+                             \special{dvisvgm:raw <g                            
+                             id='unique000'>}\tanh(                             
+                             \special{dvisvgm:raw                               
+                             </g>}\special{dvisvgm:raw                          
+                             <g id='unique001'>}W_2                             
+                             \special{dvisvgm:raw                               
+                             </g>}\special{dvisvgm:raw                          
+                             <g                                                 
+                             id='unique002'>}\mathbf{h}_                        
+                             1 \special{dvisvgm:raw                             
+                             </g>}\special{dvisvgm:raw                          
+                             <g id='unique003'>}+                               
+                             \special{dvisvgm:raw                               
+                             </g>}\special{dvisvgm:raw                          
+                             <g                                                 
+                             id='unique004'>}\mathbf{b}_                        
+                             2 \special{dvisvgm:raw                             
+                             </g>}\special{dvisvgm:raw                          
+                             <g                                                 
+                             id='unique005'>})\special{d                        
+                             visvgm:raw </g>} to                                
+                             /usr/local/google/home/butt                        
+                             erworthnat/HACK/Trasformers                        
+                             4Dummies/state_of_ai/src/ma                        
+                             nim/_media/cuepass/Tex/5cbe                        
+                             af69eb6cf25a.tex                                   
+Animation 15: FadeOut(VGroup of 2 submobjects), etc.:   0%|          | 0/1 [00:00<?, ?it/s]                                                                                           Animation 16: VecHomotopy(NumberPlane of 4 submobjects), etc.:   0%|          | 0/1 [00:00<?, ?it/s]Animation 16: VecHomotopy(NumberPlane of 4 submobjects), etc.: 100%|██████████| 1/1 [00:00<00:00,  5.73it/s]                                                                                                            Animation 18: FadeOut(VGroup of 2 submobjects), etc.:   0%|          | 0/1 [00:00<?, ?it/s]Animation 18: FadeOut(VGroup of 2 submobjects), etc.: 100%|██████████| 1/1 [00:00<00:00,  7.33it/s]                                                                                                   Animation 19: VecHomotopy(NumberPlane of 4 submobjects), etc.:   0%|          | 0/1 [00:00<?, ?it/s]Animation 19: VecHomotopy(NumberPlane of 4 submobjects), etc.: 100%|██████████| 1/1 [00:00<00:00,  5.29it/s]                                                                                                            Animation 21: FadeOut(VGroup of 2 submobjects), etc.:   0%|          | 0/1 [00:00<?, ?it/s]                                                                                           Animation 22: VecHomotopy(NumberPlane of 4 submobjects), etc.:   0%|          | 0/1 [00:00<?, ?it/s]Animation 22: VecHomotopy(NumberPlane of 4 submobjects), etc.: 100%|██████████| 1/1 [00:00<00:00,  7.66it/s]                                                                                                            Animation 24: FadeOut(VGroup of 2 submobjects), etc.:   0%|          | 0/1 [00:00<?, ?it/s]Animation 24: FadeOut(VGroup of 2 submobjects), etc.: 100%|██████████| 1/1 [00:00<00:00,  5.95it/s]                                                                                                   Animation 25: Create(Line), etc.:   0%|          | 0/1 [00:00<?, ?it/s]                                                                       Animation 26: _MethodAnimation(Polygon), etc.:   0%|          | 0/1 [00:00<?, ?it/s]                                                                                    [10/29/26 03:54:35] INFO                                scene_file_writer.py:904
+                             File ready at                                      
+                             '/usr/local/google/home/bu                         
+                             tterworthnat/HACK/Trasform                         
+                             ers4Dummies/state_of_ai/sr                         
+                             c/manim/_media/cuepass/ima                         
+                             ges/m03_grid_warp/GridWarp                         
+                             _ManimCE_v0.20.1.png'                              
+                                                                                
+                    INFO     Rendered GridWarp                      scene.py:278
+                             Played 28 animations                               

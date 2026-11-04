@@ -1,0 +1,26 @@
+/bin/sh: line 1: sox: command not found
+[10/29/26 03:16:46] WARNING  SoX could not be found!              __init__.py:10
+                                                                                
+                                 If you do not have SoX, proceed                
+                             here:                                              
+                                  - - -                                         
+                             http://sox.sourceforge.net/ - - -                  
+                                                                                
+                                 If you do (or think that you                   
+                             should) have SoX, double-check your                
+                                 path variables.                                
+                                                                                
+<frozen runpy>:128: RuntimeWarning: 'manim.__main__' found in sys.modules after import of package 'manim', but prior to execution of 'manim.__main__'; this may result in unpredictable behaviour
+Manim Community v0.20.1
+
+                    INFO     Caching disabled.              cairo_renderer.py:83
+                    INFO                                scene_file_writer.py:536
+                             1 images ready at                                  
+                             /usr/local/google/home/but                         
+                             terworthnat/HACK/Trasforme                         
+                             rs4Dummies/state_of_ai/src                         
+                             /manim/_media/images/_bgte                         
+                             st/BgTest                                          
+                                                                                
+                    INFO     Rendered BgTest                        scene.py:278
+                             Played 1 animations                                

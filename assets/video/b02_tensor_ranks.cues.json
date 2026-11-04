@@ -1,0 +1,22 @@
+[
+ {
+  "t": 0.0,
+  "label": "Scalar: a single number (rank 0)"
+ },
+ {
+  "t": 2.0,
+  "label": "Vector: a list of numbers (rank 1)"
+ },
+ {
+  "t": 4.5,
+  "label": "Matrix: a grid of numbers (rank 2)"
+ },
+ {
+  "t": 7.0,
+  "label": "3D tensor: an RGB image, height \u00d7 width \u00d7 3 (rank 3)"
+ },
+ {
+  "t": 9.5,
+  "label": "Batch: 4 images = a 4D tensor (rank 4)"
+ }
+]

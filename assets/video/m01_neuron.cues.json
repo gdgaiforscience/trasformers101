@@ -1,0 +1,22 @@
+[
+ {
+  "t": 0.0,
+  "label": "Inputs x, weights w (blue = positive, red = negative), bias b"
+ },
+ {
+  "t": 4.0,
+  "label": "Each input is multiplied by its weight"
+ },
+ {
+  "t": 6.6,
+  "label": "The neuron adds them up: z = 1.08 − 0.16 + 0.30 − 0.20 = 1.02"
+ },
+ {
+  "t": 10.2,
+  "label": "The sigmoid squashes z: σ(1.02) ≈ 0.73"
+ },
+ {
+  "t": 15.37,
+  "label": "One neuron: ŷ = σ(w·x + b)"
+ }
+]

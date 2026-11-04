@@ -1,0 +1,452 @@
++ /usr/local/google/home/butterworthnat/miniforge3/envs/gdg/bin/python -m manim render -qh --frame_rate 30 --disable_caching --media_dir /usr/local/google/home/butterworthnat/HACK/Trasformers4Dummies/state_of_ai/src/manim/_media /usr/local/google/home/butterworthnat/HACK/Trasformers4Dummies/state_of_ai/src/manim/m04_gradient_descent.py GradientDescent
+/bin/sh: line 1: sox: command not found
+[10/29/26 03:52:30] WARNING  SoX could not be found!              __init__.py:10
+                                                                                
+                                 If you do not have SoX, proceed                
+                             here:                                              
+                                  - - -                                         
+                             http://sox.sourceforge.net/ - - -                  
+                                                                                
+                                 If you do (or think that you                   
+                             should) have SoX, double-check your                
+                                 path variables.                                
+                                                                                
+<frozen runpy>:128: RuntimeWarning: 'manim.__main__' found in sys.modules after import of package 'manim', but prior to execution of 'manim.__main__'; this may result in unpredictable behaviour
+Manim Community v0.20.1
+
+[10/29/26 03:52:31] INFO     Caching disabled.              cairo_renderer.py:83
+Animation 0: Create(Axes of 2 submobjects), etc.:   0%|          | 0/24 [00:00<?, ?it/s]Animation 0: Create(Axes of 2 submobjects), etc.:  21%|██        | 5/24 [00:00<00:00, 31.55it/s]Animation 0: Create(Axes of 2 submobjects), etc.:  46%|████▌     | 11/24 [00:00<00:00, 39.14it/s]Animation 0: Create(Axes of 2 submobjects), etc.:  62%|██████▎   | 15/24 [00:00<00:00, 31.93it/s]Animation 0: Create(Axes of 2 submobjects), etc.:  96%|█████████▌| 23/24 [00:00<00:00, 44.85it/s]                                                                                                 [10/29/26 03:52:44] INFO     Animation 0 : Partial      scene_file_writer.py:601
+                             movie file written in                              
+                             '/usr/local/google/home/bu                         
+                             tterworthnat/HACK/Trasform                         
+                             ers4Dummies/state_of_ai/sr                         
+                             c/manim/_media/videos/m04_                         
+                             gradient_descent/1080p30/p                         
+                             artial_movie_files/Gradien                         
+                             tDescent/uncached_00000.mp                         
+                             4'                                                 
+                    INFO     Caching disabled.              cairo_renderer.py:83
+Animation 1: Create(ParametricFunction):   0%|          | 0/36 [00:00<?, ?it/s]Animation 1: Create(ParametricFunction):  22%|██▏       | 8/36 [00:00<00:00, 78.81it/s]Animation 1: Create(ParametricFunction):  47%|████▋     | 17/36 [00:00<00:00, 82.70it/s]Animation 1: Create(ParametricFunction):  72%|███████▏  | 26/36 [00:00<00:00, 53.56it/s]Animation 1: Create(ParametricFunction):  92%|█████████▏| 33/36 [00:00<00:00, 50.38it/s]                                                                                        [10/29/26 03:53:01] INFO     Animation 1 : Partial      scene_file_writer.py:601
+                             movie file written in                              
+                             '/usr/local/google/home/bu                         
+                             tterworthnat/HACK/Trasform                         
+                             ers4Dummies/state_of_ai/sr                         
+                             c/manim/_media/videos/m04_                         
+                             gradient_descent/1080p30/p                         
+                             artial_movie_files/Gradien                         
+                             tDescent/uncached_00001.mp                         
+                             4'                                                 
+                    INFO     Caching disabled.              cairo_renderer.py:83
+Animation 2: Create(DashedLine), etc.:   0%|          | 0/15 [00:00<?, ?it/s]Animation 2: Create(DashedLine), etc.:  40%|████      | 6/15 [00:00<00:00, 51.06it/s]Animation 2: Create(DashedLine), etc.:  80%|████████  | 12/15 [00:00<00:00, 31.08it/s]                                                                                      [10/29/26 03:53:09] INFO     Animation 2 : Partial      scene_file_writer.py:601
+                             movie file written in                              
+                             '/usr/local/google/home/bu                         
+                             tterworthnat/HACK/Trasform                         
+                             ers4Dummies/state_of_ai/sr                         
+                             c/manim/_media/videos/m04_                         
+                             gradient_descent/1080p30/p                         
+                             artial_movie_files/Gradien                         
+                             tDescent/uncached_00002.mp                         
+                             4'                                                 
+                    INFO     Caching disabled.              cairo_renderer.py:83
+Animation 3: Write(MathTex('w \\leftarrow w - \\eta \\,\\frac{d L }{d w }')):   0%|          | 0/30 [00:00<?, ?it/s]Animation 3: Write(MathTex('w \\leftarrow w - \\eta \\,\\frac{d L }{d w }')):  30%|███       | 9/30 [00:00<00:00, 83.07it/s]Animation 3: Write(MathTex('w \\leftarrow w - \\eta \\,\\frac{d L }{d w }')):  60%|██████    | 18/30 [00:00<00:00, 55.39it/s]Animation 3: Write(MathTex('w \\leftarrow w - \\eta \\,\\frac{d L }{d w }')):  83%|████████▎ | 25/30 [00:00<00:00, 44.77it/s]Animation 3: Write(MathTex('w \\leftarrow w - \\eta \\,\\frac{d L }{d w }')): 100%|██████████| 30/30 [00:00<00:00, 42.01it/s]                                                                                                                             [10/29/26 03:53:24] INFO     Animation 3 : Partial      scene_file_writer.py:601
+                             movie file written in                              
+                             '/usr/local/google/home/bu                         
+                             tterworthnat/HACK/Trasform                         
+                             ers4Dummies/state_of_ai/sr                         
+                             c/manim/_media/videos/m04_                         
+                             gradient_descent/1080p30/p                         
+                             artial_movie_files/Gradien                         
+                             tDescent/uncached_00003.mp                         
+                             4'                                                 
+[10/29/26 03:53:25] INFO     Caching disabled.              cairo_renderer.py:83
+Animation 4: FadeIn(VGroup of 2 submobjects), etc.:   0%|          | 0/18 [00:00<?, ?it/s]Animation 4: FadeIn(VGroup of 2 submobjects), etc.:  44%|████▍     | 8/18 [00:00<00:00, 66.96it/s]Animation 4: FadeIn(VGroup of 2 submobjects), etc.:  83%|████████▎ | 15/18 [00:00<00:00, 56.32it/s]                                                                                                   [10/29/26 03:53:34] INFO     Animation 4 : Partial      scene_file_writer.py:601
+                             movie file written in                              
+                             '/usr/local/google/home/bu                         
+                             tterworthnat/HACK/Trasform                         
+                             ers4Dummies/state_of_ai/sr                         
+                             c/manim/_media/videos/m04_                         
+                             gradient_descent/1080p30/p                         
+                             artial_movie_files/Gradien                         
+                             tDescent/uncached_00004.mp                         
+                             4'                                                 
+                    INFO     Caching disabled.              cairo_renderer.py:83
+Animation 5: Create(Line), etc.:   0%|          | 0/9 [00:00<?, ?it/s]Animation 5: Create(Line), etc.:  89%|████████▉ | 8/9 [00:00<00:00, 63.05it/s]                                                                              [10/29/26 03:53:39] INFO     Animation 5 : Partial      scene_file_writer.py:601
+                             movie file written in                              
+                             '/usr/local/google/home/bu                         
+                             tterworthnat/HACK/Trasform                         
+                             ers4Dummies/state_of_ai/sr                         
+                             c/manim/_media/videos/m04_                         
+                             gradient_descent/1080p30/p                         
+                             artial_movie_files/Gradien                         
+                             tDescent/uncached_00005.mp                         
+                             4'                                                 
+                    INFO     Caching disabled.              cairo_renderer.py:83
+Animation 6: MoveAlongPath(Dot), etc.:   0%|          | 0/15 [00:00<?, ?it/s]Animation 6: MoveAlongPath(Dot), etc.:  33%|███▎      | 5/15 [00:00<00:00, 37.53it/s]Animation 6: MoveAlongPath(Dot), etc.:  60%|██████    | 9/15 [00:00<00:00, 38.22it/s]Animation 6: MoveAlongPath(Dot), etc.:  87%|████████▋ | 13/15 [00:00<00:00, 37.23it/s]                                                                                      [10/29/26 03:53:46] INFO     Animation 6 : Partial      scene_file_writer.py:601
+                             movie file written in                              
+                             '/usr/local/google/home/bu                         
+                             tterworthnat/HACK/Trasform                         
+                             ers4Dummies/state_of_ai/sr                         
+                             c/manim/_media/videos/m04_                         
+                             gradient_descent/1080p30/p                         
+                             artial_movie_files/Gradien                         
+                             tDescent/uncached_00006.mp                         
+                             4'                                                 
+                    INFO     Caching disabled.              cairo_renderer.py:83
+Animation 7: Create(Line), etc.:   0%|          | 0/9 [00:00<?, ?it/s]Animation 7: Create(Line), etc.: 100%|██████████| 9/9 [00:00<00:00, 75.04it/s]                                                                              [10/29/26 03:53:50] INFO     Animation 7 : Partial      scene_file_writer.py:601
+                             movie file written in                              
+                             '/usr/local/google/home/bu                         
+                             tterworthnat/HACK/Trasform                         
+                             ers4Dummies/state_of_ai/sr                         
+                             c/manim/_media/videos/m04_                         
+                             gradient_descent/1080p30/p                         
+                             artial_movie_files/Gradien                         
+                             tDescent/uncached_00007.mp                         
+                             4'                                                 
+                    INFO     Caching disabled.              cairo_renderer.py:83
+Animation 8: MoveAlongPath(Dot), etc.:   0%|          | 0/15 [00:00<?, ?it/s]Animation 8: MoveAlongPath(Dot), etc.:  40%|████      | 6/15 [00:00<00:00, 56.25it/s]Animation 8: MoveAlongPath(Dot), etc.:  80%|████████  | 12/15 [00:00<00:00, 45.31it/s]                                                                                      [10/29/26 03:53:57] INFO     Animation 8 : Partial      scene_file_writer.py:601
+                             movie file written in                              
+                             '/usr/local/google/home/bu                         
+                             tterworthnat/HACK/Trasform                         
+                             ers4Dummies/state_of_ai/sr                         
+                             c/manim/_media/videos/m04_                         
+                             gradient_descent/1080p30/p                         
+                             artial_movie_files/Gradien                         
+                             tDescent/uncached_00008.mp                         
+                             4'                                                 
+                    INFO     Caching disabled.              cairo_renderer.py:83
+Animation 9: Create(Line), etc.:   0%|          | 0/9 [00:00<?, ?it/s]                                                                      [10/29/26 03:54:01] INFO     Animation 9 : Partial      scene_file_writer.py:601
+                             movie file written in                              
+                             '/usr/local/google/home/bu                         
+                             tterworthnat/HACK/Trasform                         
+                             ers4Dummies/state_of_ai/sr                         
+                             c/manim/_media/videos/m04_                         
+                             gradient_descent/1080p30/p                         
+                             artial_movie_files/Gradien                         
+                             tDescent/uncached_00009.mp                         
+                             4'                                                 
+                    INFO     Caching disabled.              cairo_renderer.py:83
+Animation 10: MoveAlongPath(Dot), etc.:   0%|          | 0/15 [00:00<?, ?it/s]Animation 10: MoveAlongPath(Dot), etc.:  47%|████▋     | 7/15 [00:00<00:00, 59.36it/s]Animation 10: MoveAlongPath(Dot), etc.:  87%|████████▋ | 13/15 [00:00<00:00, 42.26it/s]                                                                                       [10/29/26 03:54:08] INFO     Animation 10 : Partial     scene_file_writer.py:601
+                             movie file written in                              
+                             '/usr/local/google/home/bu                         
+                             tterworthnat/HACK/Trasform                         
+                             ers4Dummies/state_of_ai/sr                         
+                             c/manim/_media/videos/m04_                         
+                             gradient_descent/1080p30/p                         
+                             artial_movie_files/Gradien                         
+                             tDescent/uncached_00010.mp                         
+                             4'                                                 
+                    INFO     Caching disabled.              cairo_renderer.py:83
+Animation 11: Create(Line), etc.:   0%|          | 0/9 [00:00<?, ?it/s]Animation 11: Create(Line), etc.: 100%|██████████| 9/9 [00:00<00:00, 80.69it/s]                                                                               [10/29/26 03:54:12] INFO     Animation 11 : Partial     scene_file_writer.py:601
+                             movie file written in                              
+                             '/usr/local/google/home/bu                         
+                             tterworthnat/HACK/Trasform                         
+                             ers4Dummies/state_of_ai/sr                         
+                             c/manim/_media/videos/m04_                         
+                             gradient_descent/1080p30/p                         
+                             artial_movie_files/Gradien                         
+                             tDescent/uncached_00011.mp                         
+                             4'                                                 
+                    INFO     Caching disabled.              cairo_renderer.py:83
+Animation 12: MoveAlongPath(Dot), etc.:   0%|          | 0/15 [00:00<?, ?it/s]Animation 12: MoveAlongPath(Dot), etc.:  20%|██        | 3/15 [00:00<00:00, 23.70it/s]Animation 12: MoveAlongPath(Dot), etc.:  40%|████      | 6/15 [00:00<00:00, 19.35it/s]Animation 12: MoveAlongPath(Dot), etc.:  53%|█████▎    | 8/15 [00:00<00:00, 19.08it/s]Animation 12: MoveAlongPath(Dot), etc.:  73%|███████▎  | 11/15 [00:00<00:00, 22.62it/s]                                                                                       [10/29/26 03:54:20] INFO     Animation 12 : Partial     scene_file_writer.py:601
+                             movie file written in                              
+                             '/usr/local/google/home/bu                         
+                             tterworthnat/HACK/Trasform                         
+                             ers4Dummies/state_of_ai/sr                         
+                             c/manim/_media/videos/m04_                         
+                             gradient_descent/1080p30/p                         
+                             artial_movie_files/Gradien                         
+                             tDescent/uncached_00012.mp                         
+                             4'                                                 
+                    INFO     Caching disabled.              cairo_renderer.py:83
+Animation 13: Create(Line), etc.:   0%|          | 0/9 [00:00<?, ?it/s]Animation 13: Create(Line), etc.:  44%|████▍     | 4/9 [00:00<00:00, 36.70it/s]Animation 13: Create(Line), etc.:  89%|████████▉ | 8/9 [00:00<00:00, 28.36it/s]                                                                               [10/29/26 03:54:24] INFO     Animation 13 : Partial     scene_file_writer.py:601
+                             movie file written in                              
+                             '/usr/local/google/home/bu                         
+                             tterworthnat/HACK/Trasform                         
+                             ers4Dummies/state_of_ai/sr                         
+                             c/manim/_media/videos/m04_                         
+                             gradient_descent/1080p30/p                         
+                             artial_movie_files/Gradien                         
+                             tDescent/uncached_00013.mp                         
+                             4'                                                 
+                    INFO     Caching disabled.              cairo_renderer.py:83
+Animation 14: MoveAlongPath(Dot), etc.:   0%|          | 0/15 [00:00<?, ?it/s]Animation 14: MoveAlongPath(Dot), etc.:  27%|██▋       | 4/15 [00:00<00:00, 38.30it/s]Animation 14: MoveAlongPath(Dot), etc.:  53%|█████▎    | 8/15 [00:00<00:00, 36.12it/s]Animation 14: MoveAlongPath(Dot), etc.:  87%|████████▋ | 13/15 [00:00<00:00, 39.12it/s]                                                                                       [10/29/26 03:54:31] INFO     Animation 14 : Partial     scene_file_writer.py:601
+                             movie file written in                              
+                             '/usr/local/google/home/bu                         
+                             tterworthnat/HACK/Trasform                         
+                             ers4Dummies/state_of_ai/sr                         
+                             c/manim/_media/videos/m04_                         
+                             gradient_descent/1080p30/p                         
+                             artial_movie_files/Gradien                         
+                             tDescent/uncached_00014.mp                         
+                             4'                                                 
+                    INFO     Caching disabled.              cairo_renderer.py:83
+Animation 15: Create(Line), etc.:   0%|          | 0/9 [00:00<?, ?it/s]Animation 15: Create(Line), etc.:  33%|███▎      | 3/9 [00:00<00:00, 18.31it/s]                                                                               [10/29/26 03:54:35] INFO     Animation 15 : Partial     scene_file_writer.py:601
+                             movie file written in                              
+                             '/usr/local/google/home/bu                         
+                             tterworthnat/HACK/Trasform                         
+                             ers4Dummies/state_of_ai/sr                         
+                             c/manim/_media/videos/m04_                         
+                             gradient_descent/1080p30/p                         
+                             artial_movie_files/Gradien                         
+                             tDescent/uncached_00015.mp                         
+                             4'                                                 
+                    INFO     Caching disabled.              cairo_renderer.py:83
+Animation 16: MoveAlongPath(Dot), etc.:   0%|          | 0/15 [00:00<?, ?it/s]Animation 16: MoveAlongPath(Dot), etc.:  40%|████      | 6/15 [00:00<00:00, 55.46it/s]Animation 16: MoveAlongPath(Dot), etc.:  80%|████████  | 12/15 [00:00<00:00, 45.20it/s]                                                                                       [10/29/26 03:54:43] INFO     Animation 16 : Partial     scene_file_writer.py:601
+                             movie file written in                              
+                             '/usr/local/google/home/bu                         
+                             tterworthnat/HACK/Trasform                         
+                             ers4Dummies/state_of_ai/sr                         
+                             c/manim/_media/videos/m04_                         
+                             gradient_descent/1080p30/p                         
+                             artial_movie_files/Gradien                         
+                             tDescent/uncached_00016.mp                         
+                             4'                                                 
+                    INFO     Caching disabled.              cairo_renderer.py:83
+Animation 17: Wiggle(Text('too big')):   0%|          | 0/21 [00:00<?, ?it/s]Animation 17: Wiggle(Text('too big')):  14%|█▍        | 3/21 [00:00<00:00, 24.62it/s]Animation 17: Wiggle(Text('too big')):  29%|██▊       | 6/21 [00:00<00:00, 16.26it/s]Animation 17: Wiggle(Text('too big')):  43%|████▎     | 9/21 [00:00<00:00, 18.25it/s]Animation 17: Wiggle(Text('too big')):  57%|█████▋    | 12/21 [00:00<00:00, 21.17it/s]Animation 17: Wiggle(Text('too big')):  86%|████████▌ | 18/21 [00:00<00:00, 28.25it/s]Animation 17: Wiggle(Text('too big')): 100%|██████████| 21/21 [00:00<00:00, 28.49it/s]                                                                                      [10/29/26 03:54:54] INFO     Animation 17 : Partial     scene_file_writer.py:601
+                             movie file written in                              
+                             '/usr/local/google/home/bu                         
+                             tterworthnat/HACK/Trasform                         
+                             ers4Dummies/state_of_ai/sr                         
+                             c/manim/_media/videos/m04_                         
+                             gradient_descent/1080p30/p                         
+                             artial_movie_files/Gradien                         
+                             tDescent/uncached_00017.mp                         
+                             4'                                                 
+                    INFO     Caching disabled.              cairo_renderer.py:83
+Animation 18: FadeOut(VGroup of 6 submobjects), etc.:   0%|          | 0/14 [00:00<?, ?it/s]Animation 18: FadeOut(VGroup of 6 submobjects), etc.:  43%|████▎     | 6/14 [00:00<00:00, 46.61it/s]Animation 18: FadeOut(VGroup of 6 submobjects), etc.:  79%|███████▊  | 11/14 [00:00<00:00, 42.11it/s]                                                                                                     [10/29/26 03:55:00] INFO     Animation 18 : Partial     scene_file_writer.py:601
+                             movie file written in                              
+                             '/usr/local/google/home/bu                         
+                             tterworthnat/HACK/Trasform                         
+                             ers4Dummies/state_of_ai/sr                         
+                             c/manim/_media/videos/m04_                         
+                             gradient_descent/1080p30/p                         
+                             artial_movie_files/Gradien                         
+                             tDescent/uncached_00018.mp                         
+                             4'                                                 
+                    INFO     Caching disabled.              cairo_renderer.py:83
+Animation 19: FadeIn(VGroup of 2 submobjects), etc.:   0%|          | 0/15 [00:00<?, ?it/s]Animation 19: FadeIn(VGroup of 2 submobjects), etc.:  47%|████▋     | 7/15 [00:00<00:00, 54.03it/s]Animation 19: FadeIn(VGroup of 2 submobjects), etc.:  87%|████████▋ | 13/15 [00:00<00:00, 48.96it/s]                                                                                                    [10/29/26 03:55:08] INFO     Animation 19 : Partial     scene_file_writer.py:601
+                             movie file written in                              
+                             '/usr/local/google/home/bu                         
+                             tterworthnat/HACK/Trasform                         
+                             ers4Dummies/state_of_ai/sr                         
+                             c/manim/_media/videos/m04_                         
+                             gradient_descent/1080p30/p                         
+                             artial_movie_files/Gradien                         
+                             tDescent/uncached_00019.mp                         
+                             4'                                                 
+                    INFO     Caching disabled.              cairo_renderer.py:83
+Animation 20: Create(Line), etc.:   0%|          | 0/9 [00:00<?, ?it/s]Animation 20: Create(Line), etc.:  78%|███████▊  | 7/9 [00:00<00:00, 67.17it/s]                                                                               [10/29/26 03:55:12] INFO     Animation 20 : Partial     scene_file_writer.py:601
+                             movie file written in                              
+                             '/usr/local/google/home/bu                         
+                             tterworthnat/HACK/Trasform                         
+                             ers4Dummies/state_of_ai/sr                         
+                             c/manim/_media/videos/m04_                         
+                             gradient_descent/1080p30/p                         
+                             artial_movie_files/Gradien                         
+                             tDescent/uncached_00020.mp                         
+                             4'                                                 
+                    INFO     Caching disabled.              cairo_renderer.py:83
+Animation 21: MoveAlongPath(Dot), etc.:   0%|          | 0/15 [00:00<?, ?it/s]Animation 21: MoveAlongPath(Dot), etc.:  33%|███▎      | 5/15 [00:00<00:00, 45.55it/s]Animation 21: MoveAlongPath(Dot), etc.:  67%|██████▋   | 10/15 [00:00<00:00, 42.68it/s]Animation 21: MoveAlongPath(Dot), etc.: 100%|██████████| 15/15 [00:00<00:00, 44.17it/s]                                                                                       [10/29/26 03:55:19] INFO     Animation 21 : Partial     scene_file_writer.py:601
+                             movie file written in                              
+                             '/usr/local/google/home/bu                         
+                             tterworthnat/HACK/Trasform                         
+                             ers4Dummies/state_of_ai/sr                         
+                             c/manim/_media/videos/m04_                         
+                             gradient_descent/1080p30/p                         
+                             artial_movie_files/Gradien                         
+                             tDescent/uncached_00021.mp                         
+                             4'                                                 
+                    INFO     Caching disabled.              cairo_renderer.py:83
+Animation 22: Create(Line), etc.:   0%|          | 0/9 [00:00<?, ?it/s]Animation 22: Create(Line), etc.:  67%|██████▋   | 6/9 [00:00<00:00, 52.37it/s]                                                                               [10/29/26 03:55:24] INFO     Animation 22 : Partial     scene_file_writer.py:601
+                             movie file written in                              
+                             '/usr/local/google/home/bu                         
+                             tterworthnat/HACK/Trasform                         
+                             ers4Dummies/state_of_ai/sr                         
+                             c/manim/_media/videos/m04_                         
+                             gradient_descent/1080p30/p                         
+                             artial_movie_files/Gradien                         
+                             tDescent/uncached_00022.mp                         
+                             4'                                                 
+                    INFO     Caching disabled.              cairo_renderer.py:83
+Animation 23: MoveAlongPath(Dot), etc.:   0%|          | 0/15 [00:00<?, ?it/s]Animation 23: MoveAlongPath(Dot), etc.:  27%|██▋       | 4/15 [00:00<00:00, 38.71it/s]Animation 23: MoveAlongPath(Dot), etc.:  60%|██████    | 9/15 [00:00<00:00, 38.90it/s]Animation 23: MoveAlongPath(Dot), etc.:  87%|████████▋ | 13/15 [00:00<00:00, 32.91it/s]                                                                                       [10/29/26 03:55:31] INFO     Animation 23 : Partial     scene_file_writer.py:601
+                             movie file written in                              
+                             '/usr/local/google/home/bu                         
+                             tterworthnat/HACK/Trasform                         
+                             ers4Dummies/state_of_ai/sr                         
+                             c/manim/_media/videos/m04_                         
+                             gradient_descent/1080p30/p                         
+                             artial_movie_files/Gradien                         
+                             tDescent/uncached_00023.mp                         
+                             4'                                                 
+                    INFO     Caching disabled.              cairo_renderer.py:83
+Animation 24: Create(Line), etc.:   0%|          | 0/9 [00:00<?, ?it/s]Animation 24: Create(Line), etc.:  78%|███████▊  | 7/9 [00:00<00:00, 61.36it/s]                                                                               [10/29/26 03:55:35] INFO     Animation 24 : Partial     scene_file_writer.py:601
+                             movie file written in                              
+                             '/usr/local/google/home/bu                         
+                             tterworthnat/HACK/Trasform                         
+                             ers4Dummies/state_of_ai/sr                         
+                             c/manim/_media/videos/m04_                         
+                             gradient_descent/1080p30/p                         
+                             artial_movie_files/Gradien                         
+                             tDescent/uncached_00024.mp                         
+                             4'                                                 
+                    INFO     Caching disabled.              cairo_renderer.py:83
+Animation 25: MoveAlongPath(Dot), etc.:   0%|          | 0/14 [00:00<?, ?it/s]Animation 25: MoveAlongPath(Dot), etc.:  29%|██▊       | 4/14 [00:00<00:00, 39.99it/s]Animation 25: MoveAlongPath(Dot), etc.:  64%|██████▍   | 9/14 [00:00<00:00, 43.42it/s]Animation 25: MoveAlongPath(Dot), etc.: 100%|██████████| 14/14 [00:00<00:00, 43.22it/s]                                                                                       [10/29/26 03:55:41] INFO     Animation 25 : Partial     scene_file_writer.py:601
+                             movie file written in                              
+                             '/usr/local/google/home/bu                         
+                             tterworthnat/HACK/Trasform                         
+                             ers4Dummies/state_of_ai/sr                         
+                             c/manim/_media/videos/m04_                         
+                             gradient_descent/1080p30/p                         
+                             artial_movie_files/Gradien                         
+                             tDescent/uncached_00025.mp                         
+                             4'                                                 
+                    INFO     Caching disabled.              cairo_renderer.py:83
+Animation 26: Create(Line), etc.:   0%|          | 0/8 [00:00<?, ?it/s]Animation 26: Create(Line), etc.:  88%|████████▊ | 7/8 [00:00<00:00, 59.92it/s]                                                                               [10/29/26 03:55:45] INFO     Animation 26 : Partial     scene_file_writer.py:601
+                             movie file written in                              
+                             '/usr/local/google/home/bu                         
+                             tterworthnat/HACK/Trasform                         
+                             ers4Dummies/state_of_ai/sr                         
+                             c/manim/_media/videos/m04_                         
+                             gradient_descent/1080p30/p                         
+                             artial_movie_files/Gradien                         
+                             tDescent/uncached_00026.mp                         
+                             4'                                                 
+                    INFO     Caching disabled.              cairo_renderer.py:83
+Animation 27: MoveAlongPath(Dot), etc.:   0%|          | 0/13 [00:00<?, ?it/s]Animation 27: MoveAlongPath(Dot), etc.:  38%|███▊      | 5/13 [00:00<00:00, 42.80it/s]Animation 27: MoveAlongPath(Dot), etc.:  85%|████████▍ | 11/13 [00:00<00:00, 49.15it/s]                                                                                       [10/29/26 03:55:51] INFO     Animation 27 : Partial     scene_file_writer.py:601
+                             movie file written in                              
+                             '/usr/local/google/home/bu                         
+                             tterworthnat/HACK/Trasform                         
+                             ers4Dummies/state_of_ai/sr                         
+                             c/manim/_media/videos/m04_                         
+                             gradient_descent/1080p30/p                         
+                             artial_movie_files/Gradien                         
+                             tDescent/uncached_00027.mp                         
+                             4'                                                 
+                    INFO     Caching disabled.              cairo_renderer.py:83
+Animation 28: Create(Line), etc.:   0%|          | 0/7 [00:00<?, ?it/s]Animation 28: Create(Line), etc.:  86%|████████▌ | 6/7 [00:00<00:00, 54.07it/s]                                                                               [10/29/26 03:55:54] INFO     Animation 28 : Partial     scene_file_writer.py:601
+                             movie file written in                              
+                             '/usr/local/google/home/bu                         
+                             tterworthnat/HACK/Trasform                         
+                             ers4Dummies/state_of_ai/sr                         
+                             c/manim/_media/videos/m04_                         
+                             gradient_descent/1080p30/p                         
+                             artial_movie_files/Gradien                         
+                             tDescent/uncached_00028.mp                         
+                             4'                                                 
+                    INFO     Caching disabled.              cairo_renderer.py:83
+Animation 29: MoveAlongPath(Dot), etc.:   0%|          | 0/12 [00:00<?, ?it/s]Animation 29: MoveAlongPath(Dot), etc.:  50%|█████     | 6/12 [00:00<00:00, 57.55it/s]Animation 29: MoveAlongPath(Dot), etc.: 100%|██████████| 12/12 [00:00<00:00, 32.54it/s]                                                                                       [10/29/26 03:56:00] INFO     Animation 29 : Partial     scene_file_writer.py:601
+                             movie file written in                              
+                             '/usr/local/google/home/bu                         
+                             tterworthnat/HACK/Trasform                         
+                             ers4Dummies/state_of_ai/sr                         
+                             c/manim/_media/videos/m04_                         
+                             gradient_descent/1080p30/p                         
+                             artial_movie_files/Gradien                         
+                             tDescent/uncached_00029.mp                         
+                             4'                                                 
+                    INFO     Caching disabled.              cairo_renderer.py:83
+Animation 30: Create(Line), etc.:   0%|          | 0/6 [00:00<?, ?it/s]                                                                       [10/29/26 03:56:03] INFO     Animation 30 : Partial     scene_file_writer.py:601
+                             movie file written in                              
+                             '/usr/local/google/home/bu                         
+                             tterworthnat/HACK/Trasform                         
+                             ers4Dummies/state_of_ai/sr                         
+                             c/manim/_media/videos/m04_                         
+                             gradient_descent/1080p30/p                         
+                             artial_movie_files/Gradien                         
+                             tDescent/uncached_00030.mp                         
+                             4'                                                 
+                    INFO     Caching disabled.              cairo_renderer.py:83
+Animation 31: MoveAlongPath(Dot), etc.:   0%|          | 0/10 [00:00<?, ?it/s]Animation 31: MoveAlongPath(Dot), etc.:  50%|█████     | 5/10 [00:00<00:00, 44.82it/s]Animation 31: MoveAlongPath(Dot), etc.: 100%|██████████| 10/10 [00:00<00:00, 42.97it/s]                                                                                       [10/29/26 03:56:07] INFO     Animation 31 : Partial     scene_file_writer.py:601
+                             movie file written in                              
+                             '/usr/local/google/home/bu                         
+                             tterworthnat/HACK/Trasform                         
+                             ers4Dummies/state_of_ai/sr                         
+                             c/manim/_media/videos/m04_                         
+                             gradient_descent/1080p30/p                         
+                             artial_movie_files/Gradien                         
+                             tDescent/uncached_00031.mp                         
+                             4'                                                 
+                    INFO     Caching disabled.              cairo_renderer.py:83
+Animation 32: Create(Line), etc.:   0%|          | 0/6 [00:00<?, ?it/s]                                                                       [10/29/26 03:56:10] INFO     Animation 32 : Partial     scene_file_writer.py:601
+                             movie file written in                              
+                             '/usr/local/google/home/bu                         
+                             tterworthnat/HACK/Trasform                         
+                             ers4Dummies/state_of_ai/sr                         
+                             c/manim/_media/videos/m04_                         
+                             gradient_descent/1080p30/p                         
+                             artial_movie_files/Gradien                         
+                             tDescent/uncached_00032.mp                         
+                             4'                                                 
+                    INFO     Caching disabled.              cairo_renderer.py:83
+Animation 33: MoveAlongPath(Dot), etc.:   0%|          | 0/9 [00:00<?, ?it/s]Animation 33: MoveAlongPath(Dot), etc.:  33%|███▎      | 3/9 [00:00<00:00, 26.01it/s]Animation 33: MoveAlongPath(Dot), etc.:  67%|██████▋   | 6/9 [00:00<00:00, 27.22it/s]                                                                                     [10/29/26 03:56:15] INFO     Animation 33 : Partial     scene_file_writer.py:601
+                             movie file written in                              
+                             '/usr/local/google/home/bu                         
+                             tterworthnat/HACK/Trasform                         
+                             ers4Dummies/state_of_ai/sr                         
+                             c/manim/_media/videos/m04_                         
+                             gradient_descent/1080p30/p                         
+                             artial_movie_files/Gradien                         
+                             tDescent/uncached_00033.mp                         
+                             4'                                                 
+                    INFO     Caching disabled.              cairo_renderer.py:83
+Animation 34: Create(Circle), etc.:   0%|          | 0/24 [00:00<?, ?it/s]Animation 34: Create(Circle), etc.:  12%|█▎        | 3/24 [00:00<00:01, 19.80it/s]Animation 34: Create(Circle), etc.:  21%|██        | 5/24 [00:00<00:00, 19.89it/s]Animation 34: Create(Circle), etc.:  33%|███▎      | 8/24 [00:00<00:00, 21.52it/s]Animation 34: Create(Circle), etc.:  50%|█████     | 12/24 [00:00<00:00, 22.30it/s]Animation 34: Create(Circle), etc.:  67%|██████▋   | 16/24 [00:00<00:00, 24.79it/s]Animation 34: Create(Circle), etc.:  79%|███████▉  | 19/24 [00:00<00:00, 24.11it/s]Animation 34: Create(Circle), etc.:  96%|█████████▌| 23/24 [00:00<00:00, 25.83it/s]                                                                                   [10/29/26 03:56:26] INFO     Animation 34 : Partial     scene_file_writer.py:601
+                             movie file written in                              
+                             '/usr/local/google/home/bu                         
+                             tterworthnat/HACK/Trasform                         
+                             ers4Dummies/state_of_ai/sr                         
+                             c/manim/_media/videos/m04_                         
+                             gradient_descent/1080p30/p                         
+                             artial_movie_files/Gradien                         
+                             tDescent/uncached_00034.mp                         
+                             4'                                                 
+                    INFO     Caching disabled.              cairo_renderer.py:83
+Animation 35: Circumscribe(Group):   0%|          | 0/27 [00:00<?, ?it/s]Animation 35: Circumscribe(Group):  37%|███▋      | 10/27 [00:00<00:00, 82.05it/s]Animation 35: Circumscribe(Group):  70%|███████   | 19/27 [00:00<00:00, 51.51it/s]Animation 35: Circumscribe(Group):  93%|█████████▎| 25/27 [00:00<00:00, 47.34it/s]                                                                                  [10/29/26 03:56:38] INFO     Animation 35 : Partial     scene_file_writer.py:601
+                             movie file written in                              
+                             '/usr/local/google/home/bu                         
+                             tterworthnat/HACK/Trasform                         
+                             ers4Dummies/state_of_ai/sr                         
+                             c/manim/_media/videos/m04_                         
+                             gradient_descent/1080p30/p                         
+                             artial_movie_files/Gradien                         
+                             tDescent/uncached_00035.mp                         
+                             4'                                                 
+                    INFO     Caching disabled.              cairo_renderer.py:83
+[10/29/26 03:56:40] INFO     Animation 36 : Partial     scene_file_writer.py:601
+                             movie file written in                              
+                             '/usr/local/google/home/bu                         
+                             tterworthnat/HACK/Trasform                         
+                             ers4Dummies/state_of_ai/sr                         
+                             c/manim/_media/videos/m04_                         
+                             gradient_descent/1080p30/p                         
+                             artial_movie_files/Gradien                         
+                             tDescent/uncached_00036.mp                         
+                             4'                                                 
+                    INFO     Combining to Movie file.   scene_file_writer.py:753
+                    INFO                                scene_file_writer.py:904
+                             File ready at                                      
+                             '/usr/local/google/home/bu                         
+                             tterworthnat/HACK/Trasform                         
+                             ers4Dummies/state_of_ai/sr                         
+                             c/manim/_media/videos/m04_                         
+                             gradient_descent/1080p30/G                         
+                             radientDescent.mp4'                                
+                                                                                
+                    INFO     Rendered GradientDescent               scene.py:278
+                             Played 37 animations                               
++ ffmpeg -nostdin -loglevel error -y -i /usr/local/google/home/butterworthnat/HACK/Trasformers4Dummies/state_of_ai/src/manim/_media/videos/m04_gradient_descent/1080p30/GradientDescent.mp4 -an -c:v libx264 -pix_fmt yuv420p -crf 21 -movflags +faststart /usr/local/google/home/butterworthnat/HACK/Trasformers4Dummies/state_of_ai/assets/video/m04_gradient_descent.mp4
++ ffmpeg -nostdin -loglevel error -y -ss 18.250 -i /usr/local/google/home/butterworthnat/HACK/Trasformers4Dummies/state_of_ai/assets/video/m04_gradient_descent.mp4 -frames:v 1 -q:v 2 /usr/local/google/home/butterworthnat/HACK/Trasformers4Dummies/state_of_ai/assets/poster/m04_gradient_descent.jpg
++ ffmpeg -nostdin -loglevel error -y -ss 0.925 -i /usr/local/google/home/butterworthnat/HACK/Trasformers4Dummies/state_of_ai/assets/video/m04_gradient_descent.mp4 -frames:v 1 /usr/local/google/home/butterworthnat/HACK/Trasformers4Dummies/state_of_ai/src/manim/_media/check/m04_gradient_descent/f00_000.9s.png
++ ffmpeg -nostdin -loglevel error -y -ss 2.775 -i /usr/local/google/home/butterworthnat/HACK/Trasformers4Dummies/state_of_ai/assets/video/m04_gradient_descent.mp4 -frames:v 1 /usr/local/google/home/butterworthnat/HACK/Trasformers4Dummies/state_of_ai/src/manim/_media/check/m04_gradient_descent/f01_002.8s.png
++ ffmpeg -nostdin -loglevel error -y -ss 4.625 -i /usr/local/google/home/butterworthnat/HACK/Trasformers4Dummies/state_of_ai/assets/video/m04_gradient_descent.mp4 -frames:v 1 /usr/local/google/home/butterworthnat/HACK/Trasformers4Dummies/state_of_ai/src/manim/_media/check/m04_gradient_descent/f02_004.6s.png
++ ffmpeg -nostdin -loglevel error -y -ss 6.475 -i /usr/local/google/home/butterworthnat/HACK/Trasformers4Dummies/state_of_ai/assets/video/m04_gradient_descent.mp4 -frames:v 1 /usr/local/google/home/butterworthnat/HACK/Trasformers4Dummies/state_of_ai/src/manim/_media/check/m04_gradient_descent/f03_006.5s.png
++ ffmpeg -nostdin -loglevel error -y -ss 8.325 -i /usr/local/google/home/butterworthnat/HACK/Trasformers4Dummies/state_of_ai/assets/video/m04_gradient_descent.mp4 -frames:v 1 /usr/local/google/home/butterworthnat/HACK/Trasformers4Dummies/state_of_ai/src/manim/_media/check/m04_gradient_descent/f04_008.3s.png
++ ffmpeg -nostdin -loglevel error -y -ss 10.175 -i /usr/local/google/home/butterworthnat/HACK/Trasformers4Dummies/state_of_ai/assets/video/m04_gradient_descent.mp4 -frames:v 1 /usr/local/google/home/butterworthnat/HACK/Trasformers4Dummies/state_of_ai/src/manim/_media/check/m04_gradient_descent/f05_010.2s.png
++ ffmpeg -nostdin -loglevel error -y -ss 12.025 -i /usr/local/google/home/butterworthnat/HACK/Trasformers4Dummies/state_of_ai/assets/video/m04_gradient_descent.mp4 -frames:v 1 /usr/local/google/home/butterworthnat/HACK/Trasformers4Dummies/state_of_ai/src/manim/_media/check/m04_gradient_descent/f06_012.0s.png
++ ffmpeg -nostdin -loglevel error -y -ss 13.875 -i /usr/local/google/home/butterworthnat/HACK/Trasformers4Dummies/state_of_ai/assets/video/m04_gradient_descent.mp4 -frames:v 1 /usr/local/google/home/butterworthnat/HACK/Trasformers4Dummies/state_of_ai/src/manim/_media/check/m04_gradient_descent/f07_013.9s.png
++ ffmpeg -nostdin -loglevel error -y -ss 15.725 -i /usr/local/google/home/butterworthnat/HACK/Trasformers4Dummies/state_of_ai/assets/video/m04_gradient_descent.mp4 -frames:v 1 /usr/local/google/home/butterworthnat/HACK/Trasformers4Dummies/state_of_ai/src/manim/_media/check/m04_gradient_descent/f08_015.7s.png
++ ffmpeg -nostdin -loglevel error -y -ss 17.575 -i /usr/local/google/home/butterworthnat/HACK/Trasformers4Dummies/state_of_ai/assets/video/m04_gradient_descent.mp4 -frames:v 1 /usr/local/google/home/butterworthnat/HACK/Trasformers4Dummies/state_of_ai/src/manim/_media/check/m04_gradient_descent/f09_017.6s.png
++ ffmpeg -nostdin -loglevel error -y -ss 18.400 -i /usr/local/google/home/butterworthnat/HACK/Trasformers4Dummies/state_of_ai/assets/video/m04_gradient_descent.mp4 -frames:v 1 /usr/local/google/home/butterworthnat/HACK/Trasformers4Dummies/state_of_ai/src/manim/_media/check/m04_gradient_descent/f10_018.4s.png
+
+m04_gradient_descent: duration 18.50s, size 0.63 MB
+background check: OK (decodes to (15, 16, 21), nearest 8-bit YUV value to #0f1115)
+check frames in /usr/local/google/home/butterworthnat/HACK/Trasformers4Dummies/state_of_ai/src/manim/_media/check/m04_gradient_descent

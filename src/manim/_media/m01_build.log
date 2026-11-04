@@ -1,0 +1,284 @@
++ /usr/local/google/home/butterworthnat/miniforge3/envs/gdg/bin/python -m manim render -ql --frame_rate 30 --disable_caching --media_dir /usr/local/google/home/butterworthnat/HACK/Trasformers4Dummies/state_of_ai/src/manim/_media /usr/local/google/home/butterworthnat/HACK/Trasformers4Dummies/state_of_ai/src/manim/m01_neuron.py Neuron
+/bin/sh: line 1: sox: command not found
+[10/29/26 03:25:15] WARNING  SoX could not be found!              __init__.py:10
+                                                                                
+                                 If you do not have SoX, proceed                
+                             here:                                              
+                                  - - -                                         
+                             http://sox.sourceforge.net/ - - -                  
+                                                                                
+                                 If you do (or think that you                   
+                             should) have SoX, double-check your                
+                                 path variables.                                
+                                                                                
+<frozen runpy>:128: RuntimeWarning: 'manim.__main__' found in sys.modules after import of package 'manim', but prior to execution of 'manim.__main__'; this may result in unpredictable behaviour
+Manim Community v0.20.1
+
+[10/29/26 03:25:17] INFO     Caching disabled.              cairo_renderer.py:83
+Animation 0: LaggedStart(Group), etc.:   0%|          | 0/27 [00:00<?, ?it/s]Animation 0: LaggedStart(Group), etc.:  15%|█▍        | 4/27 [00:00<00:00, 37.33it/s]Animation 0: LaggedStart(Group), etc.:  30%|██▉       | 8/27 [00:00<00:00, 29.45it/s]Animation 0: LaggedStart(Group), etc.:  44%|████▍     | 12/27 [00:00<00:00, 24.93it/s]Animation 0: LaggedStart(Group), etc.:  56%|█████▌    | 15/27 [00:00<00:00, 26.24it/s]Animation 0: LaggedStart(Group), etc.:  67%|██████▋   | 18/27 [00:00<00:00, 24.93it/s]Animation 0: LaggedStart(Group), etc.:  78%|███████▊  | 21/27 [00:00<00:00, 24.27it/s]Animation 0: LaggedStart(Group), etc.:  96%|█████████▋| 26/27 [00:00<00:00, 29.99it/s]                                                                                      [10/29/26 03:25:21] INFO     Animation 0 : Partial      scene_file_writer.py:601
+                             movie file written in                              
+                             '/usr/local/google/home/bu                         
+                             tterworthnat/HACK/Trasform                         
+                             ers4Dummies/state_of_ai/sr                         
+                             c/manim/_media/videos/m01_                         
+                             neuron/480p30/partial_movi                         
+                             e_files/Neuron/uncached_00                         
+                             000.mp4'                                           
+                    INFO     Caching disabled.              cairo_renderer.py:83
+Animation 1: GrowFromCenter(Circle), etc.:   0%|          | 0/33 [00:00<?, ?it/s]Animation 1: GrowFromCenter(Circle), etc.:  27%|██▋       | 9/33 [00:00<00:00, 81.30it/s]Animation 1: GrowFromCenter(Circle), etc.:  55%|█████▍    | 18/33 [00:00<00:00, 69.54it/s]Animation 1: GrowFromCenter(Circle), etc.:  79%|███████▉  | 26/33 [00:00<00:00, 72.87it/s]                                                                                          [10/29/26 03:25:23] INFO     Animation 1 : Partial      scene_file_writer.py:601
+                             movie file written in                              
+                             '/usr/local/google/home/bu                         
+                             tterworthnat/HACK/Trasform                         
+                             ers4Dummies/state_of_ai/sr                         
+                             c/manim/_media/videos/m01_                         
+                             neuron/480p30/partial_movi                         
+                             e_files/Neuron/uncached_00                         
+                             001.mp4'                                           
+                    INFO     Caching disabled.              cairo_renderer.py:83
+Animation 2: FadeIn(MathTex('b = -0.2')), etc.:   0%|          | 0/21 [00:00<?, ?it/s]                                                                                      [10/29/26 03:25:24] INFO     Animation 2 : Partial      scene_file_writer.py:601
+                             movie file written in                              
+                             '/usr/local/google/home/bu                         
+                             tterworthnat/HACK/Trasform                         
+                             ers4Dummies/state_of_ai/sr                         
+                             c/manim/_media/videos/m01_                         
+                             neuron/480p30/partial_movi                         
+                             e_files/Neuron/uncached_00                         
+                             002.mp4'                                           
+                    INFO     Caching disabled.              cairo_renderer.py:83
+Animation 3: Create(Axes of 2 submobjects), etc.:   0%|          | 0/30 [00:00<?, ?it/s]Animation 3: Create(Axes of 2 submobjects), etc.:  60%|██████    | 18/30 [00:00<00:00, 169.17it/s]                                                                                                  [10/29/26 03:25:26] INFO     Animation 3 : Partial      scene_file_writer.py:601
+                             movie file written in                              
+                             '/usr/local/google/home/bu                         
+                             tterworthnat/HACK/Trasform                         
+                             ers4Dummies/state_of_ai/sr                         
+                             c/manim/_media/videos/m01_                         
+                             neuron/480p30/partial_movi                         
+                             e_files/Neuron/uncached_00                         
+                             003.mp4'                                           
+                    INFO     Caching disabled.              cairo_renderer.py:83
+                    INFO     Animation 4 : Partial      scene_file_writer.py:601
+                             movie file written in                              
+                             '/usr/local/google/home/bu                         
+                             tterworthnat/HACK/Trasform                         
+                             ers4Dummies/state_of_ai/sr                         
+                             c/manim/_media/videos/m01_                         
+                             neuron/480p30/partial_movi                         
+                             e_files/Neuron/uncached_00                         
+                             004.mp4'                                           
+                    INFO     Caching disabled.              cairo_renderer.py:83
+Animation 5: LaggedStart(Group):   0%|          | 0/78 [00:00<?, ?it/s]Animation 5: LaggedStart(Group):  15%|█▌        | 12/78 [00:00<00:00, 113.50it/s]Animation 5: LaggedStart(Group):  31%|███       | 24/78 [00:00<00:00, 89.11it/s] Animation 5: LaggedStart(Group):  44%|████▎     | 34/78 [00:00<00:00, 78.17it/s]Animation 5: LaggedStart(Group):  56%|█████▋    | 44/78 [00:00<00:00, 81.93it/s]Animation 5: LaggedStart(Group):  68%|██████▊   | 53/78 [00:00<00:00, 76.30it/s]Animation 5: LaggedStart(Group):  81%|████████  | 63/78 [00:00<00:00, 82.67it/s]Animation 5: LaggedStart(Group):  94%|█████████▎| 73/78 [00:00<00:00, 86.91it/s]                                                                                [10/29/26 03:25:30] INFO     Animation 5 : Partial      scene_file_writer.py:601
+                             movie file written in                              
+                             '/usr/local/google/home/bu                         
+                             tterworthnat/HACK/Trasform                         
+                             ers4Dummies/state_of_ai/sr                         
+                             c/manim/_media/videos/m01_                         
+                             neuron/480p30/partial_movi                         
+                             e_files/Neuron/uncached_00                         
+                             005.mp4'                                           
+                    INFO     Caching disabled.              cairo_renderer.py:83
+Animation 6: Indicate(MathTex('\\Sigma')), etc.:   0%|          | 0/36 [00:00<?, ?it/s]Animation 6: Indicate(MathTex('\\Sigma')), etc.:  17%|█▋        | 6/36 [00:00<00:00, 52.65it/s]Animation 6: Indicate(MathTex('\\Sigma')), etc.:  33%|███▎      | 12/36 [00:00<00:00, 48.47it/s]Animation 6: Indicate(MathTex('\\Sigma')), etc.:  50%|█████     | 18/36 [00:00<00:00, 47.72it/s]Animation 6: Indicate(MathTex('\\Sigma')), etc.:  64%|██████▍   | 23/36 [00:00<00:00, 45.42it/s]Animation 6: Indicate(MathTex('\\Sigma')), etc.:  81%|████████  | 29/36 [00:00<00:00, 48.76it/s]Animation 6: Indicate(MathTex('\\Sigma')), etc.:  94%|█████████▍| 34/36 [00:00<00:00, 47.68it/s]                                                                                                [10/29/26 03:25:33] INFO     Animation 6 : Partial      scene_file_writer.py:601
+                             movie file written in                              
+                             '/usr/local/google/home/bu                         
+                             tterworthnat/HACK/Trasform                         
+                             ers4Dummies/state_of_ai/sr                         
+                             c/manim/_media/videos/m01_                         
+                             neuron/480p30/partial_movi                         
+                             e_files/Neuron/uncached_00                         
+                             006.mp4'                                           
+                    INFO     Caching disabled.              cairo_renderer.py:83
+Animation 7: ReplacementTransform(MathTexPart('-0.2')), etc.:   0%|          | 0/27 [00:00<?, ?it/s]Animation 7: ReplacementTransform(MathTexPart('-0.2')), etc.:  22%|██▏       | 6/27 [00:00<00:00, 57.96it/s]Animation 7: ReplacementTransform(MathTexPart('-0.2')), etc.:  44%|████▍     | 12/27 [00:00<00:00, 54.56it/s]Animation 7: ReplacementTransform(MathTexPart('-0.2')), etc.:  70%|███████   | 19/27 [00:00<00:00, 56.23it/s]Animation 7: ReplacementTransform(MathTexPart('-0.2')), etc.:  93%|█████████▎| 25/27 [00:00<00:00, 57.56it/s]                                                                                                             [10/29/26 03:25:34] INFO     Animation 7 : Partial      scene_file_writer.py:601
+                             movie file written in                              
+                             '/usr/local/google/home/bu                         
+                             tterworthnat/HACK/Trasform                         
+                             ers4Dummies/state_of_ai/sr                         
+                             c/manim/_media/videos/m01_                         
+                             neuron/480p30/partial_movi                         
+                             e_files/Neuron/uncached_00                         
+                             007.mp4'                                           
+                    INFO     Caching disabled.              cairo_renderer.py:83
+Animation 8: Write(VGroup of 2 submobjects):   0%|          | 0/18 [00:00<?, ?it/s]                                                                                   [10/29/26 03:25:35] INFO     Animation 8 : Partial      scene_file_writer.py:601
+                             movie file written in                              
+                             '/usr/local/google/home/bu                         
+                             tterworthnat/HACK/Trasform                         
+                             ers4Dummies/state_of_ai/sr                         
+                             c/manim/_media/videos/m01_                         
+                             neuron/480p30/partial_movi                         
+                             e_files/Neuron/uncached_00                         
+                             008.mp4'                                           
+                    INFO     Caching disabled.              cairo_renderer.py:83
+Animation 9: Circumscribe(Group):   0%|          | 0/27 [00:00<?, ?it/s]                                                                        [10/29/26 03:25:37] INFO     Animation 9 : Partial      scene_file_writer.py:601
+                             movie file written in                              
+                             '/usr/local/google/home/bu                         
+                             tterworthnat/HACK/Trasform                         
+                             ers4Dummies/state_of_ai/sr                         
+                             c/manim/_media/videos/m01_                         
+                             neuron/480p30/partial_movi                         
+                             e_files/Neuron/uncached_00                         
+                             009.mp4'                                           
+                    INFO     Caching disabled.              cairo_renderer.py:83
+Animation 10: MoveAlongPath(Dot), etc.:   0%|          | 0/30 [00:00<?, ?it/s]Animation 10: MoveAlongPath(Dot), etc.:  47%|████▋     | 14/30 [00:00<00:00, 132.69it/s]Animation 10: MoveAlongPath(Dot), etc.:  93%|█████████▎| 28/30 [00:00<00:00, 131.61it/s]                                                                                        [10/29/26 03:25:39] INFO     Animation 10 : Partial     scene_file_writer.py:601
+                             movie file written in                              
+                             '/usr/local/google/home/bu                         
+                             tterworthnat/HACK/Trasform                         
+                             ers4Dummies/state_of_ai/sr                         
+                             c/manim/_media/videos/m01_                         
+                             neuron/480p30/partial_movi                         
+                             e_files/Neuron/uncached_00                         
+                             010.mp4'                                           
+                    INFO     Caching disabled.              cairo_renderer.py:83
+Animation 11: FadeIn(Dot):   0%|          | 0/9 [00:00<?, ?it/s]                                                                                    INFO     Animation 11 : Partial     scene_file_writer.py:601
+                             movie file written in                              
+                             '/usr/local/google/home/bu                         
+                             tterworthnat/HACK/Trasform                         
+                             ers4Dummies/state_of_ai/sr                         
+                             c/manim/_media/videos/m01_                         
+                             neuron/480p30/partial_movi                         
+                             e_files/Neuron/uncached_00                         
+                             011.mp4'                                           
+                    INFO     Caching disabled.              cairo_renderer.py:83
+Animation 12: Create(DashedLine):   0%|          | 0/18 [00:00<?, ?it/s]                                                                        [10/29/26 03:25:40] INFO     Animation 12 : Partial     scene_file_writer.py:601
+                             movie file written in                              
+                             '/usr/local/google/home/bu                         
+                             tterworthnat/HACK/Trasform                         
+                             ers4Dummies/state_of_ai/sr                         
+                             c/manim/_media/videos/m01_                         
+                             neuron/480p30/partial_movi                         
+                             e_files/Neuron/uncached_00                         
+                             012.mp4'                                           
+                    INFO     Caching disabled.              cairo_renderer.py:83
+Animation 13: FadeIn(Dot):   0%|          | 0/8 [00:00<?, ?it/s]                                                                [10/29/26 03:25:41] INFO     Animation 13 : Partial     scene_file_writer.py:601
+                             movie file written in                              
+                             '/usr/local/google/home/bu                         
+                             tterworthnat/HACK/Trasform                         
+                             ers4Dummies/state_of_ai/sr                         
+                             c/manim/_media/videos/m01_                         
+                             neuron/480p30/partial_movi                         
+                             e_files/Neuron/uncached_00                         
+                             013.mp4'                                           
+                    INFO     Caching disabled.              cairo_renderer.py:83
+Animation 14: Create(DashedLine), etc.:   0%|          | 0/21 [00:00<?, ?it/s]                                                                              [10/29/26 03:25:42] INFO     Animation 14 : Partial     scene_file_writer.py:601
+                             movie file written in                              
+                             '/usr/local/google/home/bu                         
+                             tterworthnat/HACK/Trasform                         
+                             ers4Dummies/state_of_ai/sr                         
+                             c/manim/_media/videos/m01_                         
+                             neuron/480p30/partial_movi                         
+                             e_files/Neuron/uncached_00                         
+                             014.mp4'                                           
+                    INFO     Caching disabled.              cairo_renderer.py:83
+Animation 15: _MethodAnimation(MathTex('0.73')), etc.:   0%|          | 0/42 [00:00<?, ?it/s]Animation 15: _MethodAnimation(MathTex('0.73')), etc.:  38%|███▊      | 16/42 [00:00<00:00, 155.90it/s]Animation 15: _MethodAnimation(MathTex('0.73')), etc.:  76%|███████▌  | 32/42 [00:00<00:00, 124.85it/s]                                                                                                       [10/29/26 03:25:44] INFO     Animation 15 : Partial     scene_file_writer.py:601
+                             movie file written in                              
+                             '/usr/local/google/home/bu                         
+                             tterworthnat/HACK/Trasform                         
+                             ers4Dummies/state_of_ai/sr                         
+                             c/manim/_media/videos/m01_                         
+                             neuron/480p30/partial_movi                         
+                             e_files/Neuron/uncached_00                         
+                             015.mp4'                                           
+                    INFO     Caching disabled.              cairo_renderer.py:83
+Animation 16: Indicate(MathTex('0.73')):   0%|          | 0/18 [00:00<?, ?it/s]Animation 16: Indicate(MathTex('0.73')):  89%|████████▉ | 16/18 [00:00<00:00, 148.00it/s]                                                                                         [10/29/26 03:25:45] INFO     Animation 16 : Partial     scene_file_writer.py:601
+                             movie file written in                              
+                             '/usr/local/google/home/bu                         
+                             tterworthnat/HACK/Trasform                         
+                             ers4Dummies/state_of_ai/sr                         
+                             c/manim/_media/videos/m01_                         
+                             neuron/480p30/partial_movi                         
+                             e_files/Neuron/uncached_00                         
+                             016.mp4'                                           
+                    INFO     Caching disabled.              cairo_renderer.py:83
+                    INFO     Animation 17 : Partial     scene_file_writer.py:601
+                             movie file written in                              
+                             '/usr/local/google/home/bu                         
+                             tterworthnat/HACK/Trasform                         
+                             ers4Dummies/state_of_ai/sr                         
+                             c/manim/_media/videos/m01_                         
+                             neuron/480p30/partial_movi                         
+                             e_files/Neuron/uncached_00                         
+                             017.mp4'                                           
+[10/29/26 03:25:46] INFO     Caching disabled.              cairo_renderer.py:83
+Animation 18: FadeOut(VGroup of 9 submobjects):   0%|          | 0/15 [00:00<?, ?it/s]Animation 18: FadeOut(VGroup of 9 submobjects):  47%|████▋     | 7/15 [00:00<00:00, 62.84it/s]Animation 18: FadeOut(VGroup of 9 submobjects):  93%|█████████▎| 14/15 [00:00<00:00, 62.99it/s]                                                                                               [10/29/26 03:25:47] INFO     Animation 18 : Partial     scene_file_writer.py:601
+                             movie file written in                              
+                             '/usr/local/google/home/bu                         
+                             tterworthnat/HACK/Trasform                         
+                             ers4Dummies/state_of_ai/sr                         
+                             c/manim/_media/videos/m01_                         
+                             neuron/480p30/partial_movi                         
+                             e_files/Neuron/uncached_00                         
+                             018.mp4'                                           
+                    INFO     Caching disabled.              cairo_renderer.py:83
+Animation 19: ReplacementTransform(MathTexPart('z')), etc.:   0%|          | 0/21 [00:00<?, ?it/s]Animation 19: ReplacementTransform(MathTexPart('z')), etc.:  38%|███▊      | 8/21 [00:00<00:00, 77.94it/s]Animation 19: ReplacementTransform(MathTexPart('z')), etc.:  81%|████████  | 17/21 [00:00<00:00, 84.43it/s]                                                                                                           [10/29/26 03:25:48] INFO     Animation 19 : Partial     scene_file_writer.py:601
+                             movie file written in                              
+                             '/usr/local/google/home/bu                         
+                             tterworthnat/HACK/Trasform                         
+                             ers4Dummies/state_of_ai/sr                         
+                             c/manim/_media/videos/m01_                         
+                             neuron/480p30/partial_movi                         
+                             e_files/Neuron/uncached_00                         
+                             019.mp4'                                           
+                    INFO     Caching disabled.              cairo_renderer.py:83
+                    INFO     Animation 20 : Partial     scene_file_writer.py:601
+                             movie file written in                              
+                             '/usr/local/google/home/bu                         
+                             tterworthnat/HACK/Trasform                         
+                             ers4Dummies/state_of_ai/sr                         
+                             c/manim/_media/videos/m01_                         
+                             neuron/480p30/partial_movi                         
+                             e_files/Neuron/uncached_00                         
+                             020.mp4'                                           
+                    INFO     Caching disabled.              cairo_renderer.py:83
+Animation 21: TransformMatchingTex(Group):   0%|          | 0/36 [00:00<?, ?it/s]Animation 21: TransformMatchingTex(Group):  17%|█▋        | 6/36 [00:00<00:00, 59.77it/s]Animation 21: TransformMatchingTex(Group):  33%|███▎      | 12/36 [00:00<00:00, 47.25it/s]Animation 21: TransformMatchingTex(Group):  47%|████▋     | 17/36 [00:00<00:00, 44.35it/s]Animation 21: TransformMatchingTex(Group):  64%|██████▍   | 23/36 [00:00<00:00, 49.25it/s]Animation 21: TransformMatchingTex(Group):  83%|████████▎ | 30/36 [00:00<00:00, 53.20it/s]Animation 21: TransformMatchingTex(Group): 100%|██████████| 36/36 [00:00<00:00, 54.64it/s]                                                                                          [10/29/26 03:25:50] INFO     Animation 21 : Partial     scene_file_writer.py:601
+                             movie file written in                              
+                             '/usr/local/google/home/bu                         
+                             tterworthnat/HACK/Trasform                         
+                             ers4Dummies/state_of_ai/sr                         
+                             c/manim/_media/videos/m01_                         
+                             neuron/480p30/partial_movi                         
+                             e_files/Neuron/uncached_00                         
+                             021.mp4'                                           
+                    INFO     Caching disabled.              cairo_renderer.py:83
+Animation 22: Create(SurroundingRectangle):   0%|          | 0/24 [00:00<?, ?it/s]Animation 22: Create(SurroundingRectangle):  38%|███▊      | 9/24 [00:00<00:00, 88.06it/s]Animation 22: Create(SurroundingRectangle):  79%|███████▉  | 19/24 [00:00<00:00, 93.20it/s]                                                                                           [10/29/26 03:25:52] INFO     Animation 22 : Partial     scene_file_writer.py:601
+                             movie file written in                              
+                             '/usr/local/google/home/bu                         
+                             tterworthnat/HACK/Trasform                         
+                             ers4Dummies/state_of_ai/sr                         
+                             c/manim/_media/videos/m01_                         
+                             neuron/480p30/partial_movi                         
+                             e_files/Neuron/uncached_00                         
+                             022.mp4'                                           
+                    INFO     Caching disabled.              cairo_renderer.py:83
+                    INFO     Animation 23 : Partial     scene_file_writer.py:601
+                             movie file written in                              
+                             '/usr/local/google/home/bu                         
+                             tterworthnat/HACK/Trasform                         
+                             ers4Dummies/state_of_ai/sr                         
+                             c/manim/_media/videos/m01_                         
+                             neuron/480p30/partial_movi                         
+                             e_files/Neuron/uncached_00                         
+                             023.mp4'                                           
+                    INFO     Combining to Movie file.   scene_file_writer.py:753
+                    INFO                                scene_file_writer.py:904
+                             File ready at                                      
+                             '/usr/local/google/home/bu                         
+                             tterworthnat/HACK/Trasform                         
+                             ers4Dummies/state_of_ai/sr                         
+                             c/manim/_media/videos/m01_                         
+                             neuron/480p30/Neuron.mp4'                          
+                                                                                
+                    INFO     Rendered Neuron                        scene.py:278
+                             Played 24 animations                               
++ ffmpeg -nostdin -loglevel error -y -ss 0.861 -i /usr/local/google/home/butterworthnat/HACK/Trasformers4Dummies/state_of_ai/src/manim/_media/videos/m01_neuron/480p30/Neuron.mp4 -frames:v 1 /usr/local/google/home/butterworthnat/HACK/Trasformers4Dummies/state_of_ai/src/manim/_media/check/m01_neuron/f00_000.9s.png
++ ffmpeg -nostdin -loglevel error -y -ss 2.583 -i /usr/local/google/home/butterworthnat/HACK/Trasformers4Dummies/state_of_ai/src/manim/_media/videos/m01_neuron/480p30/Neuron.mp4 -frames:v 1 /usr/local/google/home/butterworthnat/HACK/Trasformers4Dummies/state_of_ai/src/manim/_media/check/m01_neuron/f01_002.6s.png
++ ffmpeg -nostdin -loglevel error -y -ss 4.306 -i /usr/local/google/home/butterworthnat/HACK/Trasformers4Dummies/state_of_ai/src/manim/_media/videos/m01_neuron/480p30/Neuron.mp4 -frames:v 1 /usr/local/google/home/butterworthnat/HACK/Trasformers4Dummies/state_of_ai/src/manim/_media/check/m01_neuron/f02_004.3s.png
++ ffmpeg -nostdin -loglevel error -y -ss 6.028 -i /usr/local/google/home/butterworthnat/HACK/Trasformers4Dummies/state_of_ai/src/manim/_media/videos/m01_neuron/480p30/Neuron.mp4 -frames:v 1 /usr/local/google/home/butterworthnat/HACK/Trasformers4Dummies/state_of_ai/src/manim/_media/check/m01_neuron/f03_006.0s.png
++ ffmpeg -nostdin -loglevel error -y -ss 7.750 -i /usr/local/google/home/butterworthnat/HACK/Trasformers4Dummies/state_of_ai/src/manim/_media/videos/m01_neuron/480p30/Neuron.mp4 -frames:v 1 /usr/local/google/home/butterworthnat/HACK/Trasformers4Dummies/state_of_ai/src/manim/_media/check/m01_neuron/f04_007.8s.png
++ ffmpeg -nostdin -loglevel error -y -ss 9.472 -i /usr/local/google/home/butterworthnat/HACK/Trasformers4Dummies/state_of_ai/src/manim/_media/videos/m01_neuron/480p30/Neuron.mp4 -frames:v 1 /usr/local/google/home/butterworthnat/HACK/Trasformers4Dummies/state_of_ai/src/manim/_media/check/m01_neuron/f05_009.5s.png
++ ffmpeg -nostdin -loglevel error -y -ss 11.194 -i /usr/local/google/home/butterworthnat/HACK/Trasformers4Dummies/state_of_ai/src/manim/_media/videos/m01_neuron/480p30/Neuron.mp4 -frames:v 1 /usr/local/google/home/butterworthnat/HACK/Trasformers4Dummies/state_of_ai/src/manim/_media/check/m01_neuron/f06_011.2s.png
++ ffmpeg -nostdin -loglevel error -y -ss 12.917 -i /usr/local/google/home/butterworthnat/HACK/Trasformers4Dummies/state_of_ai/src/manim/_media/videos/m01_neuron/480p30/Neuron.mp4 -frames:v 1 /usr/local/google/home/butterworthnat/HACK/Trasformers4Dummies/state_of_ai/src/manim/_media/check/m01_neuron/f07_012.9s.png
++ ffmpeg -nostdin -loglevel error -y -ss 14.639 -i /usr/local/google/home/butterworthnat/HACK/Trasformers4Dummies/state_of_ai/src/manim/_media/videos/m01_neuron/480p30/Neuron.mp4 -frames:v 1 /usr/local/google/home/butterworthnat/HACK/Trasformers4Dummies/state_of_ai/src/manim/_media/check/m01_neuron/f08_014.6s.png
++ ffmpeg -nostdin -loglevel error -y -ss 16.361 -i /usr/local/google/home/butterworthnat/HACK/Trasformers4Dummies/state_of_ai/src/manim/_media/videos/m01_neuron/480p30/Neuron.mp4 -frames:v 1 /usr/local/google/home/butterworthnat/HACK/Trasformers4Dummies/state_of_ai/src/manim/_media/check/m01_neuron/f09_016.4s.png
++ ffmpeg -nostdin -loglevel error -y -ss 18.083 -i /usr/local/google/home/butterworthnat/HACK/Trasformers4Dummies/state_of_ai/src/manim/_media/videos/m01_neuron/480p30/Neuron.mp4 -frames:v 1 /usr/local/google/home/butterworthnat/HACK/Trasformers4Dummies/state_of_ai/src/manim/_media/check/m01_neuron/f10_018.1s.png
++ ffmpeg -nostdin -loglevel error -y -ss 19.806 -i /usr/local/google/home/butterworthnat/HACK/Trasformers4Dummies/state_of_ai/src/manim/_media/videos/m01_neuron/480p30/Neuron.mp4 -frames:v 1 /usr/local/google/home/butterworthnat/HACK/Trasformers4Dummies/state_of_ai/src/manim/_media/check/m01_neuron/f11_019.8s.png
++ ffmpeg -nostdin -loglevel error -y -ss 20.567 -i /usr/local/google/home/butterworthnat/HACK/Trasformers4Dummies/state_of_ai/src/manim/_media/videos/m01_neuron/480p30/Neuron.mp4 -frames:v 1 /usr/local/google/home/butterworthnat/HACK/Trasformers4Dummies/state_of_ai/src/manim/_media/check/m01_neuron/f12_020.6s.png
+
+m01_neuron: duration 20.67s, size 0.49 MB
+background check: MISMATCH [('f00_000.9s.png', [(15, 16, 21), (15, 16, 21), (15, 16, 21), (15, 16, 21)]), ('f01_002.6s.png', [(15, 16, 21), (15, 16, 21), (15, 16, 21), (15, 16, 21)]), ('f02_004.3s.png', [(15, 16, 21), (15, 16, 21), (15, 16, 21), (15, 16, 21)]), ('f03_006.0s.png', [(15, 16, 21), (15, 16, 21), (15, 16, 21), (15, 16, 21)]), ('f04_007.8s.png', [(15, 16, 21), (15, 16, 21), (15, 16, 21), (15, 16, 21)]), ('f05_009.5s.png', [(15, 16, 21), (15, 16, 21), (15, 16, 21), (15, 16, 21)]), ('f06_011.2s.png', [(15, 16, 21), (15, 16, 21), (15, 16, 21), (15, 16, 21)]), ('f07_012.9s.png', [(15, 16, 21), (15, 16, 21), (15, 16, 21), (15, 16, 21)]), ('f08_014.6s.png', [(15, 16, 21), (15, 16, 21), (15, 16, 21), (15, 16, 21)]), ('f09_016.4s.png', [(15, 16, 21), (15, 16, 21), (15, 16, 21), (15, 16, 21)]), ('f10_018.1s.png', [(15, 16, 21), (15, 16, 21), (15, 16, 21), (15, 16, 21)]), ('f11_019.8s.png', [(15, 16, 21), (15, 16, 21), (15, 16, 21), (15, 16, 21)]), ('f12_020.6s.png', [(15, 16, 21), (15, 16, 21), (15, 16, 21), (15, 16, 21)])]
+check frames in /usr/local/google/home/butterworthnat/HACK/Trasformers4Dummies/state_of_ai/src/manim/_media/check/m01_neuron

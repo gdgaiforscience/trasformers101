@@ -1,0 +1,26 @@
+/bin/sh: line 1: sox: command not found
+[10/29/26 04:00:44] WARNING  SoX could not be found!              __init__.py:10
+                                                                                
+                                 If you do not have SoX, proceed                
+                             here:                                              
+                                  - - -                                         
+                             http://sox.sourceforge.net/ - - -                  
+                                                                                
+                                 If you do (or think that you                   
+                             should) have SoX, double-check your                
+                                 path variables.                                
+                                                                                
+<frozen runpy>:128: RuntimeWarning: 'manim.__main__' found in sys.modules after import of package 'manim', but prior to execution of 'manim.__main__'; this may result in unpredictable behaviour
+Manim Community v0.20.1
+
+Animation 0: LaggedStart(Group), etc.:   0%|          | 0/1 [00:00<?, ?it/s]                                                                            Animation 1: GrowFromCenter(Circle), etc.:   0%|          | 0/1 [00:00<?, ?it/s]                                                                                Animation 2: FadeIn(MathTex('b = -0.2')), etc.:   0%|          | 0/1 [00:00<?, ?it/s]                                                                                     Animation 3: Create(Axes of 2 submobjects), etc.:   0%|          | 0/1 [00:00<?, ?it/s]                                                                                       Animation 5: LaggedStart(Group):   0%|          | 0/1 [00:00<?, ?it/s]                                                                      Animation 6: Indicate(MathTex('\\Sigma')), etc.:   0%|          | 0/1 [00:00<?, ?it/s]                                                                                      Animation 7: ReplacementTransform(MathTexPart('-0.2')), etc.:   0%|          | 0/1 [00:00<?, ?it/s]                                                                                                   Animation 8: Write(VGroup of 2 submobjects):   0%|          | 0/1 [00:00<?, ?it/s]                                                                                  Animation 9: Circumscribe(Group):   0%|          | 0/1 [00:00<?, ?it/s]                                                                       Animation 10: MoveAlongPath(Dot), etc.:   0%|          | 0/1 [00:00<?, ?it/s]                                                                             Animation 11: FadeIn(Dot):   0%|          | 0/1 [00:00<?, ?it/s]                                                                Animation 12: Create(DashedLine):   0%|          | 0/1 [00:00<?, ?it/s]                                                                       Animation 13: FadeIn(Dot):   0%|          | 0/1 [00:00<?, ?it/s]                                                                Animation 14: Create(DashedLine), etc.:   0%|          | 0/1 [00:00<?, ?it/s]                                                                             Animation 15: _MethodAnimation(MathTex('0.73')), etc.:   0%|          | 0/1 [00:00<?, ?it/s]                                                                                            Animation 16: Indicate(MathTex('0.73')):   0%|          | 0/1 [00:00<?, ?it/s]                                                                              Animation 18: FadeOut(VGroup of 9 submobjects):   0%|          | 0/1 [00:00<?, ?it/s]                                                                                     Animation 19: ReplacementTransform(MathTexPart('z')), etc.:   0%|          | 0/1 [00:00<?, ?it/s]                                                                                                 Animation 21: TransformMatchingTex(Group):   0%|          | 0/1 [00:00<?, ?it/s]                                                                                Animation 22: Create(SurroundingRectangle):   0%|          | 0/1 [00:00<?, ?it/s]                                                                                 [10/29/26 04:00:49] INFO                                scene_file_writer.py:904
+                             File ready at                                      
+                             '/usr/local/google/home/bu                         
+                             tterworthnat/HACK/Trasform                         
+                             ers4Dummies/state_of_ai/sr                         
+                             c/manim/_media/cuepass/ima                         
+                             ges/m01_neuron/Neuron_Mani                         
+                             mCE_v0.20.1.png'                                   
+                                                                                
+                    INFO     Rendered Neuron                        scene.py:278
+                             Played 24 animations                               
