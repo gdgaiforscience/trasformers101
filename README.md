@@ -24,25 +24,27 @@ in the style of 3Blue1Brown: picture first, equation second.
 | K / J | play-pause / restart video | B | blackout |
 | F | fullscreen | ? | help |
 
-Only slide 32 (bbycroft.net/llm and Transformer Explainer embeds) needs the internet. Everything
+Only slide 33 (bbycroft.net/llm and Transformer Explainer embeds) needs the internet. Everything
 else, including all data, videos and fonts, is local. The stage is 1920×1080 and scales to any window.
 
-## What's inside (40 slides, ≈55 min + Q&A)
+## What's inside (43 slides, ≈63 min + Q&A)
 
 | Chapter | Slides | Live demos (real data unless noted) |
 |---|---|---|
 | Opening | title, "I typed hi", roadmap | Gemma 3 270M next-token probabilities for "hi" (93.26 %), temperature, sampling |
-| 1 · What is AI today? | AI zoo, state of play Oct 2026 | nested-rings explainer |
+| 1 · What is AI today? | AI zoo, state of play Nov 2026 | nested-rings explainer |
 | 2 · How we got here | 80-year timeline, why now, Nobel 2024 | timeline with hype curve; training-compute chart (log ↔ linear) |
-| 3 · Technology stack | stack tower, journey of "hi" | stack tower with a TPU systolic-array clip; animated packet journey |
-| 4 · Inside a neural network | numbers, tensors, neuron, activations, layer = matrix, warping space, deep warps, weights | pixel-level photo zoom, EEG, token IDs; Iris neuron; activation explorer; matrix stepper; 2×2 grid warp; trained 21-parameter net; real Gemma weight matrices |
+| 3 · Technology stack | stack tower, journey of "hi" | stack tower with a TPU systolic-array clip; "hi" through one inference server as a CPU · PCIe · GPU swim-lane film (8 stations: guardrails, chat template, tokenizer, PCIe copy, prefill, decode loop, detokenizer) with real Gemma 3 270M token IDs, probabilities, KV-cache size and tokenizer timing (`data/journey.js`), live PCIe-bytes vs weights-read meter, and a local open-weights view (grammar masks, unified memory, prefix caching) |
+| 4 · Inside a neural network | numbers, tensors, neuron, activations, layer = matrix, GPUs & TPUs, warping space, deep warps, weights | pixel-level photo zoom, EEG, token IDs; Iris neuron; activation explorer; matrix stepper; the same layer run on a CPU, a GPU and a TPU systolic array (ticks + memory-trip counter, energy bars, zoom out to a TPU pod); 2×2 grid warp; trained 21-parameter net; real Gemma weight matrices |
 | 5 · How machines learn | loss, gradient descent, landscapes, backprop, training | Kepler's law by least squares; loss-landscape descent with η; backprop graph; in-browser neural-network playground |
-| 6 · From networks to Gemini | embeddings, attention, Transformer 3D, softmax, prediction, scaling | Gemma embedding map + analogies; real attention heads; science prompts incl. a hallucination; Chinchilla scaling law |
-| 7 · AI for science | science highlights, "which AI for my lab?" | rotating GFP (PDB 1EMA); decision helper |
+| 6 · From networks to Gemini | embeddings, attention, Transformer 3D, softmax, prediction, scaling, post-training & fine-tuning | Gemma embedding map + analogies; real attention heads; science prompts incl. a hallucination; Chinchilla scaling law; base-vs-assistant "hi" bars → SFT/RLHF/RLVR, then a live LoRA explorer (W freezes, ΔW = B·A, rank slider with exact counts), a "will it fit on one GPU?" chart and a lab playbook (`js/demos/finetune.js`) |
+| 7 · AI for science | model zoo, science highlights, "which AI for my lab?" | **model zoo** (`#archs`, `js/demos/archs.js`): the m08_wiring manim film full-bleed ("same neuron, different wiring"), then 12 live, data-driven heroes in three status groups (still everywhere / had its moment / rising): a real 3 × 3 convolution on Grace Hopper's photo, an LSTM with real equations reading "The keys to the cabinet…", message passing on caffeine, real Gemma attention, an exact-denoiser diffusion sampler, Mamba vs attention memory, PCA autoencoder, GAN (Goodfellow Fig. 1), Hopfield recall, a Fourier layer on the heat equation, KAN, plus a timeline and a "match the wiring to your data" field guide; rotating GFP (PDB 1EMA); decision helper |
 | Wrap-up | limits, six equations, resources | — |
 
-Videos: 7 manim clips (`assets/video/m0*.mp4`) and 4 Blender clips (`assets/video/b0*.mp4`), all
-1920×1080 H.264 with posters and cue files.
+Videos: 9 manim clips (`assets/video/m0*.mp4`) and 4 Blender clips (`assets/video/b0*.mp4`), all
+1920×1080 H.264 with posters and cue files. `m08_lora` uses the light palette and plays on demand
+inside the `#finetune` slide (**▶ The maths in 25 s**, or K). `m08_wiring` (light palette, 32 s) opens the
+`#archs` model-zoo slide full-bleed (→ or **meet the zoo ▸** skips it; K / J replay it at any step).
 
 ## Folder layout
 
@@ -78,5 +80,5 @@ Build intermediates can be deleted safely, freeing roughly 770 MB: `src/blender/
 
 * Live numbers come from **Gemma 3 270M** (open weights), not Gemini, whose internals aren't public. Gemma 3 shares Gemini 2.0's tokenizer.
 * The m06 (softmax) and m07 (attention) clips use **illustrative numbers** and say so on screen. The interactive slides after them use real model data.
-* `data/compute.js` is a hand-checked fallback list (reported, or 6·N·D from reported N and D), because Epoch AI's CSV couldn't be fetched whole at build time.
+* `data/compute.js` is a hand-checked fallback list (reported, or 6·N·D from reported N and D; AlexNet and Mistral Large 4 "Le Chonk" are GPU-time estimates, drawn hollow), because Epoch AI's CSV couldn't be fetched whole at build time.
 * Frontier model sizes (Gemini 4) are not disclosed and are shown as such.

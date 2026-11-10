@@ -1,0 +1,30 @@
+[
+ {
+  "t": 0.0,
+  "label": "One neuron: a weighted sum, then a bend"
+ },
+ {
+  "t": 2.43,
+  "label": "Dense: everyone talks to everyone"
+ },
+ {
+  "t": 6.9,
+  "label": "Convolution: only neighbours, the same 3 weights everywhere"
+ },
+ {
+  "t": 12.17,
+  "label": "Recurrent: read in order, carry a memory forward"
+ },
+ {
+  "t": 17.23,
+  "label": "Graph: atoms swap messages with their bonded neighbours"
+ },
+ {
+  "t": 21.53,
+  "label": "Attention: anyone can talk to anyone, and the wiring is computed from the data"
+ },
+ {
+  "t": 27.53,
+  "label": "Same neuron. Different wiring."
+ }
+]

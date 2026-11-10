@@ -8,13 +8,13 @@ Scripts: `src/python/make_*.py` (run with the `gdg` conda env, `KERAS_BACKEND=ja
 
 | Asset | Source | Licence / terms |
 |---|---|---|
-| `next_token.js`, `embeddings.js`, `weights.js`, `attention.js`, `w_*.png` | **Gemma 3 270M** (pretrained `gemma3_270m` v3 and instruction-tuned `gemma3_instruct_270m` v4 keras-hub presets, Google DeepMind), run offline from the local Kaggle cache. Gemma is Gemini's open-weights sibling, not Gemini. | [Gemma Terms of Use](https://ai.google.dev/gemma/terms) |
+| `next_token.js`, `journey.js`, `embeddings.js`, `weights.js`, `attention.js`, `w_*.png` | **Gemma 3 270M** (pretrained `gemma3_270m` v3 and instruction-tuned `gemma3_instruct_270m` v4 keras-hub presets, Google DeepMind), run offline from the local Kaggle cache. Gemma is Gemini's open-weights sibling, not Gemini. `journey.js` also times the Gemma SentencePiece tokenizer with the `sentencepiece` library (Apache 2.0) on the build machine. | [Gemma Terms of Use](https://ai.google.dev/gemma/terms) |
 | `iris.js` | R. A. Fisher (1936) iris data via `sklearn.datasets.load_iris` | public-domain data; scikit-learn BSD-3-Clause |
 | `kepler.js` | NASA Planetary Fact Sheet (metric), D. R. Williams, NASA NSSDCA, <https://nssdc.gsfc.nasa.gov/planetary/factsheet/> ("Distance from Sun", "Orbital Period"). Transcribed; not re-fetched at build time. | U.S. Government work (public domain) |
 | `hopper.js`, `assets/img/grace_hopper.jpg` | matplotlib sample data `grace_hopper.jpg` (from <https://commons.wikimedia.org/wiki/File:Grace_Hopper.jpg>) | U.S. Navy photograph, public domain |
 | `eeg.js` | matplotlib sample data `eeg.dat`; sampling rate (80 Hz) and channel labels from matplotlib's "MRI with EEG" gallery example | matplotlib licence (PSF-based) |
 | `protein.js` | RCSB PDB entry **1EMA** (green fluorescent protein): M. Ormö, A. B. Cubitt, K. Kallio, L. A. Gross, R. Y. Tsien, S. J. Remington (1996) *Science* 273:1392-1395. C-alpha trace + deposited helix/strand records via the RCSB ModelServer (<https://models.rcsb.org/v1/1ema/atoms?label_atom_id=CA&encoding=cif>) | PDB data CC0 1.0 (<https://www.rcsb.org/pages/usage-policy>) |
-| `compute.js` | **Fallback list** (Epoch AI's CSV could not be fetched whole at build time): compute reported in, or computed as 6·N·D from N and D reported in, Vaswani et al. 2017; Devlin et al. 2018; Brown et al. 2020; Rae et al. 2021; Hoffmann et al. 2022; Chowdhery et al. 2022; Touvron et al. 2023a,b; Llama Team 2024 ("The Llama 3 Herd of Models"); DeepSeek-AI 2024 (DeepSeek-V3 report); Gemma Team 2025 (Gemma 3 report); Gemma 3 270M model card. AlexNet is a GPU-time estimate (Krizhevsky et al. 2012 + NVIDIA GTX 580 spec, 33% utilisation assumed). Reference slope: Epoch AI, "Training compute of frontier AI models grows by 4-5x per year" (<https://epoch.ai/blog/training-compute-of-frontier-ai-models-grows-by-4-5x-per-year>) | facts from the cited publications; Epoch AI content CC BY 4.0 |
+| `compute.js` | **Fallback list** (Epoch AI's CSV could not be fetched whole at build time): compute reported in, or computed as 6·N·D from N and D reported in, Vaswani et al. 2017; Devlin et al. 2018; Brown et al. 2020; Rae et al. 2021; Hoffmann et al. 2022; Chowdhery et al. 2022; Touvron et al. 2023a,b; Llama Team 2024 ("The Llama 3 Herd of Models"); DeepSeek-AI 2024 (DeepSeek-V3 report); Gemma Team 2025 (Gemma 3 report); Gemma 3 270M model card. AlexNet is a GPU-time estimate (Krizhevsky et al. 2012 + NVIDIA GTX 580 spec, 33% utilisation assumed). Mistral Large 4 ("Le Chonk") is a GPU-time estimate from Mistral AI 2026, "Mistral Large 4" technical report §2.3 (4.15M GPU-hours, 36% MFU, 94.1% goodput), the launch post (<https://mistral.ai/news/mistral-large-4/>) and NVIDIA's GB200 NVL72 spec (<https://www.nvidia.com/en-us/data-center/gb200-nvl72/>). Reference slope: Epoch AI, "Training compute of frontier AI models grows by 4-5x per year" (<https://epoch.ai/blog/training-compute-of-frontier-ai-models-grows-by-4-5x-per-year>) | facts from the cited publications; Epoch AI content CC BY 4.0 |
 | `weights.js` parameter ladder | LeCun et al. 1998; Krizhevsky et al. 2012; Devlin et al. 2018; Radford et al. 2019; Brown et al. 2020; Gemma Team 2025; Llama Team 2024; DeepSeek-AI 2024 | facts from the cited publications |
 | `warpnet.js` | synthetic two-moons data (`sklearn.datasets.make_moons`), network trained here in numpy | - |
 
@@ -56,12 +56,21 @@ Software: manim Community (MIT), NumPy (BSD-3), PyAV + FFmpeg/x264 (LGPL/GPL), P
   | Roboto (Christian Robertson / Google) | `Roboto-{Light,Regular,Italic,Medium,Bold}.ttf` | Apache License 2.0 (newer releases: SIL OFL 1.1) |
   | Latin Modern Roman & Latin Modern Math (GUST e-foundry) | `lmroman10-{regular,italic,bold}.otf`, `latinmodern-math.otf` | GUST Font License (LPPL-based, free to redistribute) |
   | Noto Sans Mono (Google) | `NotoSansMono-Regular.ttf` | SIL Open Font License 1.1 |
-* **Embedded on demand (slide 32, needs internet, loaded only when clicked):** Brendan Bycroft, *LLM Visualization*,
+* **Embedded on demand (slide 33, needs internet, loaded only when clicked):** Brendan Bycroft, *LLM Visualization*,
   <https://bbycroft.net/llm>; Polo Club of Data Science (Georgia Tech), *Transformer Explainer*,
   <https://poloclub.github.io/transformer-explainer/>. These are linked or iframed, not copied.
+* **GPU / TPU slide** (slide 18, `js/demos/chips.js`): an original canvas animation. Its CPU → GPU → TPU storyline
+  follows Google Cloud's "TPU architecture" explainer; chip specs come from the Cloud TPU v5p / TPU7x pages and NVIDIA's
+  Hopper architecture post, and the energy figures from Horowitz (ISSCC 2014) via Han et al. (2015). Sources in `docs/facts.md`.
 * **Style inspiration:** Grant Sanderson's **3Blue1Brown** (<https://www.youtube.com/c/3blue1brown>), for the palette,
   the "picture first, equation second" approach and the grid-warping view of a layer. No 3Blue1Brown footage is used.
 * **Facts on slides:** every number and claim, with its source, is listed in `docs/facts.md`: model cards,
   Nature / Science papers, nobelprize.org, Epoch AI and DeepMind / Google posts. The live model numbers come from
   the data files above.
 * **Photo:** Grace Hopper (U.S. Navy, public domain), via matplotlib's sample data (see the data section).
+* **Iris flower illustrations (`assets/img/iris_{setosa,versicolor,virginica}.jpg`):** AI-generated botanical reference images of *Iris setosa*, *Iris versicolor* and *Iris virginica* created for the `#neuron` slide to illustrate Fisher's 1936 Iris dataset.
+* **Model zoo slide** (slide 38, `js/demos/archs.js`): original canvas animations, no third-party code. They reuse the deck's
+  own data (Grace Hopper photo, real Gemma 3 attention). The caffeine graph is the standard 1,3,7-trimethylxanthine
+  skeleton (PubChem CID 2519; chemical facts, drawn by hand). The GAN panel redraws the idea of Fig. 1 of Goodfellow et al.
+  (2014) from its formulas, and the KAN panel uses the example function of Liu et al. (2024); no figures were copied.
+  The opening film is the deck's own manim clip `m08_wiring`. Sources for every claim are in `docs/facts.md`.

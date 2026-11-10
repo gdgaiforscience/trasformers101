@@ -22,6 +22,22 @@ Exact probability at temperature T: `p = Math.exp(logit / T - lse[T.toFixed(2)])
 Prompt ids: `hi` (instruct + chat template), `gold`, `dna`, `star`, `water`, `mito`, `emc`, `reef`,
 `planet` (pretrained), plus `hi_pt` (pretrained model given a bare "hi", for contrast).
 
+## `journey.js` -> `AIDATA.journey` (slide `journey`, built by `make_journey.py`)
+```
+{model, config:{vocab, layers, hidden, qHeads, kvHeads, headDim, ffn, slidingWindow},
+ params, weightsBytesBf16, embedNumbers, kvBytesPerToken, kvNote, logitsBytesF32,
+ tokenizer:{type:"BPE", byteFallback, pieces},
+ timing:{cpu, lib, hiTokens, hiMicros, longTokens, longMicros},     // median SentencePiece encode time
+ prompt:{text:"hi", templated, ids:[10], tokens:[10], bytesInt32:40},
+ reply:{text, steps:[{id, token, disp, p, alt:[{id, token, disp, p} × 2]}], stop:{… <end_of_turn>}, passes, rule},
+ turn2:{user, text, ids, total, cached, reused, new}, source}
+```
+`steps` is the full greedy reply of the instruction-tuned model (11 tokens, the last one is a newline),
+`p` its softmax probability at T = 1 and `stop` the token that ends it (`<end_of_turn>`, id 106);
+`passes` = 1 prefill + one decode pass per reply token. `kvBytesPerToken` assumes bf16 keys and values:
+2 × layers × KV heads × head_dim × 2 bytes. `turn2.reused` = how many leading IDs of the second turn match
+what turn 1 left in the KV cache (prompt + every reply token that was fed back in).
+
 ## `embeddings.js` -> `AIDATA.embeddings`
 ```
 {model, dim:640, vocabSize, words:[{w, piece, id, cat, pca:[x,y], tsne:[x,y], nn:[8 strings], nnSim:[8 cosines]}],
@@ -67,5 +83,5 @@ Stages: `input -> W1 -> b1 -> tanh1 -> W2 -> b2 -> tanh2 -> W3 -> b3 -> tanh3`; 
 * `kepler.js` -> `AIDATA.kepler = {planets:[{name, a (AU), T (yr), distance_1e6km, period_days, T2_over_a3}], units, fit, conversion, source, caveat, license}`
 * `hopper.js` -> `AIDATA.hopper = {src, origWidth, origHeight, width:64, height:75, rgb:[...], gray:[...], layout, source, license}`
 * `eeg.js` -> `AIDATA.eeg = {channels, rateHz:80, nSamples:800, durationS:10, data:[channel][sample], units, source, caveat, license}`
-* `compute.js` -> `AIDATA.compute = {fallback:true, models:[{name, year, org, flop, method:"reported"|"6ND"|"estimate", flop6ND?, params, tokens, formula?, source}], formula, methods, trend:{factorPerYear:[4,5], since:2010, desc, source}, units, range, source, license}`
+* `compute.js` -> `AIDATA.compute = {fallback:true, models:[{name, label?, year, org, flop, method:"reported"|"6ND"|"estimate", flop6ND?, params, active?, tokens, formula?, source}], formula, methods, trend:{factorPerYear:[4,5], since:2010, desc, source}, units, range, source, license}` (`label` = short on-chart name, e.g. "Le Chonk"; `active` = parameters used per token by a mixture-of-experts model)
 * `protein.js` -> `AIDATA.protein = {pdb:"1EMA", name, organism, method, citation, nResidues, ca:[[x,y,z]] (Å, centred, barrel axis = y), resNum, resName, seq, ss ("H"/"E"/"C" per residue), bFactor, helices, strands, chainBreaks, chromophore:{name, approxPos, note}, radius, units, frame, notes, source, license}`

@@ -5,11 +5,12 @@ gradients GREEN, learning rate ORANGE, attention PURPLE. Glyphs are converted to
 paths (--no-fonts) so the SVGs need no fonts. Each SVG gets a pixel size of
 PX_PER_PT * its natural size, so glyphs look the same size across all equations.
 
-Usage: python src/equations/build_equations.py
+Usage: python src/equations/build_equations.py [name ...]   (no names = rebuild all)
 """
 import pathlib
 import re
 import subprocess
+import sys
 import tempfile
 
 ROOT = pathlib.Path(__file__).resolve().parents[2]
@@ -29,6 +30,8 @@ PREAMBLE = r"""
 \newcommand{\cg}[1]{\textcolor{cG}{#1}}\newcommand{\ce}[1]{\textcolor{cE}{#1}}
 \newcommand{\ca}[1]{\textcolor{cA}{#1}}\newcommand{\cm}[1]{\textcolor{cM}{#1}}
 \newcommand{\cp}[1]{\textcolor{cP}{#1}}
+\definecolor{cFr}{HTML}{174EA6}\definecolor{cTr}{HTML}{0D652D}\definecolor{cDr}{HTML}{A50E0E}
+\newcommand{\cfr}[1]{\textcolor{cFr}{#1}}\newcommand{\ctr}[1]{\textcolor{cTr}{#1}}\newcommand{\cdr}[1]{\textcolor{cDr}{#1}}
 \begin{document}\color{cT}
 """
 
@@ -62,6 +65,22 @@ EQS = {
     # --- scale ---
     "compute": r"$C \;\approx\; 6\,N\,D$",
     "scaling": r"$\cl{L}(N, D) = E + \dfrac{A}{N^{\alpha}} + \dfrac{B}{D^{\beta}}$",
+    # --- fine-tuning: LoRA forward pass (Hu et al. 2021, eq. 3); frozen W_0 blue, trainable B, A green ---
+    "lora": r"$\mathbf{h} = \cfr{W_0}\,\mathbf{x} + \ctr{B}\,\ctr{A}\,\mathbf{x}$",
+    # --- architecture zoo (slide `archs`): the user's Google palette, AA-safe surface tints only:
+    #     \cfr #174EA6 = data / inputs · \ctr #0D652D = learned weights and functions · \cdr #A50E0E = attention
+    "arch_mlp": r"$\mathbf{a} = \sigma\big(\ctr{W}\,\cfr{\mathbf{x}} + \ctr{\mathbf{b}}\big)$",
+    "arch_conv": r"$(\cfr{x} \ast \ctr{w})_{ij} = \displaystyle\sum_{m,n} \ctr{w_{mn}}\; \cfr{x_{i+m,\,j+n}}$",
+    "arch_gnn": r"$\mathbf{h}_v' = \ctr{\phi}\Big(\mathbf{h}_v,\; \displaystyle\sum_{u \in \mathcal{N}(v)} \ctr{\psi}(\mathbf{h}_u, \mathbf{h}_v)\Big)$",
+    "arch_attn": r"$\begin{aligned} \mathbf{y} &= \mathrm{softmax}\!\left(\dfrac{\cdr{Q}\,\cdr{K}^{\top}}{\sqrt{d}}\right) V \\ \cdr{Q} &= X\ctr{W_Q},\;\; \cdr{K} = X\ctr{W_K} \end{aligned}$",
+    "arch_diff": r"$\begin{aligned} \mathbf{x}_t &= \sqrt{\bar{\alpha}_t}\, \cfr{\mathbf{x}_0} + \sqrt{1-\bar{\alpha}_t}\; \boldsymbol{\epsilon} \\ L &= \big\lVert\, \boldsymbol{\epsilon} - \boldsymbol{\epsilon}_{\ctr{\theta}}(\mathbf{x}_t,\, t) \,\big\rVert^2 \end{aligned}$",
+    "arch_ae": r"$\begin{aligned} &\cfr{\mathbf{x}} \;\xrightarrow{\;f_{\ctr{\theta}}\;}\; \mathbf{z} \in \mathbb{R}^{k} \;\xrightarrow{\;g_{\ctr{\phi}}\;}\; \hat{\mathbf{x}} \\ &L = \lVert \cfr{\mathbf{x}} - \hat{\mathbf{x}} \rVert^2 \end{aligned}$",
+    "arch_hop": r"$\begin{aligned} E &= -\tfrac{1}{2} \textstyle\sum_{i,j} \ctr{w_{ij}}\, s_i\, s_j \\ \ctr{w_{ij}} &= \tfrac{1}{N} \textstyle\sum_{\mu} \xi^{\mu}_i\, \xi^{\mu}_j \end{aligned}$",
+    "arch_lstm": r"$\begin{aligned} \mathbf{c}_t &= \mathbf{f}_t \odot \mathbf{c}_{t-1} + \mathbf{i}_t \odot \tilde{\mathbf{c}}_t \\ \mathbf{h}_t &= \mathbf{o}_t \odot \tanh(\mathbf{c}_t) \end{aligned}$",
+    "arch_gan": r"$\begin{aligned} \min_{\ctr{G}}\, \max_{\ctr{D}}\;\; &\mathbb{E}_{x}\big[\log \ctr{D}(\cfr{x})\big] \\ +\, &\mathbb{E}_{z}\big[\log\big(1 - \ctr{D}(\ctr{G}(z))\big)\big] \end{aligned}$",
+    "arch_ssm": r"$\begin{aligned} \mathbf{h}_t &= \bar{A}_t\,\mathbf{h}_{t-1} + \bar{B}_t\,\cfr{x_t} \\ y_t &= C_t\,\mathbf{h}_t \end{aligned}$",
+    "arch_fno": r"$v' = \sigma\big(\ctr{W}\, v + \mathcal{F}^{-1}\big(\ctr{R} \cdot \mathcal{F} v\big)\big)$",
+    "arch_kan": r"$f(\cfr{\mathbf{x}}) = \displaystyle\sum_{q} \ctr{\Phi_q}\Big(\sum_{p} \ctr{\phi_{q,p}}(\cfr{x_p})\Big)$",
 }
 
 
@@ -85,9 +104,13 @@ def render(name: str, body: str, workdir: pathlib.Path) -> None:
 
 def main() -> None:
     OUT.mkdir(parents=True, exist_ok=True)
+    names = sys.argv[1:] or list(EQS)
+    unknown = [n for n in names if n not in EQS]
+    if unknown:
+        raise SystemExit(f"unknown equation(s): {unknown}; known: {list(EQS)}")
     with tempfile.TemporaryDirectory() as d:
-        for name, body in EQS.items():
-            render(name, body, pathlib.Path(d))
+        for name in names:
+            render(name, EQS[name], pathlib.Path(d))
 
 
 if __name__ == "__main__":

@@ -333,16 +333,11 @@
   });
 
   // ======================================================================
-  // LLM3D: live external visualisations (need internet)
+  // LLM3D: external visualisations (open in a new browser tab)
   // ======================================================================
   Deck.register('llm3d', {
     init(slide) {
-      const fr = slide.querySelector('[data-role=frame]'), cover = slide.querySelector('.embed-cover');
-      slide.querySelectorAll('[data-embed]').forEach(b => b.addEventListener('click', () => {
-        let ifr = fr.querySelector('iframe');
-        if (!ifr) { ifr = el('iframe', { allow: 'fullscreen; xr-spatial-tracking', referrerpolicy: 'no-referrer' }, fr); }
-        ifr.src = b.dataset.embed; if (cover) cover.style.display = 'none'; b.blur();
-      }));
+      slide.querySelectorAll('a[target="_blank"]').forEach(a => a.addEventListener('click', () => a.blur()));
     }
   });
 
