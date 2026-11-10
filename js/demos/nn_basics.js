@@ -321,55 +321,265 @@
   });
 
   // ======================================================================
-  // ACTIVATION functions
+  // ACTIVATION: the rule's own graph, with real numbers travelling through it
+  //   x = each neuron's sum z (IN, along the bottom); y = a = f(z) (OUT, up the
+  //   left). Each pick bends the curve into the new rule, then 27 numbers rise
+  //   from the IN axis and land on the curve: each one's height is its output.
+  //   Hovering traces any number up to the curve and across to OUT.
+  //   Colour = sign of the input (red −, ink 0, blue +), as on the weight wires.
+  //   WCAG AA: #4285f4 / #ea4335 only for lines & dots (≥ 3:1 on #f8f9fa);
+  //   canvas text uses #202124 / #5f6368.
   // ======================================================================
-  const ACTS = {
-    step: { f: z => (z >= 0 ? 1 : 0), name: 'step (1943)', col: C.muted, note: 'McCulloch–Pitts / perceptron: all-or-nothing. No slope, so it can’t be trained by gradient descent.' },
-    sigmoid: { f: z => 1 / (1 + Math.exp(-z)), name: 'sigmoid', col: C.blue, note: 'A smooth step that squashes anything into (0, 1). Great for probabilities.' },
-    tanh: { f: z => Math.tanh(z), name: 'tanh', col: C.teal, note: 'A sigmoid centred on zero, range (−1, 1). Used in our “warp” networks.' },
-    relu: { f: z => Math.max(0, z), name: 'ReLU', col: C.orange, note: 'max(0, z): dead simple and fast. It powered the 2012 deep-learning boom.' },
-    gelu: { f: z => 0.5 * z * (1 + Math.tanh(Math.sqrt(2 / Math.PI) * (z + 0.044715 * z * z * z))), name: 'GELU', col: C.yellow, note: 'A smooth ReLU used inside Transformers (Gemma uses a gated GELU).' }
+  const AP = {
+    pos: '#4285f4', neg: '#ea4335', ink: '#202124', muted: '#5f6368',
+    axis: '#5f6368', grid: '#e8eaed', zero: '#9aa0a6', spark: '#dadce0'
   };
+  const gelu = z => 0.5 * z * (1 + Math.tanh(Math.sqrt(2 / Math.PI) * (z + 0.044715 * z * z * z)));
+  const mv = s => `<span class="m">${s}</span>`, op = s => `<span class="op">${s}</span>`, mr = s => `<span class="mr">${s}</span>`;
+  const ACTS = {
+    // not a button: the dashed straight line on the graph, and the shape every visit bends away from
+    none: { f: z => z, name: 'No activation', range: 'same as the input' },
+    step: {
+      f: z => (z >= 0 ? 1 : 0), label: 'step (1943)', name: 'Step', full: 'McCulloch &amp; Pitts, 1943',
+      says: 'Negative → <b>0</b>. Zero or positive → <b>1</b>. All or nothing: the neuron is off or on.',
+      eq: `${mv('a')}${op('=')}1 ${mr('if')} ${mv('z')}${op('≥')}0, ${mr('else')} 0`,
+      foot: 'The first artificial neuron. It is flat everywhere, so gradient descent gets no slope to learn from.',
+      range: 'only ever 0 or 1'
+    },
+    sigmoid: {
+      f: sigmoid, label: 'sigmoid', name: 'Sigmoid', full: 'logistic curve',
+      says: 'Squashes <b>every</b> number into <b>0 to 1</b>: big negatives → almost 0, big positives → almost 1, and 0 → 0.5.',
+      eq: `${mv('a')}${op('=')}1 / (1 + ${mv('e')}<sup>−${mv('z')}</sup>)`,
+      foot: 'Reads like a probability: it gave our Iris neuron its confidence.',
+      range: 'always between 0 and 1'
+    },
+    tanh: {
+      f: Math.tanh, label: 'tanh', name: 'Tanh', full: 'hyperbolic tangent',
+      says: 'Squashes every number into <b>−1 to 1</b> and keeps its sign: negatives stay negative, 0 stays 0.',
+      eq: `${mv('a')}${op('=')}${mr('tanh')}(${mv('z')})`,
+      foot: 'A sigmoid stretched and re-centred on 0. It bends the grid in our warp demos.',
+      range: 'always between −1 and 1'
+    },
+    relu: {
+      f: z => Math.max(0, z), label: 'ReLU', name: 'ReLU', full: 'rectified linear unit',
+      says: 'Negatives become <b>0</b>: the neuron switches off. Positives pass through <b>unchanged</b>.',
+      eq: `${mv('a')}${op('=')}${mr('max')}(0, ${mv('z')})`,
+      foot: 'Dead simple and fast: it powered the 2012 deep-learning boom.',
+      range: 'never negative'
+    },
+    gelu: {
+      f: gelu, label: 'GELU', name: 'GELU', full: 'Gaussian error linear unit',
+      says: 'A smooth ReLU: big negatives fade to <b>≈ 0</b>, small ones dip just below, positives pass <b>almost unchanged</b>.',
+      eq: `${mv('a')}${op('=')}${mv('z')} · Φ(${mv('z')})`,
+      foot: 'Φ is a smooth 0-to-1 switch. Standard in Transformers; Gemma uses a gated version (GeGLU).',
+      range: 'never below −0.17'
+    }
+  };
+  const ACT_ORDER = ['step', 'sigmoid', 'tanh', 'relu', 'gelu'];
+  const ACT_WIN = { z0: -3.6, z1: 3.6, a0: -1.25, a1: 3.4 };                   // the graph window (z across, a up)
+  const ACT_CZ = []; for (let k = -180; k <= 180; k++) ACT_CZ.push(k / 50);    // curve samples every 0.02
+  const ACT_C0 = ACT_CZ.indexOf(0);                                            // where red (z < 0) meets blue
+  const ACT_Z = []; for (let k = -13; k <= 13; k++) ACT_Z.push(k / 4);          // 27 travelling numbers, −3.25 … 3.25
+  const ACT_EXZ = [-3, -1, 0, 1, 3], ACT_EX = ACT_EXZ.map(z => ACT_Z.indexOf(z)); // sample values for the screen-reader summary
+  const REDUCED = !!(window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches);
+  const signCol = z => (z < 0 ? AP.neg : z > 0 ? AP.pos : AP.ink);
+  const actLine = (ctx, x1, y1, x2, y2) => { ctx.beginPath(); ctx.moveTo(x1, y1); ctx.lineTo(x2, y2); ctx.stroke(); };
+  // dotted reading guide (round dots, like a pencil trace on graph paper)
+  function actDots(ctx, x1, y1, x2, y2, col, alpha) {
+    if (alpha <= 0.01 || Math.hypot(x2 - x1, y2 - y1) < 1) return;
+    ctx.save(); ctx.globalAlpha = alpha; ctx.strokeStyle = col; ctx.lineWidth = 3; ctx.lineCap = 'round'; ctx.setLineDash([0.1, 8]);
+    actLine(ctx, x1, y1, x2, y2); ctx.restore();
+  }
+  // tidy numbers: integers stay integers; never round 0.995 up to 1, or −0.004 to 0
+  function fmtAct(v, exact) {
+    if (!exact) return fmtMinus(v, 2);
+    if (Math.abs(v - Math.round(v)) < 1e-9) return fmtMinus(Math.round(v), 0);
+    let s = fmt(v, 2);
+    if ((+s === 0 && v !== 0) || (Math.abs(+s) === 1 && Math.abs(v) < 1)) s = fmt(v, 3);
+    return s.replace('-', '−');
+  }
+  // word-sized graph of a rule (a Tufte sparkline): red half for z < 0, blue half for z ≥ 0
+  function actSpark(f) {
+    const W = 112, H = 64, p = 7, z0 = -3, z1 = 3, N = 60;
+    const zs = []; for (let i = 0; i <= N; i++) zs.push(z0 + (z1 - z0) * i / N);
+    const ys = zs.map(f);
+    const lo = Math.min(0, ...ys), hi = Math.max(lo + 1e-6, 0, ...ys);
+    const X = z => (p + (z - z0) / (z1 - z0) * (W - 2 * p)).toFixed(1);
+    const Y = v => (H - p - (v - lo) / (hi - lo) * (H - 2 * p)).toFixed(1);
+    const path = (a, b, g) => zs.filter(z => z >= a && z <= b).map((z, i) => `${i ? 'L' : 'M'}${X(z)} ${Y(g(z))}`).join('');
+    const stroke = c => `stroke="${c}" stroke-width="3.5" fill="none" stroke-linecap="round" stroke-linejoin="round"`;
+    return `<svg viewBox="0 0 ${W} ${H}" width="${W}" height="${H}" aria-hidden="true" focusable="false">` +
+      `<path d="M${p} ${Y(0)}H${W - p}M${X(0)} ${p}V${H - p}" stroke="${AP.spark}" stroke-width="1.5" fill="none"/>` +
+      `<path d="${path(z0, 0, z => (z === 0 ? f(-1e-9) : f(z)))}" ${stroke(AP.neg)}/>` +
+      `<path d="${path(0, z1, f)}" ${stroke(AP.pos)}/></svg>`;
+  }
   Deck.register('activation', {
     init(slide) {
       const host = slide.querySelector('[data-role=plot]');
       const wrap = el('div', { class: 'canvas-wrap' }, host);
       this.cv = U.canvas(wrap, { onresize: () => this.draw() });
-      this.sel = 'sigmoid'; this.hx = null;
+      this.cv.canvas.setAttribute('role', 'img');
+      this.sel = this.shown = 'sigmoid'; this.st = this.state(this.sel); this.oldSt = null;
+      this.idle = true; this.tt = 1; this.oldA = 0; this.probe = null;
       const ctl = slide.querySelector('[data-role=ctl]');
-      this.seg = seg(ctl, Object.keys(ACTS).map(k => ({ value: k, label: ACTS[k].name })), 'sigmoid', v => { this.sel = v; this.draw(); this.note(); });
-      this.noteEl = slide.querySelector('[data-role=note]');
-      this.cv.canvas.addEventListener('pointermove', e => { const p = this.cv.toLocal(e); this.hx = this.view().ix(p.x); this.draw(); });
-      this.cv.canvas.addEventListener('pointerleave', () => { this.hx = null; this.draw(); });
-      this.note(); this.draw();
+      this.seg = seg(ctl, ACT_ORDER.map(k => ({ value: k, label: ACTS[k].label })), this.sel, k => this.choose(k));
+      this.ruleEl = slide.querySelector('[data-role=rule]');
+      this.sparkBend = slide.querySelector('[data-role=spark-bend]');
+      const lin = slide.querySelector('[data-role=spark-lin]');
+      if (lin) lin.innerHTML = actSpark(z => z);
+      const cvs = this.cv.canvas;
+      cvs.addEventListener('pointermove', e => { this.probe = clamp(this.geom().iz(this.cv.toLocal(e).x), -3.5, 3.5); this.draw(); });
+      cvs.addEventListener('pointerleave', () => { this.probe = null; this.draw(); });
+      this.text(); this.draw();
     },
-    onStep(a, vis) { if (vis && ACTS[a]) { this.seg.set(a); } },
-    note() { if (this.noteEl) this.noteEl.innerHTML = `<b style="color:${ACTS[this.sel].col}">${ACTS[this.sel].name}</b> — ${ACTS[this.sel].note}`; },
-    view() { const { w, h } = this.cv; return U.view(60, 20, w - 80, h - 60, -5, 5, -1.4, 2.6); },
-    draw() {
-      const { ctx, w, h } = this.cv, v = this.view();
-      ctx.fillStyle = C.bg; ctx.fillRect(0, 0, w, h);
-      U.grid(ctx, v, { step: 1, labels: true });
-      U.mathText(ctx, 'z', v.px + v.pw - 6, v.sy(0) - 10, { size: 26, color: C.muted, align: 'right' });
-      for (const k of Object.keys(ACTS)) {
-        const A = ACTS[k], on = k === this.sel;
-        ctx.save(); ctx.beginPath(); ctx.rect(v.px, v.py, v.pw, v.ph); ctx.clip();
-        ctx.strokeStyle = A.col; ctx.globalAlpha = on ? 1 : 0.22; ctx.lineWidth = on ? 5 : 2.5;
-        if (on) { ctx.shadowColor = A.col; ctx.shadowBlur = 14; }
-        ctx.beginPath();
-        let prev = null;
-        for (let X = v.px; X <= v.px + v.pw; X += 2) {
-          const z = v.ix(X), y = A.f(z), Y = v.sy(clamp(y, -2, 3));
-          if (prev !== null && k === 'step' && Math.abs(y - prev) > 0.5) ctx.moveTo(X, Y); else (X === v.px ? ctx.moveTo(X, Y) : ctx.lineTo(X, Y));
-          prev = y;
+    // every visit: the dashed "no activation" line bends into the chosen rule, then the numbers run through it
+    enter() {
+      this.stop(); this.st = this.state('none'); this.shown = 'none'; this.oldSt = null;
+      this.idle = false; this.tt = 0; this.oldA = 0; this.draw();
+      this.play(this.sel, 650);
+    },
+    leave() { this.stop(); },
+    onStep(a, vis) { if (vis && ACT_ORDER.includes(a)) this.seg.set(a); },
+    choose(k) { this.sel = k; this.text(); this.play(k, 0); },
+    stop() { if (this._raf) cancelAnimationFrame(this._raf); this._raf = 0; },
+    state(k) {
+      const A = ACTS[k];
+      return { curve: ACT_CZ.map(A.f), zl: A.f(-1e-9), out: ACT_Z.map(A.f) };   // zl = value just left of 0 (the step's jump)
+    },
+    blend(a, b, e) {
+      const m = (u, v) => lerp(u, v, e);
+      return { curve: a.curve.map((v, i) => m(v, b.curve[i])), zl: m(a.zl, b.zl), out: a.out.map((v, i) => m(v, b.out[i])) };
+    },
+    // one take, in seconds: last numbers fade (0–0.2) · the curve bends into the new rule (0–0.6) ·
+    // the numbers rise from IN and land on it (0.45–0.95)
+    play(k, hold) {
+      this.stop();
+      const a = this.st, b = this.state(k), hadOld = this.idle;
+      this.oldSt = hadOld ? a : null; this.idle = false;
+      if (REDUCED) { this.shown = k; this.st = b; this.idle = true; this.tt = 1; this.oldA = 0; this.draw(); return; }
+      const t0 = performance.now() + (hold || 0);
+      const tick = now => {
+        const tau = (now - t0) / 1000;
+        if (tau >= 0) {
+          this.shown = k;
+          this.st = this.blend(a, b, U.ease(clamp(tau / 0.6, 0, 1)));
+          this.oldA = hadOld ? 1 - clamp(tau / 0.2, 0, 1) : 0;
+          this.tt = clamp((tau - 0.45) / 0.5, 0, 1);
         }
-        ctx.stroke(); ctx.restore();
+        if (tau < 1.0) { this.draw(); this._raf = requestAnimationFrame(tick); }
+        else { this._raf = 0; this.st = b; this.idle = true; this.tt = 1; this.oldA = 0; this.draw(); }
+      };
+      this._raf = requestAnimationFrame(tick);
+    },
+    text() {
+      const A = ACTS[this.sel];
+      if (this.ruleEl) this.ruleEl.innerHTML =
+        `<div class="act-name">${A.name}${A.full ? `<small>${A.full}</small>` : ''}</div>` +
+        `<p class="act-says">${A.says}</p><div class="eqline act-eq">${A.eq}</div><p class="act-foot">${A.foot}</p>`;
+      if (this.sparkBend) this.sparkBend.innerHTML = actSpark(A.f);
+    },
+    geom() {
+      const { w, h } = this.cv, { z0, z1, a0, a1 } = ACT_WIN, L = 168, R = w - 46, T = 74, B = h - 116;
+      return {
+        L, R, T, B,
+        x: z => L + (z - z0) / (z1 - z0) * (R - L),
+        y: a => B - (a - a0) / (a1 - a0) * (B - T),
+        iz: X => z0 + (X - L) / (R - L) * (z1 - z0)
+      };
+    },
+    curveAt(st, z) {   // read the (possibly mid-bend) curve between its samples
+      const u = (z - ACT_WIN.z0) * 50, i = clamp(Math.floor(u), 0, ACT_CZ.length - 2);
+      return lerp(st.curve[i], st.curve[i + 1], u - i);
+    },
+    // draw a row of differently styled text runs (sans words + italic math letters) from x
+    runs(ctx, x, y, parts, align) {
+      ctx.save(); ctx.textAlign = 'left'; ctx.textBaseline = 'alphabetic';
+      let tot = 0; for (const p of parts) { ctx.font = p.f; p.w = ctx.measureText(p.t).width; tot += p.w; }
+      let cx = align === 'center' ? x - tot / 2 : align === 'right' ? x - tot : x;
+      for (const p of parts) { ctx.font = p.f; ctx.fillStyle = p.c; ctx.fillText(p.t, cx, y); cx += p.w; }
+      ctx.restore(); return tot;
+    },
+    // white value tag for the hover probe: 'center' (under the IN axis) or 'right' (beside the OUT axis)
+    pill(ctx, sym, val, x, y, align) {
+      const parts = [{ t: sym, f: `italic 30px ${FONT.math}`, c: AP.ink }, { t: ` = ${val}`, f: `500 26px ${FONT.sans}`, c: AP.ink }];
+      ctx.save(); let tw = 0; for (const p of parts) { ctx.font = p.f; tw += ctx.measureText(p.t).width; } ctx.restore();
+      const w = tw + 26, left = align === 'right' ? x + 13 - w : clamp(x - w / 2, 4, this.cv.w - w - 4);
+      ctx.save(); U.roundRect(ctx, left, y - 28, w, 40, 12);
+      ctx.fillStyle = '#ffffff'; ctx.fill(); ctx.strokeStyle = AP.ink; ctx.lineWidth = 2; ctx.stroke(); ctx.restore();
+      this.runs(ctx, left + 13, y, parts);
+    },
+    // the travelling numbers at progress tt: 0 = waiting on the IN axis, 1 = landed on the curve (height = output)
+    numbers(ctx, g, st, tt, alpha) {
+      if (alpha <= 0.01) return;
+      const rise = U.easeOut(clamp(tt, 0, 1));
+      ctx.save(); ctx.globalAlpha = alpha;
+      ACT_Z.forEach((z, i) => U.circle(ctx, g.x(z), lerp(g.B, Math.max(g.T - 4, g.y(st.out[i])), rise), 5, signCol(z), C.bg, 1.5));
+      ctx.restore();
+    },
+    draw() {
+      if (!this.cv) return;
+      const { ctx, w, h } = this.cv, g = this.geom(), st = this.st, A = ACTS[this.shown];
+      const { z0, z1, a0, a1 } = ACT_WIN, probing = this.probe !== null, dim = probing ? 0.25 : 1;
+      const sans = (px, wt) => `${wt || 400} ${px}px ${FONT.sans}`, math = px => `italic ${px}px ${FONT.math}`;
+      ctx.fillStyle = C.bg; ctx.fillRect(0, 0, w, h);
+
+      // axis titles in plain words: OUT up the left, IN along the bottom
+      this.runs(ctx, 4, 38, [
+        { t: 'OUT', f: sans(24, 500), c: AP.ink }, { t: '   ', f: sans(24), c: AP.muted }, { t: 'a', f: math(30), c: AP.ink },
+        { t: ', what the next layer gets  —  ', f: sans(24), c: AP.muted }, { t: A.range, f: sans(24, 500), c: AP.ink }]);
+      this.runs(ctx, g.L, h - 22, [
+        { t: 'IN', f: sans(24, 500), c: AP.ink }, { t: '   ', f: sans(24), c: AP.muted }, { t: 'z', f: math(30), c: AP.ink },
+        { t: ', each neuron’s sum  —  ', f: sans(24), c: AP.muted }, { t: 'can be any number', f: sans(24, 500), c: AP.ink }]);
+      U.text(ctx, 'hover to try any number', w - 4, 38, { size: 20, color: AP.muted, align: 'right' });
+
+      // graph paper: grid with stronger zero lines
+      ctx.save(); ctx.lineWidth = 1.5;
+      for (let z = -3; z <= 3; z++) { ctx.strokeStyle = z ? AP.grid : AP.zero; actLine(ctx, g.x(z), g.T, g.x(z), g.B); }
+      for (let a = -1; a <= 3; a++) { ctx.strokeStyle = a ? AP.grid : AP.zero; actLine(ctx, g.L, g.y(a), g.R, g.y(a)); }
+      ctx.restore();
+      // the two axes and their plain scales
+      ctx.save(); ctx.strokeStyle = AP.axis; ctx.lineWidth = 2;
+      actLine(ctx, g.L, g.T - 8, g.L, g.B); actLine(ctx, g.L, g.B, g.R, g.B); ctx.restore();
+      for (let a = -1; a <= 3; a++) U.text(ctx, fmtMinus(a, 0), g.R + 12, g.y(a) + 6, { size: 18, color: AP.muted });
+      for (let z = -3; z <= 3; z++) U.text(ctx, fmtMinus(z, 0), g.x(z), g.B + 38, { size: 19, color: AP.muted, align: 'center', alpha: dim });
+
+      // the reference: no activation is the straight line a = z
+      const d0 = Math.max(z0, a0), d1 = Math.min(z1, a1);
+      ctx.save(); ctx.strokeStyle = AP.zero; ctx.lineWidth = 2; ctx.setLineDash([9, 8]);
+      actLine(ctx, g.x(d0), g.y(d0), g.x(d1), g.y(d1)); ctx.restore();
+      this.runs(ctx, g.x(2.5) - 16, g.y(2.5) - 8, [{ t: 'no activation: ', f: sans(20), c: AP.muted }, { t: 'a = z', f: math(24), c: AP.muted }], 'right');
+
+      // the rule itself: red where it reads negative sums, blue where it reads positive ones
+      ctx.save(); ctx.beginPath(); ctx.rect(g.L, g.T - 6, g.R - g.L + 6, g.B - g.T + 6); ctx.clip();
+      ctx.lineWidth = 5; ctx.lineJoin = 'round'; ctx.lineCap = 'round';
+      ctx.strokeStyle = AP.neg; ctx.beginPath();
+      for (let i = 0; i < ACT_C0; i++) { const X = g.x(ACT_CZ[i]), Y = g.y(st.curve[i]); i ? ctx.lineTo(X, Y) : ctx.moveTo(X, Y); }
+      ctx.lineTo(g.x(0), g.y(st.zl)); ctx.stroke();
+      ctx.strokeStyle = AP.pos; ctx.beginPath();
+      for (let i = ACT_C0; i < ACT_CZ.length; i++) { const X = g.x(ACT_CZ[i]), Y = g.y(st.curve[i]); i === ACT_C0 ? ctx.moveTo(X, Y) : ctx.lineTo(X, Y); }
+      ctx.stroke(); ctx.restore();
+      if (Math.abs(st.curve[ACT_C0] - st.zl) > 0.04) actDots(ctx, g.x(0), g.y(st.zl), g.x(0), g.y(st.curve[ACT_C0]), AP.zero, 1);
+
+      // where the numbers start: evenly spaced sums on the IN axis
+      ACT_Z.forEach(z => U.circle(ctx, g.x(z), g.B, 4, U.rgba(signCol(z), 0.4)));
+
+      // the numbers: the last rule's fade out while this rule's travel in
+      if (this.oldA > 0.01 && this.oldSt) this.numbers(ctx, g, this.oldSt, 1, this.oldA * dim);
+      this.numbers(ctx, g, st, this.idle ? 1 : this.tt, dim);
+
+      // hover probe: read any number off the graph, the same way
+      if (probing) {
+        const z = this.probe, a = this.idle ? ACTS[this.shown].f(z) : this.curveAt(st, z);
+        const X = g.x(z), Y = Math.max(g.T - 4, g.y(a));
+        actDots(ctx, X, g.B, X, Y, AP.ink, 1); actDots(ctx, X, Y, g.L, Y, AP.ink, 1);
+        U.circle(ctx, X, g.B, 8, AP.ink, C.bg, 2.5); U.circle(ctx, X, Y, 9, AP.ink, C.bg, 3); U.circle(ctx, g.L, Y, 8, AP.ink, C.bg, 2.5);
+        this.pill(ctx, 'z', fmtMinus(z, 2), X, g.B + 38, 'center');
+        this.pill(ctx, 'a', fmtAct(a, this.idle), g.L - 26, Y + 9, 'right');
       }
-      if (this.hx !== null && this.hx >= v.x0 && this.hx <= v.x1) {
-        const A = ACTS[this.sel], y = A.f(this.hx), X = v.sx(this.hx), Y = v.sy(y);
-        ctx.strokeStyle = U.rgba(C.text, 0.3); ctx.setLineDash([5, 6]); ctx.beginPath(); ctx.moveTo(X, v.py); ctx.lineTo(X, v.py + v.ph); ctx.stroke(); ctx.setLineDash([]);
-        U.circle(ctx, X, Y, 8, A.col, C.bg, 2);
-        U.text(ctx, `z = ${fmtMinus(this.hx, 2)}  →  ${fmtMinus(y, 3)}`, X + 14, Y - 14, { size: 22, color: C.text, family: FONT.mono });
+
+      if (this.idle) {   // screen-reader summary of what the rule does to a few sample numbers
+        const lab = `${A.name}: for example ${ACT_EXZ.map(z => fmtAct(z, true)).join(', ')} come out as ${ACT_EX.map(i => fmtAct(st.out[i], true)).join(', ')}; the output is ${A.range}.`;
+        if (this._aria !== lab) { this.cv.canvas.setAttribute('aria-label', lab); this._aria = lab; }
       }
     }
   });

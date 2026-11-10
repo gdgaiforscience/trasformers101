@@ -1,8 +1,8 @@
 # From One Neuron to a Transformer (short workshop)
 
-A concise, hands-on Jupyter notebook for the **GDG AI for Science** community. In about an hour, learners build one artificial neuron from scratch, grow it into a neural network, and finish with a small, readable Transformer that learns to write DNA reverse complements.
+[![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/gdgaiforscience/trasformers101/blob/main/workshop-short/neuron_to_transformer.ipynb)
 
-It's inspired by the talk [*Inside the Black Box: How AI Really Works*](../README.md) (same examples, same numbers) and taught in the style of [Software Carpentry](https://software-carpentry.org/) and the [CAITG AI Winter School](https://gdgaiforscience.github.io/CAITG-WinterSchool/). The 90-minute version is in [`../workshop/`](../workshop/).
+A concise, hands-on Jupyter notebook for the **GDG AI for Science** community. In about an hour, learners build one artificial neuron from scratch, grow it into a neural network, and finish with a small, readable Transformer that learns to write DNA reverse complements.
 
 ![The four parts: one neuron with NumPy, a neural network with PyTorch autograd and nn.Sequential, attention with nn.Embedding and F.scaled_dot_product_attention, and a Transformer with nn.Module and nn.MultiheadAttention](assets/roadmap.svg)
 
@@ -25,14 +25,7 @@ Running short? Skip the bonus challenges (1.3 and 4.3) and do 3.1 as a live demo
 
 ## Running the notebook
 
-* **Google Colab (no setup):** *File → Upload notebook*, choose `neuron_to_transformer.ipynb`, then *Runtime → Run all*. The diagrams are embedded in the notebook, so no other files are needed, and no GPU is needed either.
-* **Local, with the `gdg` conda environment:**
-
-  ```bash
-  cd workshop-short
-  /usr/local/google/home/butterworthnat/miniforge3/envs/gdg/bin/python -m pip install jupyterlab   # once
-  /usr/local/google/home/butterworthnat/miniforge3/envs/gdg/bin/jupyter lab neuron_to_transformer.ipynb
-  ```
+* **Google Colab (no setup):** click [![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/gdgaiforscience/trasformers101/blob/main/workshop-short/neuron_to_transformer.ipynb) (or *File → Upload notebook*, choose `neuron_to_transformer.ipynb`), then *Runtime → Run all*. The diagrams are embedded in the notebook, so no other files are needed, and no GPU is needed either.
 
   Any environment with `numpy`, `matplotlib`, `torch`, `scikit-learn` and `ipywidgets` works. VS Code opens the notebook directly.
 

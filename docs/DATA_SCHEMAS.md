@@ -51,13 +51,15 @@ what turn 1 left in the KV cache (prompt + every reply token that was fed back i
 {model, totalParams, breakdown:{embedding, attention, mlp, norms}, breakdownPct, breakdownNote,
  perLayer:{params, layers, matrices:{name:{shape,n,group}}}, config,
  colormap:{neg, zero, pos, scale, gamma, mapping, levels, transparent},
- matrices:[{id, img, title, desc, layout, width, height, vmax, stats:{shape,n,mean,std,min,max,absMax,p01,p99,fracBeyond3Sigma},
+ matrices:[{id, img, title, desc, grid:{rows:[n, label], cols:[n, label]}, layout, width, height, vmax, stats:{shape,n,mean,std,min,max,absMax,p01,p99,fracBeyond3Sigma},
             patch:{row0, col0, values:[16][16], px:[x, y, w, h]  (zoom box in PNG pixels), head?, rowsWords?, sharedCol?},
             sharedFeature? (embed_slice only: {dim, meanOverVocab, fracSameSign})}],
  histogram:{edges(161), counts:{embedding,attention,mlp}, all, under, over, note}, allWeightStats, ladder:[{name, params, year, approx?, source}]}
 ```
 PNG colour = `lerp(#1a1d24, BLUE|RED, |w/vmax|^0.8)`, clipped at ±3σ; gaps between heads/groups are transparent.
 `layout.blocks` (query/attn-out) and `layout.rowsPx` / `layout.groups` (embedding slice) give pixel positions for labels.
+`grid` is the caption line "rows × columns = weights" for the *full* matrix (rows × cols is asserted to equal `stats.n`);
+`title`/`desc` may contain `W_Q`/`W_O`, which the deck renders with a subscript.
 
 ## `attention.js` -> `AIDATA.attention`
 ```

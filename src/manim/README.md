@@ -13,6 +13,7 @@
 | `m07_attention.py` | `Attention` | Q/K/V, "it" attends to "wombat", causal attention matrix, formula |
 | `m08_lora.py` | `Lora` | **light palette** (`common_light.py`, build with `--bg light`): rank-1 ΔW = b aᵀ on real numbers, 36 → 6 + 6, a 4096 × 4096 layer (16,777,216 vs 8,192 vs 65,536), h = W₀x + BAx with B = 0 at the start. Plays on demand over the `#finetune` slide's live LoRA explorer |
 | `m08_wiring.py` | `Wiring` | **light palette** (`--bg light`): "same neuron, different wiring". One neuron → dense 6→4 (24 fixed-seed weights) → convolution (banded Toeplitz a, b, c: 3 weights, sliding window) → recurrent (same U, W every step; influence of x_s on h_t fades as 0.6^(t−s)) → graph (phenol adjacency + self-loops, message passing) → attention (row softmax of illustrative scores; "big" → "small" re-routes "it" from trophy to suitcase) → 5-icon summary. Every stage pairs the diagram with a "who talks to whom" matrix (rows = receivers). Plays full-bleed as step 0 of the `#archs` model-zoo slide (K / J replay it at any step) |
+| `m09_agent_loop.py` | `AgentLoop` | **light palette** (`--bg light`): how a humble next-token Transformer becomes an Agent. Plain Transformer guessing pH ≈ 3.12 → tool schemas added (`run_python`) → pause at `<call>` → Python sandbox catches `NameError: math` on turn 1, appends observation to context → turn 2 fixes `import math` and verifies `pH = 3.2918` → 4 pillars + `Agent = Transformer + Tools + While-Loop + Memory`. Plays on demand inside `#agents` |
 
 ## Build
 

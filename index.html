@@ -14,11 +14,20 @@
   <div class="hero-video"><video data-src="assets/video/b01_hero_network.mp4" poster="assets/poster/b01_hero_network.jpg" data-autoplay data-restart="false" loop muted playsinline></video></div>
   <div class="hero-shade"></div>
   <div class="title-block">
-    <div class="kicker"><span class="gdg-dots"><i style="background:var(--g-blue)"></i><i
-          style="background:var(--g-red)"></i><i style="background:var(--g-yellow)"></i><i
-          style="background:var(--g-green)"></i></span>&nbsp; GDG AI for Science / UTS · Nov 2026</div>
-    <h1>Transformers<br><b>101</b></h1>
-    <div class="tsub">How AI works:<br>from one artificial neuron to Gemini,<br>and what it means for science</div>
+    <div class="title-head">
+      <div class="kicker"><span class="gdg-dots"><i style="background:var(--g-blue)"></i><i
+            style="background:var(--g-red)"></i><i style="background:var(--g-yellow)"></i><i
+            style="background:var(--g-green)"></i></span>&nbsp; GDG AI for Science / UTS · Nov 2026</div>
+      <h1>Transformers<br><b>101</b></h1>
+      <div class="tsub">How AI works:<br>from one artificial neuron to Gemini,<br>and what it means for science</div>
+    </div>
+    <div class="title-cta">
+      <img class="title-qr" src="assets/linktonotes.png" width="160" height="160" alt="QR code to follow along at https://github.com/gdgaiforscience/trasformers101">
+      <div class="title-cta-body">
+        <div class="title-cta-label">Follow along at</div>
+        <a class="title-cta-url" href="https://github.com/gdgaiforscience/trasformers101" target="_blank" rel="noopener noreferrer">https://github.com/<wbr>gdgaiforscience/<wbr>trasformers101</a>
+      </div>
+    </div>
   </div>
   <aside class="notes">
     <p><b>Core idea:</b> There is no magic inside modern AI—only simple arithmetic repeated at a breathtaking scale.</p>
@@ -69,7 +78,12 @@
     <div class="chapter-card"><div class="ci">🏗️</div><div class="cn">3</div><div class="ct">The technology stack</div><div class="cd">From electricity to apps</div></div>
     <div class="chapter-card hl"><div class="ci">🧠</div><div class="cn">4</div><div class="ct">Inside a neural network</div><div class="cd">Numbers, neurons, weights & tensors</div></div>
     <div class="chapter-card hl"><div class="ci">⛰️</div><div class="cn">5</div><div class="ct">How machines learn</div><div class="cd">Loss, gradients & backpropagation</div></div>
-    <div class="chapter-card"><div class="ci">💬</div><div class="cn">6</div><div class="ct">From networks to Gemini</div><div class="cd">Embeddings, attention, scale</div></div>
+    <div class="chapter-card">
+      <div class="ci">💬</div>
+      <div class="cn">6</div>
+      <div class="ct">From networks to Gemini</div>
+      <div class="cd">Embeddings, attention, scale &amp; agents</div>
+    </div>
     <div class="chapter-card"><div class="ci">🔬</div><div class="cn">7</div><div class="ct">AI for science</div><div class="cd">Proteins, materials, weather & you</div></div>
     <div class="chapter-card"><div class="ci">🧾</div><div class="cn">✓</div><div class="ct">The six equations</div><div class="cd">The whole story on one slide</div></div>
   </div>
@@ -369,7 +383,7 @@
 
 <section class="slide" id="neuron" data-demo="neuron" data-title="One artificial neuron" data-chapter="4 · Inside a neural network" data-minutes="2.5">
   <header>
-    <h2 class="title">One artificial neuron: <em>a weighted vote</em></h2>
+    <h2 class="title">The Perceptron: <em>a single artificial neuron</em></h2>
   </header>
   <div class="body row" style="gap:40px">
     <div class="col" style="flex:1.25"><div data-role="plot" style="height:690px"></div><div data-role="acc" class="small mt-s"></div></div>
@@ -416,23 +430,46 @@
   </aside>
 </section>
 
-<section class="slide" id="activation" data-demo="activation" data-title="Why bend? Activation functions" data-chapter="4 · Inside a neural network" data-minutes="1">
+<section class="slide" id="activation" data-demo="activation" data-title="Activation: squash, or zero the negatives"
+  data-chapter="4 · Inside a neural network" data-minutes="1">
   <header>
-    <h2 class="title">Why <em>bend</em>? Activation functions</h2>
+    <h2 class="title">Activation: <em>bend</em> the math so multiple layers don't collapse</h2>
+    <div class="subtitle">A single neuron outputs a weighted, <span class="m">z</span>. Activation decides whether to pass
+      it along or block it before the next layer.</div>
   </header>
   <div class="body row" style="gap:48px">
-    <div class="col" style="flex:1.4"><div data-role="plot" style="height:640px"></div><div data-role="ctl" class="controls mt-s"></div></div>
-    <div class="col" style="gap:22px;justify-content:center">
-      <div data-role="note" class="big" style="font-size:32px;min-height:140px"></div>
-      <div class="row center-v" style="gap:30px"><img class="eq z12" src="assets/eq/sigmoid.svg" alt="sigmoid"><img class="eq z12" src="assets/eq/relu.svg" alt="ReLU"></div>
-      <div class="card glow-red"><h3>Without a bend, depth is useless</h3><img class="eq" src="assets/eq/collapse.svg" alt="collapse"><p class="small muted">Two straight-line steps in a row are just one straight-line step. The <b>nonlinearity</b> is what lets stacked layers do something new.</p></div>
+    <div class="col" style="flex:1.32">
+      <div data-role="plot" style="height:722px"></div>
+      <div data-role="ctl" class="controls mt-s"></div>
+    </div>
+    <div class="col act-side">
+      <div data-role="rule" class="act-rule" aria-live="polite"></div>
+      <div class="card glow-red act-why">
+        <h3>Pass detected features forward, mute the noise!</h3>
+        Passing positives through unchanged prevents vanishing gradients.
+      </div>
     </div>
   </div>
   <aside class="notes">
-    <p><b>Core idea:</b> Without a nonlinear “bend” after each neuron’s sum, a 100-layer network mathematically collapses into a single flat layer.</p>
+    <p><b>Core idea:</b> An activation is a tiny rule applied to <em>each neuron’s sum, one number at a time</em>. It either
+      <b>squashes</b> the number into a small range (sigmoid, tanh) or <b>zeroes the negatives</b> (ReLU, GELU). Unlike a
+      weight, what it does depends on the number itself—that is all “nonlinear” means—and it is why stacked layers don’t
+      collapse into one.
+    </p>
     <ul>
-      <li><b>Terms:</b> An <em>activation function</em> is a simple curve applied after the weighted sum to introduce <em>nonlinearity</em>: <b>step</b> (1943, zero slope everywhere so calculus can’t train it), <b>sigmoid</b> &amp; <b>tanh</b> (smooth S-curves), <b>ReLU</b> (<code>max(0, z)</code>—zero if negative, linear if positive; sparked the 2012 boom), and <b>GELU</b> (a smooth ReLU used inside Gemini &amp; Gemma).</li>
-      <li><b>Why depth needs a bend:</b> Multiplying by matrix <b>W₁</b> then matrix <b>W₂</b> equals multiplying once by <b>(W₂W₁)</b>. Only by bending space between multiplications can stacked layers carve complex shapes.</li>
+      <li><b>Demo:</b> On arrival the dashed straight line (no activation) <em>bends</em> into <b>sigmoid</b>; then every
+        number rises from the IN axis and lands on the curve—its height is its output, so they all end up squeezed between 0
+        and 1. Hover to trace one up and across: <code>−3 → 0.05</code>, <code>0 → 0.50</code>, <code>1 → 0.73</code> (≈ the
+        <code>1.02 → 0.73</code> neuron in the next clip). Click <b>ReLU</b>: the curve becomes a hinge, every negative lands
+        on the flat floor at 0 and positives land on the ramp unchanged.
+      </li>
+      <li><b>Terms:</b> <b>step</b> (McCulloch &amp; Pitts 1943; flat, so gradient descent can’t learn), <b>sigmoid</b> (0 to
+        1, reads as a probability), <b>tanh</b> (−1 to 1), <b>ReLU</b> <code>max(0, z)</code> (sparked the 2012 boom),
+        <b>GELU</b> <code>z·Φ(z)</code> (a smooth ReLU; Gemma uses a gated version, GeGLU).
+      </li>
+      <li><b>Why it matters:</b> Weights treat every number the same—multiply and add—so ×2 then ×3 is just ×6, and <b>W₂(W₁x)
+          = (W₂W₁)x</b>. An activation doesn’t, so its graph <em>bends</em>: that is the “bend” in “stretch, rotate, shift,
+        bend” on the warp slide.</li>
     </ul>
   </aside>
 </section>
@@ -548,8 +585,17 @@
     <h2 class="title">Weights: <em>the knobs</em>. And there are a lot of them.</h2>
   </header>
   <div class="body row" style="gap:40px">
-    <div class="col" style="flex:1.25"><div data-role="img" style="height:600px;border-radius:12px;overflow:hidden;border:1px solid var(--line)"></div><div data-role="ctl" class="controls mt-s"></div><div data-role="desc" class="small mt-s"></div><span class="step trigger" data-action="zoom"></span></div>
-    <div class="col"><div class="small muted">How many knobs? (log scale)</div><div data-role="ladder" style="height:600px"></div><p class="small"><b class="c-yellow">Gemma 3 270M</b>: 268,098,176 numbers. 63% of them are the word table alone.</p></div>
+    <div class="col" style="flex:1.25">
+      <div data-role="img" style="height:540px;border-radius:12px;overflow:hidden;border:1px solid var(--line)"></div>
+      <div data-role="ctl" class="controls mt-s"></div>
+      <div data-role="desc" class="small mt-s"></div><span class="step trigger" data-action="zoom"></span>
+    </div>
+    <div class="col">
+      <div class="small muted">How many knobs? (log scale)</div>
+      <div data-role="ladder" style="height:540px"></div>
+      <p class="small"><b class="c-yellow">Gemma 3 270M</b>: 268,098,176 weights = <b>embeddings</b> 167.8M (63%) + <b>18
+          layers</b> × 5.57M each (attention 1.64M + MLP 3.93M).</p>
+    </div>
   </div>
   <aside class="notes">
     <p><b>Core idea:</b> Everything an AI “knows”—grammar, chemistry, coding—lives strictly as floating-point numbers inside its weight matrices.</p>
@@ -667,18 +713,6 @@
   </aside>
 </section>
 
-<section class="slide video-slide" id="v-backprop" data-title="▶ Backpropagation (animation)" data-chapter="5 · How machines learn" data-minutes="0.5">
-  <div class="video-frame full"><video data-src="assets/video/m05_backprop.mp4" poster="assets/poster/m05_backprop.jpg" data-autoplay muted playsinline></video>
-    <div class="vmissing missing">🎬 manim animation <b>m05_backprop.mp4</b> not rendered yet</div>
-    <button class="btn small vbtn" onclick="Deck.toggleVideo(true)">↻ replay</button></div>
-  <aside class="notes">
-    <p><b>Core idea (23 s clip):</b> <em>Backpropagation</em> is simply the chain rule of calculus run in reverse—passing “blame” backward from the final error to every weight.</p>
-    <ul>
-      <li><b>Narrate:</b> Forward (blue, left → right): <code>x=2, w=0.5 → z=1.0 → ŷ=0.731 → L=0.0723</code>. Backward (green, right → left): multiply each step’s simple local sensitivity <code>(−0.538) × 0.197 × 2 = −0.2115</code> → nudge <code>w</code> up, and the error drops.</li>
-    </ul>
-  </aside>
-</section>
-
 <section class="slide" id="backprop" data-demo="backprop" data-title="Backpropagation" data-chapter="5 · How machines learn" data-minutes="2">
   <header>
     <h2 class="title">Learning step 3: <em>backpropagation</em> assigns the blame</h2>
@@ -697,6 +731,18 @@
     <ul>
       <li><b>Terms:</b> The <em>chain rule</em> multiplies local derivatives along a computation graph. <em>Backpropagation</em> (reverse-mode automatic differentiation) reuses intermediate values so <b>one backward pass computes the exact slope for all 268M weights simultaneously</b> at ~2× the cost of one forward pass!</li>
       <li><b>→ Steps 1–4:</b> <b>Forward</b> (compute prediction &amp; loss) → <b>Backward</b> (propagate gradients right-to-left) → <b>Update</b> (step opposite gradient) → <b>Train ×20</b>.</li>
+    </ul>
+  </aside>
+</section>
+
+<section class="slide video-slide" id="v-backprop" data-title="▶ Backpropagation (animation)" data-chapter="5 · How machines learn" data-minutes="0.5">
+  <div class="video-frame full"><video data-src="assets/video/m05_backprop.mp4" poster="assets/poster/m05_backprop.jpg" data-autoplay muted playsinline></video>
+    <div class="vmissing missing">🎬 manim animation <b>m05_backprop.mp4</b> not rendered yet</div>
+    <button class="btn small vbtn" onclick="Deck.toggleVideo(true)">↻ replay</button></div>
+  <aside class="notes">
+    <p><b>Core idea (23 s clip):</b> <em>Backpropagation</em> is simply the chain rule of calculus run in reverse—passing “blame” backward from the final error to every weight.</p>
+    <ul>
+      <li><b>Narrate:</b> Forward (blue, left → right): <code>x=2, w=0.5 → z=1.0 → ŷ=0.731 → L=0.0723</code>. Backward (green, right → left): multiply each step’s simple local sensitivity <code>(−0.538) × 0.197 × 2 = −0.2115</code> → nudge <code>w</code> up, and the error drops.</li>
     </ul>
   </aside>
 </section>
@@ -752,18 +798,6 @@
   </aside>
 </section>
 
-<section class="slide video-slide" id="v-attention" data-title="▶ Attention (animation)" data-chapter="6 · From networks to Gemini" data-minutes="0.5">
-  <div class="video-frame full"><video data-src="assets/video/m07_attention.mp4" poster="assets/poster/m07_attention.jpg" data-autoplay muted playsinline></video>
-    <div class="vmissing missing">🎬 manim animation <b>m07_attention.mp4</b> not rendered yet</div>
-    <button class="btn small vbtn" onclick="Deck.toggleVideo(true)">↻ replay</button></div>
-  <aside class="notes">
-    <p><b>Core idea (22 s clip):</b> A static dictionary vector isn’t enough because words take their meaning from context—<em>self-attention</em> lets tokens dynamically route information to one another.</p>
-    <ul>
-      <li><b>Terms (Query, Key, Value):</b> Each token projects three vectors: <b>Query Q</b> (“what am I looking for?”), <b>Key K</b> (“what do I offer?”), and <b>Value V</b> (“what message do I send if chosen?”). Dot products <code>Q·K</code> measure relevance, softmax normalizes weights, and weighted <b>V</b> vectors blend context into “it” (resolving to “wombat”).</li>
-    </ul>
-  </aside>
-</section>
-
 <section class="slide" id="attention" data-demo="attention" data-title="Attention" data-chapter="6 · From networks to Gemini" data-minutes="2">
   <header>
     <h2 class="title">Attention: words <em>look at</em> other words</h2>
@@ -782,6 +816,25 @@
     <ul>
       <li><b>On entry (Layer 9, Head 2):</b> Validated real weights from Gemma 3 on “The trophy did not fit in the suitcase because <b>it</b> was too big”—from “it”, <b>51%</b> of attention lands on “trophy” vs 8% on “suitcase”.</li>
       <li><b>→ Steps 1–2:</b> <b>Previous-token head</b> (clean off-diagonal stripe) → <b>Attention sink</b> (parks ~95% of weight on <code>&lt;bos&gt;</code> as a learned “no-op” when a head finds nothing relevant). Note the lower-triangular <em>causal mask</em>: tokens can only attend to past tokens, never the future.</li>
+    </ul>
+  </aside>
+</section>
+
+<section class="slide video-slide" id="v-attention" data-title="▶ Attention (animation)"
+  data-chapter="6 · From networks to Gemini" data-minutes="0.5">
+  <div class="video-frame full"><video data-src="assets/video/m07_attention.mp4"
+      poster="assets/poster/m07_attention.jpg" data-autoplay muted playsinline></video>
+    <div class="vmissing missing">🎬 manim animation <b>m07_attention.mp4</b> not rendered yet</div>
+    <button class="btn small vbtn" onclick="Deck.toggleVideo(true)">↻ replay</button>
+  </div>
+  <aside class="notes">
+    <p><b>Core idea (22 s clip):</b> A static dictionary vector isn’t enough because words take their meaning from
+      context—<em>self-attention</em> lets tokens dynamically route information to one another.</p>
+    <ul>
+      <li><b>Terms (Query, Key, Value):</b> Each token projects three vectors: <b>Query Q</b> (“what am I looking
+        for?”), <b>Key K</b> (“what do I offer?”), and <b>Value V</b> (“what message do I send if chosen?”). Dot
+        products <code>Q·K</code> measure relevance, softmax normalizes weights, and weighted <b>V</b> vectors blend
+        context into “it” (resolving to “wombat”).</li>
     </ul>
   </aside>
 </section>
@@ -1029,6 +1082,134 @@
   </aside>
 </section>
 
+<section class="slide" id="agents" data-demo="agents" data-title="Agents: giving a Transformer hands"
+  data-chapter="6 · From networks to Gemini" data-minutes="2.5">
+  <header>
+    <h2 class="title">How a humble Transformer becomes an <em>Agent</em></h2>
+  </header>
+  <!-- Interactive Transformer-in-a-Loop demo (js/demos/agents.js) + 3Blue1Brown Manim reel (m09_agent_loop.mp4) -->
+  <div class="body ag-body" data-role="root">
+    <div class="ag-main">
+      <!-- Left: interactive loop stage -->
+      <div class="ag-left">
+        <div class="ag-bar">
+          <div class="ag-scen" data-role="scen"></div>
+          <div class="ag-mode" data-role="mode"></div>
+          <button class="btn small ag-play" data-role="play" title="Manim animation, ~16 s (K plays / pauses)">▶ The
+            loop in 16 s</button>
+        </div>
+
+        <div class="ag-stage" data-role="stage">
+          <div class="ag-cv" data-role="cv" role="img"
+            aria-label="Interactive diagram showing a Transformer inside a while-loop harness calling external tools and reading results back into its context window">
+          </div>
+          <div class="ag-film" data-role="film">
+            <div class="video-frame">
+              <video data-src="assets/video/m09_agent_loop.mp4" poster="assets/poster/m09_agent_loop.jpg" muted
+                playsinline preload="none"></video>
+              <div class="vmissing missing">🎬 manim animation <b>m09_agent_loop.mp4</b> not rendered yet</div>
+            </div>
+            <button class="btn small ag-close" data-role="close">✕ back to live loop</button>
+          </div>
+        </div>
+
+        <div class="ag-foot">
+          <div class="ag-transport">
+            <button class="btn small" data-role="prev" type="button">◀ Back</button>
+            <div class="ag-dots" data-role="dots" aria-label="Turn steps"></div>
+            <button class="btn small" data-role="next" type="button">Step ▶</button>
+            <button class="btn small" data-role="replay" type="button">↻ Auto-play</button>
+          </div>
+          <div class="ag-status">
+            <b data-role="turn-label">Plain Transformer · 1 forward pass</b>
+            <span data-role="caption">Click Step or press → to wrap the Transformer in a harness loop.</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Right: 4 capabilities that create agency -->
+      <div class="ag-right">
+        <div class="ag-pillars">
+          <button class="ag-pillar p-yellow" type="button" data-pill="0">
+            <div class="ag-ph"><span class="ag-ico" aria-hidden="true">🛠️</span>
+              <h3>1 · Tool Use <small>giving the model hands</small></h3>
+            </div>
+            <p>Tool schemas sit in the prompt; post-training + grammar masks teach the Transformer to emit structured
+              <code>&lt;call&gt;</code> JSON tokens instead of prose. <b>MCP</b> (“USB-C for AI”) connects Python,
+              search, browsers, and lab APIs.
+            </p>
+          </button>
+
+          <button class="ag-pillar p-blue" type="button" data-pill="1">
+            <div class="ag-ph"><span class="ag-ico" aria-hidden="true">🔁</span>
+              <h3>2 · The Harness Loop <small>plan · act · observe</small></h3>
+            </div>
+            <p>Ordinary software runs <code>while not done</code>: pause GPU decoding at a tool call, execute outside
+              the model, inject the real result (or error!) back into context, and repeat (<b>ReAct</b>) to
+              self-correct.</p>
+          </button>
+
+          <button class="ag-pillar p-green" type="button" data-pill="2">
+            <div class="ag-ph"><span class="ag-ico" aria-hidden="true">🧠</span>
+              <h3>3 · Memory &amp; State <small>short &amp; long term</small></h3>
+            </div>
+            <p><b>Working memory</b> lives in the growing context window (prefix-cached in <b>KV memory</b>).
+              <b>Persistent memory</b> spans files, vector retrieval (<b>RAG</b>), and project specs like
+              <code>AGENTS.md</code>.
+            </p>
+          </button>
+
+          <button class="ag-pillar p-red" type="button" data-pill="3">
+            <div class="ag-ph"><span class="ag-ico" aria-hidden="true">🛡️</span>
+              <h3>4 · Grounding &amp; Guardrails <small>truth &amp; safety</small></h3>
+            </div>
+            <p>Compilers, unit tests, and sensors supply <b>hard ground truth</b> to defeat hallucination. Because
+              agents hold credentials, <b>sandboxing</b>, <b>least privilege</b>, and <b>human gates</b> block prompt
+              injection.</p>
+          </button>
+        </div>
+
+        <div class="ag-eq">
+          <span class="ag-eq-lbl">No new neurons:</span>
+          <span class="ag-eq-f"><b>Agent</b> = <span class="c-blue">Transformer</span> + <span
+              class="c-orange">Tools</span> + <span class="c-green">While-Loop</span> + Memory</span>
+        </div>
+      </div>
+    </div>
+
+    <span class="step trigger" data-action="ag:1"></span>
+    <span class="step trigger" data-action="ag:2"></span>
+    <span class="step trigger" data-action="ag:3"></span>
+    <span class="step trigger" data-action="ag:4"></span>
+    <span class="step trigger" data-action="ag:5"></span>
+  </div>
+
+  <aside class="notes">
+    <p><b>Core idea:</b> There is no mysterious “agent brain” inside the weights. An Agent is the <em>exact same
+        next-token Transformer</em> placed inside a software <code>while</code> loop (a <em>harness</em>) with tool
+      schemas, external execution, memory, and guardrails.</p>
+    <ul>
+      <li><b>Opening state (Step 0 · Plain Transformer):</b> Ask for the pH of 0.015 M acetic acid
+        (<code>Ka = 1.8e-5</code>). A plain Transformer gets one forward pass—it guesses <code>≈ 3.12</code> from
+        memorized averages without doing the math (exact quadratic is <code>3.2918</code>).</li>
+      <li><b>→ Step 1 · Tool Use (Hands):</b> Put JSON tool schemas in the prompt. Post-training (SFT + RLVR) taught the
+        model to predict a structured <code>&lt;call&gt;</code> token when calculation or lookup is needed. <em>MCP</em>
+        (Model Context Protocol) standardizes how tools plug in.</li>
+      <li><b>→ Step 2 · The Harness Loop (ReAct):</b> At the stop token, the GPU pauses! Ordinary CPU code runs Python
+        outside the model. Here, Turn 1 intentionally hits <code>NameError: name 'math' is not defined</code>—and the
+        harness feeds that real traceback right back into the context window!</li>
+      <li><b>→ Step 3 · Memory &amp; Self-Correction:</b> Prefix KV-cache vectors are reused. Reading the error in its
+        working memory, the Transformer adds <code>import math</code>, re-runs Python, and gets <code>3.2918</code>.
+        Persistent memory comes from files, RAG, and <code>AGENTS.md</code>.</li>
+      <li><b>→ Step 4 · Grounding &amp; Guardrails:</b> Switch to <em>Search &amp; MCP</em> or <em>Plan &amp; Gate</em>
+        to show grounding beyond cutoff dates and human approval gates before risky writes—essential because untrusted
+        content can carry <em>prompt injections</em>.</li>
+      <li><b>→ Step 5 · Synthesis:</b> <em>Agent = Transformer + Tools + While-Loop + Memory</em>. Also click <b>▶ The
+          loop in 16 s</b> (or press <b>K</b>) for the Manim animation.</li>
+    </ul>
+  </aside>
+</section>
+
 <!-- ================================================================ 7 · SCIENCE -->
 <section class="slide" id="archs" data-demo="archs" data-title="The model zoo: same neuron, different wiring" data-chapter="7 · AI for science" data-minutes="3">
   <header>
@@ -1070,28 +1251,133 @@
   </aside>
 </section>
 
-<section class="slide" id="science" data-demo="protein" data-title="AI for science" data-chapter="7 · AI for science" data-minutes="2">
+<section class="slide" id="science" data-demo="protein" data-title="AI ecosystem" data-chapter="7 · AI for science"
+  data-minutes="2.5">
   <header>
-    <h2 class="title">AI for science: <em>beyond chatbots</em></h2>
+    <h2 class="title">AI <em>ecosystem</em></h2>
   </header>
-  <div class="body row" style="gap:40px">
-    <div class="col" style="flex:0 0 700px"><div data-role="prot" style="height:700px"></div><div data-role="pctl" class="controls mt-s"></div></div>
-    <div class="col">
-      <div class="grid-2" style="gap:16px">
-        <div class="card step"><h3>🧬 AlphaFold</h3><p class="small">Protein structure from sequence. <b>200M+</b> predicted structures, free to all. AlphaFold 3 adds DNA, RNA and drugs.</p></div>
-        <div class="card step"><h3>💎 GNoME</h3><p class="small"><b>2.2 million</b> new crystal structures, ~380,000 predicted stable: candidate batteries, solar cells, superconductors.</p></div>
-        <div class="card step"><h3>🌦️ GenCast</h3><p class="small">15-day ensemble weather forecasts that beat the leading physics system on <b>97.2%</b> of targets.</p></div>
-        <div class="card step"><h3>🧮 AlphaEvolve</h3><p class="small">A Gemini coding agent found 4×4 complex matrix multiplication in <b>48 multiplications</b>, beating Strassen (1969).</p></div>
-        <div class="card step"><h3>🧑‍🔬 AI co-scientist</h3><p class="small">Multi-agent Gemini system that proposes and debates testable hypotheses (e.g. drug repurposing).</p></div>
-        <div class="card step"><h3>🧾 AlphaGenome</h3><p class="small">Reads up to <b>1 million DNA letters</b> and predicts how variants change gene regulation.</p></div>
+  <!-- 9 paradigm cards in 3 themed rows (same pattern as #now): models · agents · science & beyond.
+                         The six earlier science cards are folded in: AlphaFold + AlphaGenome → "molecules of life",
+                         GNoME + GenCast → "matter & the planet", AlphaEvolve → agents, AI co-scientist → multi-agent.
+                         The GFP thumbnail (PDB 1EMA) is still the live `protein` demo (js/demos/science.js): drag to rotate.
+                         Copy is sized to 5 lines per card on the 1920 × 1080 stage. Sources: docs/facts.md, "AI ecosystem". -->
+  <div class="body eco-body">
+    <div class="eco-grid">
+      <!-- row 1 · models -->
+      <div class="eco-row r-blue"><span>Models</span></div>
+      <div class="card glow-blue eco-card step">
+        <div class="eco-head"><span class="eco-ico" aria-hidden="true">📱</span>
+          <h3>Small reasoning models</h3>
+        </div>
+        <p>Distillation and RL on checkable answers teach small models to reason step by step. DeepSeek-R1’s
+          <b>1.5&nbsp;B</b> distilled model beat GPT-4o at competition maths, and <b>Gemma&nbsp;4</b> runs on phones
+          and laptops with configurable thinking.
+        </p>
+      </div>
+      <div class="card glow-blue eco-card step">
+        <div class="eco-head"><span class="eco-ico" aria-hidden="true">🔬</span>
+          <h3>Domain-specific models</h3>
+        </div>
+        <p>Specialists built from generalists: keep training an open model on one field’s data. <b>MedGemma</b>
+          reads medical images; <b>C2S-Scale</b> reads cells as “sentences”, and its cancer-drug idea held up in
+          living cells.</p>
+      </div>
+      <div class="card glow-blue eco-card step">
+        <div class="eco-head"><span class="eco-ico" aria-hidden="true">🌍</span>
+          <h3>World models</h3>
+        </div>
+        <p>Models that learn how a world changes when you act, so an agent can imagine before it moves.
+          <b>Genie&nbsp;4</b> generates explorable worlds from a prompt in real time; agents and robots can rehearse
+          there first.
+        </p>
+      </div>
+      <!-- row 2 · agents -->
+      <div class="eco-row r-green"><span>Agents</span></div>
+      <div class="card glow-green eco-card step">
+        <div class="eco-head"><span class="eco-ico" aria-hidden="true">🛠️</span>
+          <h3>Agents &amp; tool use</h3>
+        </div>
+        <p>A model in a loop: plan, call tools (search, code, a browser), check, repeat. <b>AlphaEvolve</b>, a
+          Gemini coding agent, beat Strassen’s 1969 record for 4×4 complex matrices (<b>48 multiplications</b>).
+          Agents’ task length doubles ~every 7 months.</p>
+      </div>
+      <div class="card glow-green eco-card step">
+        <div class="eco-head"><span class="eco-ico" aria-hidden="true">🤝</span>
+          <h3>Multi-agent intelligence</h3>
+        </div>
+        <p>Teams of specialised agents propose, critique and rank each other’s ideas. Google’s <b>AI
+            co-scientist</b> works this way; some of its drug-repurposing picks for leukaemia worked in lab tests.
+          Coding tools now fan one job out to <b>hundreds</b> of agents.</p>
+      </div>
+      <div class="card glow-green eco-card step">
+        <div class="eco-head"><span class="eco-ico" aria-hidden="true">🦞</span>
+          <h3>OpenClaw &amp; Grok Bot</h3>
+        </div>
+        <p>Always-on agents. <b>OpenClaw</b> is open source, runs on your own machine and takes requests from
+          WhatsApp or Telegram; <b>Grok Bot</b> runs cloud teammates on a computer of their own, 24/7. Both hold
+          your logins, so prompt injection is a real risk.</p>
+      </div>
+      <!-- row 3 · science & beyond -->
+      <div class="eco-row r-yellow"><span>Science &amp; beyond</span></div>
+      <div class="card glow-yellow eco-card step">
+        <div class="eco-viz" data-role="prot" role="img"
+          aria-label="Green fluorescent protein (PDB 1EMA) rotating in 3D; drag to rotate"></div>
+        <div class="eco-head"><span class="eco-ico" aria-hidden="true">🧬</span>
+          <h3>The molecules of life</h3>
+        </div>
+        <p><b>AlphaFold</b> predicts protein shapes from sequence: <b>200M+</b> structures, free to all;
+          AlphaFold&nbsp;3 adds DNA, RNA and drugs. <b>AlphaGenome</b> reads <b>1 million</b> DNA letters to
+          predict how variants change gene regulation.</p>
+      </div>
+      <div class="card glow-yellow eco-card step">
+        <div class="eco-head"><span class="eco-ico" aria-hidden="true">💎</span>
+          <h3>Matter &amp; the planet</h3>
+        </div>
+        <p><b>GNoME</b> found <b>2.2 million</b> new crystal structures, ~380,000 predicted stable: candidate
+          batteries, solar cells, superconductors. <b>GenCast</b>’s 15-day ensemble forecasts beat the leading
+          physics system on <b>97.2%</b> of targets.</p>
+      </div>
+      <div class="card glow-yellow eco-card step">
+        <div class="eco-head"><span class="eco-ico" aria-hidden="true">🌌</span>
+          <h3>Superintelligence</h3><span class="eco-tag">hypothetical · debated</span>
+        </div>
+        <p>AI far beyond humans in nearly every domain. Today’s AI is superhuman in some (like its neighbours), not
+          all. Labs name it as their goal; <b>Hinton</b> and <b>Bengio</b> back a ban until it’s shown safe and the
+          public agrees.</p>
       </div>
     </div>
+    <p class="eco-foot step"><b>Same building blocks as tonight</b> (neurons, attention, gradient descent),
+      reassembled: smaller, specialised, simulating worlds, and acting in loops and teams.</p>
   </div>
   <aside class="notes">
-    <p><b>Core idea:</b> Nature speaks in sequences, graphs, and 3D fields—when we apply these exact same equations to experimental measurements, we get fast scientific surrogates and hypothesis generators.</p>
+    <p><b>Core idea:</b> Nothing here needs new ingredients. The neurons, attention and gradient descent from tonight are
+      being reassembled: smaller and specialised models, models that simulate worlds, and models that act in loops and
+      teams.</p>
     <ul>
-      <li><b>Left 3D model:</b> Real Green Fluorescent Protein (PDB <b>1EMA</b>, 11 β-strands forming a protective barrel around its glowing chromophore). Predicting 3D coordinates from 1D amino-acid chains used to take years of X-ray crystallography.</li>
-      <li><b>→ Steps 1–6:</b> Walk through AlphaFold (attention + diffusion), GNoME (GNNs), GenCast (graph-transformer diffusion), AlphaEvolve (evolutionary search + LLM), AI co-scientist, and AlphaGenome (1M-base sequence model).</li>
+      <li><b>Terms:</b> <em>Distillation</em>: a small “student” model trained to copy a big “teacher”. <em>World model</em>:
+        a learned simulator (“if I do this, what happens next?”). <em>Agent</em>: a model in a loop (plan → call a tool → read
+        the result → repeat). <em>Prompt injection</em>: orders hidden in an email or web page that hijack an agent.
+        <em>Superintelligence</em>: an intellect far beyond humans in virtually all domains (Bostrom 2014). It is
+        hypothetical.
+      </li>
+      <li><b>→ 1–3 · Models:</b> DeepSeek-R1-Distill-Qwen-<b>1.5B</b> scored <b>28.9%</b> on the AIME 2024 maths contest vs
+        <b>9.3%</b> for GPT-4o (May 2024). <b>C2S-Scale 27B</b> (Google + Yale, built on Gemma 2) predicted that silmitasertib
+        plus low-dose interferon raises antigen presentation (~50%), and the effect was confirmed in living human cells. A
+        language model predicts the next word; a world model like Genie predicts the next moment of a world as you act in it.
+      </li>
+      <li><b>→ 4–6 · Agents:</b> AlphaEvolve: Gemini writes code, automatic evaluators score it, evolution keeps the best (48
+        vs Strassen’s 49 multiplications). METR: the length of tasks agents finish half the time has doubled about every 7
+        months (2019–2025). AI co-scientist: agents generate, debate and rank hypotheses in a tournament. OpenClaw is free,
+        self-hosted and run by a non-profit; Grok Bot (x.ai, Aug 2026) gives a user’s bots one always-on cloud computer. Rule
+        of thumb: treat everything an agent reads as data, never as orders, and give it the fewest permissions possible.</li>
+      <li><b>→ 7–9 · Science &amp; beyond:</b> Drag the GFP (PDB 1EMA): green β-strands form a barrel around the glowing
+        chromophore. AlphaFold DB 200M+ structures; AlphaGenome reads 1 Mb; GNoME 2.2M crystals (~380k stable); GenCast beats
+        ECMWF’s ensemble on 97.2% of 1,320 targets. Superintelligence: narrow superhuman AI exists (its neighbours), general
+        does not. Meta Superintelligence Labs and Safe Superintelligence Inc. name it as their goal; the Oct 2025 Statement on
+        Superintelligence (Hinton, Bengio, Russell, Wozniak…) calls for a prohibition until there is broad scientific
+        consensus it can be done safely and controllably, and strong public buy-in.</li>
+      <li><b>→ 10:</b> Same building blocks, new arrangements. Bridge: “So which of these should <em>your</em> lab reach for?”
+      </li>
     </ul>
   </aside>
 </section>
@@ -1200,12 +1486,16 @@
       <li><a href="https://jax-ml.github.io/scaling-book/" target="_blank">How to Scale Your Model (TPUs & LLMs)</a></li>
       <li><a href="https://alphafold.ebi.ac.uk" target="_blank">AlphaFold Protein Structure Database</a></li>
       <li><a href="https://epoch.ai/data/notable-ai-models" target="_blank">Epoch AI: data on AI models</a></li>
-      <li>This deck: open <span class="mono">state_of_ai/index.html</span>. All demos run offline.</li>
+      <li><a href="https://huggingface.co/models?sort=trending" target="_blank" rel="noopener noreferrer">Which model to
+          choose for my task?</a></li>
     </ul>
   </div>
   <p class="center muted mt-l">GDG AI for Science · thank you! 🙏</p>
   <aside class="notes">
     <p><b>Open for Q&amp;A:</b> All interactive demos in this deck run offline in a browser so anyone can experiment at their own pace. See <code>TALK_SCRIPT.md</code> for detailed Q&amp;A answers and exact reference numbers.</p>
+    <p><b>Which model to choose for my task?</b> opens Hugging Face’s trending models: filter by task (e.g. image
+      segmentation, speech recognition, time-series forecasting) and licence to find a pre-trained starting point, the
+      transfer-learning rule from the “Which AI should my lab use?” slide.</p>
   </aside>
 </section>
 
@@ -1238,6 +1528,7 @@
 <script src="js/demos/learning.js"></script>
 <script src="js/demos/llm.js"></script>
 <script src="js/demos/finetune.js"></script>
+<script src="js/demos/agents.js"></script>
 <script src="js/demos/archs.js"></script>
 <script src="js/demos/science.js"></script>
 </body>

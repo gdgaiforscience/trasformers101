@@ -1,6 +1,7 @@
 /* =====================================================================
    Chapter 7 demos: a real protein in 3D (PDB 1EMA, green fluorescent
-   protein) and "which AI should my lab use?"
+   protein; a 100 px live thumbnail on the AI-ecosystem card, #science)
+   and "which AI should my lab use?"
    ===================================================================== */
 (function () {
   'use strict';
@@ -51,12 +52,16 @@
     colour(i) {
       if (this.mode === 'rainbow') { const c = U.rampRgb(['#4285f4', '#00897b', '#34a853', '#fbbc04', '#e65100', '#ea4335'], this.idxPath[i]); return c; }
       const s = this.ssPath[i];
-      return U.hexToRgb(s === 'H' ? C.pink : s === 'E' ? '#f9ab00' : '#9aa0a6');
+      // palette: β-strands green (GFP's barrel), helices blue, coil grey
+      return U.hexToRgb(s === 'H' ? '#4285f4' : s === 'E' ? '#34a853' : '#9aa0a6');
     },
     draw() {
       const { ctx, w, h } = this.cv; ctx.fillStyle = C.bg; ctx.fillRect(0, 0, w, h);
+      // one drawing for any size: ribbons scale with the canvas (×1 at the original 700 px hero); a
+      // thumbnail (< 300 px, the AI-ecosystem card) fills more of its box and leaves captions to the card
+      const m = Math.min(w, h), thumb = m < 300, lw = clamp(m / 700, 0.22, 1);
       const cy = Math.cos(this.yaw), sy = Math.sin(this.yaw), cp = Math.cos(this.pitch), sp = Math.sin(this.pitch);
-      const S = Math.min(w, h) * 0.36, ox = w / 2, oy = h / 2;
+      const S = m * (thumb ? 0.44 : 0.36), ox = w / 2, oy = h / 2;
       const proj = this.path.map(([x, y, z]) => { const X = cy * x + sy * z, Z0 = -sy * x + cy * z, Y = cp * y - sp * Z0, Z = sp * y + cp * Z0; const f = 1 / (1 + Z * 0.25); return [ox + X * S * f, oy - Y * S * f, Z]; });
       const segs = [];
       for (let i = 0; i < proj.length - 1; i++) segs.push(i);
@@ -65,13 +70,14 @@
       for (const i of segs) {
         const a = proj[i], b = proj[i + 1], z = (a[2] + b[2]) / 2, depth = clamp((1 - z) / 2, 0, 1);
         const c = this.colour(i), fog = 0.38 + 0.62 * depth, ss = this.mode === 'ss' ? this.ssPath[i] : 'C';
-        const width = (ss === 'H' ? 15 : ss === 'E' ? 13 : 6) * (0.65 + 0.5 * depth);
+        const width = (ss === 'H' ? 15 : ss === 'E' ? 13 : 6) * lw * (0.65 + 0.5 * depth);
         const r = lerp(226, c[0], fog) | 0, g = lerp(230, c[1], fog) | 0, bl = lerp(236, c[2], fog) | 0;
         ctx.strokeStyle = `rgb(${r},${g},${bl})`; ctx.lineWidth = width;
         ctx.beginPath(); ctx.moveTo(a[0], a[1]); ctx.lineTo(b[0], b[1]); ctx.stroke();
         ctx.strokeStyle = `rgba(255,255,255,${0.32 * depth})`; ctx.lineWidth = width * 0.3;
         ctx.beginPath(); ctx.moveTo(a[0], a[1] - width * 0.18); ctx.lineTo(b[0], b[1] - width * 0.18); ctx.stroke();
       }
+      if (thumb) return;
       const lab = this.P ? `${this.P.name} · PDB ${this.P.pdb} · ${this.n} amino acids` : 'toy structure (protein data missing)';
       U.text(ctx, lab, 16, h - 16, { size: 18, color: C.muted });
       U.text(ctx, 'drag to rotate', w - 16, h - 16, { size: 16, color: C.dim, align: 'right' });
