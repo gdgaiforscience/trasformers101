@@ -26,7 +26,7 @@
       this.cv = U.canvas(wrap, { onresize: () => this.draw() });
       this.imgs = W.matrices.map(m => { const im = new Image(); im.onload = () => this.draw(); im.src = m.img; return im; });
       const ctl = slide.querySelector('[data-role=ctl]');
-      this.selSeg = seg(ctl, W.matrices.map((m, i) => ({ value: String(i), label: ['W_Q layer 0', 'MLP gate', 'embeddings', 'W_O layer 17'][i] || m.id })), '0', v => { this.sel = +v; this.tz = 0; this.z = 0; this.info(); this.draw(); if (this.zoomBtn) this.zoomBtn.innerHTML = '🔍 zoom to the numbers'; });
+      this.selSeg = seg(ctl, W.matrices.map((m, i) => ({ value: String(i), label: ['W<sub>Q</sub> layer 0', 'MLP gate', 'Embeddings', 'W<sub>O</sub> layer 17'][i] || m.id })), '0', v => { this.sel = +v; this.tz = 0; this.z = 0; this.info(); this.draw(); if (this.zoomBtn) this.zoomBtn.innerHTML = '🔍 zoom to the numbers'; });
       this.zoomBtn = btn(ctl, '🔍 zoom to the numbers', () => this.zoom(), 'primary');
       this.desc = slide.querySelector('[data-role=desc]');
       this.lad = U.canvas(slide.querySelector('[data-role=ladder]'), { onresize: () => this.drawLadder() });
@@ -41,8 +41,15 @@
     },
     onStep(a, vis) { if (a === 'zoom') { if (vis) { this.tz = 0; this.zoom(); } else { this.tz = 0; this.animate(); } } },
     info() {
-      const m = this.W.matrices[this.sel];
-      if (this.desc) this.desc.innerHTML = `<b>${U.esc(m.title)}</b><br><span class="muted">${U.esc(m.desc)}</span><br><span class="mono xs muted">mean ${fmtMinus(m.stats.mean, 5)} · std ${fmt(m.stats.std, 4)} · min ${fmtMinus(m.stats.min, 3)} · max ${fmt(m.stats.max, 3)}</span>`;
+      const m = this.W.matrices[this.sel], cm = this.W.colormap || { pos: '#58C4DD', neg: '#FC6255', zero: '#1a1d24' };
+      if (!this.desc) return;
+      const tex = s => U.esc(s).replace(/W_([QKVO])/g, 'W<sub>$1</sub>');  // W_Q -> W with a subscript Q
+      const num = v => Number(v).toLocaleString('en-US');
+      // rows x columns = weights: where each matrix's count comes from
+      const g = m.grid;
+      const grid = g ? `<br><b>${num(g.rows[0])} rows</b> (${U.esc(g.rows[1])}) × <b>${num(g.cols[0])} columns</b> (${U.esc(g.cols[1])}) = <b>${num(g.rows[0] * g.cols[0])} weights</b>` : '';
+      const key = `<span class="legend wt-key"><span>1 pixel = 1 weight</span>${[['pos', 'positive'], ['neg', 'negative'], ['zero', '≈ zero']].map(([k, t]) => `<span><i class="sw" style="background:${cm[k]}"></i>${t}</span>`).join('')}</span>`;
+      this.desc.innerHTML = `<b>${tex(m.title)}</b><br><span class="muted">${tex(m.desc)}</span>${grid}${key}`;
     },
     zoom() { this.tz = this.tz > 0.5 ? 0 : 1; this.animate(); },
     animate() {
@@ -69,8 +76,8 @@
       const fit = Math.min(w / IW, h / IH);
       const full = { x: 0, y: 0, w: IW, h: IH }, pr = this.patchRect(m);
       const aspect = w / h;
-      // final view: ~9 rows of the 16x16 patch, so each weight is big enough (~68 px) to print its value
-      const th = pr.h * 0.55, tw = th * aspect;
+      // final view: ~8 rows of the 16x16 patch, so each weight is big enough (~68 px) to print its value
+      const th = pr.h * 0.5, tw = th * aspect;
       const tgt = { x: pr.x + pr.w / 2 - tw / 2, y: pr.y + pr.h / 2 - th / 2, w: tw, h: th };
       // interpolate the view in log-space so the zoom feels uniform
       const e = this.z, lw = Math.exp(lerp(Math.log(full.w), Math.log(tgt.w), e)), lh = lw / (full.w / full.h) * (e > 0 ? lerp(1, (full.w / full.h) / aspect, e) : 1);

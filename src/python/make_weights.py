@@ -73,6 +73,12 @@ def stats(M):
     }
 
 
+def grid(rows, rows_what, cols, cols_what, M):
+    """Caption line 'rows x columns = weights'; asserts it really multiplies out to the matrix size."""
+    assert rows * cols == M.size, (rows, cols, M.shape)
+    return {"rows": [int(rows), rows_what], "cols": [int(cols), cols_what]}
+
+
 def blocks_image(blocks, sx=1, sy=1, gap=GAP, axis=1, vmax=None):
     """Lay out 2-D blocks side by side (axis=1) or stacked (axis=0) with
     transparent gaps; each weight becomes an sy x sx pixel rectangle.
@@ -162,11 +168,14 @@ def main():
     h_best = int(np.argmax([np.abs(Q[h]).max() for h in range(4)]))
     r0, c0, P = patch_at_max(Q[h_best])
     ox, oy = offs[h_best]
+    n_heads, d_model, d_head = Q.shape
     mats.append({
         "id": "query_l0", "img": "assets/img/w_query_l0.png",
-        "title": "Layer 0 attention: query projection W_Q",
-        "desc": ("All 655,360 numbers of layer 0's query matrix. Rows = the 640 input features, columns = "
-                 "4 heads x 256 query features (heads separated by gaps). 1 weight = 1 pixel."),
+        "title": "W_Q: attention query matrix · layer 0 (the first of 18)",
+        "desc": (f"Attention lets each token pull in context from earlier tokens. W_Q turns a token’s {d_model} "
+                 f"coordinates into a {d_head}-number “query” (what am I looking for?) for each of {n_heads} heads, "
+                 f"drawn as {n_heads} blocks. Each output number needs one weight per input number."),
+        "grid": grid(d_model, "coordinates", n_heads * d_head, f"{n_heads} heads × {d_head}", Q),
         "layout": {"rows": "input feature (640)", "cols": "head h * 256 + query feature", "pxPerWeight": 1,
                    "blocks": [{"label": f"head {h}", "x": offs[h][0], "y": 0, "w": 256, "h": 640} for h in range(4)]},
         "width": int(img.shape[1]), "height": int(img.shape[0]),
@@ -186,9 +195,12 @@ def main():
     r0, c0, P = patch_at_max(crop)
     mats.append({
         "id": f"ffn_gate_l{L}", "img": f"assets/img/w_ffn_gate_l{L}.png",
-        "title": f"Layer {L} feed-forward (MLP) gate W_gate: a 300 x 600 crop",
-        "desc": (f"The top-left 300 x 600 corner of layer {L}'s 640 x 2048 gate matrix (that crop alone is "
-                 "180,000 weights; the full matrix has 1,310,720). 1 weight = 2 x 2 pixels."),
+        "title": f"MLP gate matrix · layer {L} (mid-network)",
+        "desc": (f"After attention, each token passes through a small neural network (the MLP) with {G.shape[1]:,} "
+                 f"neurons. Each neuron reads all {G.shape[0]} coordinates, and the gate decides how strongly it "
+                 f"switches on. Shown: only the top-left {crop.shape[0]} × {crop.shape[1]} corner "
+                 f"({100 * crop.size / G.size:.0f}%)."),
+        "grid": grid(G.shape[0], "coordinates", G.shape[1], "neurons", G),
         "layout": {"rows": "input feature 0-299", "cols": "hidden unit 0-599", "pxPerWeight": 2,
                    "crop": {"row0": 0, "col0": 0, "rows": 300, "cols": 600, "fullShape": list(G.shape)}},
         "width": int(img.shape[1]), "height": int(img.shape[0]),
@@ -226,10 +238,11 @@ def main():
     P = allrows[r0:r0 + 16, c0:c0 + 16]
     mats.append({
         "id": "embed_slice", "img": "assets/img/w_embed_slice.png",
-        "title": "Token embeddings: one row of 640 numbers per word",
-        "desc": (f"{allrows.shape[0]} rows of the 262,144 x 640 embedding table (the words from the embedding map, "
-                 "grouped by category, gaps between groups). Each word is a 640-number 'barcode'; vertical "
-                 "stripes are features shared by almost every token. 1 weight = 2 x 2 pixels."),
+        "title": f"Embeddings: Gemma’s token lookup table ({100 * E.size / total:.0f}% of all weights)",
+        "desc": (f"Gemma’s vocabulary has {E.shape[0]:,} tokens (words and word pieces). Each token is represented "
+                 f"by {E.shape[1]} coordinates in vector space (a “meaning space”), all learned in training. "
+                 f"Shown: {allrows.shape[0]} sample words, grouped by topic."),
+        "grid": grid(E.shape[0], "tokens", E.shape[1], "coordinates", E),
         "layout": {"rows": "word (grouped by category)", "cols": "embedding feature (640)", "pxPerWeight": 2,
                    "rowsPx": row_px,
                    "groups": [{"cat": c, "y": oy, "h": 2 * len(ws)} for (c, ws, _), (_, oy) in zip(cat_words, offs)]},
@@ -252,11 +265,14 @@ def main():
     h_best = int(np.argmax([np.abs(O[h]).max() for h in range(4)]))
     r0, c0, P = patch_at_max(blocks[h_best])
     ox, oy = offs[h_best]
+    n_heads, d_head, d_model = O.shape
     mats.append({
         "id": "attn_out_l17", "img": "assets/img/w_attn_out_l17.png",
-        "title": "Layer 17 (last) attention output projection W_O",
-        "desc": ("How the last layer writes each head's result back into the 640-number stream. Rows = 640 "
-                 "output features, columns = 4 heads x 256 (gaps between heads). 1 weight = 1 pixel."),
+        "title": "W_O: attention output matrix · layer 17 (the last of 18)",
+        "desc": (f"Each of the {n_heads} heads (the {n_heads} blocks) returns {d_head} numbers of gathered context. "
+                 f"W_O blends those {n_heads * d_head:,} numbers back into the token’s {d_model} coordinates, one of "
+                 "the final steps before the next token is picked."),
+        "grid": grid(d_model, "coordinates", n_heads * d_head, f"{n_heads} heads × {d_head}", O),
         "layout": {"rows": "output feature (640)", "cols": "head h * 256 + value feature", "pxPerWeight": 1,
                    "blocks": [{"label": f"head {h}", "x": offs[h][0], "y": 0, "w": 256, "h": 640} for h in range(4)]},
         "width": int(img.shape[1]), "height": int(img.shape[0]),

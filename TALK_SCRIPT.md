@@ -2,7 +2,7 @@
 
 * **Event:** Google Developer Groups (GDG) AI for Science / UTS · November 2026
 * **Audience:** Scientists, students, and curious minds—no machine-learning background assumed, and zero mathematical hand-waving.
-* **Duration:** ~63 minutes (43 slides) + Q&A. See trimming notes below the Run of Show to land cleanly at 60 minutes.
+* **Duration:** ~66 minutes (44 slides) + Q&A. See trimming notes below the Run of Show to land cleanly at 60 minutes.
 * **Deck:** [`index.html`](index.html) — fully offline single-page deck (only the optional external 3D links on Slide 33 open a browser tab requiring internet).
 * **Central question:** *How does a static pile of numbers decide to say “Hi there”?*
 * **Central answer:** *Multiply, bend, repeat. Measure the error, roll downhill, repeat. Then do it at an absurd scale.*
@@ -26,7 +26,7 @@ How to read each slide below:
 
 ---
 
-## ⏱️ Run of show (43 slides)
+## ⏱️ Run of show (44 slides)
 
 | Time | # | ID | Slide | Core paradigm / demo |
 |:---|:---:|:---|:---|:---|
@@ -56,25 +56,26 @@ How to read each slide below:
 | 36:00 | 24 | `#v-descent` | ▶ Gradient descent (animation) | Manim (18 s): slope, learning rate $\eta$, overshoot vs convergence |
 | 36:30 | 25 | `#descent` | Rolling downhill | 2D loss landscape, gradient $-\nabla L$, divergence at $\eta = 0.8$ |
 | 38:30 | 26 | `#landscape` | ▶ Real loss landscapes | Blender loop: 268M-D non-convex terrain & momentum |
-| 39:15 | 27 | `#v-backprop` | ▶ Backpropagation (animation) | Manim (23 s): forward values vs backward blame (chain rule) |
-| 39:45 | 28 | `#backprop` | Backpropagation | Reverse-mode autodiff: all 268M slopes in one backward pass |
+| 39:15 | 27 | `#backprop` | Backpropagation | Reverse-mode autodiff: all 268M slopes in one backward pass |
+| 41:15 | 28 | `#v-backprop` | ▶ Backpropagation (animation) | Manim (23 s): forward values vs backward blame (chain rule) |
 | 41:45 | 29 | `#train` | Watch a network learn | **[DEMO]** Live MLP training on spirals; why 1 neuron fails XOR |
 | 44:15 | 30 | `#embed` | Words become vectors | 640-D embeddings, t-SNE clusters, Jupiter’s neighbours, analogies |
-| 45:45 | 31 | `#v-attention` | ▶ Attention (animation) | Manim (22 s): Query, Key, Value & causal mask |
-| 46:15 | 32 | `#attention` | Attention | Real Gemma multi-head attention: coreference & attention sinks |
+| 45:45 | 31 | `#attention` | Attention | Real Gemma multi-head attention: coreference & attention sinks |
+| 47:45 | 32 | `#v-attention` | ▶ Attention (animation) | Manim (22 s): Query, Key, Value & causal mask |
 | 48:15 | 33 | `#llm3d` | The Transformer in 3D | Full Transformer stack; external 3D flythrough tab (`bbycroft.net/llm`) |
 | 49:15 | 34 | `#v-softmax` | ▶ Softmax & temperature | Manim (20 s): logits $\to \exp(z_i/T) \to$ probabilities |
 | 49:45 | 35 | `#predict` | Next-token prediction | Autoregressive decoding & live hallucination (“largest planet”) |
 | 51:15 | 36 | `#scale` | Training & scaling | Pre-train / post-train / think + Chinchilla law (~20 tokens/param) |
 | 52:45 | 37 | `#finetune` | Post-training & fine-tuning | SFT, RLHF, RLVR; LoRA ($\Delta W = BA$), QLoRA (4-bit), RAG ladder |
-| 54:45 | 38 | `#archs` | The model zoo | Inductive bias: CNN, LSTM, GNN, Transformer, Diffusion, Mamba |
-| 57:45 | 39 | `#science` | AI for science | GFP (PDB 1EMA), AlphaFold, GNoME, GenCast, AlphaEvolve, AlphaGenome |
-| 59:45 | 40 | `#lab` | Which AI for my lab? | **[DEMO]** Tabular trees vs foundation-model transfer learning |
-| 60:45 | 41 | `#limits` | What AI still gets wrong | Hallucination, bias, energy, contamination, interpretability, safety |
-| 62:15 | 42 | `#recap` | Six equations | All 6 equations assembled + final synthesis |
-| 63:15 | 43 | `#qa` | Keep exploring | Offline links & open Q&A |
+| 54:45 | 38 | `#agents` | Agents: giving a Transformer hands | Tool schemas, pause-and-parse, while-loop harness, self-correction & guardrails (`m09_agent_loop`) |
+| 57:15 | 39 | `#archs` | The model zoo | Inductive bias: CNN, LSTM, GNN, Transformer, Diffusion, Mamba |
+| 60:15 | 40 | `#science` | AI ecosystem | 9 paradigms in 3 rows: small, domain & world models · agents & tools, multi-agent, OpenClaw & Grok Bot · AlphaFold/AlphaGenome, GNoME/GenCast, superintelligence |
+| 62:45 | 41 | `#lab` | Which AI for my lab? | **[DEMO]** Tabular trees vs foundation-model transfer learning |
+| 63:45 | 42 | `#limits` | What AI still gets wrong | Hallucination, bias, energy, contamination, interpretability, safety |
+| 65:15 | 43 | `#recap` | Six equations | All 6 equations assembled + final synthesis |
+| 66:15 | 44 | `#qa` | Keep exploring | Offline links & open Q&A |
 
-**Pacing valve (to hit 60:00 sharp):** Summarize Slide 5 in 3 row-level bullets (~1 min saved), skip the pod zoom step on Slide 22 (~30 s), treat Slide 33 as a 20-second architectural recap without opening the external tab (~40 s), and on Slide 38 advance past the opening film into the 6 live cards (~30 s).
+**Pacing valve (to hit 60:00 sharp):** Summarize Slide 5 in 3 row-level bullets (~1 min saved), skip the pod zoom step on Slide 22 (~30 s), treat Slide 33 as a 20-second architectural recap without opening the external tab (~40 s), on Slide 39 advance past the opening film into the 6 live cards (~30 s), and on Slide 40 click through each row and tell one story per row (~1 min). *These five trims save ~3 min 40 s; the deck now plans 66:15, so they land near 62:35 and ~2.5 min more must go to hit 60:00 (e.g., the Slide 28 backprop clip now recaps the demo before it and can be skipped, ~30 s).*
 
 ---
 
@@ -378,7 +379,8 @@ How to read each slide below:
   * Plot NASA’s 8 planets: log distance from the Sun ($\log_{10} a$) vs log orbital period ($\log_{10} T$). Each red square literally has side length equal to that planet’s vertical miss, so its **area is the squared error**.
   * **`[DEMO]`** *Drag the yellow line handles to shrink the red squares.*
   * **`[→]`** *(Best fit)* Minimizing average square area lands at slope **$w = 1.498 \approx \frac{3}{2}$**—rediscovering **Kepler’s Third Law ($T^2 \propto a^3$, 1619)** straight from raw numbers!
-  * **`[→]`** *(Raw linear axes)* Flip back from log-log to ordinary units to see our straight line become Kepler’s classic power-law curve. **`[→]`**
+  * **`[→]`** *(Raw linear axes)* Flip back from log-log to ordinary units to see our straight line become Kepler’s classic power-law curve.
+  * **Bridge to step 2:** *“So learning means finding the bottom of this loss. For a straight line, Legendre and Gauss gave us a formula around 1805, and that’s what the best-fit button just used. But Gemma 3 has 268 million knobs, bent through activation functions, and no such formula exists. So how does a machine find the bottom when it can’t see the map?”* (Presenter note: ✨ best fit uses the closed-form least-squares formula, not gradient descent.) **`[→]`**
 
 ---
 
@@ -388,6 +390,7 @@ How to read each slide below:
   * **Derivative ($\frac{dL}{dw}$):** The local slope of the loss with respect to weight $w$ (positive = uphill to the right, so step left).
   * **Learning rate ($\eta$):** A hyperparameter scaling how big a step we take per update ($w \leftarrow w - \eta \frac{dL}{dw}$).
 * **Talking points** *(18.5 s video)*:
+  * *(0 s)* **Learning step 2.** Across: one knob, $w$. Up: how wrong. Every setting of the knob is one dot on this curve. (Presenter note: this curve is illustrative, not Kepler’s; slide 25 brings back the real loss.)
   * *(2.5 s)* Measure the slope and step opposite to it: $w \leftarrow w - \eta \frac{dL}{dw}$.
   * *(3.5 s)* If $\eta$ is too large, you leap right across the valley and bounce higher.
   * *(9.6 s)* With a sensible $\eta$, steps automatically shorten as the valley floor flattens out, settling cleanly into the minimum. **`[→]`**
@@ -401,7 +404,7 @@ How to read each slide below:
   * **Gradient ($\nabla L$):** The vector collecting the partial derivative $\frac{\partial L}{\partial w_i}$ along every parameter axis; $-\nabla L$ points in the direction of steepest descent.
 * **Talking points:**
   * Every point on this contour map is one candidate line $(w, b)$ for Kepler’s planets (yellow = terrible fit, deep blue = low error; green arrow = $-\nabla L$).
-  * **`[→]` $\eta = 0.1$:** Smooth, steady descent into the Kepler minimum in ~180 steps.
+  * **`[→]` $\eta = 0.1$:** Smooth, steady descent into the Kepler minimum in ~180 steps, landing on $w = 1.498$: the same answer the best-fit formula gave on slide 23, reached just by walking downhill.
   * **`[→]` $\eta = 0.6$:** Reaches the valley fast (~27 steps) but zig-zags violently off the steep canyon walls.
   * **`[→]` $\eta = 0.8$:** **Divergence**—each bounce overshoots higher up the opposite wall until the error explodes to infinity! **`[→]`**
 
@@ -418,22 +421,24 @@ How to read each slide below:
 
 ---
 
-#### 27 · ▶ Backpropagation (animation) (`#v-backprop`, 39:15–39:45)
-* **Core point:** **Backpropagation** applies the chain rule of calculus backward from the final loss—computing every weight’s exact sensitivity in a single reverse sweep.
-* **Talking points** *(23 s video)*:
-  * *(2.6 s)* **Forward pass (blue, left → right):** Input $x=2 \times w=0.5 \to z=1.0 \to \hat{y}=0.731 \to \text{loss } L = (\hat{y}-1)^2 = 0.0723$.
-  * *(7 s)* **Backward pass (green, right → left):** Each simple link knows its own local derivative: $-0.538$, $0.197$, and $2$.
-  * *(12 s)* **Chain rule:** Multiply the local sensitivities along the chain: $(-0.538)\times 0.197 \times 2 = -0.2115 = \frac{\partial L}{\partial w}$. Nudge $w$ up (opposite the negative slope), and the loss drops! **`[→]`**
-
----
-
-#### 28 · Learning step 3: backpropagation assigns the blame (`#backprop`, 39:45–41:45)
+#### 27 · Learning step 3: backpropagation assigns the blame (`#backprop`, 39:15–41:15)
 * **Core point:** Think of a train of gears—knowing each gear pair’s local ratio lets one backward sweep determine how turning the very first knob moves the final needle, for ~2× the work of one forward pass.
 * **Definitions:**
   * **Chain rule ($\frac{\partial L}{\partial w} = \frac{\partial L}{\partial \hat{y}}\frac{\partial \hat{y}}{\partial z}\frac{\partial z}{\partial w}$):** The rate of change through a chain of functions is the product of each link’s local rate of change.
   * **Backpropagation (reverse-mode automatic differentiation):** Caching intermediate activations on the forward pass, then sweeping error sensitivities right-to-left so all $N$ parameter gradients are computed in one pass (explaining the “4” backward FLOPs + “2” forward FLOPs in $C \approx 6ND$!).
 * **Talking points:**
+  * **One-liner** (as you arrive, answering slide 26’s question): *“The loss tells us **how wrong** we are. Backpropagation tells every knob **how much it’s to blame**, and which way to turn.”* (Presenter note: each knob’s slope $\frac{\partial L}{\partial w}$ *is* that blame: its size says how much, its sign says which way.)
   * **`[→]` Forward** (values flow left-to-right) → **`[→]` Backward** (blame flows right-to-left) → **`[→]` Update** (weights step opposite gradients, loss drops) → **`[→]` Train ×20** (watch error converge toward zero). **`[→]`**
+
+---
+
+#### 28 · ▶ Backpropagation (animation) (`#v-backprop`, 41:15–41:45)
+* **Core point:** **Backpropagation** applies the chain rule of calculus backward from the final loss—computing every weight’s exact sensitivity in a single reverse sweep.
+* **Talking points** *(23 s video)*:
+  * *(0 s)* The same forward and backward pass you just clicked through, now animated.
+  * *(2.6 s)* **Forward pass (blue, left → right):** Input $x=2 \times w=0.5 \to z=1.0 \to \hat{y}=0.731 \to \text{loss } L = (\hat{y}-1)^2 = 0.0723$.
+  * *(7 s)* **Backward pass (green, right → left):** Each simple link knows its own local derivative: $-0.538$, $0.197$, and $2$.
+  * *(12 s)* **Chain rule:** Multiply the local sensitivities along the chain: $(-0.538)\times 0.197 \times 2 = -0.2115 = \frac{\partial L}{\partial w}$. Nudge $w$ up (opposite the negative slope), and the loss drops! **`[→]`**
 
 ---
 
@@ -445,6 +450,7 @@ How to read each slide below:
 * **Talking points:**
   * **`[→]`** *(Starts live training in browser—~50 lines of vanilla JS)* Watch two interleaved spirals untangle in real time! Look at the little square thumbnails inside each neuron: Layer 1 discovers straight diagonal cuts; Layer 2 combines cuts into curves; Layer 3 weaves curves into spirals—emergent hierarchy without a single hand-coded rule.
   * **`[DEMO]`** *Select **XOR** with **1 hidden layer** and **1 neuron/layer**—watch it stall at ~63%, recreating Minsky & Papert’s 1969 roadblock live—then restore 3 layers / 6 neurons to watch it snap to 100%.*
+  * **Recap in three beats** (the order they run in every training step): *“Loss: how wrong. Backprop: who’s to blame. Gradient descent: nudge them.”*
   * Emphasize: **That 4-step loop is all of deep learning.** Gemini runs the exact same loop on bigger matrices. **`[→]`**
 
 ---
@@ -465,7 +471,22 @@ How to read each slide below:
 
 ---
 
-#### 31 · ▶ Attention (animation) (`#v-attention`, 45:45–46:15)
+#### 31 · Attention: words look at other words (`#attention`, 45:45–47:45)
+* **Core point:** **Multi-head attention** runs dozens of independent Query-Key-Value circuits in parallel so the network learns specialized linguistic detectors automatically.
+* **Definitions:**
+  * **Multi-Head Attention:** Splitting token vectors across $H$ parallel attention heads, each with its own $(W_Q, W_K, W_V)$ matrices, then concatenating their outputs.
+  * **Attention sink:** A common learned behaviour where a head parks nearly all its probability weight on the `<bos>` (beginning-of-sequence) token as a harmless “do-nothing” state when no pattern matches.
+* **Talking points:**
+  * **Opener:** *“One vector per word isn’t enough: a river bank isn’t a bank account. Attention lets each word look back at the words before it and borrow their meaning. Here’s a real Gemma head doing it.”*
+  * Validated real attention matrices extracted from **Gemma 3 270M** (18 layers × 4 query heads = 72 heads):
+  * On entry (**Layer 9, Head 2**): *“The trophy did not fit in the suitcase because **it** was too big.”* From `"it"`, **51.2%** of attention routes directly to `"trophy"` vs only **7.6%** to `"suitcase"`—pronoun resolution learned purely from next-word prediction!
+  * **`[→]` Layer 2, Head 3:** A crisp **previous-token head** (note the sub-diagonal stripe in the heatmap).
+  * **`[→]` Layer 17, Head 3:** An **attention sink**—parking ~95% on `<bos>` whenever a head has nothing useful to contribute.
+  * **Bridge:** *“So how does a word know where to look? Here’s the mechanism, in 22 seconds.”* **`[→]`**
+
+---
+
+#### 32 · ▶ Attention (animation) (`#v-attention`, 47:45–48:15)
 * **Core point:** Static word vectors aren’t enough because words change meaning in context (“bank” of a river vs “bank” account)—**self-attention** lets tokens dynamically query earlier tokens and blend relevant context.
 * **Definitions:**
   * **Self-Attention:** A mechanism where each token computes relevance weights over other tokens in the sequence and absorbs a weighted sum of their information.
@@ -474,19 +495,6 @@ How to read each slide below:
 * **Talking points** *(22 s video; illustrative numbers)*:
   * *“The wombat crossed the road because **it** was hungry.”* How does `"it"` know it’s a wombat?
   * `"it"` broadcasts its **Query**; every earlier word holds up a **Key**; dot products $\mathbf{q}\cdot\mathbf{k}/\sqrt{d_k}$ pass through softmax so `"wombat"` wins the highest weight, pouring its **Value** vector into `"it"`. **`[→]`**
-
----
-
-#### 32 · Attention: words look at other words (`#attention`, 46:15–48:15)
-* **Core point:** **Multi-head attention** runs dozens of independent Query-Key-Value circuits in parallel so the network learns specialized linguistic detectors automatically.
-* **Definitions:**
-  * **Multi-Head Attention:** Splitting token vectors across $H$ parallel attention heads, each with its own $(W_Q, W_K, W_V)$ matrices, then concatenating their outputs.
-  * **Attention sink:** A common learned behaviour where a head parks nearly all its probability weight on the `<bos>` (beginning-of-sequence) token as a harmless “do-nothing” state when no pattern matches.
-* **Talking points:**
-  * Validated real attention matrices extracted from **Gemma 3 270M** (18 layers × 4 query heads = 72 heads):
-  * On entry (**Layer 9, Head 2**): *“The trophy did not fit in the suitcase because **it** was too big.”* From `"it"`, **51.2%** of attention routes directly to `"trophy"` vs only **7.6%** to `"suitcase"`—pronoun resolution learned purely from next-word prediction!
-  * **`[→]` Layer 2, Head 3:** A crisp **previous-token head** (note the sub-diagonal stripe in the heatmap).
-  * **`[→]` Layer 17, Head 3:** An **attention sink**—parking ~95% on `<bos>` whenever a head has nothing useful to contribute. **`[→]`**
 
 ---
 
@@ -552,9 +560,25 @@ How to read each slide below:
 
 ---
 
+#### 38 · How a humble Transformer becomes an Agent (`#agents`, 54:45–57:15)
+* **Core point:** There is no mysterious second brain inside the weights. An **Agent** is the *exact same next-token Transformer* placed inside a software `while` loop (a **harness**) with tool schemas, external execution, memory, and guardrails.
+* **Definitions:**
+  * **Tool use / Function calling:** Including JSON tool descriptions in the prompt and post-training the model (via SFT + RLVR, often with grammar-constrained decoding) to emit structured call tokens (`<call>`) instead of prose.
+  * **MCP (Model Context Protocol):** Open standard (“USB-C for AI”) letting any model or harness plug into external tools, databases, browsers, or lab instruments.
+  * **ReAct / Harness loop:** Ordinary software running `while not done`: decode tokens → pause GPU at a tool call → run the tool in the real world → append the observation to the context window → repeat.
+  * **Prompt injection:** Untrusted instructions hidden inside web pages, emails, or logs that try to hijack an agent’s tool permissions—mitigated via sandboxing, least privilege, and human approval gates.
+* **Talking points:**
+  * **Opening (Plain Transformer):** Ask for the pH of $0.015\text{ M}$ acetic acid ($K_a = 1.8\times 10^{-5}$). With one forward pass and no tools, a language model can only guess from memorized text (`≈ 3.12`)—missing the exact quadratic result (`3.2918`).
+  * **`[→]` 1 · Tool Use (Hands):** Put `[run_python]` in the prompt. Predicting `<call>` is *still* just next-token prediction (`p(x_t | x_<t)`), only now the token stream triggers a pause!
+  * **`[→]` 2 · The Harness Loop (Reality Check):** The GPU pauses; CPU code runs Python outside the model. Watch Turn 1 catch a real `NameError: name 'math' is not defined`—the harness injects that error right back into the prompt!
+  * **`[→]` 3 · Memory & Self-Correction:** Existing KV-cache prefixes stay warm. Seeing its own traceback in working memory, the Transformer fixes `import math`, re-runs, and observes `3.2918 ✓`. Longer-term memory comes from files, RAG, and `AGENTS.md`.
+  * **`[→]` 4 · Grounding & Guardrails:** Flip to *Search & MCP* (grounding past cutoff dates) or *Plan & Gate* (human approval before file patches). **`[→]` 5 · Formula:** `Agent = Transformer + Tools + While-Loop + Memory`. *(Click **▶ The loop in 16 s** or press **K** for the Manim animation.)* **`[→]`**
+
+---
+
 ### Chapter 7 · AI for science
 
-#### 38 · The model zoo: same neuron, different wiring (`#archs`, 54:45–57:45)
+#### 39 · The model zoo: same neuron, different wiring (`#archs`, 57:15–60:15)
 * **Core point:** Every neural architecture uses the **exact same artificial neuron**—changing how neurons are wired encodes an **inductive bias**: a mathematical bet about the symmetry and geometry of your scientific data.
 * **Definitions:**
   * **Inductive bias:** Structural assumptions built into a model’s wiring (locality, translation invariance, graph permutation symmetry) so it generalizes from realistic amounts of data.
@@ -575,19 +599,32 @@ How to read each slide below:
 
 ---
 
-#### 39 · AI for science: beyond chatbots (`#science`, 57:45–59:45)
-* **Core point:** Applied to experimental measurements of nature, these exact neural architectures act as fast physical surrogates, structure predictors, and search engines over vast chemical and genomic spaces.
+#### 40 · AI ecosystem (`#science`, 60:15–62:45)
+* **Core point:** Nothing on this slide needs new ingredients. The neurons, attention and gradient descent from tonight are being reassembled into **smaller and specialised** models, models that **simulate worlds**, and models that **act** in loops and teams. They are aimed at science and, some say, at superintelligence.
+* **Definitions:**
+  * **Small reasoning model:** A model with a few billion parameters or fewer that works through problems step by step. It usually learns this by **distillation** (a small *student* is trained to imitate a large *teacher*’s outputs), by **RLVR** (slide 37: rewards only for answers a checker can verify), or both.
+  * **Domain-specific model:** A general foundation model given extra training on one field’s data (medical images, single-cell gene expression) so it speaks that field’s “language”.
+  * **World model:** A learned simulator that predicts how a world changes when you act in it. A language model predicts the next word; a world model predicts the next moment. Agents can “imagine” an action before taking it, and robots can practise in generated worlds.
+  * **Agent & tool use:** An agent is a model running in a loop: plan, act, observe, repeat. *Tool use* means the model writes a structured request (search this, run this code, click this button) that ordinary software carries out, then reads the result.
+  * **Multi-agent system:** Several model instances with different roles (generator, critic, ranker, coordinator) working on one problem, often in parallel.
+  * **Prompt injection:** Instructions hidden in content an agent reads (an email, a web page, a document) that try to take over the agent. The more access the agent has, the more dangerous this is.
+  * **Superintelligence:** Bostrom’s definition: *“any intellect that greatly exceeds the cognitive performance of humans in virtually all domains of interest.”* It does not exist. Whether, when and how to build it is openly debated.
 * **Talking points:**
-  * Left: real atomic trace of **Green Fluorescent Protein (PDB 1EMA)** from the jellyfish *Aequorea victoria*—11 $\beta$-strands forming a protective barrel around its light-emitting chromophore. Determining one protein’s 3D fold experimentally once took years of PhD crystallography.
-  * **`[→]` AlphaFold:** Attention + diffusion predicting **200M+** protein structures (virtually every catalogued protein known to science), extended in AlphaFold 3 to DNA, RNA, and drug ligands.
-  * **`[→]` GNoME:** Graph networks discovering **2.2 million** new crystal structures (~380,000 predicted thermodynamically stable—equivalent to centuries of materials synthesis).
-  * **`[→]` GenCast:** Graph-transformer diffusion delivering 15-day probabilistic weather ensembles that beat ECMWF’s physics model on **97.2%** of targets in minutes.
-  * **`[→]` AlphaEvolve:** Gemini coding agent paired with evolutionary evaluators discovering a 4×4 complex matrix multiplication algorithm in **48 multiplications**—beating Strassen’s 1969 record!
-  * **`[→]` AI co-scientist** (multi-agent hypothesis generation & critique) & **`[→]` AlphaGenome** (reading **1 million DNA base pairs** at single-base resolution to predict variant effects on gene regulation). **`[→]`**
+  * *Frame:* “Three rows: what the **models** are becoming, what they now **do**, and where it might **lead**.”
+  * **`[→]` ① Small reasoning models:** Reasoning is no longer just for giant models. DeepSeek-R1’s distilled **1.5 B** model scored **28.9%** on the AIME 2024 maths competition; GPT-4o (May 2024) scored **9.3%**. Gemma 4 runs on phones and laptops, and you choose how hard it thinks.
+  * **`[→]` ② Domain-specific models:** Take a generalist and keep training it on one field. **MedGemma** reads medical images and text. **C2S-Scale 27B** (Google + Yale, built on Gemma 2) reads each cell as a “sentence” of gene names. It predicted that the drug silmitasertib plus low-dose interferon would make tumour cells more visible to the immune system (~50% more antigen presentation), and the prediction held up in living human cells.
+  * **`[→]` ③ World models:** **Genie 4** turns a prompt into a world you can explore in real time, a safe rehearsal space for agents and robots.
+  * **`[→]` ④ Agents & tool use:** This is slide 5’s harness at work. In **AlphaEvolve**, Gemini proposes code, automated evaluators score it and an evolutionary loop keeps the winners. It multiplied 4×4 complex matrices with **48** multiplications, one fewer than Strassen’s 1969 method. METR measures how long a task (in human time) agents can finish half the time; that length has doubled roughly every **7 months** (2019–2025).
+  * **`[→]` ⑤ Multi-agent intelligence:** Divide the labour, like a lab group. In Google’s **AI co-scientist**, some agents generate hypotheses, others critique them, and a tournament ranks them. Several of its drug-repurposing suggestions for acute myeloid leukaemia inhibited cancer cells in lab tests. Coding tools now split one job across **hundreds** of parallel agents and check the results.
+  * **`[→]` ⑥ OpenClaw & Grok Bot:** The newest wave is *always-on* agents. **OpenClaw** is free, open source and self-hosted, stewarded by a non-profit. You message it on WhatsApp or Telegram and it handles email, calendar and flights. **Grok Bot** (x.ai, launched August 2026) gives your bots a persistent cloud computer where they work 24/7 and hand tasks to each other. Both hold your logins, so one hidden line in an email can try to give them orders: **prompt injection**. Grant the fewest permissions possible.
+  * **`[→]` ⑦ The molecules of life:** *Drag the protein:* green fluorescent protein (PDB **1EMA**). The green β-strands form a barrel around its glowing chromophore. **AlphaFold** has predicted **200M+** structures, free to all, and **AlphaFold 3** adds DNA, RNA and drug molecules. **AlphaGenome** reads **1 million** DNA letters at once and predicts how a single-letter change alters gene regulation.
+  * **`[→]` ⑧ Matter & the planet:** **GNoME** (graph networks) found **2.2 million** new crystals, ~**380,000** of them predicted stable. **GenCast** (diffusion) beat the leading physics ensemble (ECMWF ENS) on **97.2%** of 1,320 forecast targets.
+  * **`[→]` ⑨ Superintelligence:** Hypothetical and debated. Today’s AI is superhuman in narrow domains (its neighbours on this row), not in general. Meta Superintelligence Labs and Safe Superintelligence Inc. say it is their goal. In October 2025, Hinton, Bengio and many others signed a statement calling for a prohibition on developing it until there is broad scientific consensus that it can be done safely and controllably, and strong public buy-in.
+  * **`[→]` Footer:** *“Same building blocks as tonight, reassembled.”* Bridge: *“So which of these should **your** lab reach for?”* **`[→]`**
 
 ---
 
-#### 40 · Which AI should my lab use? (`#lab`, 59:45–60:45)
+#### 41 · Which AI should my lab use? (`#lab`, 62:45–63:45)
 * **Core point:** Good scientific computing starts with the simplest baseline suited to your data’s geometry and sample size—and reuses pre-trained representations whenever data is unstructured.
 * **Definitions:**
   * **Gradient-Boosted Decision Trees (XGBoost / LightGBM):** Ensembles of shallow decision trees trained sequentially to correct previous residuals—still the gold standard on small-to-medium tabular datasets.
@@ -600,7 +637,7 @@ How to read each slide below:
 
 ### Wrap-up
 
-#### 41 · What AI still gets wrong (`#limits`, 60:45–62:15)
+#### 42 · What AI still gets wrong (`#limits`, 63:45–65:15)
 * **Core point:** Richard Feynman’s first rule of science—*“The first principle is that you must not fool yourself, and you are the easiest person to fool”*—is essential when working with probabilistic models.
 * **Definitions:**
   * **Out-of-distribution (OOD) generalization:** How a model behaves on regimes absent from its training data—where statistical interpolators often fail silently.
@@ -614,7 +651,7 @@ How to read each slide below:
 
 ---
 
-#### 42 · The whole story in six equations (`#recap`, 62:15–63:15)
+#### 43 · The whole story in six equations (`#recap`, 65:15–66:15)
 * **Core point:** Return to our opening question—*How does a pile of numbers decide to say “Hi there”?* Every symbol on this slide now corresponds to a concrete picture you have seen and manipulated tonight.
 * **Talking points:**
   * Reveal each card deliberately and state its plain meaning:
@@ -628,9 +665,10 @@ How to read each slide below:
 
 ---
 
-#### 43 · Keep exploring (`#qa`, 63:15+)
+#### 44 · Keep exploring (`#qa`, 66:15+)
 * **Talking points:**
   * Every interactive demo from tonight runs offline in a browser so you can poke at the weights, break gradient descent, and inspect Gemma’s attention heads yourself.
+  * **Which model to choose for my task?** opens Hugging Face’s trending models list: filter by task (image segmentation, speech recognition, time-series forecasting…) and licence to find a pre-trained model to start from—slide 41’s transfer-learning rule in practice.
   * Grant Sanderson’s *3Blue1Brown* series and Brendan Bycroft’s 3D visualizer are wonderful next stops. Thank you—let’s open the floor for questions!
 
 ---
@@ -657,6 +695,11 @@ How to read each slide below:
 | **SFT, RLHF, DPO & RLVR** | Post-training stages: Supervised Fine-Tuning imitates curated responses; RLHF/DPO aligns outputs with human preference rankings under a KL leash; RLVR trains step-by-step reasoning against automated math/code verifiers. |
 | **LoRA & QLoRA** | Parameter-Efficient Fine-Tuning (PEFT) that freezes $W_0$ (quantized to 4-bit in QLoRA) and learns a low-rank update $\Delta W = BA$ ($r \ll d$), cutting trainable parameters ~100–10,000× and fitting large models on one GPU. |
 | **Inductive Bias** | Architectural assumptions matched to data symmetry: translation equivariance in **CNNs**, sequential gating in **LSTMs**, permutation-equivariant bond message passing in **GNNs**, iterative denoising in **Diffusion**, and linear-time selective state in **Mamba (SSMs)**. |
+| **Distillation** | Training a small *student* model to reproduce a large *teacher* model’s outputs (or full probability distributions), transferring much of its skill at a fraction of the size and cost; a common way to make small reasoning models. |
+| **World Model** | A learned simulator that predicts the next state of an environment from the current state and an action, so an agent can plan or practise “in imagination” (e.g., Genie). |
+| **Agent, Tool Use & Multi-Agent Systems** | An agent runs a model in a loop: plan → emit a structured tool call (search, code, browser) → read the result → repeat. A multi-agent system splits one problem across several model instances with different roles (generate, critique, rank). |
+| **Prompt Injection** | An attack in which instructions hidden in content an agent reads (emails, web pages, files) hijack its behaviour; the risk grows with the agent’s permissions. |
+| **Superintelligence** | Hypothetical AI that “greatly exceeds the cognitive performance of humans in virtually all domains of interest” (Bostrom 2014); distinct from today’s *narrow* superhuman systems such as AlphaFold. |
 
 ---
 
@@ -676,6 +719,10 @@ How to read each slide below:
   In 2D cartoons, valleys look like closed bowls. In 268-million-dimensional space, almost every flat critical point is a *saddle point* with millions of downward escape directions, and mini-batch noise plus Adam’s momentum carry the trajectory into wide, low-loss basins.
 * **“Why did ‘strawberry’ letter-counting trip up older models?”**
   Tokenization! In Gemma’s tokenizer, `"strawberry"` is a single integer (`#115137`), so the network never sees individual characters unless it spells them out token-by-token in a reasoning chain—which modern thinking models now do automatically.
+* **“Is superintelligence coming? Should we be worried?”** *(Slide 39)*
+  Nobody knows the timeline, and serious researchers disagree. What we can measure: narrow superhuman systems already exist (AlphaFold, GNoME), and the length of tasks agents can finish has doubled roughly every 7 months (METR, 2019–2025). Some labs say superintelligence is their goal; Hinton, Bengio and many others have called for a prohibition until there is broad scientific consensus that it can be done safely and controllably, and strong public buy-in. The scientist’s stance: follow the measurements, not the headlines.
+* **“Should I run an always-on agent like OpenClaw on my own machine?”** *(Slide 39)*
+  Treat it like handing a new intern your passwords. Run it in a separate account or container, grant the fewest permissions possible, require confirmation before payments, deletions or outgoing messages, and only install skills you trust: security researchers have reported internet-exposed installations and malicious add-on skills. And remember prompt injection: anything the agent reads can try to give it orders.
 
 ---
 
@@ -695,4 +742,5 @@ How to read each slide below:
 | **Embeddings & Attention** | Jupiter neighbours: *Saturn (.73), Venus (.71), Neptune (.69), Mars (.68), Titan, Pluto, Uranus, Zeus* · Analogies: **14/18** · L9H2 `"it"` → `"trophy"` **51.2%** vs `"suitcase"` **7.6%** · L17H3 sink: **~95%** on `<bos>` |
 | **Compute & Scaling** | Growth: **4–5×/yr** (AlexNet $\approx 5\times 10^{17}$ → Llama 3.1 405B $\approx 4\times 10^{25}$ FLOP; Le Chonk 1T/52B active $\approx 1.3\times 10^{25}$) · $C \approx 6ND$ · Chinchilla optimum: **~20 tokens/parameter** |
 | **LoRA & QLoRA (`#finetune`)** | $4096\times 4096$ ($16.8\text{M}$ weights), $r=8$: **65,536** trained (**0.39%**) · 7B memory: Full **112 GB**, LoRA **~14 GB**, QLoRA **~4 GB** · GPT-3 adapter: **35 MB** vs **350 GB** · QLoRA 65B on **one 48 GB GPU** |
-| **Model zoo & Science** | Hopper $3\times 3$ CNN: **9** shared weights × **4,526** positions vs **21,724,800** dense · LSTM `"keys…are"` **98.4%** · AlphaFold DB **200M+** · GNoME **2.2M** crystals (**380k** stable) · GenCast **97.2%** · AlphaEvolve **48** mults · AlphaGenome **1M** bases |
+| **Model zoo (`#archs`)** | Hopper $3\times 3$ CNN: **9** shared weights × **4,526** positions vs **21,724,800** dense · LSTM `"keys…are"` **98.4%** |
+| **AI ecosystem (`#science`)** | R1-Distill-Qwen-**1.5B** AIME 2024 **28.9%** vs GPT-4o **9.3%** · C2S-Scale **27B**: ~**50%** more antigen presentation · AlphaEvolve **48** mults (Strassen **49**) · METR task length doubles every **~7 months** · Grok Build: **hundreds** of parallel agents · AlphaFold DB **200M+** · AlphaGenome **1M** bases · GNoME **2.2M** crystals (**380k** stable) · GenCast **97.2%** of **1,320** targets |

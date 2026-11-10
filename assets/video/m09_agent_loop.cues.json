@@ -1,0 +1,18 @@
+[
+ {
+  "t": 0.0,
+  "label": "Without tools, a Transformer makes one pass and guesses from its weights"
+ },
+ {
+  "t": 3.2,
+  "label": "Add tool schemas to the prompt: the same model emits a structured tool call"
+ },
+ {
+  "t": 5.9,
+  "label": "The harness runs Python in the real world, catches a bug, and feeds truth back"
+ },
+ {
+  "t": 11.1,
+  "label": "Agent = Transformer + Tools + While-Loop + Memory"
+ }
+]
