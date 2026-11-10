@@ -78,6 +78,7 @@ Root folder: `state_of_ai/`. The deck is `state_of_ai/index.html` (offline-first
 | 24 | `llm3d` | 2 | The whole Transformer in 3D | Embed bbycroft.net/llm (live) with fallback | — |
 | 25 | `predict` | 2 | Next-token prediction | manim softmax clip, then real Gemma predictions for science prompts + temperature | `m06_softmax`, `data/next_token.js` |
 | 26 | `scale` | 2.5 | How LLMs are trained and scaled | Pretrain → post-train → think pipeline; interactive Chinchilla scaling law | — |
+| 26b | `archs` | 3 | The model zoo: same neuron, different wiring | Step 0 = `m08_wiring` film full-bleed; then live heroes (CNN on the Hopper photo, LSTM gates, GNN on caffeine, real Gemma attention, exact-denoiser diffusion, Mamba vs attention) + 6 more tiles, a timeline and a field guide; tiles grouped by status (still everywhere / had its moment / rising) in the light Google palette | `m08_wiring`, `assets/eq/arch_*.svg`, `data/hopper.js`, `data/attention.js` |
 | 27 | `science` | 3 | AI for Science | Rotating real protein (PDB) + highlight cards (AlphaFold, GNoME, weather, …) | `data/protein.js`, `docs/facts.md` |
 | 28 | `lab` | 1.5 | Which AI should my lab use? | Interactive decision helper | — |
 | 29 | `limits` | 1.5 | What AI still gets wrong | Hallucination, energy, bias, evaluation, interpretability, safety | — |
@@ -122,6 +123,12 @@ Set `config.background_color = "#0f1115"`. Recommended length 12–25 s each; en
   matrix builds row by row (lower-triangular heatmap in PURPLE), and
   `\mathrm{Attention}(Q,K,V)=\mathrm{softmax}\!\big(\frac{QK^\top}{\sqrt{d_k}}\big)V` assembles.
   Values may be illustrative (say so in a tiny corner caption: "illustrative numbers").
+* **m08_lora** (light palette, `common_light.py`, background `#F8F9FA`, build with `--bg light`; it plays
+  over the light `#finetune` slide, not full-bleed): a 6 × 6 rank-1 ΔW = b aᵀ with b = (1, 2, −1, 3, −2, 1),
+  a = (2, −1, 3, 1, −2, 1); the "×k" row multipliers morph into b, row 1 lifts out as aᵀ; one cell
+  ΔW₄₃ = 3 × 3 = 9; 36 → 6 + 6 = 12; a 4096 × 4096 layer: 16,777,216 vs 8,192 (rank 1) vs 65,536 (rank 8,
+  ΔW = B A); end on the boxed `\mathbf{h} = W_0\mathbf{x} + BA\mathbf{x}` with W₀ frozen (dark blue) and
+  B, A trainable (dark green), after a "B = 0 ⇒ ΔW = 0" beat (LoRA §4.1). All numbers asserted in the script.
 
 ### 3b. Blender clips → `assets/video/b0X_*.mp4`, sources in `src/blender/`
 Headless only: `blender -b --factory-startup -P src/blender/<script>.py` (EEVEE works with

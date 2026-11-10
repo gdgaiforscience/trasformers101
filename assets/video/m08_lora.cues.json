@@ -1,0 +1,22 @@
+[
+ {
+  "t": 0.0,
+  "label": "Fine-tuning learns a change ΔW: a grid of numbers"
+ },
+ {
+  "t": 3.5,
+  "label": "But every row is a multiple of the first row"
+ },
+ {
+  "t": 8.1,
+  "label": "Each cell is one multiplication: ΔW_ij = b_i × a_j"
+ },
+ {
+  "t": 12.6,
+  "label": "A real 4096 × 4096 layer: 16,777,216 numbers, 8,192 at rank 1, 65,536 at rank 8"
+ },
+ {
+  "t": 18.9,
+  "label": "LoRA: h = W₀x + BAx. W₀ is frozen; only B and A train, and B starts at 0"
+ }
+]

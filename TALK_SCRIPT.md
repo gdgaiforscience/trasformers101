@@ -1,981 +1,698 @@
-# 🎙️ "Inside the Black Box: How AI Really Works": 60-minute speaker script
+# 🎙️ Transformers 101 — Inside the Black Box: Presenter Guide & Talking Points
 
-* **Event:** Google Developer Groups (GDG) AI for Science community · October 2026
-* **Audience:** general (scientists, students, curious people). No maths background assumed.
-* **Length:** about 55 minutes of talk, then 5 minutes or more of Q&A
-* **Deck:** [`state_of_ai/index.html`](index.html). It is one offline HTML file; open it in Chrome or Edge.
-* **The question of the night:** *How does a pile of numbers decide to say "Hi there"?*
-* **The answer (last slide):** *Multiply, bend, repeat. Measure the error, roll downhill, repeat. Then do it at an absurd scale.*
+* **Event:** Google Developer Groups (GDG) AI for Science / UTS · November 2026
+* **Audience:** Scientists, students, and curious minds—no machine-learning background assumed, and zero mathematical hand-waving.
+* **Duration:** ~63 minutes (43 slides) + Q&A. See trimming notes below the Run of Show to land cleanly at 60 minutes.
+* **Deck:** [`index.html`](index.html) — fully offline single-page deck (only the optional external 3D links on Slide 33 open a browser tab requiring internet).
+* **Central question:** *How does a static pile of numbers decide to say “Hi there”?*
+* **Central answer:** *Multiply, bend, repeat. Measure the error, roll downhill, repeat. Then do it at an absurd scale.*
 
-How to read this script:
+### Voice & philosophy of these notes
+> *“If we cannot explain what is happening in plain language—without hiding behind mystical words—then we haven’t really understood it yet. Yet once you strip away the jargon, what remains is even more remarkable: out of nothing more than multiplying numbers, bending straight lines, and rolling downhill on error, something emerges that can translate languages, fold proteins, and help discover new crystals.”*
 
-* **[→]** means press → (or the clicker) once. That reveals the next step, or moves to the next slide when there are no steps left.
-* **[DEMO]** means do something live with the mouse.
-* *(12 s)* marks a time inside a video, so you can match your words to the picture.
-* Text in quote blocks is what you say. Paraphrase freely; the numbers are exact.
-
----
-
-## ✅ Before you go on (10 minutes before)
-
-1. Open `state_of_ai/index.html` in **Chrome or Edge**. Press **F** for fullscreen and **P** for the presenter window (notes, timer and next-slide preview).
-2. Press **T** to show the timer pill. It starts when you leave the title slide and shows whether you are ahead of or behind plan.
-3. **Internet is only needed on slide 32** (bbycroft.net/llm). Load it once during setup to warm the cache. Everything else is local.
-4. Click through the video slides once. They are local MP4s, so they should start instantly.
-5. Useful keys: **K** play/pause video · **J** restart video · **B** blackout · **O** overview (click any slide) · type a number then **Enter** to jump · **N** notes drawer · **?** help.
-6. If anything misbehaves, reload with the slide's name after `#` (for example `index.html#train`). Every demo resets itself when you enter its slide.
+How to read each slide below:
+* **Core point:** The single takeaway the audience should walk away with.
+* **Definitions:** Crisp, accurate, plain-English definitions of the technical and scientific terms introduced on that slide.
+* **Talking points & cues:** Concise bullet points to speak from, paired with **`[→]`** (next step/slide), **`[DEMO]`** (live mouse interaction), and **`(0 s)`** (video cue times).
 
 ---
 
-## ⏱️ Run of show
+## ✅ Pre-talk checklist (10 minutes before)
 
-| Time | # | Slide | What happens |
-|:---|:---:|:---|:---|
-| 0:00 | 1 | Inside the Black Box | Blender hero network loops while people sit |
-| 0:30 | 2 | I typed "hi" | Real Gemma 3 probabilities; temperature slider; 262,144 count-up; reply types out |
-| 2:30 | 3 | Tonight's journey | Chapter cards |
-| 3:00 | 4 | What do we mean by "AI"? | Nested rings: AI ⊃ ML ⊃ deep learning ⊃ foundation models |
-| 5:00 | 5 | State of play, Oct 2026 | Six trend cards |
-| 7:30 | 6 | 80 years in 3 minutes | Timeline with hype line, 8 steps |
-| 10:30 | 7 | Why now? | Training-compute chart; log → linear flip |
-| 12:00 | 8 | Two Nobel prizes | Citations |
-| 13:00 | 9 | The AI technology stack | Climb the tower; TPU systolic-array clip on "Chips" |
-| 14:30 | 10 | The journey of "hi" | 9 stops from keyboard to reply |
-| 16:00 | 11 | Everything is numbers | **[DEMO]** zoom into Grace Hopper's eye |
-| 18:00 | 12 | Tensors | Blender: scalar → vector → matrix → image → batch |
-| 19:00 | 13 | ▶ A neuron | manim clip (21 s) |
-| 19:30 | 14 | One artificial neuron | **[DEMO]** Iris neuron: fix it by hand, then "let it learn" |
-| 22:00 | 15 | Activation functions | **[DEMO]** step / sigmoid / tanh / ReLU / GELU |
-| 23:00 | 16 | ▶ A layer is a matrix | manim clip (22 s) |
-| 23:30 | 17 | A layer is a matrix | **[DEMO]** step through the matrix multiply |
-| 25:00 | 18 | ▶ Layers warp space | manim clip (23 s) |
-| 25:30 | 19 | A layer warps space | Rotate, shear, shift, bend; **[DEMO]** drag î and ĵ |
-| 28:00 | 20 | Deep = many warps | A trained 21-number network untangles two moons |
-| 29:30 | 21 | Weights: the knobs | Real Gemma weights; zoom to the raw numbers; size ladder |
-| 31:00 | 22 | Measuring wrongness | Kepler's planets; squared errors drawn as squares; best fit |
-| 33:00 | 23 | ▶ Gradient descent | manim clip (18 s) |
-| 33:30 | 24 | Rolling downhill | Loss landscape; η = 0.1, 0.6, 0.8 (diverges) |
-| 35:30 | 25 | ▶ Real loss landscapes | Blender terrain (12 s loop) |
-| 36:15 | 26 | ▶ Backpropagation | manim clip (23 s) |
-| 36:45 | 27 | Backpropagation | Forward, backward, nudge, train ×20 |
-| 38:45 | 28 | Watch a network learn | **[DEMO]** live training on spirals |
-| 41:15 | 29 | Words become vectors | Gemma's embedding map; Jupiter's neighbours; analogies |
-| 42:45 | 30 | ▶ Attention | manim clip (22 s) |
-| 43:15 | 31 | Attention | Real Gemma heads: coreference, previous-token, sink |
-| 45:15 | 32 | The Transformer in 3D | bbycroft.net/llm (internet) |
-| 46:15 | 33 | ▶ Softmax & temperature | manim clip (20 s) |
-| 46:45 | 34 | Next-token prediction | Reef → gold → largest planet (hallucination) |
-| 48:15 | 35 | Training & scaling | Pre-train → post-train → think; Chinchilla curve |
-| 49:45 | 36 | AI for science | Rotating GFP protein; six result cards |
-| 51:45 | 37 | Which AI for my lab? | **[DEMO]** audience project |
-| 52:45 | 38 | What AI still gets wrong | Six cards |
-| 54:15 | 39 | Six equations | Recap and the answer |
-| 55:15 | 40 | Keep exploring | Links, then Q&A |
-
-If you are running late, shorten slides 5, 9 and 10 (one sentence per card) and skip slide 32. If you are early, spend longer in slides 14, 19 and 28; they are the most fun live.
+1. Open `index.html` in **Chrome or Edge**. Press **`F`** for fullscreen and **`P`** to open the presenter window (shows each slide’s `<aside class="notes">`, live timer, and next-slide preview).
+2. Press **`T`** to toggle the on-screen timer pill (starts automatically when advancing past Slide 1).
+3. **Optional internet check (Slide 33 `#llm3d`):** Click **Open bbycroft.net/llm ↗** once beforehand if you plan to show the 3D flythrough in a separate browser tab. Every other slide, dataset, font, and video is 100% local.
+4. **Controls:** **`→` / `Space` / `PgDn`** next step or slide · **`←` / `PgUp`** undo step or previous slide · **`K`** play/pause video · **`J`** restart video · **`O`** slide overview · **`N`** notes drawer · **`B`** blackout · **`?`** help.
 
 ---
 
-## 🎤 Word-for-word script
+## ⏱️ Run of show (43 slides)
+
+| Time | # | ID | Slide | Core paradigm / demo |
+|:---|:---:|:---|:---|:---|
+| 0:00 | 1 | `#title` | Transformers 101 | Hero network loop: neurons & numerical pulses |
+| 0:30 | 2 | `#hook` | I typed “hi” | Tokens, vocabulary (262,144), probabilities, temperature |
+| 2:30 | 3 | `#roadmap` | Tonight’s journey | 7-chapter map: picture first, equation second |
+| 3:00 | 4 | `#zoo` | What do we mean by “AI”? | AI ⊃ Machine Learning ⊃ Deep Learning ⊃ Foundation Models |
+| 5:00 | 5 | `#now` | State of play: Nov 2026 | Multimodality, test-time reasoning, MoE, agents, harnesses, MCP |
+| 7:30 | 6 | `#timeline` | 80 years of AI | McCulloch–Pitts → AI winters → AlexNet → Transformer → Nobels |
+| 10:30 | 7 | `#whynow` | Why now? Compute exploded | Exponential FLOPs (4–5×/yr), log vs linear scale, $C \approx 6ND$ |
+| 12:00 | 8 | `#nobel` | 2024: Two Nobel prizes | Statistical physics (Hopfield, Hinton) & proteins (Baker, Hassabis, Jumper) |
+| 13:00 | 9 | `#stack` | The AI technology stack | Energy → silicon → compilers → weights → serving → agents |
+| 14:30 | 10 | `#journey` | The journey of “hi” | CPU text (BPE) ⇄ PCIe ⇄ GPU tensors (prefill, KV cache, decode) |
+| 17:00 | 11 | `#tensors` | Everything is numbers | **[DEMO]** Pixel RGB zoom, EEG time series, tokens, amino acids |
+| 19:00 | 12 | `#tensors2` | Tensors: numbers in boxes | Scalar (0D) → vector (1D) → matrix (2D) → 3D/4D tensors |
+| 20:00 | 13 | `#neuron` | One artificial neuron | **[DEMO]** Fisher’s Iris flowers; weights, bias, decision boundary |
+| 22:30 | 14 | `#activation` | Why bend? Activation functions | **[DEMO]** Nonlinearity (Sigmoid, ReLU, GELU) vs linear collapse |
+| 23:30 | 15 | `#v-neuron` | ▶ A neuron (animation) | Manim synthesis (21 s): $\hat{y} = \sigma(\mathbf{w}\cdot\mathbf{x} + b)$ |
+| 24:00 | 16 | `#layer` | A layer is a matrix | **[DEMO]** Dense layer = matrix-vector dot products |
+| 25:30 | 17 | `#v-layer` | ▶ A layer is a matrix (animation) | Manim synthesis (22 s): wires fold into $\mathbf{a} = \sigma(W\mathbf{x}+\mathbf{b})$ |
+| 26:00 | 18 | `#v-warp` | ▶ Layers warp space (animation) | Manim (23 s): stretch, shift, bend untangles data |
+| 26:30 | 19 | `#warp` | Layers warp space | **[DEMO]** Basis vectors $\hat{\imath}, \hat{\jmath}$, determinant, $\tanh$ warp |
+| 29:00 | 20 | `#deep` | Deep = many warps | Representation learning: 21-parameter net unfolds two moons |
+| 30:30 | 21 | `#weights` | Weights: the knobs | Real Gemma 3 weight matrices (268M parameters) + scale ladder |
+| 32:00 | 22 | `#chips` | How GPUs & TPUs work | MACs, memory wall (170× energy), CPU vs GPU vs TPU systolic array |
+| 34:00 | 23 | `#loss` | Measuring wrongness | **[DEMO]** Loss function (MSE) rediscovers Kepler’s $T^2 \propto a^3$ |
+| 36:00 | 24 | `#v-descent` | ▶ Gradient descent (animation) | Manim (18 s): slope, learning rate $\eta$, overshoot vs convergence |
+| 36:30 | 25 | `#descent` | Rolling downhill | 2D loss landscape, gradient $-\nabla L$, divergence at $\eta = 0.8$ |
+| 38:30 | 26 | `#landscape` | ▶ Real loss landscapes | Blender loop: 268M-D non-convex terrain & momentum |
+| 39:15 | 27 | `#v-backprop` | ▶ Backpropagation (animation) | Manim (23 s): forward values vs backward blame (chain rule) |
+| 39:45 | 28 | `#backprop` | Backpropagation | Reverse-mode autodiff: all 268M slopes in one backward pass |
+| 41:45 | 29 | `#train` | Watch a network learn | **[DEMO]** Live MLP training on spirals; why 1 neuron fails XOR |
+| 44:15 | 30 | `#embed` | Words become vectors | 640-D embeddings, t-SNE clusters, Jupiter’s neighbours, analogies |
+| 45:45 | 31 | `#v-attention` | ▶ Attention (animation) | Manim (22 s): Query, Key, Value & causal mask |
+| 46:15 | 32 | `#attention` | Attention | Real Gemma multi-head attention: coreference & attention sinks |
+| 48:15 | 33 | `#llm3d` | The Transformer in 3D | Full Transformer stack; external 3D flythrough tab (`bbycroft.net/llm`) |
+| 49:15 | 34 | `#v-softmax` | ▶ Softmax & temperature | Manim (20 s): logits $\to \exp(z_i/T) \to$ probabilities |
+| 49:45 | 35 | `#predict` | Next-token prediction | Autoregressive decoding & live hallucination (“largest planet”) |
+| 51:15 | 36 | `#scale` | Training & scaling | Pre-train / post-train / think + Chinchilla law (~20 tokens/param) |
+| 52:45 | 37 | `#finetune` | Post-training & fine-tuning | SFT, RLHF, RLVR; LoRA ($\Delta W = BA$), QLoRA (4-bit), RAG ladder |
+| 54:45 | 38 | `#archs` | The model zoo | Inductive bias: CNN, LSTM, GNN, Transformer, Diffusion, Mamba |
+| 57:45 | 39 | `#science` | AI for science | GFP (PDB 1EMA), AlphaFold, GNoME, GenCast, AlphaEvolve, AlphaGenome |
+| 59:45 | 40 | `#lab` | Which AI for my lab? | **[DEMO]** Tabular trees vs foundation-model transfer learning |
+| 60:45 | 41 | `#limits` | What AI still gets wrong | Hallucination, bias, energy, contamination, interpretability, safety |
+| 62:15 | 42 | `#recap` | Six equations | All 6 equations assembled + final synthesis |
+| 63:15 | 43 | `#qa` | Keep exploring | Offline links & open Q&A |
+
+**Pacing valve (to hit 60:00 sharp):** Summarize Slide 5 in 3 row-level bullets (~1 min saved), skip the pod zoom step on Slide 22 (~30 s), treat Slide 33 as a 20-second architectural recap without opening the external tab (~40 s), and on Slide 38 advance past the opening film into the 6 live cards (~30 s).
+
+---
+
+## 🎤 Slide-by-slide presenter notes & talking points
 
 ### Opening
 
-#### 1 · Inside the Black Box (0:00–0:30)
-*The hero animation loops while people settle. Start when the room is ready.*
+#### 1 · Transformers 101 (`#title`, 0:00–0:30)
+* **Core point:** Modern AI is not magic—it is simple arithmetic (multiplying, adding, and bending curves) repeated billions of times.
+* **Definitions:**
+  * **Artificial neuron:** A simple mathematical unit that takes several numbers in, weighs them, and outputs one number.
+* **Talking points:**
+  * Welcome to GDG AI for Science. Behind me is a simulation of a deep neural network: every glowing sphere is an artificial neuron, and every pulse of light is a plain number passing from one layer to the next.
+  * By the end of this hour, we will open this black box completely—starting with a single neuron, building all the way up to Gemini and AlphaFold, and summarizing the entire machinery in **six equations**.
+  * Every equation tonight arrives *after* its visual picture, so when the symbols appear, you already know what they mean. **`[→]`**
 
-> Good evening, and welcome to GDG AI for Science.
->
-> Behind me is a neural network. Every dot is an artificial neuron, and every streak of light is a number flowing from one neuron to the next. By the end of tonight you'll know exactly what those numbers are, and the six equations that make the whole thing learn.
->
-> You don't need any maths background. But I'm not going to hide the maths either: every equation arrives *after* its picture, so by the time you see it, it should look obvious.
+---
 
-**[→]**
+#### 2 · I typed “hi” (`#hook`, 0:30–2:30)
+* **Core point:** A language model does not “think in sentences”—at each step, it computes a probability distribution over every piece of text in its vocabulary and samples one piece at a time.
+* **Definitions:**
+  * **Token:** The basic unit of text a language model reads and writes—a common word, a word fragment, or a punctuation mark, represented by an integer ID.
+  * **Vocabulary:** The fixed dictionary of all tokens the model knows (262,144 in Gemma 3).
+  * **Temperature ($T$):** A knob that rescales uncertainty before choosing a token—low $T$ concentrates nearly all probability on the #1 choice (deterministic); high $T$ flattens the distribution so rarer choices can be picked.
+* **Talking points:**
+  * Start with the smallest possible experiment: typing two letters, *h-i*.
+  * **`[→]`** *(Step 1: probability bars)* These are real measurements from **Gemma 3 270M**, an open-weights cousin of Gemini running locally. Notice the top strip: the model actually receives a 10-token formatted script (`<bos> <start_of_turn> user \n hi <end_of_turn> \n <start_of_turn> model \n`), where each token is just an integer.
+  * Out comes a probability for every possible next token: **“Hi” (93.3%)**, **“Hello” (6.3%)**, **“How” (0.37%)**.
+  * **`[DEMO]`** *Drag Temperature to ~2, then back to 1; click **Sample a token** a few times.* Raising temperature is like heating atoms in physics—more thermal agitation means more randomness (“Hi” drops to ~71%, “Hello” rises to ~19%). Clicking *Sample* literally rolls a 262,144-sided weighted die.
+  * **`[→]`** *(Step 2: counter)* To pick that single word, it scored all **262,144** tokens in its vocabulary.
+  * **`[→]`** *(Step 3: reply streams)* Then it appended “Hi” to the prompt and ran the entire calculation again—12 passes total—to write *“Hi there! How can I help you today?”*
+  * **`[→]`** *(Step 4: central question)* Here is our scientific mystery for tonight: **How does a static pile of numbers compute those probabilities?** **`[→]`**
 
-#### 2 · I typed "hi" (0:30–2:30)
+---
 
-> Let's start with the smallest conversation you can have with an AI. I typed two letters: h, i.
+#### 3 · Tonight’s journey (`#roadmap`, 2:30–3:00)
+* **Core point:** Understand the landscape first, build the engine from scratch in the middle, then see how scaling and wiring turn that engine into Gemini and scientific discovery tools.
+* **Talking points:**
+  * Chapters 1–3 map out what “AI” means in 2026, how 80 years of history brought us here, and the physical stack from power plants to silicon.
+  * Chapters **4 and 5** are the heart of tonight: we will build a neural network from one neuron and watch calculus teach it from mistakes.
+  * Chapters 6–7 assemble those exact pieces into Transformers, Gemini, and AI for biology, chemistry, and physics—closing with the whole story on one slide. **`[→]`**
 
-**[→]** *The probability bars appear.*
-
-> This is what a real language model did with those two letters. It's not a cartoon. These are the actual numbers from **Gemma 3**, a small open cousin of Gemini that I ran on my laptop.
->
-> Look at the top row first. That's what the model actually sees: not "hi", but a little script. Start of turn, *user*, *hi*, end of turn, start of turn, *model*. That's ten tokens, and each one is just a number.
->
-> From that, it produces a probability for every possible next word. "Hi": 93 percent. "Hello": 6 percent. "How": a third of a percent.
-
-**[DEMO]** Drag *temperature* to about 2, then back to 1. Press *Sample a token* two or three times.
-
-> This slider is *temperature*. Turn it up and the model gets more adventurous: at 2, "Hi" falls to about 71 percent and "Hello" climbs to 19. Turn it down and it becomes a robot that always says exactly the same thing. Each press of this button rolls a weighted die.
-
-**[→]** *The number counts up.*
-
-> For that very first word, it weighed up **262,144** possible tokens: its entire vocabulary.
-
-**[→]** *The reply types out.*
-
-> Then it did it again, and again, one token at a time: "Hi there! How can I help you today?"
-
-**[→]**
-
-> So here's the question for tonight. Not "what does AI mean for society", although we'll get there. I mean, mechanically: **how does a pile of numbers *decide* that?**
-
-**[→]**
-
-#### 3 · Tonight's journey (2:30–3:00)
-
-> Here's the plan. A quick lap of what "AI" means in 2026 and how we got here, then the technology stack underneath it.
->
-> Then the heart of the talk, chapters 4 and 5: we'll build a neural network from scratch, and watch it learn. Then we'll scale it up to something like Gemini, and finish with what it means for science, plus the whole story in six equations.
-
-**[→]**
+---
 
 ### Chapter 1 · What is AI today?
 
-#### 4 · What do we mean by "AI"? (3:00–5:00)
+#### 4 · What do we mean by “AI”? (`#zoo`, 3:00–5:00)
+* **Core point:** AI, Machine Learning, Deep Learning, and Foundation Models are four nested paradigms—and larger/newer isn’t always the right tool for your data.
+* **Definitions:**
+  * **Artificial Intelligence (AI):** Any computational method that performs tasks associated with intelligent behaviour—including hand-written logic rules and tree search (no learning required).
+  * **Machine Learning (ML):** Algorithms that infer statistical rules from data examples rather than explicit human instructions (e.g., linear models, decision trees, random forests).
+  * **Deep Learning (DL):** Machine learning built from many stacked layers of artificial neurons that automatically learn hierarchical features directly from raw inputs (pixels, audio waveforms, sequences).
+  * **Foundation Models / Generative AI:** Large deep networks pre-trained on massive datasets to model complex probability distributions—capable of generating new text, code, images, or molecular structures, and adaptable across tasks.
+* **Talking points:**
+  * People use “AI” to mean everything from a thermostat to Gemini. Picture four Russian nesting dolls:
+  * Outer ring: **AI (1956)**—includes pure search like Deep Blue beating Kasparov at chess without learning from data.
+  * **`[→]`** **Machine Learning**—instead of coding rules, we fit parameters to examples.
+  * **`[→]`** **Deep Learning**—multi-layer neural networks that learn their own features from raw signals; sparked the 2012 boom and powers AlphaFold.
+  * **`[→]`** **Foundation Models & Generative AI**—giant pre-trained models like Gemini and Gemma.
+  * *Practical note for scientists:* If your lab has a clean spreadsheet of 500 rows, classical ML in the second ring (like gradient-boosted trees) routinely beats deep learning. We’ll revisit why at the end. **`[→]`**
 
-> First, some vocabulary, because "AI" gets used for everything from a chess program to a chatbot. Think of Russian dolls.
->
-> The outer doll is **artificial intelligence**, the whole field, since 1956. It means any technique that makes a computer do something we'd call intelligent if a person did it: chess engines, route planners, rule-based expert systems.
+---
 
-**[→]**
+#### 5 · The state of play: November 2026 (`#now`, 5:00–7:30)
+* **Core point:** Modern AI has shifted from single-pass text prediction to multimodal, reasoning models wrapped inside tool-using software harnesses.
+* **Definitions:**
+  * **Multimodal model:** A single network trained jointly on text, images, audio, and video tokens in a shared representation space.
+  * **Test-time compute (“thinking”):** Spending extra computation *during inference* to generate and verify step-by-step intermediate reasoning before producing a final answer.
+  * **Mixture of Experts (MoE):** A sparse architecture where each layer holds dozens or hundreds of specialist sub-networks (“experts”), and a learned router sends each token to only a few—decoupling total memory capacity from per-token compute cost.
+  * **Agent & Harness:** The *model* only predicts tokens; the *harness* is the surrounding control loop that plans, executes external tools (Python, search, lab APIs), checks outputs, and enforces permissions. Together they form an *agent*.
+  * **MCP (Model Context Protocol):** An open standard interface (“USB-C for AI”) connecting models/harnesses to external tools and data sources.
+* **Talking points:**
+  * **`[→]` × 3 (Row 1 — Models):** ① **Multimodal** in and out—1M tokens of context (~10 novels) plus native generation of images (Nano Banana), video+audio (Veo), music (Lyria), and interactive worlds (Genie 4). ② **Reasoning (“thinking”)**—RL-trained step-by-step deliberation hit IMO gold-medal level in 2025. ③ **Fine-grained MoE**—used in both frontier Gemini 4 and open Gemma 4 26B (25.2B total weights, only 3.8B active per token).
+  * **`[→]` × 3 (Row 2 — Agents):** ④ **Tool use**—models invoke Python, search, browsers, or custom lab functions. ⑤ **Harnesses**—if the model is the engine, the harness (like Antigravity or Gemini CLI) is the car steering the plan-act-verify loop. ⑥ **Open standards**—MCP for tools, `AGENTS.md` (60k+ repos), and A2A under the Linux Foundation.
+  * **`[→]` × 4 (Row 3 — Impact + Footnote):** ⑦ Measure **cost per completed task**, not price per token (Mistral’s Le Chonk matches top open coding scores using 47% fewer tokens). ⑧ **Open-weight models** (Gemma 4, Apache 2.0) keep sensitive research local. ⑨ **Science**—proteins, crystals, weather, genomics. **`[→]`**
 
-> Inside that is **machine learning**. Instead of writing the rules, you learn them from data. You show examples, not instructions. Think spam filters, or a random forest trained on your lab's spreadsheet.
-
-**[→]**
-
-> Inside that is **deep learning**: machine learning with many-layered neural networks that discover their own features from raw data like images, sound and protein sequences. That's the 2012 revolution, and it's where AlphaFold lives.
-
-**[→]**
-
-> And in the middle sit **foundation models and generative AI**: huge networks pre-trained on vast data, then adapted to many tasks. Gemini, Gemma, image and video generators, protein designers.
->
-> One science point before we move on. If your data is a spreadsheet with a few hundred rows, the *outer* dolls often win. We'll come back to that at the end.
-
-**[→]**
-
-#### 5 · The state of play: October 2026 (5:00–7:30)
-
-> So where are we, in October 2026? Six trends, one sentence each.
-
-**[→]**
-
-> **Multimodal in and out.** One model reads text, images, audio and video. Others generate them: Nano Banana for images, Veo for video with sound, Lyria for music, and Genie 4 for worlds you can walk around in.
-
-**[→]**
-
-> **Models that think.** They're trained with reinforcement learning to reason before they answer, spending extra computation on hard problems. In 2025, a Gemini Deep Think model reached gold-medal standard at the International Mathematical Olympiad.
-
-**[→]**
-
-> **Agents.** These are models that use tools: they write and run code, search, browse and operate software. Coding agents like Antigravity, Deep Research, robots.
-
-**[→]**
-
-> **Long context.** More than a million tokens in one go: roughly ten novels, a whole codebase, or hours of video.
-
-**[→]**
-
-> **Open models.** Open-weight models like Gemma 4 run on a laptop or a phone. You can inspect them, fine-tune them, and keep your data private. All of tonight's live data comes from Gemma 3, the generation before.
-
-**[→]**
-
-> **AI for science.** Over 200 million predicted protein structures, millions of new crystals, better weather forecasts, new algorithms, and AI "co-scientists".
-
-**[→]**
-
-> Google's flagship today is **Gemini 4 Argon**: a sparse mixture-of-experts *Transformer* (remember that word), natively multimodal, with that million-token context. Everything on this slide comes from published model cards and papers.
->
-> So AI today is less "a chatbot" and more a general-purpose engine that sees, reasons, acts, and does science. How did we get here?
-
-**[→]**
+---
 
 ### Chapter 2 · How we got here
 
-#### 6 · 80 years of AI in 3 minutes (7:30–10:30)
+#### 6 · 80 years of AI (`#timeline`, 7:30–10:30)
+* **Core point:** Neural networks are an 80-year-old idea; past “AI winters” happened whenever bold promises outran mathematical depth, data, and hardware.
+* **Definitions:**
+  * **Perceptron (1958):** Rosenblatt’s single-layer learning neuron—able to learn linear boundaries, but mathematically incapable of nonlinear logic like XOR.
+  * **Expert systems (1980s):** Symbolic AI built from thousands of hand-authored `IF–THEN` rules; brittle in the noisy real world.
+  * **AI Winter:** Periods when overhyped expectations collided with fundamental bottlenecks, collapsing research funding.
+* **Talking points:**
+  * Walk the yellow “expectations” curve across 8 eras (hover any icon if asked):
+  * **`[→]` 1943–60:** McCulloch & Pitts write down a logical neuron (1943); Turing asks *“Can machines think?”* (1950); Dartmouth names “AI” (1956); Rosenblatt’s **perceptron** learns weights from data (1958).
+  * **`[→]` 1969–75:** Minsky & Papert prove single-layer perceptrons can’t even learn XOR; the 1973 Lighthill report triggers the **first AI winter**.
+  * **`[→]` 1980s–90s:** Rule-based expert systems boom and bust (**second winter**), while Rumelhart, Hinton & Williams quietly popularize **backpropagation** (1986) and LeCun trains convolutional nets to read postal codes (1989).
+  * **`[→]` 1997–2009:** Statistical ML matures; Deep Blue beats Kasparov via brute-force search (1997); Fei-Fei Li’s team assembles **ImageNet** (14M labelled photos, 2009).
+  * **`[→]` 2012–17:** **AlexNet** trains a deep net on two gaming GPUs and halves ImageNet error overnight (2012); AlphaGo (2016); Google publishes *“Attention Is All You Need”*—the **Transformer** (2017).
+  * **`[→]` × 3 (2020–26):** GPT-3 & AlphaFold 2 (2020) → ChatGPT & Gemini 1.0 (2022–23) → AI Nobel Prizes (2024), IMO-gold reasoning models (2025), and sparse MoE flagships (2026). **`[→]`**
 
-> Eighty years in three minutes. The yellow line is my rough sense of hype and funding. It's a vibe, not data, but the winters were real.
+---
 
-**[→]**
+#### 7 · Why now? Compute exploded (`#whynow`, 10:30–12:00)
+* **Core point:** Modern AI ignited when internet-scale data met scalable algorithms and an exponential **10-billion-fold** surge in training compute.
+* **Definitions:**
+  * **FLOP (Floating-Point Operation):** One basic decimal addition or multiplication—the unit of computational work.
+  * **Logarithmic scale:** An axis where equal vertical steps multiply by 10 ($10^{18}, 10^{20}, 10^{22}\dots$), turning exponential explosions into straight lines.
+  * **$C \approx 6ND$ rule:** Training a dense Transformer with $N$ active parameters on $D$ tokens takes roughly $6 \times N \times D$ FLOPs (~2 FLOPs/weight forward + ~4 FLOPs/weight backward).
+* **Talking points:**
+  * Three ingredients had to converge: **Data** (trillions of tokens), **Algorithms** (backprop, ReLU, residual highways, attention, MoE), and above all **Compute**.
+  * Since 2010, frontier training compute grew **4–5× every single year** (Epoch AI)—jumping from AlexNet ($\approx 5 \times 10^{17}$ FLOP) to Llama 3.1 405B ($\approx 4 \times 10^{25}$ FLOP), nearly 100 million times more arithmetic.
+  * Point out the top-right hollow dot (**Mistral Large 4 “Le Chonk”**, Oct 2026): 1 trillion total parameters, yet only 52B active per token via MoE—training in $\approx 1.3 \times 10^{25}$ FLOP, a third of Llama 3.1’s bill. Cleverer algorithms buy capability without brute force.
+  * **`[→]`** *(Switch to Linear scale)* Watch everything before 2020 flatten onto the floor—that is the visceral reality of exponential growth. **`[→]`**
 
-> 1943: McCulloch and Pitts write down a mathematical neuron, with inputs, weights and a threshold. 1950: Turing asks "can machines think?" 1956: the Dartmouth workshop gives the field its name. 1958: Rosenblatt's perceptron learns its weights from examples, and the newspapers promise it will soon walk, talk and be conscious.
+---
 
-**[→]**
+#### 8 · 2024: AI wins two Nobel prizes (`#nobel`, 12:00–13:00)
+* **Core point:** Neural networks emerged from statistical physics and have matured into foundational instruments of scientific discovery.
+* **Talking points:**
+  * **Physics (Hopfield & Hinton):** Borrowed energy landscapes and Boltzmann distributions from condensed-matter physics to show how networks of simple nodes store associative memories and learn representations.
+  * **Chemistry (Baker; Hassabis & Jumper):** Solved the 50-year protein-folding problem (predicting 3D atomic coordinates from 1D amino-acid sequences via AlphaFold) and designed entirely new functional proteins from scratch.
+  * **`[→]`** Like Galileo’s telescope or Leeuwenhoek’s microscope, AI is shifting from an engineering curiosity into part of the scientific method itself. **`[→]`**
 
-> It doesn't. In 1969, Minsky and Papert's book *Perceptrons* shows what single-layer networks can't do. In 1973 the Lighthill report savages the field in the UK, and funding collapses. That's the first AI winter.
-
-**[→]**
-
-> In the 1980s, expert systems boom. In 1986, Rumelhart, Hinton and Williams popularise **backpropagation**, the learning algorithm we'll meet in chapter 5. By 1989, LeCun's networks are reading handwritten postcodes. Then expert systems fail to deliver, and a second winter sets in.
-
-**[→]**
-
-> Through the 90s and 2000s, statistical machine learning quietly works. In 1997, Deep Blue beats Kasparov, but with search, not learning. In 2009 comes ImageNet: 14 million labelled images.
-
-**[→]**
-
-> 2012: AlexNet, a deep network trained on two gaming graphics cards, crushes the ImageNet competition, with 15 percent error against 26 for the runner-up. The deep-learning era begins. In 2016, AlphaGo beats Lee Sedol four games to one. And in 2017, Google researchers publish "Attention Is All You Need": the **Transformer**.
-
-**[→]**
-
-> 2020: GPT-3, with 175 billion parameters. The same year, AlphaFold 2 predicts protein structures at near-experimental accuracy.
-
-**[→]**
-
-> November 2022: ChatGPT, and chatbots go mainstream. December 2023: Gemini 1.0, multimodal from the start. 2024: two Nobel prizes, which is the next slide.
-
-**[→]**
-
-> 2025 brings thinking models and an IMO gold medal, and 2026 brings Gemini 4 Argon.
->
-> Two things to notice. The winters came when promises outran results. And this boom is riding on things that genuinely work, and that we can measure.
-
-*Hover any emoji for details if someone asks.*
-
-**[→]**
-
-#### 7 · Why now? Compute exploded (10:30–12:00)
-
-> Why now, and not in the 80s? It takes three ingredients: data, compute and algorithms. The one that exploded is compute.
->
-> Each dot is a famous model. Up the side is the total number of arithmetic operations used to train it. Filled dots are numbers the authors reported; hollow dots are estimates. Watch the axis: each gridline is ten times the one below it.
->
-> AlexNet in 2012 took about 5 times 10 to the 17. Llama 3.1 in 2024 took about 4 times 10 to the 25: almost a hundred million times more. Epoch AI measures the trend at four to five times more compute every single year.
-
-**[→]** *The chart flips to a linear axis.*
-
-> Here's the same chart on a normal, linear axis. Everything before 2020 is squashed flat on the floor. That's what exponential growth looks like.
->
-> And here's the rule of thumb in the corner: training compute is about 6 × parameters × tokens. For GPT-3, that's 6 × 175 billion × 300 billion, about 3 times 10 to the 23, and that's exactly where its dot sits. Two of those six operations per parameter happen on the way forward through the network, and four on the way back. You'll see the backward pass in chapter 5.
-
-**[→]**
-
-#### 8 · 2024: AI wins two Nobel prizes (12:00–13:00)
-
-> 2024 is the year the scientific establishment noticed.
->
-> The Physics prize went to John Hopfield and Geoffrey Hinton, "for foundational discoveries and inventions that enable machine learning with artificial neural networks". Hinton is one of the backpropagation authors from the timeline.
->
-> The Chemistry prize went to David Baker for computational protein design, and to Demis Hassabis and John Jumper of Google DeepMind for AlphaFold.
-
-**[→]**
-
-> AI is no longer just a tool *for* science. It's now part of *how science is done*.
-
-**[→]**
+---
 
 ### Chapter 3 · The technology stack
 
-#### 9 · The AI technology stack (13:00–14:30)
+#### 9 · The AI technology stack (`#stack`, 13:00–14:30)
+* **Core point:** Strip away the mystique: a trained model is just a static file of numbers; seven layers of physical and software engineering exist to multiply those numbers fast and wrap them safely.
+* **Definitions:**
+  * **Compiler / ML Framework (JAX, PyTorch, XLA, CUDA):** Software that translates high-level matrix equations into fused machine instructions distributed across thousands of accelerator chips.
+  * **Inference / Serving:** Running a frozen, already-trained model to answer live user requests (as opposed to *training*, which updates the weights).
+* **Talking points:**
+  * Climb from bedrock to user interface:
+  * Start on **① Energy & data centres**—megawatts of electricity and liquid cooling turning power into computation.
+  * **`[→]` ② Chips**—GPUs and Google TPUs built around matrix-multiply silicon (Gemini 2.5 trained across pods of 8,960 TPU v5p chips).
+  * **`[→]` ③ Systems software**—PyTorch, JAX, Keras, XLA, CUDA; open-source tools anyone here can `pip install`.
+  * **`[→]` ④ Models**—an architecture blueprint + billions of learned weights.
+  * **`[→]` ⑤ Data & training** → **`[→]` ⑥ Serving** (batching requests, streaming tokens, safety filters) → **`[→]` ⑦ Apps & agents**. **`[→]`**
 
-> Before we open the box, let's see what it sits on. We'll start at the bottom, with **energy and data centres**: power, cooling and buildings, measured in megawatts.
+---
 
-**[→]** *Chips: the TPU animation plays.*
+#### 10 · The journey of “hi” (`#journey`, 14:30–17:00)
+* **Core point:** Text lives on the CPU and tensors live on the GPU—only tiny 4-byte integer token IDs cross the wire between them, while gigabytes of model weights are read inside GPU memory.
+* **Definitions:**
+  * **BPE Tokenizer (Byte-Pair Encoding):** A fast lookup algorithm that splits raw text into common sub-word pieces and maps each piece to its integer ID.
+  * **PCIe bus:** The physical data highway connecting the host CPU’s memory to the GPU’s high-bandwidth memory (VRAM).
+  * **Prefill vs Decode:** *Prefill* processes all prompt tokens simultaneously in one parallel pass; *decode* generates the response sequentially, one token per pass, feeding each chosen token back in (**autoregressive loop**).
+  * **KV Cache (Key-Value Cache):** The saved attention keys and values of all earlier tokens kept in GPU VRAM (~18 KB/token in Gemma 3 270M) so the model never recomputes the past.
+* **Talking points:**
+  * Follow our two-letter `"hi"` through a real inference server using measured Gemma 3 270M numbers:
+  * **`[→]` ① Input guardrail** (policy/safety filter) → **`[→]` ② Chat template** (adds `<start_of_turn>user...` formatting tags—formatting, not security!) → **`[→]` ③ Tokenizer** (turns the templated string into 10 integers in **6.8 microseconds**; `"hi"` = `2202`) → **`[→]` ④ PCIe transfer** (just **40 bytes** cross into GPU VRAM—the GPU never sees English letters!).
+  * **`[→]` ⑤ Prefill** (all 10 token vectors pass through 18 layers in parallel, populating the KV cache; `"Hi"` scores 93.3%) → **`[→]` ⑥ Decode loop** (11 sequential laps generate 1 token per lap until `<end_of_turn>`; weights stay in VRAM) → **`[→]` ⑦ Detokenizer** (each integer streams immediately back to the CPU as text—that’s why words appear one by one!) → **`[→]` ⑧ Output guardrail**.
+  * Point out the byte meter: **under 100 bytes** crossed PCIe, while the GPU read **6.4 GB** of weights!
+  * **`[→]` Local open weights (L1–L4):** Running `llama.cpp` or `vLLM` locally uses the exact same pipeline—adding grammar masks for guaranteed JSON, unified CPU/GPU memory on Apple silicon (zero PCIe copy), and prefix caching across chat turns. **`[→]`**
 
-> Next, **chips**: GPUs, and Google's TPUs. Inside is a grid of multiply-add units called a *systolic array*. That's this animation: numbers pulse through the grid, passed from neighbour to neighbour every clock tick. Gemini 2.5 was trained on pods of 8,960 TPU chips each.
-
-**[→]**
-
-> **Systems software**: compilers and frameworks like JAX, PyTorch and Keras. They split one model across thousands of chips, and you can pip-install the same tools tonight.
-
-**[→]**
-
-> **Models**: an architecture, usually a Transformer, plus its *weights*, billions of learned numbers. That pile of numbers *is* the model.
-
-**[→]**
-
-> **Data and training**: pre-training on trillions of tokens, then post-training with human feedback and reinforcement learning, plus safety evaluation.
-
-**[→]**
-
-> **Serving**: batching thousands of users onto the chips, streaming tokens back, safety filters, watermarking.
-
-**[→]**
-
-> And **apps and agents** on top.
->
-> If you remember one line: **the model is just a pile of numbers.** Everything below exists to multiply them fast, and everything above makes them useful.
-
-**[→]**
-
-#### 10 · The 1-second journey of "hi" (14:30–16:00)
-
-> Let's follow "hi" through that whole stack, in about one second. It starts on your device, where the keystrokes become bytes: hex 68, hex 69.
-
-**[→]**
-
-> They cross the internet: DNS finds Google, TLS encrypts them, and packets ride the fibre, maybe a subsea cable.
-
-**[→]**
-
-> At Google's front door: load balancing, sign-in, abuse checks, then routing to a model server.
-
-**[→]**
-
-> The Gemini app adds hidden instructions, your chat history and tool definitions, and wraps it all in a chat template.
-
-**[→]**
-
-> The tokenizer turns "hi" into token number 2202.
-
-**[→]**
-
-> Those ten numbers become ten vectors of 640 numbers each, which flow through 18 layers of attention and neural network. That's the Gemma version; Gemini does the same with a far bigger mixture-of-experts on TPUs.
-
-**[→]**
-
-> Decoding: 262,144 scores, a softmax, "Hi" at 93 percent. Pick it, append it, repeat.
-
-**[→]**
-
-> Guardrails check the output, and SynthID nudges word choices to leave an invisible watermark.
-
-**[→]**
-
-> And the reply streams back: "Hi there! How can I help you today?"
->
-> Most of this is eighty years of brilliant plumbing. The new part is stops 5 to 7: tokens in, a neural network, probabilities out. That's what we'll open up for the rest of the talk.
-
-**[→]**
+---
 
 ### Chapter 4 · Inside a neural network
 
-#### 11 · Step 0: everything is numbers (16:00–18:00)
-
-> Chapter 4. Step zero: to a computer, *everything is numbers*.
-
-**[DEMO]** Click **🔍 zoom into the eye**, then hover over a few pixels.
-
-> This is Rear Admiral Grace Hopper, the computing pioneer who wrote the first compiler. Let's zoom into her eye. Keep going, and the photo dissolves into numbers.
->
-> Each pixel is three numbers, red, green and blue, from 0 to 255. Even this tiny 64-by-75 version is 14,400 numbers. That's all a computer ever sees.
-
-**[→]**
-
-> A brain signal is numbers over time: four EEG channels, 800 samples.
-
-**[→]**
-
-> Text is token IDs. "The" is token 818. "Wombat" is two tokens, "wom" and "bat".
-
-**[→]**
-
-> A protein is a string of amino-acid letters, and those become numbers too.
->
-> That's why one technology works across all of science: once your data is numbers, it's the same problem.
-
-**[→]**
-
-#### 12 · Tensors: numbers stacked in boxes (18:00–19:00)
-*The Blender clip loops, with captions.*
-
-> We need one word: **tensor**. A tensor is just numbers stacked in a box. One number is a scalar; a list is a vector; a grid is a matrix. A stack of grids is a 3D tensor, and a colour photo is exactly that: height × width × 3. A batch of photos is a 4D tensor.
->
-> A neural network is a machine that turns tensors into other tensors, which is literally why Google's library is called *TensorFlow*. GPUs and TPUs are machines built to crunch them.
-
-**[→]**
-
-#### 13 · ▶ A neuron (19:00–19:30)
-*The video plays by itself (21 s).*
-
-> *(0 s)* Here's the atom of the whole thing: one artificial neuron. Three inputs: 0.9, 0.2 and 0.6. Each wire has a weight: blue means positive, red means negative, and thickness shows size.
->
-> *(4 s)* Each input is multiplied by its weight.
->
-> *(7 s)* The neuron adds them up, plus a *bias* of minus 0.2, to get 1.02.
->
-> *(10 s)* Then it squashes that through an S-shaped curve called the sigmoid, and 1.02 becomes 0.73.
->
-> *(15 s)* In symbols: ŷ equals σ of w dot x plus b. **A neuron is a weighted vote.**
-
-**[→]**
-
-#### 14 · One artificial neuron (19:30–22:00)
-
-> Now let's play with one. These are Fisher's iris flowers, from 1936. Across the bottom is petal length; up the side is petal width. Blue dots are setosa, orange are versicolor. Our neuron gets two inputs, two weights and a bias.
->
-> Right now it's wrong on purpose. The yellow line is where the neuron is exactly 50:50, and every flower is on the "setosa" side, so it scores 50 out of 100.
-
-**[DEMO]** Drag **b** slowly from −8 up to about −4.
-
-> The bias is how easily the neuron fires. Watch the line sweep in... and that's 100 out of 100.
-
-**[DEMO]** Drag **w₁** and **w₂**.
-
-> The weights are what the neuron pays attention to. Change how much it cares about length versus width, and the line tilts. The arrow is the weight vector: it always points straight across the line, towards "more orange". The shading is the neuron's confidence.
-
-**[DEMO]** Switch to **versicolor vs virginica**, then press **⚙️ let it learn**.
-
-> Now a harder pair. These overlap, so no straight line can be perfect. Let it learn: this is chapter 5 in miniature. It nudges w₁, w₂ and b downhill until it reaches 94 out of 100. The best any straight line can do here is 97.
->
-> So: **weights are what the neuron cares about; the bias is how easily it fires.**
-
-**[→]**
-
-#### 15 · Why bend? Activation functions (22:00–23:00)
-
-**[DEMO]** Click through *step*, *sigmoid*, *tanh*, *ReLU* and *GELU*.
-
-> Why does the neuron bend its sum with that S-curve? Here are the options. The 1943 neuron used a hard step: all or nothing. The problem is that it has no slope, so it can't learn by rolling downhill, and you'll see in a few minutes why that matters.
->
-> Sigmoid is a smooth step. Tanh is the same thing centred on zero. ReLU is max of zero and z: dead simple, and it powered the 2012 boom. GELU is a smooth ReLU, and it's used inside Transformers like Gemma.
->
-> And here's why we need a bend at all: **two straight-line steps in a row are just one straight-line step.** W₂ times W₁ is just another matrix. Without the bend, a hundred layers collapse into one. *The bend is what makes deep learning deep.*
-
-**[→]**
-
-#### 16 · ▶ A layer is a matrix (23:00–23:30)
-*Video (22 s).*
-
-> *(0 s)* Now put four neurons side by side, all looking at the same three inputs. That's twelve weights.
->
-> *(2 s)* Watch each neuron's weights fly into one row of a grid: a matrix, W.
->
-> *(7 s)* The inputs become a column, x. Add the biases, b, and apply σ.
->
-> *(10 s)* Row one times the column is our neuron from before: 1.02, then 0.73.
->
-> *(16 s)* The other rows give the other neurons.
->
-> *(18 s)* So **a whole layer is one matrix multiplication**: a equals σ of W x plus b.
-
-**[→]**
-
-#### 17 · A whole layer = one matrix multiplication (23:30–25:00)
-
-> Same numbers; now you drive.
-
-**[DEMO]** Press **next neuron ▸** four times. Hover a matrix entry to light up its wire.
-
-> Row one: 1.2 times 0.9, minus 0.8 times 0.2, plus 0.5 times 0.6, which gives 1.22. Then row two, row three, row four. Every entry of the matrix is one wire in the picture.
-
-**[DEMO]** Press **next neuron ▸** twice more.
-
-> Add the biases, so 1.22 becomes 1.02, then squash. We get 0.73, 0.58, 0.57 and 0.33, exactly as in the video.
->
-> This is why AI runs on GPUs and TPUs: they're chips built to do millions of these row-times-column products at the same time.
-
-**[→]**
-
-#### 18 · ▶ Layers warp space (25:00–25:30)
-*Video (23.5 s).*
-
-> *(0 s)* Here's another way to see a layer, the 3Blue1Brown way. Two classes, blue and orange, are tangled together, so no straight line separates them.
->
-> *(5 s)* In layer one, the matrix stretches and rotates the entire plane, grid and points together.
->
-> *(7.5 s)* The bias shifts it.
->
-> *(9 s)* And tanh bends it.
->
-> *(12 s)* Layer two does the same again: stretch, shift, bend.
->
-> *(19 s)* And now a single straight line separates them.
-
-**[→]**
-
-#### 19 · Tensor transformations: a layer warps space (25:30–28:00)
-
-> Let's do that by hand. The green arrow, i-hat, and the red arrow, j-hat, show where the matrix sends the two basic directions. The first column of the matrix is where i-hat lands; the second is where j-hat lands. Everything else follows along.
-
-**[→]**
-
-> This is a rotation.
-
-**[→]**
-
-> This is a shear: j-hat tips over and the whole grid slants.
-
-**[DEMO]** Drag one of the arrow tips, then click **squash**.
-
-> Drag the tips and the grid follows. The number in the corner is the *determinant*: how much area grows. Squash the plane flat and the determinant goes to zero. Information is destroyed, and no later layer can undo that.
-
-**[→]**
-
-> The bias shifts the whole plane.
-
-**[→]**
-
-> And here's the bend: tanh squashes everything into the dashed box, and straight grid lines become curves. That curving is the only non-straight thing in the whole picture.
->
-> A layer with 640 inputs does exactly this, in 640 dimensions: **stretch, rotate, shift, bend.**
-
-**[→]**
-
-#### 20 · Deep learning = warp, warp, warp (28:00–29:30)
-
-> Deep learning is warp, warp, warp, until the problem is simple.
-
-**[→]** *Plays all 9 stages, about 15 s.*
-
-> This is a real trained network with just 21 numbers in it. Layer one stretches and rotates, shifts, and bends: the moons get squeezed into an S-shaped band. Layer two unfolds it. Layer three pushes the two classes into opposite corners. And now the final straight line separates them, 100 percent correct.
->
-> That's the central intuition of deep learning. **Each layer makes the problem a little simpler, until a straight line is enough.** Big networks do it in thousands of dimensions, dozens of layers deep.
-
-**[→]**
-
-#### 21 · Weights: the knobs (29:30–31:00)
-
-> Everything we've built is controlled by weights: the knobs. Here are some real ones.
->
-> This image is one weight matrix from Gemma 3: the *query* matrix in its first attention layer. That's 655,360 numbers at one pixel each, blue for positive and red for negative. The four blocks are four attention heads, which you'll meet in chapter 6.
-
-**[→]** *Zooms into the yellow box.*
-
-> Let's zoom into one little patch, and there they are: zero point zero one two, minus zero point zero three one, and so on. **Nobody wrote these numbers. They were learned.** This is what "knowledge" looks like inside a neural network.
->
-> And how many knobs are there? Our neuron had 3. The warp network had 21. Gemma 3 270M has 268 million, and 63 percent of those are just the word table. GPT-3 has 175 billion. Frontier models are bigger again, and Gemini 4's size isn't disclosed.
-
-*Optional:* click **embeddings** to show a slice of the word table (one row per word).
-
-**[→]**
+#### 11 · Step 0: Everything is numbers (`#tensors`, 17:00–19:00)
+* **Core point:** One mathematical architecture can process photos, brainwaves, language, and proteins because every physical measurement or symbol can be encoded as a structured grid of numbers.
+* **Talking points:**
+  * **`[DEMO]`** *Click **🔍 zoom into the eye** on Rear Admiral Grace Hopper’s portrait and hover over pixels.* Up close, a human face is nothing more than a grid where each square holds three integers—Red, Green, Blue—from 0 to 255 (14,400 numbers even at 64×75 resolution).
+  * **`[→]`** **Brainwaves (EEG):** Voltage sampled over time—4 channels × 800 numbers.
+  * **`[→]`** **Text:** Sequence of token IDs (`"The"` = 818; `"wombat"` splits into `"wom"` + `"bat"`).
+  * **`[→]`** **Proteins:** Chains of 20 standard amino acids mapped to integers 0–19. Once nature is written as numbers, finding patterns becomes geometry. **`[→]`**
+
+---
+
+#### 12 · Tensors: numbers stacked in boxes (`#tensors2`, 19:00–20:00)
+* **Core point:** In computer science, a *tensor* is simply a box of numbers generalized to any number of dimensions (axes).
+* **Definitions:**
+  * **Tensor & Rank:** An array of numbers indexed along $k$ axes (*rank* $k$): **Scalar** (rank 0, single number), **Vector** (rank 1, list/column), **Matrix** (rank 2, 2D table), **3D Tensor** (rank 3, e.g., image height × width × colour), **4D Tensor** (rank 4, a *batch* of images processed together).
+* **Talking points:**
+  * Physicists attach coordinate-transformation rules to tensors, but in machine learning a tensor is simply an $N$-dimensional container of numbers.
+  * Watch the cubes stack from scalar → vector → matrix → RGB image → batch of images. A neural network is an assembly line where tensors flow in, get multiplied and bent into new shapes, and flow out as predictions—literally **TensorFlow**. **`[→]`**
+
+---
+
+#### 13 · One artificial neuron: a weighted vote (`#neuron`, 20:00–22:30)
+* **Core point:** A single artificial neuron computes a weighted vote over its inputs, shifts the result by a threshold (*bias*), and squashes it into a probability—drawing a straight decision boundary across input space.
+* **Definitions:**
+  * **Fisher’s Iris dataset (1936):** Classic botanical dataset of 150 flowers across three species (*Iris setosa*, *Iris versicolor*, *Iris virginica*), measured by petal and sepal length/width.
+  * **Weights ($w_1, w_2$):** Multipliers telling how strongly—and with what sign—each input feature votes toward the output. Geometrically, the vector $\mathbf{w}=(w_1, w_2)$ sets the orientation of the boundary and points perpendicular to it.
+  * **Bias ($b$):** An offset added to the sum that shifts the boundary without tilting it—controlling how easily the neuron fires.
+  * **Decision boundary:** The line $w_1 x_1 + w_2 x_2 + b = 0$ where the neuron’s output is exactly $\sigma(0) = 0.50$ (50 : 50).
+* **Talking points:**
+  * Look at the three flower photos on the bottom right so everyone knows what we’re measuring: *Iris setosa* (blue) has tiny stubby inner petals (~1.5 × 0.2 cm), *Iris versicolor* (orange) has medium petals (~4.3 × 1.3 cm), and *Iris virginica* (green) has large petals (~5.6 × 2.0 cm).
+  * Each dot on the chart is a real flower plotted by petal length ($x_1$) vs petal width ($x_2$). Right now our neuron calls every flower *setosa* (50/100 correct).
+  * **`[DEMO]`** *Drag **bias $b$** from $-8$ up to $\approx -4$.* Watch the yellow 50:50 line sweep between blue and orange—**100 out of 100**! *Bias* is how easily the neuron fires.
+  * **`[DEMO]`** *Drag **$w_1$** and **$w_2$**, and hover a flower dot.* Changing weights tilts the boundary—*weights* decide which measurements the neuron cares about. Notice the yellow arrow $\mathbf{w}$ always points perpendicular to the boundary toward higher output confidence.
+  * **`[DEMO]`** *Click the **I. virginica** card (or **versicolor vs virginica**), then click **⚙️ let it learn**.* Notice orange (*versicolor*) stays right where it was, and green (*virginica*) overlaps with it—no straight line can ever get 100%. Clicking *let it learn* previews Chapter 5: calculus nudges $w_1, w_2, b$ automatically up to **94/100** (best possible line is 97). **`[→]`**
+
+---
+
+#### 14 · Why bend? Activation functions (`#activation`, 22:30–23:30)
+* **Core point:** Stacking linear layers without a nonlinear curve (“bend”) between them collapses mathematically into a single flat layer—**nonlinearity is what makes deep learning deep**.
+* **Definitions:**
+  * **Activation function:** A nonlinear function applied to each neuron’s weighted sum $z$.
+  * **Step function (1943):** Jumps abruptly from 0 to 1; flat everywhere ($0$ slope), so calculus gives zero signal on how to improve weights.
+  * **Sigmoid ($\sigma(z) = \frac{1}{1+e^{-z}}$) & Tanh:** Smooth S-curves squashing $(-\infty, \infty)$ into $(0,1)$ or $(-1,1)$ with non-zero slopes for learning.
+  * **ReLU ($\max(0, z)$) & GELU:** Zero for negative inputs, linear (or smoothly curved in GELU) for positive inputs—cheap to compute and resistant to vanishing slopes in deep networks; GELU is used in Gemini and Gemma.
+  * **Linear collapse:** $W_2(W_1 \mathbf{x}) = (W_2 W_1)\mathbf{x} = W_{\text{single}}\mathbf{x}$—multiplying matrices without an intervening bend can only ever draw flat hyperplanes.
+* **Talking points:**
+  * **`[DEMO]`** *Click through **step → sigmoid → tanh → ReLU → GELU**.* Why did neural networks abandon the 1943 hard step? Because a flat cliff gives zero slope—you can’t feel which way is downhill! Smooth curves and ReLU/GELU preserve slope so networks can learn.
+  * Point to the red card: if you apply two straight-line transformations in a row without bending in between, algebra collapses them into one matrix. A 100-layer linear network has no more expressive power than a 1-layer network! **`[→]`**
+
+---
+
+#### 15 · ▶ A neuron (animation) (`#v-neuron`, 23:30–24:00)
+* **Core point:** Watch all three ingredients of one artificial neuron—weighted sum, bias shift, and nonlinear squash—lock into a single clean formula before we scale to a full layer.
+* **Talking points** *(21 s video plays automatically)*:
+  * *(0 s)* Three inputs $(0.9, 0.2, 0.6)$ travel along wires with weights $(+1.2, -0.8, +0.5)$—blue positive, red negative, thickness proportional to strength.
+  * *(7 s)* Multiply and sum with bias $-0.2$: $1.08 - 0.16 + 0.30 - 0.20 = 1.02$.
+  * *(10 s)* Pass $1.02$ through the sigmoid bend to get **$\hat{y} = 0.73$**—remember $1.02 \to 0.73$ for Neuron #1 on the very next slide! **`[→]`**
+
+---
+
+#### 16 · A whole layer = one matrix multiplication (`#layer`, 24:00–25:30)
+* **Core point:** Putting many neurons side by side in a layer—each looking for a different pattern in the same inputs—is mathematically identical to one **matrix-vector multiplication**.
+* **Definitions:**
+  * **Dense (fully connected) layer:** A bank of neurons where every input connects to every neuron in the layer.
+  * **Dot product:** Multiplying two equal-length lists element-by-element and summing the products ($\sum_j W_{ij} x_j$).
+  * **Weight matrix ($W$):** A 2D table whose $i$-th row holds all incoming weights of the $i$-th neuron.
+* **Talking points:**
+  * One neuron asks one question of the inputs; four neurons ask four independent questions at once.
+  * **`[DEMO]`** *Click **next neuron ▸** 4 times; hover a matrix cell to light up its wire.* Row 1 dotted with input column $\mathbf{x}$ gives $1.22$—our exact neuron from the animation! Rows 2, 3, and 4 compute the other three neurons.
+  * **`[DEMO]`** *Click **next neuron ▸** twice more.* Add bias vector $\mathbf{b}$ ($1.22 - 0.2 = 1.02$) and apply $\sigma$ element-wise to get $(0.73, 0.58, 0.57, 0.33)$. **`[→]`**
+
+---
+
+#### 17 · ▶ A layer is a matrix (animation) (`#v-layer`, 25:30–26:00)
+* **Core point:** Visual proof of Equation ①: $\mathbf{a} = \sigma(W\mathbf{x} + \mathbf{b})$.
+* **Talking points** *(22 s video)*:
+  * Watch the tangled web of 12 wires lift right off the diagram and pack neatly into the 4 rows of matrix $W$.
+  * That single notation—$\mathbf{a} = \sigma(W\mathbf{x} + \mathbf{b})$—turns messy wiring into clean linear algebra that hardware can execute in parallel. **`[→]`**
+
+---
+
+#### 18 · ▶ Layers warp space (animation) (`#v-warp`, 26:00–26:30)
+* **Core point:** Geometrically, a neural network doesn’t draw a complicated boundary through fixed points—it **warps the space itself** until tangled classes become separable by a straight line.
+* **Talking points** *(23 s video)*:
+  * Watch two interlocking crescents (blue and orange) that no straight line could ever divide.
+  * Each layer stretches and rotates the entire grid ($W$), shifts it ($\mathbf{b}$), and bends it ($\tanh$)—until the crescents untangle and a single straight line cleanly separates them. **`[→]`**
+
+---
+
+#### 19 · Tensor transformations: a layer warps space (`#warp`, 26:30–29:00)
+* **Core point:** Every matrix multiplication is a geometric stretch, rotation, or shear determined completely by where the unit basis vectors $\hat{\imath}$ and $\hat{\jmath}$ land; the activation function is what bends straight grid lines into curves.
+* **Definitions:**
+  * **Linear transformation ($W\mathbf{x}$):** Maps space while keeping grid lines straight, parallel, and evenly spaced; Column 1 of $W$ is where $\hat{\imath}=(1,0)$ lands, Column 2 is where $\hat{\jmath}=(0,1)$ lands.
+  * **Determinant ($\det W$):** The signed factor by which a matrix scales area (or volume). If $\det W = 0$, space collapses onto a lower dimension, irreversibly erasing information.
+  * **Affine + nonlinear map ($\tanh(W\mathbf{x}+\mathbf{b})$):** Linear warp ($W$), origin shift ($\mathbf{b}$), and coordinate-wise curve ($\tanh$).
+* **Talking points:**
+  * **`[→]`** **Rotate** → **`[→]`** **Shear** (slanting the grid).
+  * **`[DEMO]`** *Drag an arrow tip, then click **squash**.* When $\hat{\imath}$ and $\hat{\jmath}$ line up, $\det W = 0$: the entire 2D plane flattens onto a 1D line—information lost forever!
+  * **`[→]`** **Shift** (bias $\mathbf{b}$ moves the grid) → **`[→]`** **Bend** ($\tanh$ curves the straight lines into the $[-1,1]$ box). A 640-dimensional layer in Gemma performs this exact **stretch, rotate, shift, bend** in 640D space. **`[→]`**
+
+---
+
+#### 20 · Deep learning = warp, warp, warp (`#deep`, 29:00–30:30)
+* **Core point:** **Depth** composes simple warps step by step—each layer untangles the data’s geometry a little further until the final classification is trivial.
+* **Definitions:**
+  * **Representation learning:** Automatically transforming raw measurements across successive hidden layers into an internal coordinate space where meaningful categories separate cleanly.
+* **Talking points:**
+  * **`[→]`** *(Plays all 9 stages across 3 layers)* Imagine two colours painted on a crumpled ball of paper. Instead of cutting with microscopic curved scissors, a deep network gently unfolds the paper crease by crease—using just **21 learned numbers** here to hit **100% accuracy** with a straight cut at the end. **`[→]`**
+
+---
+
+#### 21 · Weights: the knobs (`#weights`, 30:30–32:00)
+* **Core point:** Everything an AI model knows—syntax, facts, physics heuristics—exists strictly as millions or billions of learned decimal numbers stored in weight matrices.
+* **Definitions:**
+  * **Parameters:** All adjustable numbers in a model (every entry of every weight matrix $W$ and bias vector $\mathbf{b}$).
+* **Talking points:**
+  * Left: a real 655,360-number weight matrix from Layer 0 of **Gemma 3 270M**, drawn at one pixel per weight (blue positive, red negative).
+  * **`[→]`** *(Zooms to raw decimals)* `0.012`, `−0.031`… Nobody hand-coded a single number here; every one was tuned automatically during training.
+  * Right: the logarithmic ladder from our 3-knob Iris neuron and 21-knob moon net up to **268,098,176** knobs in Gemma 3 270M (63% in the token embedding table alone) and 175B in GPT-3. Now ask: if Gemma has 268M weights, how does physical silicon multiply 268M numbers for *every single word*? **`[→]`**
+
+---
+
+#### 22 · How GPUs & TPUs work (`#chips`, 32:00–34:00)
+* **Core point:** Arithmetic on silicon is extraordinarily cheap; **fetching numbers from off-chip memory burns ~170× more energy**, so AI accelerators win by massive parallelism and passing data rhythmically between neighbouring cells.
+* **Definitions:**
+  * **MAC (Multiply-Accumulate):** The atomic hardware step of matrix math: $s \leftarrow s + w \times x$.
+  * **Memory wall (von Neumann bottleneck):** The speed and energy penalty of shuttling weights and activations back and forth between off-chip DRAM and compute cores.
+  * **Systolic array (Kung & Leiserson, 1978):** A 2D grid of MAC cells where weights stay stationary and inputs/partial sums pulse from neighbour to neighbour every clock tick—like blood pumped by a heartbeat (*systole*)—eliminating repeated memory trips.
+* **Talking points:**
+  * Run our 4×3 layer $W$ across 4 tokens (48 MACs total) and watch **ticks** (time) and **memory fetches** (red counter):
+  * **`[→]` CPU:** 4 powerful sequential cores—**12 ticks, 96 memory trips**.
+  * **`[→]` GPU:** Built to shade millions of pixels simultaneously—16 cores finish in **3 ticks**, though a naive uncached pass still makes **96 trips** (real NVIDIA H100s use caches + 528 Tensor Cores to cut trips dramatically).
+  * **`[→]` TPU:** Load the 12 weights once and freeze them in place; stream inputs down and running sums right—top-left drops out **1.22** (our exact row-1 sum!), cutting memory trips from 96 down to **24**.
+  * **`[→]` Energy:** At 45 nm, one 32-bit multiply costs **3.7 pJ**, while reading one number from off-chip DRAM costs **640 pJ (~170× more)**! Data movement—not math—dominates AI power.
+  * **`[→]` Zoom out:** One 128×128 Matrix Multiply Unit (16,384 MACs/tick @ 1.75 GHz) → 8 MXUs on a TPU v5p chip (459 TFLOP/s) → optical pods of **8,960** (v5p) or **9,216** (Ironwood) chips acting as one supercomputer. **`[→]`**
+
+---
 
 ### Chapter 5 · How machines learn
 
-#### 22 · Learning step 1: measure how wrong you are (31:00–33:00)
+#### 23 · Learning step 1: measure how wrong you are (`#loss`, 34:00–36:00)
+* **Core point:** To learn automatically, we first collapse all prediction errors across a dataset into a single scalar score—the **loss function**—turning “learning” into finding the lowest point of a mathematical surface.
+* **Definitions:**
+  * **Loss (objective / cost) function $L$:** A single number quantifying how poorly the current parameters fit the training data (lower = better).
+  * **Mean Squared Error (MSE):** $L = \frac{1}{N}\sum_i (\hat{y}_i - y_i)^2$—squaring each residual makes every error positive and penalizes big misses heavily (invented by Gauss & Legendre around 1805 to track planetary orbits!).
+* **Talking points:**
+  * Plot NASA’s 8 planets: log distance from the Sun ($\log_{10} a$) vs log orbital period ($\log_{10} T$). Each red square literally has side length equal to that planet’s vertical miss, so its **area is the squared error**.
+  * **`[DEMO]`** *Drag the yellow line handles to shrink the red squares.*
+  * **`[→]`** *(Best fit)* Minimizing average square area lands at slope **$w = 1.498 \approx \frac{3}{2}$**—rediscovering **Kepler’s Third Law ($T^2 \propto a^3$, 1619)** straight from raw numbers!
+  * **`[→]`** *(Raw linear axes)* Flip back from log-log to ordinary units to see our straight line become Kepler’s classic power-law curve. **`[→]`**
 
-> Chapter 5. How do you set 268 million knobs? Step one is to measure how wrong you are.
->
-> Our data is the eight planets. Across is distance from the Sun; up is the time to go around once. Both are on log scales. Can a machine rediscover a law of nature from data?
->
-> Our model is a straight line with two knobs: slope w and intercept b. Each red square is one planet's error, *squared*, and literally drawn as a square. The loss, L, is their average area, and right now it's 0.35.
+---
 
-**[DEMO]** Drag the yellow handles to shrink the squares.
+#### 24 · ▶ Gradient descent (animation) (`#v-descent`, 36:00–36:30)
+* **Core point:** Without a closed-form shortcut, a network finds good weights like a hiker in thick mountain fog—feeling the local slope underfoot and stepping downhill.
+* **Definitions:**
+  * **Derivative ($\frac{dL}{dw}$):** The local slope of the loss with respect to weight $w$ (positive = uphill to the right, so step left).
+  * **Learning rate ($\eta$):** A hyperparameter scaling how big a step we take per update ($w \leftarrow w - \eta \frac{dL}{dw}$).
+* **Talking points** *(18.5 s video)*:
+  * *(2.5 s)* Measure the slope and step opposite to it: $w \leftarrow w - \eta \frac{dL}{dw}$.
+  * *(3.5 s)* If $\eta$ is too large, you leap right across the valley and bounce higher.
+  * *(9.6 s)* With a sensible $\eta$, steps automatically shorten as the valley floor flattens out, settling cleanly into the minimum. **`[→]`**
 
-> Make the squares smaller... smaller... That's the loss function written up here: the average of prediction minus truth, squared. **Learning means making the red squares as small as possible.**
+---
 
-**[→]** *Best fit; the green card appears.*
+#### 25 · Learning step 2: roll downhill (`#descent`, 36:30–38:30)
+* **Core point:** **Gradient descent** generalizes “stepping opposite the slope” to any number of knobs simultaneously—and its stability hinges critically on the learning rate $\eta$.
+* **Definitions:**
+  * **Loss landscape:** The altitude map of error $L$ plotted over every possible combination of model parameters.
+  * **Gradient ($\nabla L$):** The vector collecting the partial derivative $\frac{\partial L}{\partial w_i}$ along every parameter axis; $-\nabla L$ points in the direction of steepest descent.
+* **Talking points:**
+  * Every point on this contour map is one candidate line $(w, b)$ for Kepler’s planets (yellow = terrible fit, deep blue = low error; green arrow = $-\nabla L$).
+  * **`[→]` $\eta = 0.1$:** Smooth, steady descent into the Kepler minimum in ~180 steps.
+  * **`[→]` $\eta = 0.6$:** Reaches the valley fast (~27 steps) but zig-zags violently off the steep canyon walls.
+  * **`[→]` $\eta = 0.8$:** **Divergence**—each bounce overshoots higher up the opposite wall until the error explodes to infinity! **`[→]`**
 
-> Best fit: w equals 1.498. That's Kepler's third law! T squared is proportional to a cubed, which means log T is one and a half times log a. Kepler needed years of Tycho Brahe's observations to find it, in 1619. We needed one button.
+---
 
-**[→]** *Raw axes.*
+#### 26 · ▶ Real loss landscapes (`#landscape`, 38:30–39:15)
+* **Core point:** In 268 million dimensions, calculus works identically—and tricks like **momentum** help optimizers glide past shallow traps into deep valleys.
+* **Definitions:**
+  * **Non-convex landscape, Local minimum & Saddle point:** Rugged surfaces with multiple valleys; in high dimensions, most flat spots aren’t dead-end bowls (*local minima*) but *saddle points* that curve up in some directions and down in others.
+  * **Momentum & Adam:** Optimizers that accumulate a running velocity of past gradients (like a heavy ball rolling downhill) and adapt step sizes per parameter.
+* **Talking points** *(Blender loop)*:
+  * Watch the glowing ball roll through a rugged terrain, escape a shallow side basin thanks to momentum, and settle into the global valley.
+  * Now face the million-dollar question: if we wiggle 268M knobs one at a time to test each slope, one step would require 268 million forward passes. How do we compute all 268M slopes *at once*? **`[→]`**
 
-> On ordinary axes, our straight line becomes the familiar curve.
+---
 
-**[→]**
+#### 27 · ▶ Backpropagation (animation) (`#v-backprop`, 39:15–39:45)
+* **Core point:** **Backpropagation** applies the chain rule of calculus backward from the final loss—computing every weight’s exact sensitivity in a single reverse sweep.
+* **Talking points** *(23 s video)*:
+  * *(2.6 s)* **Forward pass (blue, left → right):** Input $x=2 \times w=0.5 \to z=1.0 \to \hat{y}=0.731 \to \text{loss } L = (\hat{y}-1)^2 = 0.0723$.
+  * *(7 s)* **Backward pass (green, right → left):** Each simple link knows its own local derivative: $-0.538$, $0.197$, and $2$.
+  * *(12 s)* **Chain rule:** Multiply the local sensitivities along the chain: $(-0.538)\times 0.197 \times 2 = -0.2115 = \frac{\partial L}{\partial w}$. Nudge $w$ up (opposite the negative slope), and the loss drops! **`[→]`**
 
-#### 23 · ▶ Gradient descent (33:00–33:30)
-*Video (18.5 s).*
+---
 
-> *(0 s)* But how do you minimise without a magic button? Picture the loss as a landscape, and roll downhill.
->
-> *(2.5 s)* The rule: look at the slope, and take a step downhill of size η, the *learning rate*. w becomes w minus η times dL/dw.
->
-> *(3.5 s)* Take too big a step and you overshoot, bouncing back and forth across the valley.
->
-> *(9.6 s)* Get it just right, and the steps shrink as the slope flattens, all the way into the minimum.
+#### 28 · Learning step 3: backpropagation assigns the blame (`#backprop`, 39:45–41:45)
+* **Core point:** Think of a train of gears—knowing each gear pair’s local ratio lets one backward sweep determine how turning the very first knob moves the final needle, for ~2× the work of one forward pass.
+* **Definitions:**
+  * **Chain rule ($\frac{\partial L}{\partial w} = \frac{\partial L}{\partial \hat{y}}\frac{\partial \hat{y}}{\partial z}\frac{\partial z}{\partial w}$):** The rate of change through a chain of functions is the product of each link’s local rate of change.
+  * **Backpropagation (reverse-mode automatic differentiation):** Caching intermediate activations on the forward pass, then sweeping error sensitivities right-to-left so all $N$ parameter gradients are computed in one pass (explaining the “4” backward FLOPs + “2” forward FLOPs in $C \approx 6ND$!).
+* **Talking points:**
+  * **`[→]` Forward** (values flow left-to-right) → **`[→]` Backward** (blame flows right-to-left) → **`[→]` Update** (weights step opposite gradients, loss drops) → **`[→]` Train ×20** (watch error converge toward zero). **`[→]`**
 
-**[→]**
+---
 
-#### 24 · Learning step 2: roll downhill (33:30–35:30)
+#### 29 · Put it together: watch a network learn (`#train`, 41:45–44:15)
+* **Core point:** Running **Forward → Loss → Backward → Update** in a loop spontaneously organizes simple neurons into a hierarchy of features—edges first, curves second, full shapes last.
+* **Definitions:**
+  * **Epoch / Iteration:** One pass of computing predictions, loss, backward gradients, and weight updates.
+  * **XOR (Exclusive-OR):** Classic nonlinear task where opposite quadrants share a label—impossible for a single linear boundary, trivial once hidden neurons bend space.
+* **Talking points:**
+  * **`[→]`** *(Starts live training in browser—~50 lines of vanilla JS)* Watch two interleaved spirals untangle in real time! Look at the little square thumbnails inside each neuron: Layer 1 discovers straight diagonal cuts; Layer 2 combines cuts into curves; Layer 3 weaves curves into spirals—emergent hierarchy without a single hand-coded rule.
+  * **`[DEMO]`** *Select **XOR** with **1 hidden layer** and **1 neuron/layer**—watch it stall at ~63%, recreating Minsky & Papert’s 1969 roadblock live—then restore 3 layers / 6 neurons to watch it snap to 100%.*
+  * Emphasize: **That 4-step loop is all of deep learning.** Gemini runs the exact same loop on bigger matrices. **`[→]`**
 
-> Here's the real landscape for our Kepler problem. Every point is a choice of slope and intercept, and the colour shows how wrong that choice is: yellow is bad, dark blue is good. The green arrow points downhill.
-
-**[→]**
-
-> With a learning rate of 0.1 it's slow and steady: about 180 steps. Watch the line on the right swing into place while the loss underneath falls.
-
-**[→]**
-
-> At 0.6 it's much faster, but it zig-zags across the valley.
-
-**[→]**
-
-> At 0.8: boom. Each step overshoots more than the last, and it diverges. Choosing the learning rate is one of the black arts of deep learning.
-
-*Optional:* click anywhere on the map to drop the ball somewhere new.
-
-**[→]**
-
-#### 25 · ▶ Real loss landscapes (35:30–36:15)
-*Blender clip; it loops.*
-
-> With two knobs, we can draw the landscape. Gemma has 268 million knobs, so its landscape has 268 million dimensions, full of valleys, ridges and little dips. Here the ball gets caught in a side basin, escapes on momentum, and settles in the deepest valley.
->
-> Gradient descent doesn't care how many dimensions there are. It just needs the slope in every direction, and *that* is the gradient. So how do you compute 268 million slopes?
-
-**[→]**
-
-#### 26 · ▶ Backpropagation (36:15–36:45)
-*Video (23 s).*
-
-> *(0 s)* The answer is *backpropagation*. Here's a tiny network drawn as a chain: x times w, then σ, then the squared error.
->
-> *(2.6 s)* On the forward pass, numbers flow left to right: z is 1, ŷ is 0.731, and the loss is 0.0723.
->
-> *(7 s)* On the backward pass, blame flows right to left. Each box only knows its own local slope: −0.538, 0.197, and 2.
->
-> *(12 s)* The *chain rule* says: multiply them. That gives −0.2115, which is how much the loss changes if you nudge w.
->
-> *(16 s)* So nudge w the other way...
->
-> *(19 s)* ...and the loss drops.
-
-**[→]**
-
-#### 27 · Learning step 3: backpropagation assigns the blame (36:45–38:45)
-
-**[→]**
-
-> On the forward pass, blue pulses carry the values: w x is 1, ŷ is 0.731, and the loss is 0.072.
-
-**[→]**
-
-> On the backward pass, green pulses carry the blame. Each box multiplies by its own local slope, and the gradients appear under every node.
-
-**[→]**
-
-> Now nudge the weights against their gradients, and the loss drops.
-
-**[→]**
-
-> Do it twenty times: forward, backward, nudge. The loss falls towards zero.
->
-> Each box only needs its *local* slope, and the chain rule multiplies them together. That's how one backward pass through a 268-million-weight network gives you all 268 million slopes at once, for roughly twice the cost of the forward pass. That's where the 4 in "6 N D" comes from.
-
-**[→]**
-
-#### 28 · Put it together: watch a network learn (38:45–41:15)
-
-> Let's put it all together. This is a real neural network training live, in this web page: about fifty lines of maths, no libraries. The task is two interleaved spirals, the hardest of these toy problems.
-
-**[→]** *Training starts.*
-
-> Forward, loss, backward, update, hundreds of times a second. Watch the decision boundary on the left.
->
-> On the right, every little square is one neuron's opinion over the whole plane. The first layer learns simple slanted edges, the next layer combines those into curves, and the output combines the curves into spirals. Nobody told it to do that.
-
-**[DEMO]** Click **1 hidden layer**, then **XOR** with **neurons/layer = 1**, then back to **3** layers.
-
-> With one hidden layer, it struggles. And XOR with a single neuron is impossible: you can't separate it with one straight line. That's the Minsky and Papert result that helped trigger the first winter. Add neurons and layers, and it's trivial.
->
-> That loop, forward, loss, backward, update, is **all of deep learning**. Gemini runs the same loop, just with vastly more numbers.
-
-**[→]**
+---
 
 ### Chapter 6 · From networks to Gemini
 
-#### 29 · Words become vectors (41:15–42:45)
+#### 30 · Words become vectors: a map of meaning (`#embed`, 44:15–45:45)
+* **Core point:** An embedding table turns discrete symbols into continuous coordinates in high-dimensional space, where **semantic similarity becomes geometric closeness** and **relationships become directions**.
+* **Definitions:**
+  * **Vector embedding:** A learned lookup table assigning each vocabulary token a dense list of numbers ($d = 640$ in Gemma 3 270M).
+  * **Dimensionality reduction (t-SNE / PCA):** Projecting high-dimensional points onto a 2D map so nearby vectors stay nearby visually.
+  * **Cosine similarity:** Measuring how closely two vectors point in the same direction.
+* **Talking points:**
+  * Token IDs alone are arbitrary labels (`"Jupiter"`’s ID number tells you nothing about planets). So Gemma gives every token 640 learned coordinates.
+  * Look at this real t-SNE map of Gemma 3’s embeddings: planets cluster, elements cluster, emotions cluster—nobody gave it a taxonomy; tokens that appear in exchangeable contexts get pulled together by gradient descent! Notice `"lead"` sitting near both metals and verbs.
+  * **`[→]`** *(Highlight Jupiter)* Out of all **262,144** tokens in Gemma’s vocabulary, Jupiter’s nearest neighbours by cosine similarity are *Saturn, Venus, Neptune, Mars, Titan, Pluto, Uranus*—and *Zeus*!
+  * Even directions carry meaning: `vec("king") − vec("man") + vec("woman") ≈ vec("queen")`; `vec("sodium") − vec("Na") + vec("K") ≈ vec("potassium")` (14 of 18 tested analogies succeed; misses left in honestly). **`[→]`**
 
-> Chapter 6: from networks to Gemini. Here's the first problem. Networks need numbers, but we have words. The solution is to give every token a list of numbers (640 of them, in Gemma) and let training choose them.
->
-> This map squashes those 640 dimensions down to two. Nobody told the model what a planet is, but the planets cluster, the chemical elements cluster, emotions cluster, numbers cluster. And look: "lead" sits right next to the verbs, because it's also a verb.
+---
 
-**[→]** *Jupiter is highlighted.*
+#### 31 · ▶ Attention (animation) (`#v-attention`, 45:45–46:15)
+* **Core point:** Static word vectors aren’t enough because words change meaning in context (“bank” of a river vs “bank” account)—**self-attention** lets tokens dynamically query earlier tokens and blend relevant context.
+* **Definitions:**
+  * **Self-Attention:** A mechanism where each token computes relevance weights over other tokens in the sequence and absorbs a weighted sum of their information.
+  * **Query ($\mathbf{q}$), Key ($\mathbf{k}$), Value ($\mathbf{v}$):** Three learned linear projections of each token: **Query** = *what I’m looking for*; **Key** = *what I advertise*; **Value** = *what content I pass along if matched*.
+  * **Causal mask:** Restricting each token to attend only to itself and earlier tokens (forming a lower-triangular matrix) so the model cannot peek at future words during training.
+* **Talking points** *(22 s video; illustrative numbers)*:
+  * *“The wombat crossed the road because **it** was hungry.”* How does `"it"` know it’s a wombat?
+  * `"it"` broadcasts its **Query**; every earlier word holds up a **Key**; dot products $\mathbf{q}\cdot\mathbf{k}/\sqrt{d_k}$ pass through softmax so `"wombat"` wins the highest weight, pouring its **Value** vector into `"it"`. **`[→]`**
 
-> Here are Jupiter's nearest neighbours out of all 262,144 tokens: Saturn, Venus, Neptune, Mars, Titan, Pluto, Uranus... and Zeus.
->
-> You can even do arithmetic with meaning. King minus man plus woman gives queen. Paris minus France plus Japan gives Tokyo. Sodium minus Na plus K gives potassium. These are real results from Gemma's word table: 14 out of 18 worked, and I've left the failures in.
+---
 
-**[→]**
+#### 32 · Attention: words look at other words (`#attention`, 46:15–48:15)
+* **Core point:** **Multi-head attention** runs dozens of independent Query-Key-Value circuits in parallel so the network learns specialized linguistic detectors automatically.
+* **Definitions:**
+  * **Multi-Head Attention:** Splitting token vectors across $H$ parallel attention heads, each with its own $(W_Q, W_K, W_V)$ matrices, then concatenating their outputs.
+  * **Attention sink:** A common learned behaviour where a head parks nearly all its probability weight on the `<bos>` (beginning-of-sequence) token as a harmless “do-nothing” state when no pattern matches.
+* **Talking points:**
+  * Validated real attention matrices extracted from **Gemma 3 270M** (18 layers × 4 query heads = 72 heads):
+  * On entry (**Layer 9, Head 2**): *“The trophy did not fit in the suitcase because **it** was too big.”* From `"it"`, **51.2%** of attention routes directly to `"trophy"` vs only **7.6%** to `"suitcase"`—pronoun resolution learned purely from next-word prediction!
+  * **`[→]` Layer 2, Head 3:** A crisp **previous-token head** (note the sub-diagonal stripe in the heatmap).
+  * **`[→]` Layer 17, Head 3:** An **attention sink**—parking ~95% on `<bos>` whenever a head has nothing useful to contribute. **`[→]`**
 
-#### 30 · ▶ Attention (42:45–43:15)
-*Video (22 s). The numbers in this clip are illustrative.*
+---
 
-> *(0 s)* The second problem: words change meaning with context. "The wombat crossed the road because it was hungry." What is "it"?
->
-> *(1.5 s)* Every token makes three vectors: a *query* (what am I looking for?), a *key* (what do I contain?), and a *value* (what will I pass on?).
->
-> *(3 s)* "It" compares its query with every earlier key.
->
-> *(6.7 s)* A softmax turns those scores into weights, and "wombat" wins.
->
-> *(8.7 s)* A weighted sum of the values flows into "it". Now "it" knows about the wombat.
->
-> *(11 s)* Every token does this at once, which gives a triangular matrix: each word can only look backwards.
->
-> *(16.7 s)* And that's the famous equation: softmax of Q K-transpose over root d, times V.
+#### 33 · The whole Transformer, in 3D (`#llm3d`, 48:15–49:15)
+* **Core point:** Every modern LLM (GPT, Gemma, Gemini) is simply a repeating two-beat rhythm stacked $N$ layers deep: **Attention** moves context *between* tokens, and an **MLP** processes knowledge *within* each token.
+* **Definitions:**
+  * **Transformer block (Vaswani et al., 2017):** One repeating unit combining Multi-Head Self-Attention + Feed-Forward MLP, wrapped with **residual (skip) connections** ($\mathbf{x} + f(\mathbf{x})$, so gradients flow cleanly across dozens of layers) and **normalization**.
+* **Talking points:**
+  * Walk the one-line blueprint at the bottom: **Embeddings → (Self-Attention + MLP) × $N$ layers → Vocabulary logits**. Every single sub-part is just matrices and bends you now understand!
+  * **`[DEMO]`** *(Optional if internet is live)* Click **Open bbycroft.net/llm ↗** (opens in a new browser tab) for a 30-second 3D flythrough from token embeddings to final softmax, then switch right back to this tab. **`[→]`**
 
-**[→]**
+---
 
-#### 31 · Attention: words look at other words (43:15–45:15)
+#### 34 · ▶ Softmax & temperature (`#v-softmax`, 49:15–49:45)
+* **Core point:** **Softmax** turns any list of positive or negative raw scores (*logits*) into valid probabilities that are positive and sum to 100%, governed by temperature $T$.
+* **Definitions:**
+  * **Logits ($z_i$):** The raw, unnormalized real-valued scores produced by the final linear layer for every token in the vocabulary.
+  * **Softmax ($p_i = \frac{e^{z_i/T}}{\sum_j e^{z_j/T}}$):** Exponentiates scaled logits (making them strictly positive and amplifying leaders) and divides by their sum (normalizing to 1).
+* **Talking points** *(20 s video)*:
+  * Watch 5 candidate chemical tokens: exponentiating turns differences into ratios, dividing by the sum normalizes them to 1, and sweeping $T$ from $0.3 \to 2.5$ shifts the distribution from laser-focused certainty (`"Au"`) to creative exploration. **`[→]`**
 
-> That was illustrative. This is real: attention inside Gemma 3, on the sentence "The trophy did not fit in the suitcase because it was too big."
->
-> This is layer 9, head 2. From "it", 51 percent of the attention goes to "trophy", and only 8 percent to "suitcase". The model has worked out what "it" refers to, and nobody programmed that.
+---
 
-**[DEMO]** Hover a few other words to see where they look.
+#### 35 · A language model is a next-token predictor (`#predict`, 49:45–51:15)
+* **Core point:** Generating text by chaining next-token probabilities explains both why LLMs write so fluently and why they **hallucinate**—statistical likelihood is not a database of verified facts.
+* **Definitions:**
+  * **Autoregressive generation:** Factoring sequence probability via $P(w_1,\dots,w_t) = \prod_k P(w_k \mid w_{<k})$—generating one token at a time conditioned on all preceding tokens.
+  * **Hallucination:** Fluent, grammatically probable text generated by the model that is factually false.
+* **Talking points:**
+  * Real outputs from raw pretrained **Gemma 3 270M**:
+  * *“The Great Barrier Reef is located off the coast of…”* → **Australia (49%)**, **Queensland (34%)**.
+  * **`[→]`** *“The chemical symbol for gold is…”* → **Au (32%)** (*`[DEMO]` drag $T$ to 0.3 → Au jumps to ~75%*).
+  * **`[→]`** *“The largest planet in our solar system is…”* → Top prediction is `"the"` then `"a"`; **Jupiter gets 0.85%**, and greedy decoding loops endlessly! In a compact 270M model you can catch the mechanism red-handed: **next-token plausibility $\neq$ truth**. Larger models know far more facts, yet share this exact statistical foundation. **`[→]`**
 
-**[→]**
+---
 
-> Other heads do other jobs. This one, layer 2 head 3, just looks one word back. It's a simple pattern: see the diagonal in the heat map.
+#### 36 · Training a giant: predict, align, think, and scale (`#scale`, 51:15–52:45)
+* **Core point:** Frontier models are built in three training phases, and their pre-training error obeys smooth **power-law scaling laws** linking compute, model size, and dataset size.
+* **Definitions:**
+  * **Self-supervised pre-training & Cross-entropy loss ($-\log p_{\text{true}}$):** Hiding the next token in ordinary documents so any text becomes training data; cross-entropy measures how “surprised” the model was by the true next token.
+  * **Neural scaling laws (Chinchilla, Hoffmann et al. 2022):** Empirical power laws $L(N,D) = E + A N^{-\alpha} + B D^{-\beta}$ showing that for a fixed FLOP budget $C \approx 6ND$, optimal performance requires scaling parameters $N$ and training tokens $D$ in tandem (~**20 tokens per parameter**).
+* **Talking points:**
+  * Three stages: **① Pre-training** (compress world patterns via next-token prediction on trillions of tokens), **② Post-training** (turn document-completion into a helpful assistant), **③ Reasoning RL** (practice step-by-step problem solving on verifiable math & code).
+  * Right chart: why labs invested billions with confidence—error falls along a predictable curve! GPT-3 (175B weights, 300B tokens) was oversized for its data; **Chinchilla** (70B weights, 1.4T tokens—20 tokens/weight) outperformed it on the same compute budget. **`[→]` × 2** to sweep compute budgets from small lab runs to frontier clusters. **`[→]`**
 
-**[→]**
+---
 
-> And this one, layer 17 head 3, parks about 95 percent of its attention on the very first token. It's a do-nothing "attention sink" for when there's nothing useful to look at.
->
-> Gemma has 18 layers of 4 heads, so 72 of these, each specialised. Gemini has far more.
+#### 37 · From autocomplete to assistant… to your model (`#finetune`, 52:45–54:45)
+* **Core point:** Post-training reshapes a base model’s weights from raw autocomplete into an aligned assistant, while **LoRA / QLoRA** lets any lab specialize a multi-billion-parameter open model on a single GPU.
+* **Definitions:**
+  * **SFT (Supervised Fine-Tuning) & Distillation:** Continuing next-token training on curated `(prompt, ideal response)` pairs (or matching a larger teacher model’s probability distributions in *knowledge distillation*).
+  * **RLHF, DPO & RLAIF:** *Reinforcement Learning from Human Feedback* fits a **reward model** to human A-vs-B preference rankings and optimizes the LLM toward high reward with a KL-divergence “leash” so it doesn’t drift into gibberish (*DPO* optimizes preferences directly without a separate reward model; *RLAIF* uses a principle-guided AI judge).
+  * **RLVR (RL with Verifiable Rewards):** Rewarding chains of thought using deterministic checkers (unit tests, symbolic math)—the engine behind modern “thinking” models.
+  * **LoRA (Low-Rank Adaptation) & QLoRA:** Freezing the giant weight matrix $W_0 \in \mathbb{R}^{d\times k}$ and training a low-rank update $\Delta W = B A$ ($B \in \mathbb{R}^{d\times r}, A \in \mathbb{R}^{r\times k}$ with $r \ll d$, $B$ initialized to $0$). *QLoRA* compresses frozen $W_0$ to 4-bit precision while training LoRA adapters.
+  * **RAG (Retrieval-Augmented Generation):** Fetching relevant lab documents/papers at query time and inserting them into the prompt—updating knowledge without touching weights.
+* **Talking points:**
+  * **Scene 1 (Post-training):** Look at raw base Gemma 3 given bare `"hi"`: its #1 prediction is a **comma (27.3%)**—it thinks it’s continuing `"hi, hope this email finds you well"`!
+  * **`[→]` ① SFT** (imitate curated dialogues) → **`[→]` ② RLHF** (learn human preference on a KL leash) → **`[→]` ③ RLVR** (verify math & code) → **`[→]` ④ Assistant** (`"Hi"` **93.3%**—same 268M architecture, updated weight values; in 2022 people preferred 1.3B InstructGPT over raw 175B GPT-3!).
+  * **`[→]` Scene 2 (Fine-tuning on your GPU):** Full Adam fine-tuning needs ~16 bytes/weight (**112 GB** for a 7B model—overflowing an 80 GB H100).
+  * **`[→]` LoRA animation:** Freeze $W_0$ and factor $\Delta W = B \cdot A$ ($B=0$ at start so $\Delta W = 0$). On a $4096 \times 4096$ matrix at rank $r=8$, only **65,536** numbers train instead of **16.8 million (0.39%)**!
+  * **`[→]` Memory fit:** Drops a 7B run from 112 GB → **~14 GB (LoRA)** → **~4 GB (4-bit QLoRA)**—fitting on a single workstation or gaming GPU (GPT-3’s LoRA adapter was 35 MB vs a 350 GB base model!).
+  * **`[→]` Lab playbook:** Climb only as high as needed: **① Prompting → ② RAG → ③ LoRA/QLoRA on an open model → ④ Full fine-tune**. **`[→]`**
 
-**[→]**
-
-#### 32 · The whole Transformer, in 3D (45:15–46:15)
-
-**[DEMO]** Click **Load bbycroft.net/llm** (needs internet). Scroll or zoom gently.
-
-> Here's the whole thing in 3D, built by Brendan Bycroft. This is a small GPT, and every block is a matrix you now understand. The word table comes first. Then, repeated layer after layer: attention, with its queries, keys and values, followed by a small neural network called the MLP. At the end, one last matrix and a softmax over the vocabulary.
->
-> Neurons, matrices, bends and attention, stacked dozens of times.
-
-*No internet?* "This one needs the internet, and the link is on the last slide. It's worth five minutes of your evening." Then **[→]**.
-
-**[→]**
-
-#### 33 · ▶ Softmax & temperature (46:15–46:45)
-*Video (20 s), illustrative numbers.*
-
-> *(0 s)* The last step is turning scores into a choice. These are the raw scores, called *logits*, for five candidate tokens.
->
-> *(3 s)* Exponentiate them, and the leader dominates.
->
-> *(6 s)* Divide by the total, and you get probabilities that add up to one.
->
-> *(9.6 s)* Temperature divides the scores first.
->
-> *(11.8 s)* At low temperature, "Au" wins every time.
->
-> *(13.9 s)* At high temperature, everything flattens out and gets more random.
->
-> *(16.8 s)* And back to one.
-
-**[→]**
-
-#### 34 · A language model is a next-token predictor (46:45–48:15)
-
-> So a language model is a *next-token predictor*. These are real outputs from Gemma 3 270M, the raw pre-trained version.
->
-> "The Great Barrier Reef is located off the coast of..." Australia, 49 percent; Queensland, 34. Good model.
-
-**[→]**
-
-> "The chemical symbol for gold is..." Au at 32 percent, "gold" at 23.
-
-**[DEMO]** Drag temperature to 0.3.
-
-> Turn the temperature down and Au jumps to about 75 percent.
-
-**[→]**
-
-> "The largest planet in our solar system is..." The top answer is "the", then "a". *Jupiter* gets less than one percent, and if you keep picking the top word, it goes round in circles: "the largest planet in the solar system. It is the largest planet in..."
->
-> **Prediction is not truth.** That's a hallucination, in a model small enough to run on a phone. Big models are far better, but it's the same mechanism.
->
-> Write one token, append it, predict again. That's how "Hi there! How can I help you today?" got written.
-
-**[→]**
-
-#### 35 · Training a giant: predict, align, think, and scale (48:15–49:45)
-
-> How do you get from that to Gemini? Three stages.
->
-> One, **pre-training**: predict the next token across trillions of tokens of text, code, images and audio, for weeks, on thousands of chips. The loss, called cross-entropy, measures how surprised the model was by the true next token.
->
-> Two, **post-training**: fine-tune on great example answers, then use reinforcement learning from human and AI feedback. That's where "Hi there! How can I help?" comes from. Give the raw pre-trained model a bare "hi" and its favourite next token is a comma, as if it were starting an email.
->
-> Three, **thinking**: reinforcement learning on problems with checkable answers, like maths and code, teaches models to reason step by step.
->
-> Then there's scale. This chart is the Chinchilla scaling law: the loss falls smoothly and predictably as you add parameters, N, and data, D. For a fixed compute budget, the bright curve, there's a sweet spot. Too small a model leaves capability on the table; too big a model starves for data. The sweet spot is about 20 tokens of training data per parameter.
-
-**[→]**
-
-> With a small budget, the best choice is a small model.
-
-**[→]**
-
-> With a huge budget, it's hundreds of billions of parameters trained on trillions of tokens. That predictability is why companies were willing to spend so much.
-
-**[→]**
+---
 
 ### Chapter 7 · AI for science
 
-#### 36 · AI for science: beyond chatbots (49:45–51:45)
+#### 38 · The model zoo: same neuron, different wiring (`#archs`, 54:45–57:45)
+* **Core point:** Every neural architecture uses the **exact same artificial neuron**—changing how neurons are wired encodes an **inductive bias**: a mathematical bet about the symmetry and geometry of your scientific data.
+* **Definitions:**
+  * **Inductive bias:** Structural assumptions built into a model’s wiring (locality, translation invariance, graph permutation symmetry) so it generalizes from realistic amounts of data.
+  * **CNN (Convolutional Neural Network):** Slides a tiny shared weight kernel across spatial grids—reusing the same detector at every pixel (**translation equivariance**).
+  * **RNN / LSTM (Long Short-Term Memory):** Processes sequences step by step while learned *input, forget, and output gates* regulate what stays in a running memory cell.
+  * **GNN (Graph Neural Network):** Nodes (e.g., atoms) iteratively aggregate transformed vectors from bonded neighbours (**message passing**), respecting molecular/mesh symmetries.
+  * **Diffusion model:** A generative paradigm trained to estimate clean signals (or noise scores) from corrupted inputs, creating samples by iteratively denoising pure Gaussian static.
+  * **SSM (State Space Model, e.g., Mamba):** Updates a compact fixed-size hidden state selectively per token—scaling linearly $O(n)$ in sequence length vs $O(n^2)$ for full attention.
+* **Talking points:**
+  * *Opening 32 s film:* Watch the same neuron wired five ways: Dense, Convolution, Recurrence, Graph, and Attention. **`[→]`** *(or click **meet the zoo ▸**)*
+  * **① CNN:** Real $3\times 3$ filter on Grace Hopper’s photo—**9 shared weights** reused across 4,526 positions (a dense layer would demand **21.7 million** weights!). Workhorse of microscopy (U-Net cell segmentation).
+  * **`[→]` ② LSTM:** Gated sequential memory reading *“The keys to the cabinet…”*—remembers plural `"keys"` across the singular distractor `"cabinet"` to predict `"are"` (**98.4%**). Still powers Google’s global Flood Hub.
+  * **`[→]` ③ GNN:** Message passing on **caffeine** (14 heavy atoms, 15 bonds; 6 hops for full molecular context). Scales to **GraphCast** (40,962-node global weather mesh) and **GNoME** (crystals).
+  * **`[→]` ④ Transformer:** Data-dependent all-to-all routing (`"it"` → `"trophy"` 51.2%)—universal across modalities, at quadratic $O(n^2)$ length cost.
+  * **`[→]` ⑤ Diffusion:** Watch 1,600 points condense out of pure static across 60 denoising steps—how **AlphaFold 3**, **RFdiffusion**, and **GenCast** generate 3D molecular coordinates and weather ensembles.
+  * **`[→]` ⑥ Mamba (SSM):** Selective fixed-size 16-number memory—doubling sequence length costs **2×** work instead of attention’s **4×** (used in hybrid LLMs like RecurrentGemma, Jamba, Granite 4).
+  * **`[→]` ⑦ Timeline & Field Guide:** **Match the wiring to the symmetry of your data** (grids → CNN/ViT; sequences → Transformer/SSM; molecules/meshes → GNN; 3D structures/ensembles → Diffusion; PDEs → Neural Operators; small tables → Trees). *(Extra Q&A tiles on rail: MLP, Autoencoder/PCA, GAN, Hopfield network, Fourier Neural Operator, KAN.)* **`[→]`**
 
-> Chapter 7: AI for science, beyond chatbots. On the left is a real protein: green fluorescent protein, from a jellyfish. It's the glowing tag used in labs everywhere, and it earned its own Nobel prize in 2008. Eleven yellow strands form a barrel, with the light-emitting part tucked inside. AlphaFold predicts shapes like this from the amino-acid sequence alone.
+---
 
-**[→]**
+#### 39 · AI for science: beyond chatbots (`#science`, 57:45–59:45)
+* **Core point:** Applied to experimental measurements of nature, these exact neural architectures act as fast physical surrogates, structure predictors, and search engines over vast chemical and genomic spaces.
+* **Talking points:**
+  * Left: real atomic trace of **Green Fluorescent Protein (PDB 1EMA)** from the jellyfish *Aequorea victoria*—11 $\beta$-strands forming a protective barrel around its light-emitting chromophore. Determining one protein’s 3D fold experimentally once took years of PhD crystallography.
+  * **`[→]` AlphaFold:** Attention + diffusion predicting **200M+** protein structures (virtually every catalogued protein known to science), extended in AlphaFold 3 to DNA, RNA, and drug ligands.
+  * **`[→]` GNoME:** Graph networks discovering **2.2 million** new crystal structures (~380,000 predicted thermodynamically stable—equivalent to centuries of materials synthesis).
+  * **`[→]` GenCast:** Graph-transformer diffusion delivering 15-day probabilistic weather ensembles that beat ECMWF’s physics model on **97.2%** of targets in minutes.
+  * **`[→]` AlphaEvolve:** Gemini coding agent paired with evolutionary evaluators discovering a 4×4 complex matrix multiplication algorithm in **48 multiplications**—beating Strassen’s 1969 record!
+  * **`[→]` AI co-scientist** (multi-agent hypothesis generation & critique) & **`[→]` AlphaGenome** (reading **1 million DNA base pairs** at single-base resolution to predict variant effects on gene regulation). **`[→]`**
 
-> **AlphaFold**: over 200 million predicted structures, free to everyone. AlphaFold 3 adds DNA, RNA and drug molecules.
+---
 
-**[→]**
+#### 40 · Which AI should my lab use? (`#lab`, 59:45–60:45)
+* **Core point:** Good scientific computing starts with the simplest baseline suited to your data’s geometry and sample size—and reuses pre-trained representations whenever data is unstructured.
+* **Definitions:**
+  * **Gradient-Boosted Decision Trees (XGBoost / LightGBM):** Ensembles of shallow decision trees trained sequentially to correct previous residuals—still the gold standard on small-to-medium tabular datasets.
+  * **Transfer learning:** Starting from a foundation model pre-trained on millions/billions of examples and adapting it (via embeddings, probing, or LoRA) to your smaller lab dataset.
+* **Talking points:**
+  * **`[DEMO]`** *Invite an audience member’s real dataset and click through the 3 questions.*
+  * Leave them with two rules: **① Tabular spreadsheets (<100k rows):** put the GPU down and run gradient-boosted trees + linear baselines first. **② Images, spectra, sequences, text, or molecules:** never train from scratch if a pre-trained foundation model exists—extract embeddings or fine-tune with LoRA. **`[→]`**
 
-> **GNoME**: 2.2 million new crystal structures, about 380,000 of them predicted stable. They're candidates for batteries, solar cells and superconductors.
-
-**[→]**
-
-> **GenCast**: 15-day ensemble weather forecasts that beat the leading physics-based system on 97.2 percent of targets.
-
-**[→]**
-
-> **AlphaEvolve**: a Gemini coding agent that found a way to multiply 4×4 complex matrices using 48 multiplications, beating Strassen's method from 1969.
-
-**[→]**
-
-> **AI co-scientist**: a team of Gemini agents that propose and debate testable hypotheses.
-
-**[→]**
-
-> **AlphaGenome**: it reads up to a million DNA letters and predicts how variants change gene regulation.
->
-> It's the same maths every time: multiply, bend, roll downhill, applied to nature's data.
-
-**[→]**
-
-#### 37 · Which AI should my lab use? (51:45–52:45)
-
-> So which AI should *your* lab use? Who's got a project?
-
-**[DEMO]** Take one answer from the audience and click its data type, size and goal.
-
-> Two takeaways. For small tabular data, use classical machine learning first: gradient-boosted trees usually beat deep nets, train in seconds, and are easier to explain. Put the GPU down. For everything else, start from a pre-trained model rather than training from scratch.
-
-**[→]**
+---
 
 ### Wrap-up
 
-#### 38 · What AI still gets wrong (52:45–54:15)
-
-> Now, honestly: what does AI still get wrong?
-
-**[→]**
-
-> **Hallucination.** It predicts *plausible* tokens, not *true* ones; you saw that with the largest planet. Verify facts, citations and numbers.
-
-**[→]**
-
-> **Bias and data.** Models inherit the gaps and biases of their training data, including scientific blind spots.
-
-**[→]**
-
-> **Energy and cost.** Compute grows four to five times a year. Efficiency is a research field of its own.
-
-**[→]**
-
-> **Evaluation.** Benchmarks leak into training data and saturate fast. Measuring real ability is hard.
-
-**[→]**
-
-> **The black box.** We can see every single weight (you've seen them tonight) and we still struggle to explain *why*. Interpretability is wide open, and it's a great field for scientists.
-
-**[→]**
-
-> **Safety and misuse.** Guardrails, watermarking, and frontier-safety evaluations are part of every release.
->
-> My rule of thumb: treat AI like a brilliant but overconfident postdoc. Use it a lot, and check its work.
-
-**[→]**
-
-#### 39 · The whole story in six equations (54:15–55:15)
-
-> So, back to the question: how does a pile of numbers decide to say "Hi there"?
-
-**[→]** "One: a layer. Multiply by weights, shift, bend."
-**[→]** "Two: measure the error."
-**[→]** "Three: roll downhill."
-**[→]** "Four: assign the blame backwards, with the chain rule."
-**[→]** "Five: let words look at other words."
-**[→]** "Six: turn scores into choices."
-
-**[→]**
-
-> Multiply, bend, repeat. Measure the error, roll downhill, repeat.
->
-> *(pause)*
->
-> Then do it at an absurd scale.
->
-> Thank you!
-
-**[→]**
-
-#### 40 · Keep exploring (Q&A)
-
-> Everything tonight runs offline from a single HTML file, and the links are up here. 3Blue1Brown's neural-network series is the best next step. I'm happy to take questions.
+#### 41 · What AI still gets wrong (`#limits`, 60:45–62:15)
+* **Core point:** Richard Feynman’s first rule of science—*“The first principle is that you must not fool yourself, and you are the easiest person to fool”*—is essential when working with probabilistic models.
+* **Definitions:**
+  * **Out-of-distribution (OOD) generalization:** How a model behaves on regimes absent from its training data—where statistical interpolators often fail silently.
+  * **Data contamination:** When benchmark test questions accidentally appear in web-scale training sets, inflating scores via memorization rather than reasoning.
+  * **Mechanistic interpretability:** Reverse-engineering trained weight matrices into human-understandable circuits and algorithms.
+* **Talking points:**
+  * **`[→]` ① Hallucination:** Next-token likelihood is not physical or factual truth—verify every reference, number, and proof.
+  * **`[→]` ② Bias & OOD blind spots:** Models mirror where science has already looked (well-studied organisms and crystal families), not unexplored nature.
+  * **`[→]` ③ Energy & cost** (4–5×/yr compute growth demands algorithmic & hardware efficiency) · **`[→]` ④ Evaluation & contamination** · **`[→]` ⑤ The interpretability black box** (we can inspect all 268M numbers yet still not know *why*—a wide-open frontier for scientists!) · **`[→]` ⑥ Safety, guardrails & SynthID watermarking**.
+  * **Summary rule:** Treat AI like an encyclopedic, tireless, occasionally overconfident postdoc—collaborate ambitiously, and check every step of its work. **`[→]`**
 
 ---
 
-## 🙋 Q&A bank
-
-**"Does it actually understand anything? Is it conscious?"**
-It builds internal representations that behave like understanding: Jupiter sits near Saturn, and "it" finds "trophy". But it is a function from tokens to probabilities, with no goals or experiences of its own. Whether that counts as "understanding" is a philosophy question, not an engineering one. It's useful to keep both facts in mind.
-
-**"Why does it hallucinate, and can it be fixed?"**
-It's trained to produce *likely* text, not *true* text. When it doesn't know, a fluent guess is still likely text. Big models hallucinate much less, and grounding (search, retrieval over your documents, running code) helps a lot. It isn't solved, so verify anything that matters.
-
-**"Is it learning from me while I chat?"**
-Not during the conversation: the weights are frozen. It only "remembers" what's in its context window (up to about a million tokens). Whether conversations are used for future training depends on the product's settings and terms. For sensitive data, run an open model like Gemma locally.
-
-**"Why did you use Gemma, not Gemini, for the demos?"**
-Gemma's weights are open, so I could read the actual numbers: probabilities, attention and weights. Gemini's internals aren't public. The mechanism is the same family (Transformer, next-token prediction), and Gemma 3 uses the same tokenizer as Gemini 2.0.
-
-**"How big is Gemini 4?"**
-Not disclosed. The model card says it's a sparse mixture-of-experts Transformer. For scale, open models range from 270 million to hundreds of billions of parameters.
-
-**"What's a mixture of experts?"**
-Instead of one giant MLP in each layer, there are many smaller "expert" MLPs, and a router sends each token to just a few of them. You get the knowledge of a huge model at the running cost of a much smaller one.
-
-**"How does it do maths if it only predicts tokens?"**
-Thinking models generate long step-by-step reasoning (trained with reinforcement learning on checkable problems), and they can call tools such as a Python interpreter. Tokenization also matters: Gemma splits numbers into single digits ("9.11" is four tokens: 9, ., 1, 1), which helps arithmetic.
-
-**"Is the 'how many r's in strawberry' thing real?"**
-It comes from tokenization. In Gemma 3's tokenizer, "strawberry" is a *single* token (#115137), so the model never sees the letters unless it spells the word out. Thinking models now handle this by spelling first.
-
-**"How much energy does this use?"**
-Training frontier models takes data-centre-scale power, measured in megawatts for weeks. Each individual query is small, but there are billions of them. Efficiency (MoE, distillation, better chips, smaller models like Gemma) is a major research area. Measure before you train: for many science problems a small model on a laptop is enough.
-
-**"Will AI replace scientists?"**
-It replaces *tasks*, not the job: literature triage, code, fitting and searching huge hypothesis spaces. The 2024 Nobel prizes went to people who used AI to answer questions they cared about. Asking good questions, designing experiments and judging evidence are still human work.
-
-**"Can I fine-tune a model on my own lab's data?"**
-Yes. Start with an open model (Gemma) and LoRA fine-tuning in Keras, JAX or PyTorch. A few thousand good examples often matter more than model size. For small tabular data, try gradient-boosted trees first.
-
-**"What's the difference between attention and the MLP?"**
-Attention moves information *between* tokens (who should I listen to?). The MLP processes each token *on its own* (what do I now know?), and is where much of the factual knowledge seems to live. A Transformer layer alternates the two.
-
-**"Why do we need GPUs or TPUs?"**
-Almost all the work is matrix multiplication, and those chips are grids of thousands of multiply-add units doing it in parallel. That's the systolic array in the slide-9 animation.
-
-**"What temperature do real products use?"**
-It varies and is often tunable. The Gemini API's default is 1.0 for Gemini 3, and the model is trained to work well at that setting. Lower is more deterministic; higher is more varied.
-
-**"Isn't 'roll downhill' going to get stuck in local minima?"**
-In millions of dimensions, true dead-end minima are rare; most flat spots are saddles with some way down. Momentum, noise from small batches, and optimisers like Adam help it keep moving. The Blender clip shows the ball escaping a side basin.
-
-**"Why 262,144 tokens? Why not letters?"**
-Bigger tokens mean shorter sequences, and the cost grows with sequence length. Sub-word tokens are a compromise: common words get one token ("hi" is #2202), and rare words are built from pieces ("Deoxyribonucleic" is five). 262,144 is 2 to the 18th; a big vocabulary covers many languages well.
+#### 42 · The whole story in six equations (`#recap`, 62:15–63:15)
+* **Core point:** Return to our opening question—*How does a pile of numbers decide to say “Hi there”?* Every symbol on this slide now corresponds to a concrete picture you have seen and manipulated tonight.
+* **Talking points:**
+  * Reveal each card deliberately and state its plain meaning:
+  * **`[→]` ① Dense layer** ($\mathbf{a} = \sigma(W\mathbf{x} + \mathbf{b})$): *Take a weighted vote, shift by a bias, and bend space.*
+  * **`[→]` ② Loss function** ($L = \frac{1}{N}\sum (\hat{y}_i - y_i)^2$, or cross-entropy for tokens): *Collapse how wrong you are into a single score.*
+  * **`[→]` ③ Gradient descent** ($w \leftarrow w - \eta \frac{\partial L}{\partial w}$): *Feel the local slope and take a step downhill.*
+  * **`[→]` ④ Backpropagation** ($\frac{\partial L}{\partial w} = \frac{\partial L}{\partial \hat{y}}\frac{\partial \hat{y}}{\partial z}\frac{\partial z}{\partial w}$): *Use the chain rule backward to compute millions of slopes in one pass.*
+  * **`[→]` ⑤ Self-attention** ($\mathrm{softmax}(\frac{QK^\top}{\sqrt{d_k}})V$): *Let tokens dynamically look at other tokens to gather context.*
+  * **`[→]` ⑥ Softmax** ($p_i = \frac{e^{z_i/T}}{\sum_j e^{z_j/T}}$): *Turn raw scores into probabilities and roll the die.*
+  * **`[→]`** Read slowly: *“Multiply, bend, repeat. Measure the error, roll downhill, repeat.”* *(pause)* *“Then do it at an absurd scale.”* **`[→]`**
 
 ---
 
-## 🔢 Numbers cheat sheet (all verified from the deck's data files)
+#### 43 · Keep exploring (`#qa`, 63:15+)
+* **Talking points:**
+  * Every interactive demo from tonight runs offline in a browser so you can poke at the weights, break gradient descent, and inspect Gemma’s attention heads yourself.
+  * Grant Sanderson’s *3Blue1Brown* series and Brendan Bycroft’s 3D visualizer are wonderful next stops. Thank you—let’s open the floor for questions!
 
-| Fact | Value |
+---
+
+## 📖 Quick Glossary of Core Paradigms, Algorithms & Terms
+
+| Term | Plain-English & rigorous definition |
 |---|---|
-| "hi" → first word (Gemma 3 270M instruct, chat template) | Hi 93.26 % · Hello 6.31 % · How 0.37 %; at T = 2: Hi ≈ 71 %, Hello ≈ 19 % |
-| Prompt length with the chat template | 10 tokens; "hi" = #2202, "Hi" = #10979 |
-| Vocabulary | 262,144 tokens |
-| Raw pre-trained model given a bare "hi" | "," 27 % · " all" 9 % · " guys" 8 % |
-| Reef / gold / water / DNA / mitochondria | Australia 49 % · Au 32 % (≈75 % at T = 0.3) · oxygen 90 % · "cytos…" 99.8 % · powerhouse 20 % |
-| Largest planet | Jupiter 0.85 %; the greedy continuation loops |
-| Gemma 3 270M | 268,098,176 parameters; 63 % in the word table; 18 layers × 4 heads; 640-dim |
-| Neuron | 1.08 − 0.16 + 0.30 − 0.20 = 1.02 → σ = 0.73 |
-| Layer outputs | 0.73, 0.58, 0.57, 0.33 |
-| Warp network | 21 numbers, 100 % accuracy |
-| Iris "let it learn" (hard pair) | 94 / 100 (best straight line 97) |
-| Kepler fit | w = 1.498 → T² ∝ a³ |
-| Learning rates (Kepler) | 0.1 converges in ≈180 steps; 0.6 zig-zags; 0.8 diverges |
-| Backprop example | z = 1, ŷ = 0.731, L = 0.0723; −0.538 × 0.197 × 2 = −0.2115 |
-| Attention (L9 H2, trophy sentence) | "it" → trophy 51 %, suitcase 8 % |
-| Attention sink (L17 H3) | ≈95 % on the first token; 43 of 72 heads put > 50 % there |
-| Jupiter's neighbours | Saturn .73 · Venus .71 · Neptune .69 · Mars .68 · Titan · Pluto · Uranus · Zeus |
-| Analogies | 14 of 18 correct |
-| Compute | AlexNet ≈ 5×10¹⁷ FLOP → Llama 3.1 405B ≈ 4×10²⁵; ×4–5 per year (Epoch AI) |
-| C ≈ 6ND | GPT-3: 6 × 175 B × 300 B ≈ 3×10²³ |
-| Scaling sweet spot | ≈ 20 tokens per parameter |
-| Science cards | AlphaFold DB 200 M+ · GNoME 2.2 M (380 k stable) · GenCast 97.2 % · AlphaEvolve 48 mults · AlphaGenome 1 M letters |
+| **Token & BPE** | A numbered text unit (word, sub-word, character) produced by Byte-Pair Encoding, which iteratively merges frequent character pairs into a fixed vocabulary (262,144 in Gemma 3). |
+| **Tensor** | An $N$-dimensional array of numbers: scalar (0D), vector (1D), matrix (2D), image (3D), batch (4D). |
+| **Artificial Neuron** | Computes $z = \mathbf{w}\cdot\mathbf{x} + b$, then applies a nonlinear activation $\hat{y} = \sigma(z)$—geometrically slicing input space with a hyperplane. |
+| **Activation Function** | Element-wise nonlinear curve (Sigmoid, Tanh, ReLU, GELU) preventing stacked matrix multiplications from collapsing into a single linear matrix. |
+| **Parameters (Weights & Biases)** | All learnable numbers inside a model ($268,098,176$ in Gemma 3 270M); weights scale connections, biases shift thresholds. |
+| **Systolic Array (TPU)** | Hardware grid of Multiply-Accumulate (MAC) units that holds weights stationary while streaming inputs and partial sums between adjacent cells each clock cycle, slashing off-chip memory energy. |
+| **Loss Function (MSE / Cross-Entropy)** | Scalar measure of prediction error minimized during training: Mean Squared Error averages $(\hat{y}-y)^2$ for continuous values; Cross-Entropy $-\log p_{\text{true}}$ measures surprise on discrete probabilities. |
+| **Gradient Descent & Learning Rate ($\eta$)** | Iterative optimization rule $\theta \leftarrow \theta - \eta \nabla_\theta L$ that steps opposite the vector of partial derivatives; $\eta$ sets step size. |
+| **Backpropagation** | Reverse-mode automatic differentiation applying the calculus chain rule from output loss back through each layer, computing all $N$ parameter gradients in ~2× the FLOPs of one forward pass. |
+| **Embedding** | Learned lookup vector assigning each discrete token continuous coordinates ($d=640$ in Gemma 3) so semantic similarity maps to geometric proximity. |
+| **Self-Attention (Q, K, V)** | Projects tokens into Queries, Keys, and Values; computes context-dependent routing weights $\mathrm{softmax}(QK^\top/\sqrt{d_k})$ to mix Value vectors across positions. |
+| **Transformer** | Architecture alternating Multi-Head Self-Attention (inter-token routing) and Feed-Forward MLPs (per-token processing) with residual skip connections and normalization. |
+| **Logits, Softmax & Temperature ($T$)** | Logits $z_i$ are raw final-layer scores; Softmax $\exp(z_i/T)/\sum_j \exp(z_j/T)$ converts them to probabilities; $T$ scales entropy/randomness. |
+| **Mixture of Experts (MoE)** | Replaces a single dense MLP per layer with many expert MLPs plus a router activating only $k$ experts per token—scaling parameter memory without proportionally scaling FLOPs/token. |
+| **Chinchilla Scaling Law** | Empirical power law showing compute-optimal pre-training scales model parameters $N$ and training tokens $D$ roughly equally (~20 tokens per parameter, $C \approx 6ND$). |
+| **SFT, RLHF, DPO & RLVR** | Post-training stages: Supervised Fine-Tuning imitates curated responses; RLHF/DPO aligns outputs with human preference rankings under a KL leash; RLVR trains step-by-step reasoning against automated math/code verifiers. |
+| **LoRA & QLoRA** | Parameter-Efficient Fine-Tuning (PEFT) that freezes $W_0$ (quantized to 4-bit in QLoRA) and learns a low-rank update $\Delta W = BA$ ($r \ll d$), cutting trainable parameters ~100–10,000× and fitting large models on one GPU. |
+| **Inductive Bias** | Architectural assumptions matched to data symmetry: translation equivariance in **CNNs**, sequential gating in **LSTMs**, permutation-equivariant bond message passing in **GNNs**, iterative denoising in **Diffusion**, and linear-time selective state in **Mamba (SSMs)**. |
 
 ---
 
-## 🧯 If something breaks
+## 🙋 Q&A Bank
 
-* **A video won't start:** press **K** (play) or **J** (restart). If it still fails, the poster frame shows, so narrate from the cue times above.
-* **No internet on slide 32:** say the line above and move on. Nothing else needs a network.
-* **A demo looks stuck:** leave the slide and come back; every demo resets on entry. Or reload with `#slide-id` in the URL.
-* **Wrong screen size:** the deck scales to any window. Press **F** for fullscreen. It's designed for 16:9.
-* **Lost?** Press **O** for the overview and click any slide.
+* **“Does the model actually understand, or is it ‘just’ predicting the next token?”**
+  Mechanically, its training objective is purely next-token probability estimation. Yet to predict the next token accurately across trillions of examples of code, physics, and logic, backpropagation forces its internal layers to build geometric representations—resolving pronouns, clustering chemical elements, tracking state. It has functional world-models without consciousness, feelings, or lived goals.
+* **“Why does it hallucinate, and will scaling fix it?”**
+  Softmax assigns probabilities over plausible continuations, not epistemic truth; when uncertain, fluent fabrication still scores well. Scale, retrieval (RAG), search, and code-execution verifiers drastically reduce hallucinations, but statistical generation has no native guarantee of truth—always verify critical facts and citations.
+* **“Is it learning from me while we chat?”**
+  No—during inference all weights $W$ are completely frozen. “Memory” inside a chat is just the text and KV cache sitting in the context window. If privacy matters, run open-weight models (like Gemma) locally so prompts never leave your machine.
+* **“Why did tonight’s live demos use Gemma 3 instead of Gemini 4?”**
+  Science requires inspecting the instrument! Gemma 3’s weights are open, letting us extract exact internal matrices, 640-D embeddings, validated attention maps, and full-vocabulary logits. Gemini uses the same Transformer principles (plus sparse MoE and native multimodality) at undisclosed frontier scale.
+* **“Why do GPUs and TPUs beat CPUs so dramatically here?”**
+  Nearly every heavy step—dense layers, Q/K/V projections, attention scores, MLPs—is matrix multiplication. GPUs run thousands of threads in parallel with Tensor Cores; TPUs hold weights inside systolic arrays and pass activations cell-to-cell so off-chip memory (which costs ~170× more energy per number than arithmetic) is touched as little as possible.
+* **“Won’t gradient descent get trapped in local minima?”**
+  In 2D cartoons, valleys look like closed bowls. In 268-million-dimensional space, almost every flat critical point is a *saddle point* with millions of downward escape directions, and mini-batch noise plus Adam’s momentum carry the trajectory into wide, low-loss basins.
+* **“Why did ‘strawberry’ letter-counting trip up older models?”**
+  Tokenization! In Gemma’s tokenizer, `"strawberry"` is a single integer (`#115137`), so the network never sees individual characters unless it spells them out token-by-token in a reasoning chain—which modern thinking models now do automatically.
+
+---
+
+## 🔢 Verified Numbers Cheat Sheet (from `data/*.js` & `docs/facts.md`)
+
+| Item | Exact value |
+|---|---|
+| **“hi” prompt (Gemma 3 270M IT)** | 10 templated tokens (`"hi"` = `#2202`, `"Hi"` = `#10979`) · Vocabulary = **262,144** tokens · `"Hi"` **93.26%**, `"Hello"` **6.31%**, `"How"` **0.37%** ($T=1$) |
+| **Base vs Assistant “hi”** | Pretrained bare `"hi"` → `","` **27.3%**, `" all"` **8.9%**, `" guys"` **8.2%** · Post-trained assistant → `"Hi"` **93.3%** (same **268,098,176** parameters) |
+| **Journey of “hi” (`#journey`)** | BPE encode = **6.8 µs** · PCIe in = **40 B**, out = **48 B** · 12 passes (1 prefill + 11 decode) read **6.4 GB** of bf16 weights · KV cache = **18 KB/token** |
+| **Iris neuron (`#neuron`)** | 150 flowers, 3 species (*setosa* ~1.5×0.2 cm, *versicolor* ~4.3×1.3 cm, *virginica* ~5.6×2.0 cm) · Easy pair: **100/100** · Hard pair Adam: **94/100** (best line 97) |
+| **Single neuron & 4-neuron layer** | $x=(0.9,0.2,0.6), w=(1.2,-0.8,0.5), b=-0.2 \Rightarrow 1.22 - 0.20 = 1.02 \Rightarrow \sigma(1.02) = \mathbf{0.73}$ · Layer outputs: **0.73, 0.58, 0.57, 0.33** |
+| **Deep moon warp & Gemma weights** | Moon net = **21** parameters (**100%** accuracy) · Gemma 3 270M = **268,098,176** parameters (**63%** in embedding table; 18 layers × 4 query heads, $d=640$) |
+| **Chips & energy (`#chips`)** | 48 MACs toy: CPU **12 ticks / 96 fetches** · GPU **3 / 96** · TPU **9 / 24** (first output **1.22**) · 45 nm energy: multiply **3.7 pJ** vs DRAM read **640 pJ (~170×)** · Pods: **8,960** (v5p), **9,216** (Ironwood) |
+| **Kepler & gradient descent** | Best fit slope **$w = 1.498 \Rightarrow T^2 \propto a^3$** · $\eta=0.1$: ~181 steps · $\eta=0.6$: 27 steps (zig-zag) · $\eta=0.8$: diverges |
+| **Backprop chain (`#v-backprop`)** | $x=2, w=0.5 \Rightarrow z=1.0, \hat{y}=0.731, L=0.0723$ · $\frac{\partial L}{\partial w} = (-0.538)(0.197)(2) = \mathbf{-0.2115}$ |
+| **Embeddings & Attention** | Jupiter neighbours: *Saturn (.73), Venus (.71), Neptune (.69), Mars (.68), Titan, Pluto, Uranus, Zeus* · Analogies: **14/18** · L9H2 `"it"` → `"trophy"` **51.2%** vs `"suitcase"` **7.6%** · L17H3 sink: **~95%** on `<bos>` |
+| **Compute & Scaling** | Growth: **4–5×/yr** (AlexNet $\approx 5\times 10^{17}$ → Llama 3.1 405B $\approx 4\times 10^{25}$ FLOP; Le Chonk 1T/52B active $\approx 1.3\times 10^{25}$) · $C \approx 6ND$ · Chinchilla optimum: **~20 tokens/parameter** |
+| **LoRA & QLoRA (`#finetune`)** | $4096\times 4096$ ($16.8\text{M}$ weights), $r=8$: **65,536** trained (**0.39%**) · 7B memory: Full **112 GB**, LoRA **~14 GB**, QLoRA **~4 GB** · GPT-3 adapter: **35 MB** vs **350 GB** · QLoRA 65B on **one 48 GB GPU** |
+| **Model zoo & Science** | Hopper $3\times 3$ CNN: **9** shared weights × **4,526** positions vs **21,724,800** dense · LSTM `"keys…are"` **98.4%** · AlphaFold DB **200M+** · GNoME **2.2M** crystals (**380k** stable) · GenCast **97.2%** · AlphaEvolve **48** mults · AlphaGenome **1M** bases |

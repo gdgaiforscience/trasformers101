@@ -8,7 +8,7 @@ globalThis.window = globalThis;
 const expect = {
   "next_token.js": "nextToken", "embeddings.js": "embeddings", "weights.js": "weights",
   "attention.js": "attention", "warpnet.js": "warpnet", "iris.js": "iris", "kepler.js": "kepler",
-  "hopper.js": "hopper", "eeg.js": "eeg", "compute.js": "compute", "protein.js": "protein",
+  "hopper.js": "hopper", "eeg.js": "eeg", "compute.js": "compute", "protein.js": "protein", "journey.js": "journey",
 };
 let ok = true;
 const fail = (m) => { ok = false; console.log("  FAIL:", m); };
@@ -96,5 +96,21 @@ const pr = AIDATA.protein;
 if (pr.ca.length !== pr.resNum.length || pr.ss.length !== pr.ca.length) fail("protein lengths");
 console.log(`  protein: ${pr.pdb} ${pr.ca.length} CA, ss H/E/C = ${[..."HEC"].map((c) => pr.ss.split(c).length - 1).join("/")}`);
 console.log(`  compute: ${AIDATA.compute.models.length} models, fallback=${AIDATA.compute.fallback}`);
+
+// journey: must agree with next_token.js and with itself
+const jr = AIDATA.journey;
+if (JSON.stringify(jr.prompt.ids) !== JSON.stringify(hi.promptIds)) fail("journey prompt ids != nextToken hi");
+hi.greedyTokens.forEach((g, i) => { if (jr.reply.steps[i].id !== g.id) fail(`journey reply token ${i} != nextToken greedy`); });
+if (!approx(jr.reply.steps[0].p, pHi, 0.0005)) fail("journey first-token p != nextToken");
+if (jr.reply.stop.id !== 106) fail("journey reply does not end with <end_of_turn>");
+if (jr.reply.passes !== jr.reply.steps.length + 1) fail("journey passes != steps + 1");
+const c = jr.config;
+if (jr.kvBytesPerToken !== 2 * c.layers * c.kvHeads * c.headDim * 2) fail("journey KV bytes per token");
+if (jr.params !== wt.totalParams) fail("journey params != weights total");
+const cached = jr.prompt.ids.concat(jr.reply.steps.map((s) => s.id));
+for (let i = 0; i < jr.turn2.reused; i++) if (jr.turn2.ids[i] !== cached[i]) { fail("journey turn-2 prefix mismatch"); break; }
+if (jr.turn2.ids[jr.turn2.reused] === cached[jr.turn2.reused]) fail("journey turn-2 reuse could be longer");
+if (jr.turn2.reused + jr.turn2.new !== jr.turn2.total) fail("journey turn-2 counts");
+console.log(`  journey: ${jr.prompt.ids.length} prompt IDs, reply ${jr.reply.steps.length} tokens + stop (${jr.reply.passes} passes), KV ${jr.kvBytesPerToken} B/token, turn 2 reuses ${jr.turn2.reused}/${jr.turn2.total}, tokenizer ${jr.tokenizer.type} ${jr.timing.hiMicros} µs`);
 console.log(ok ? "ALL CHECKS PASSED" : "SOME CHECKS FAILED");
 process.exit(ok ? 0 : 1);

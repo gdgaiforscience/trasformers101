@@ -63,7 +63,7 @@
     draw() {
       if (!this.W) return;
       const { ctx, w, h } = this.cv, m = this.W.matrices[this.sel], im = this.imgs[this.sel];
-      ctx.fillStyle = C.bg; ctx.fillRect(0, 0, w, h);
+      ctx.fillStyle = '#0f1115'; ctx.fillRect(0, 0, w, h);
       if (!im.complete || !im.naturalWidth) return;
       const IW = m.width, IH = m.height;
       const fit = Math.min(w / IW, h / IH);
@@ -80,10 +80,10 @@
       ctx.save(); ctx.imageSmoothingEnabled = scale < 2;
       ctx.drawImage(im, ox, oy, IW * scale, IH * scale);
       // paint over the white gaps between heads
-      if (m.layout.blocks) { ctx.fillStyle = C.bg; const B = m.layout.blocks; for (let i = 0; i < B.length - 1; i++) ctx.fillRect(ox + (B[i].x + B[i].w) * scale, oy, (B[i + 1].x - B[i].x - B[i].w) * scale, IH * scale); }
+      if (m.layout.blocks) { ctx.fillStyle = '#0f1115'; const B = m.layout.blocks; for (let i = 0; i < B.length - 1; i++) ctx.fillRect(ox + (B[i].x + B[i].w) * scale, oy, (B[i + 1].x - B[i].x - B[i].w) * scale, IH * scale); }
       ctx.restore();
       const cell = pr.px * scale;
-      if (e < 0.6) { ctx.strokeStyle = U.rgba(C.yellow, 1 - e); ctx.lineWidth = 2; ctx.strokeRect(ox + pr.x * scale, oy + pr.y * scale, pr.w * scale, pr.h * scale); }
+      if (e < 0.6) { ctx.strokeStyle = U.rgba('#ffd54f', 1 - e); ctx.lineWidth = 2; ctx.strokeRect(ox + pr.x * scale, oy + pr.y * scale, pr.w * scale, pr.h * scale); }
       if (cell > 22) {
         const a = clamp((cell - 22) / 20, 0, 1), vals = m.patch.values, vmax = m.vmax || 0.1;
         ctx.textAlign = 'center'; ctx.textBaseline = 'middle';
@@ -91,7 +91,7 @@
           const X = ox + (pr.x + c * pr.px) * scale, Y = oy + (pr.y + r * pr.px) * scale, v = vals[r][c];
           ctx.globalAlpha = a; ctx.fillStyle = U.diverge(Math.sign(v) * Math.pow(Math.min(1, Math.abs(v) / vmax), 0.8));
           ctx.fillRect(X, Y, cell, cell); ctx.strokeStyle = 'rgba(15,17,21,.6)'; ctx.strokeRect(X, Y, cell, cell);
-          if (cell > 44) { ctx.fillStyle = C.text; ctx.font = `${Math.min(17, cell * 0.24)}px ${FONT.mono}`; ctx.fillText(v.toFixed(3).replace('-', '−'), X + cell / 2, Y + cell / 2); }
+          if (cell > 44) { ctx.fillStyle = '#eceff4'; ctx.font = `${Math.min(17, cell * 0.24)}px ${FONT.mono}`; ctx.fillText(v.toFixed(3).replace('-', '−'), X + cell / 2, Y + cell / 2); }
         }
         ctx.globalAlpha = 1;
       }
@@ -107,7 +107,7 @@
       L.forEach((m, i) => {
         const y = 6 + i * rh, isG = /Gemma 3 270M/.test(m.name), bw = (lx(m.params) - x0) * clamp(T * rows - i * 0.6, 0, 1);
         U.text(ctx, m.name.replace(' (mixture of experts; 37B active per token)', ' (MoE)'), x0 - 14, y + rh * 0.62, { size: 17, color: isG ? C.yellow : C.text, align: 'right' });
-        ctx.fillStyle = isG ? C.yellow : U.rgba(C.blue, 0.8); U.roundRect(ctx, x0, y + rh * 0.18, Math.max(2, bw), rh * 0.62, 5); ctx.fill();
+        ctx.fillStyle = isG ? C.gyellow : U.rgba(C.gblue, 0.85); U.roundRect(ctx, x0, y + rh * 0.18, Math.max(2, bw), rh * 0.62, 5); ctx.fill();
         if (bw > 0) U.text(ctx, fmtBig(m.params), x0 + bw + 8, y + rh * 0.62, { size: 16, color: C.muted, family: FONT.mono });
       });
       const y = 6 + L.length * rh;
@@ -120,12 +120,26 @@
   // ======================================================================
   // EMBED: a map of meaning (real Gemma input embeddings)
   // ======================================================================
+  const EMBED_COLS = {
+    'planets & space': '#c98400',
+    'chemical elements': '#00897b',
+    'animals': '#1e8e3e',
+    'countries': '#1a73e8',
+    'cities': '#3949ab',
+    'emotions': '#d01884',
+    'numbers': '#e65100',
+    'colours': '#d93025',
+    'body parts': '#6d4c41',
+    'sciences': '#9334e6',
+    'verbs': '#3c4043'
+  };
   Deck.register('embed', {
     init(slide) {
       const E = U.data('embeddings');
       const host = slide.querySelector('[data-role=map]');
       if (!E) { U.missing(host); return; }
       this.E = E; this.proj = 'tsne'; this.hl = null; this.hover = null; this.search = null;
+      this.catCol = cat => EMBED_COLS[cat] || E.categories[cat] || C.text;
       const wrap = el('div', { class: 'canvas-wrap' }, host);
       this.cv = U.canvas(wrap, { onresize: () => this.draw() });
       this.tipper = U.tip(wrap);
@@ -134,7 +148,8 @@
       const inp = el('input', { class: 'txt', placeholder: 'find a word…', style: 'width:220px' }, ctl);
       inp.addEventListener('input', () => { const q = inp.value.trim().toLowerCase(); this.search = q ? this.E.words.find(w => w.w.toLowerCase() === q) || this.E.words.find(w => w.w.toLowerCase().startsWith(q)) : null; this.draw(); this.showNN(this.search); });
       const leg = slide.querySelector('[data-role=legend]');
-      Object.entries(E.categories).forEach(([cat, col]) => {
+      Object.keys(E.categories).forEach(cat => {
+        const col = this.catCol(cat);
         const s = el('span', { class: 'leg-item', html: `<i class="sw" style="background:${col}"></i>${cat}` }, leg);
         s.addEventListener('mouseenter', () => { this.hl = cat; this.draw(); });
         s.addEventListener('mouseleave', () => { this.hl = null; this.draw(); });
@@ -185,7 +200,7 @@
       const placed = [];
       const order = E.words.slice().sort((a, b) => (a.cat === this.hl) - (b.cat === this.hl));
       order.forEach(wd => {
-        const [x, y] = this.xy(wd), X = v.sx(x), Y = v.sy(y), col = E.categories[wd.cat] || C.text;
+        const [x, y] = this.xy(wd), X = v.sx(x), Y = v.sy(y), col = this.catCol(wd.cat);
         const dim = (this.hl && wd.cat !== this.hl) || (focus && wd !== focus && !nnSet.has(wd.w));
         ctx.globalAlpha = dim ? 0.18 : 1;
         U.circle(ctx, X, Y, wd === focus ? 8 : 5, col);
@@ -209,7 +224,7 @@
     showNN(wd) {
       if (!this.nnBox) return;
       if (!wd) { this.nnBox.innerHTML = '<span class="muted">Hover a word: its nearest neighbours are computed over the <b>whole</b> 262,144-token vocabulary, in all 640 dimensions.</span>'; return; }
-      this.nnBox.innerHTML = `<b style="color:${this.E.categories[wd.cat]}">${U.esc(wd.w)}</b> is closest to: ` + wd.nn.slice(0, 8).map(n => `<span class="token-chip" style="font-size:20px">${U.esc(n)}</span>`).join('');
+      this.nnBox.innerHTML = `<b style="color:${this.catCol(wd.cat)}">${U.esc(wd.w)}</b> is closest to: ` + wd.nn.slice(0, 8).map(n => `<span class="token-chip" style="font-size:20px">${U.esc(n)}</span>`).join('');
     }
   });
 
@@ -281,7 +296,13 @@
       const { ctx, w, h } = this.arcs; ctx.clearRect(0, 0, w, h);
       const toks = Array.from(this.row.children), Wt = this.weights(), q = this.q, rowW = Wt[q];
       const base = this.row.offsetTop - 6;
-      toks.forEach((t, i) => { t.classList.toggle('q', i === q); t.style.background = i <= q && i !== q ? U.rgba(C.purple, Math.min(0.85, rowW[i] * 1.6)) : ''; t.classList.toggle('future', i > q); });
+      toks.forEach((t, i) => {
+        const alpha = Math.min(0.82, rowW[i] * 1.5);
+        t.classList.toggle('q', i === q);
+        t.style.background = i <= q && i !== q ? U.rgba(C.purple, alpha) : '';
+        t.style.color = i <= q && i !== q && alpha > 0.45 ? '#ffffff' : '';
+        t.classList.toggle('future', i > q);
+      });
       const cx = i => toks[i].offsetLeft + toks[i].offsetWidth / 2;
       for (let k = 0; k <= q; k++) {
         const a = rowW[k]; if (a < 0.01) continue;
@@ -298,10 +319,10 @@
       const pad = 110, cs = Math.min((w - pad - 10) / n, (h - pad - 10) / n);
       for (let i = 0; i < n; i++) for (let j = 0; j < n; j++) {
         const a = j <= i ? Wt[i][j] : 0;
-        ctx.fillStyle = j > i ? '#13161c' : U.rgba(C.purple, Math.min(1, Math.sqrt(a) * 1.15));
+        ctx.fillStyle = j > i ? C.bg3 : (a < 0.002 ? '#ffffff' : U.rgba(C.purple, Math.min(1, Math.sqrt(a) * 1.15)));
         ctx.fillRect(pad + j * cs, pad + i * cs, cs - 1, cs - 1);
       }
-      if (this.q !== null) { ctx.strokeStyle = C.yellow; ctx.lineWidth = 2; ctx.strokeRect(pad, pad + this.q * cs, n * cs, cs); }
+      if (this.q !== null) { ctx.strokeStyle = C.blue; ctx.lineWidth = 2; ctx.strokeRect(pad, pad + this.q * cs, n * cs, cs); }
       ctx.save(); ctx.font = `15px ${FONT.mono}`; ctx.fillStyle = C.muted; ctx.textAlign = 'right'; ctx.textBaseline = 'middle';
       s.tokens.forEach((t, i) => ctx.fillText(t.replace(/^ /, '␣').slice(0, 9), pad - 6, pad + (i + 0.5) * cs));
       ctx.translate(0, 0);
@@ -312,16 +333,11 @@
   });
 
   // ======================================================================
-  // LLM3D: live external visualisations (need internet)
+  // LLM3D: external visualisations (open in a new browser tab)
   // ======================================================================
   Deck.register('llm3d', {
     init(slide) {
-      const fr = slide.querySelector('[data-role=frame]'), cover = slide.querySelector('.embed-cover');
-      slide.querySelectorAll('[data-embed]').forEach(b => b.addEventListener('click', () => {
-        let ifr = fr.querySelector('iframe');
-        if (!ifr) { ifr = el('iframe', { allow: 'fullscreen; xr-spatial-tracking', referrerpolicy: 'no-referrer' }, fr); }
-        ifr.src = b.dataset.embed; if (cover) cover.style.display = 'none'; b.blur();
-      }));
+      slide.querySelectorAll('a[target="_blank"]').forEach(a => a.addEventListener('click', () => a.blur()));
     }
   });
 
@@ -400,9 +416,9 @@
     .an-row{font-size:22px;padding:4px 0}.an-row.hit b{color:var(--green)}.an-row.miss b{color:var(--red)}
     .an-q{font-family:var(--mono);color:var(--muted)}
     .att-row{display:flex;flex-wrap:nowrap;gap:6px;position:absolute;left:0;right:0;top:244px;justify-content:center;z-index:2}
-    .att-tok{font-family:var(--mono);font-size:var(--att-fs,26px);padding:8px 10px;border-radius:10px;border:1px solid var(--line);cursor:pointer;white-space:pre;transition:background .2s,color .2s}
-    .att-tok.q{border-color:var(--yellow);color:var(--yellow);box-shadow:0 0 0 2px rgba(255,213,79,.5)}
-    .att-tok.future{opacity:.3}
+    .att-tok{font-family:var(--mono);font-size:var(--att-fs,26px);padding:8px 10px;border-radius:10px;border:1px solid var(--line);background:var(--bg-2);cursor:pointer;white-space:pre;transition:background .2s,color .2s}
+    .att-tok.q{border-color:var(--blue);color:var(--blue);background:#e8f0fe;box-shadow:0 0 0 2px rgba(26,115,232,.25)}
+    .att-tok.future{opacity:.35}
     `
   }));
 })();

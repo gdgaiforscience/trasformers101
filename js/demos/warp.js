@@ -109,7 +109,7 @@
     draw() {
       const { ctx, w, h } = this.cv, v = this.view(), P = this.P;
       ctx.fillStyle = C.bg; ctx.fillRect(0, 0, w, h);
-      U.grid(ctx, v, { step: 1, minor: false, color: '#1b2029', axisColor: '#2a3140' });
+      U.grid(ctx, v, { step: 1, minor: false, color: C.gridMinor, axisColor: C.line });
       ctx.save(); ctx.beginPath(); ctx.rect(v.px, v.py, v.pw, v.ph); ctx.clip();
       // transformed grid
       const lines = [];
@@ -311,7 +311,7 @@
     .wvec{display:inline-grid;grid-template-columns:auto;gap:2px;border-left:3px solid var(--muted);border-right:3px solid var(--muted);border-radius:8px;padding:2px 10px;font-size:30px;font-family:var(--mono)}
     .stage-name{font-size:30px;color:var(--text);margin-bottom:6px}
     .stage-eq span{transition:color .3s, text-shadow .3s}
-    .stage-eq > span.on, .stage-eq > span.on *{color:var(--yellow) !important;text-shadow:0 0 18px rgba(255,213,79,.55)}
+    .stage-eq > span.on, .stage-eq > span.on *{color:var(--blue) !important;text-shadow:0 0 14px rgba(66,133,244,.25)}
     `
   }));
 })();

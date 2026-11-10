@@ -514,15 +514,15 @@ Fifty minutes ago, we asked: When you type "hi" into Gemini, how does a pile of 
 
 Let's put the entire black box onto one single slide. Watch as I reveal the six equations - and notice how every single colour and symbol now tells a picture you know by heart.
 
-Equation one, a neural network layer: take input numbers x, multiply by weights capital W, shift by bias b, and bend with sigma - warping space step by step.
+Equation one, a dense layer, one layer of a neural network: take input numbers x, multiply by weights capital W, shift by bias b, and bend with sigma - warping space step by step.
 
-Equation two, Loss L: compare your prediction to reality and square the errors to measure how wrong you are.
+Equation two, mean squared error, our loss L: compare your prediction to reality and square the errors to measure how wrong you are.
 
 Equation three, Gradient descent: step your weights w downhill along the slope by learning rate eta.
 
 Equation four, Backpropagation: multiply local slopes backward from the error using the Chain Rule so every single knob gets its exact share of the blame in one sweep.
 
-Equation five, Attention: let words send out Queries Q and match Keys K to gather meaning V from other words in context.
+Equation five, Self-attention: let words send out Queries Q and match Keys K to gather meaning V from other words in context.
 
 Equation six, Softmax: turn 262,144 raw scores into probabilities shaped by Temperature T, pick one winning token, glue it on, and go again!
 

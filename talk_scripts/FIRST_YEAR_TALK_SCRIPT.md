@@ -1140,13 +1140,13 @@ Fifty minutes ago, we asked: **When you type *"hi"* into Gemini, how does a pile
 
 Let’s put the entire black box onto **one single slide**. Watch as I reveal the **six equations**—and notice how every single colour and symbol now tells a picture you know by heart:
 
-**`[PRESS → (Step 1 of 7 — Equation ①: Layer)]`**
+**`[PRESS → (Step 1 of 7 — Equation ①: Dense layer)]`**
 
-**① A neural network layer:** take input numbers `x`, multiply by weights `W`, shift by bias `b`, and bend with `σ`—warping space step by step.
+**① Dense layer** (one layer of a neural network): take input numbers `x`, multiply by weights `W`, shift by bias `b`, and bend with `σ`—warping space step by step.
 
-**`[PRESS → (Step 2 of 7 — Equation ②: Loss)]`**
+**`[PRESS → (Step 2 of 7 — Equation ②: Mean squared error)]`**
 
-**② Loss `L`:** compare your prediction to reality and square the errors to measure *how wrong* you are.
+**② Mean squared error**, our loss `L`: compare your prediction to reality and square the errors to measure *how wrong* you are.
 
 **`[PRESS → (Step 3 of 7 — Equation ③: Gradient descent)]`**
 
@@ -1156,9 +1156,9 @@ Let’s put the entire black box onto **one single slide**. Watch as I reveal th
 
 **④ Backpropagation:** multiply local slopes backward from the error using the Chain Rule so every single knob gets its exact share of the blame in one sweep.
 
-**`[PRESS → (Step 5 of 7 — Equation ⑤: Attention)]`**
+**`[PRESS → (Step 5 of 7 — Equation ⑤: Self-attention)]`**
 
-**⑤ Attention:** let words send out Queries (`Q`) and match Keys (`K`) to gather meaning (`V`) from other words in context.
+**⑤ Self-attention:** let words send out Queries (`Q`) and match Keys (`K`) to gather meaning (`V`) from other words in context.
 
 **`[PRESS → (Step 6 of 7 — Equation ⑥: Softmax)]`**
 

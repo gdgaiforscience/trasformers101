@@ -123,13 +123,13 @@
       const P = U.data('protein'), ph = slide.querySelector('[data-role=protein-seq]');
       if (ph && P) {
         const AA = 'ACDEFGHIKLMNPQRSTVWY', seqs = P.seq.slice(0, 16).split('');
-        ph.innerHTML = seqs.map(a => `<span class="token-chip" style="background:rgba(131,193,103,.12);border-color:rgba(131,193,103,.5)">${a}<span class="tid">${AA.indexOf(a)}</span></span>`).join('') + '<span class="dim mono"> …</span>';
+        ph.innerHTML = seqs.map(a => `<span class="token-chip" style="background:#e6f4ea;border-color:#a8dab5">${a}<span class="tid">${AA.indexOf(a)}</span></span>`).join('') + '<span class="dim mono"> …</span>';
       }
     },
     draw() {
       const E = this.E; if (!E) return;
       const { ctx, w, h } = this.cv;
-      ctx.fillStyle = C.bg; ctx.fillRect(0, 0, w, h);
+      ctx.fillStyle = C.bg2; ctx.fillRect(0, 0, w, h);
       const n = Math.min(E.data[0].length, 400), lanes = E.data.length, lh = h / lanes;
       const cols = [C.blue, C.teal, C.purple, C.orange];
       E.data.forEach((ch, k) => {
@@ -168,35 +168,68 @@
       btn(ctl2, 'reset', () => { if (this._learn) { this._learn.stop(); this._learn = null; } this.w1 = 1.0; this.w2 = 1.0; this.b = -8.0; this.s1.set(this.w1, true); this.s2.set(this.w2, true); this.sb.set(this.b, true); this.update(); });
       this.eq = slide.querySelector('[data-role=eq]');
       this.acc = slide.querySelector('[data-role=acc]');
+      this.flowerCards = Array.from(slide.querySelectorAll('[data-role=flowers] [data-species]'));
+      this.flowerCards.forEach(card => {
+        const pick = () => {
+          const sp = card.dataset.species;
+          const next = sp === 'setosa' ? 'easy' : sp === 'virginica' ? 'hard' : (this.pair === 'easy' ? 'hard' : 'easy');
+          if (next !== this.pair) this.pairSeg.set(next);
+        };
+        card.addEventListener('click', pick);
+        card.addEventListener('keydown', e => { if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); pick(); } });
+      });
       this.hover = null;
       this.cv.canvas.addEventListener('pointermove', e => this.onHover(this.cv.toLocal(e)));
-      this.cv.canvas.addEventListener('pointerleave', () => { this.hover = null; this.tipper.hide(); this.drawDiagram(); });
+      this.cv.canvas.addEventListener('pointerleave', () => { this.hover = null; this.tipper.hide(); this.draw(); this.drawDiagram(); this.syncFlowers(); });
       this.update();
     },
     leave() { if (this._learn) { this._learn.stop(); this._learn = null; } },
+    spColor(sp) {
+      return sp === 'setosa' ? '#4285f4' : sp === 'versicolor' ? '#e37400' : '#34a853';
+    },
+    pairInfo() {
+      const names = this.pair === 'easy' ? ['setosa', 'versicolor'] : ['versicolor', 'virginica'];
+      return { names, cols: [this.spColor(names[0]), this.spColor(names[1])] };
+    },
     pts() {
       const [a, b] = this.pair === 'easy' ? [0, 1] : [1, 2];
-      return this.I.rows.filter(r => r[4] === a || r[4] === b).map(r => ({ x: r[2], y: r[3], c: r[4] === b ? 1 : 0, sp: this.I.species[r[4]], r }));
+      return this.I.rows.filter(r => r[4] === a || r[4] === b).map(r => {
+        const sp = this.I.species[r[4]];
+        return { x: r[2], y: r[3], c: r[4] === b ? 1 : 0, sp, col: this.spColor(sp), r };
+      });
     },
     view() { const { w, h } = this.cv; return U.view(70, 20, w - 90, h - 70, 0.6, 7.4, 0, 2.7); },
     z(x, y) { return this.w1 * x + this.w2 * y + this.b; },
+    syncFlowers() {
+      if (!this.flowerCards) return;
+      const [s0, s1] = this.pairInfo().names;
+      const hsp = this.hover ? this.hover.sp : null;
+      this.flowerCards.forEach(card => {
+        const sp = card.dataset.species;
+        card.classList.toggle('is-off', sp !== s0 && sp !== s1);
+        card.classList.toggle('is-hover', sp === hsp);
+        const tag = card.querySelector('[data-role=sp-tag]');
+        if (tag) tag.textContent = sp === s0 ? 'ŷ → 0' : sp === s1 ? 'ŷ → 1' : (sp === 'virginica' ? 'hard pair ▸' : '◂ easy pair');
+      });
+    },
     update() {
       const P = this.pts(); let ok = 0;
       for (const p of P) ok += ((sigmoid(this.z(p.x, p.y)) > 0.5 ? 1 : 0) === p.c) ? 1 : 0;
-      const names = this.pair === 'easy' ? ['setosa', 'versicolor'] : ['versicolor', 'virginica'];
-      if (this.acc) this.acc.innerHTML = `correct: <b class="${ok === P.length ? 'c-green' : 'c-yellow'}">${ok}</b> / ${P.length} flowers &nbsp;<span class="legend" style="display:inline-flex"><span><i class="sw" style="background:${C.blue}"></i>${names[0]} (ŷ→0)</span><span><i class="sw" style="background:${C.orange}"></i>${names[1]} (ŷ→1)</span></span>`;
+      const { names, cols } = this.pairInfo();
+      if (this.acc) this.acc.innerHTML = `correct: <b class="${ok === P.length ? 'c-green' : 'c-yellow'}">${ok}</b> / ${P.length} flowers &nbsp;<span class="legend" style="display:inline-flex"><span><i class="sw" style="background:${cols[0]}"></i>${names[0]} (ŷ→0)</span><span><i class="sw" style="background:${cols[1]}"></i>${names[1]} (ŷ→1)</span></span>`;
       if (this.eq) this.eq.innerHTML = `<span class="m">ŷ</span> <span class="op">=</span> <span class="m">σ</span>( <b class="c-yellow">${fmtMinus(this.w1, 2)}</b>·<span class="m c-blue">x</span><sub>1</sub> <span class="op">+</span> <b class="c-yellow">${fmtMinus(this.w2, 2)}</b>·<span class="m c-blue">x</span><sub>2</sub> <span class="op">${this.b < 0 ? '−' : '+'}</span> <b class="c-teal">${fmt(Math.abs(this.b), 1)}</b> )`;
-      this.draw(); this.drawDiagram();
+      this.draw(); this.drawDiagram(); this.syncFlowers();
     },
     draw() {
       if (!this.I) return;
       const { ctx, w, h } = this.cv, v = this.view();
+      const [col0, col1] = this.pairInfo().cols;
       ctx.fillStyle = C.bg; ctx.fillRect(0, 0, w, h);
       // probability field
       const cs = 10;
       for (let X = v.px; X < v.px + v.pw; X += cs) for (let Y = v.py; Y < v.py + v.ph; Y += cs) {
         const p = sigmoid(this.z(v.ix(X + cs / 2), v.iy(Y + cs / 2)));
-        ctx.fillStyle = p > 0.5 ? U.rgba(C.orange, (p - 0.5) * 0.42) : U.rgba(C.blue, (0.5 - p) * 0.42);
+        ctx.fillStyle = p > 0.5 ? U.rgba(col1, (p - 0.5) * 0.42) : U.rgba(col0, (0.5 - p) * 0.42);
         ctx.fillRect(X, Y, cs, cs);
       }
       U.grid(ctx, v, { step: 1, stepY: 0.5, labels: true, axes: false, minor: false });
@@ -221,7 +254,7 @@
       // points
       for (const p of this.pts()) {
         const X = v.sx(p.x), Y = v.sy(p.y), pr = sigmoid(this.z(p.x, p.y)), wrong = (pr > 0.5 ? 1 : 0) !== p.c;
-        U.circle(ctx, X, Y, 8, p.c ? C.orange : C.blue, C.bg, 2);
+        U.circle(ctx, X, Y, 8, p.col, C.bg, 2);
         if (wrong) U.circle(ctx, X, Y, 13, null, C.red, 3);
       }
       if (this.hover) { const p = this.hover; U.circle(ctx, v.sx(p.x), v.sy(p.y), 15, null, C.text, 2.5); }
@@ -232,18 +265,19 @@
       this.hover = best;
       if (best) {
         const z = this.z(best.x, best.y), y = sigmoid(z);
-        this.tipper.show(`<b>Iris ${best.sp}</b><br>petal length <span class="c-blue">x₁ = ${best.x}</span> cm<br>petal width <span class="c-blue">x₂ = ${best.y}</span> cm<br>z = ${fmtMinus(z, 2)} → <b>ŷ = σ(z) = ${fmt(y, 3)}</b>`, m.x, m.y);
+        this.tipper.show(`<div class="iris-tip-head"><img src="assets/img/iris_${best.sp}.jpg" alt=""><b><i class="sw" style="display:inline-block;width:10px;height:10px;border-radius:50%;background:${best.col};margin-right:6px"></i><i>Iris ${best.sp}</i></b></div>petal length <span class="c-blue">x₁ = ${best.x}</span> cm<br>petal width <span class="c-blue">x₂ = ${best.y}</span> cm<br>z = ${fmtMinus(z, 2)} → <b>ŷ = σ(z) = ${fmt(y, 3)}</b>`, m.x, m.y);
       } else this.tipper.hide();
-      this.draw(); this.drawDiagram();
+      this.draw(); this.drawDiagram(); this.syncFlowers();
     },
     drawDiagram() {
       if (!this.dg) return;
       const { ctx, w, h } = this.dg;
+      const [col0, col1] = this.pairInfo().cols;
       ctx.fillStyle = C.bg; ctx.fillRect(0, 0, w, h);
       const p = this.hover || { x: 4.5, y: 1.5 };
       const ins = [{ x: 70, y: h * 0.28, v: p.x, lab: 'x₁', wv: this.w1, sub: 'petal length' }, { x: 70, y: h * 0.62, v: p.y, lab: 'x₂', wv: this.w2, sub: 'petal width' }];
       const nx = w * 0.62, ny = h * 0.45, ox = w - 50;
-      const z = this.z(p.x, p.y), yv = sigmoid(z);
+      const z = this.z(p.x, p.y), yv = sigmoid(z), ocol = yv > 0.5 ? col1 : col0;
       ins.forEach(n => {
         const col = n.wv >= 0 ? C.blue : C.red, lw = 1 + Math.min(9, Math.abs(n.wv) * 2.4);
         ctx.strokeStyle = col; ctx.lineWidth = lw; ctx.beginPath(); ctx.moveTo(n.x + 34, n.y); ctx.lineTo(nx - 46, ny); ctx.stroke();
@@ -260,7 +294,7 @@
       U.circle(ctx, nx, ny, 46, U.rgba(C.yellow, 0.08 + 0.25 * yv), C.text, 2.5); ctx.restore();
       U.text(ctx, 'Σ → σ', nx, ny + 9, { size: 24, color: C.text, align: 'center', family: FONT.math });
       U.arrow(ctx, nx + 48, ny, ox - 34, ny, { color: C.muted, width: 2.5 });
-      U.circle(ctx, ox, ny, 30, U.rgba(yv > 0.5 ? C.orange : C.blue, 0.2 + 0.6 * Math.abs(yv - 0.5) * 2), yv > 0.5 ? C.orange : C.blue, 2.5);
+      U.circle(ctx, ox, ny, 30, U.rgba(ocol, 0.2 + 0.6 * Math.abs(yv - 0.5) * 2), ocol, 2.5);
       U.text(ctx, fmt(yv, 2), ox, ny + 8, { size: 20, color: C.text, align: 'center', family: FONT.mono });
       U.mathText(ctx, 'ŷ', ox, ny - 40, { size: 26, color: C.text, align: 'center' });
       U.text(ctx, `z = ${fmtMinus(z, 2)}`, nx, ny - 58, { size: 20, color: C.muted, align: 'center', family: FONT.mono });
@@ -333,7 +367,7 @@
       }
       if (this.hx !== null && this.hx >= v.x0 && this.hx <= v.x1) {
         const A = ACTS[this.sel], y = A.f(this.hx), X = v.sx(this.hx), Y = v.sy(y);
-        ctx.strokeStyle = 'rgba(236,239,244,.35)'; ctx.setLineDash([5, 6]); ctx.beginPath(); ctx.moveTo(X, v.py); ctx.lineTo(X, v.py + v.ph); ctx.stroke(); ctx.setLineDash([]);
+        ctx.strokeStyle = U.rgba(C.text, 0.3); ctx.setLineDash([5, 6]); ctx.beginPath(); ctx.moveTo(X, v.py); ctx.lineTo(X, v.py + v.ph); ctx.stroke(); ctx.setLineDash([]);
         U.circle(ctx, X, Y, 8, A.col, C.bg, 2);
         U.text(ctx, `z = ${fmtMinus(this.hx, 2)}  →  ${fmtMinus(y, 3)}`, X + 14, Y - 14, { size: 22, color: C.text, family: FONT.mono });
       }
@@ -447,9 +481,9 @@
     .mx-sym{font-size:56px;padding-top:30px}
     table.mx{border-collapse:separate;border-spacing:6px 4px;border-left:3px solid var(--muted);border-right:3px solid var(--muted);border-radius:10px;padding:2px 6px}
     table.mx td{font-size:30px;min-width:76px;text-align:center;padding:6px 8px;border-radius:8px;color:var(--text);transition:background .25s,color .25s}
-    table.mx td.w{color:var(--yellow)} table.mx td.w.hl{background:rgba(255,213,79,.18);box-shadow:0 0 0 2px rgba(255,213,79,.6) inset}
-    table.mx td.x{color:var(--blue)} table.mx td.x.hl{background:rgba(88,196,221,.16)}
-    table.mx td.b{color:var(--teal)} table.mx td.z{color:var(--dim)} table.mx td.z.on{color:var(--text)} table.mx td.z.hl{background:rgba(255,213,79,.18)}
+    table.mx td.w{color:var(--yellow)} table.mx td.w.hl{background:#fef7e0;box-shadow:0 0 0 2px #fdd663 inset}
+    table.mx td.x{color:var(--blue)} table.mx td.x.hl{background:#e8f0fe}
+    table.mx td.b{color:var(--teal)} table.mx td.z{color:var(--dim)} table.mx td.z.on{color:var(--text)} table.mx td.z.hl{background:#fef7e0}
     table.mx td.a{color:var(--dim)} table.mx td.a.on{color:var(--yellow);font-weight:700}
     `
   }));

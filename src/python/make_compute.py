@@ -8,8 +8,10 @@ and re-run this script; every model with a training-compute value is exported.
 FALLBACK (used when that CSV is not available, e.g. no network at build time):
 a short list of models whose compute is either REPORTED in the original paper
 or ESTIMATED here with C ~= 6 N D from the parameter count N and training
-tokens D that the paper reports. Each row says which ("method") and cites its
-source. No value is taken from memory of third-party estimates.
+tokens D that the paper reports. Where 6ND can't be used (AlexNet is a CNN;
+Mistral Large 4's report gives GPU-hours and MFU but no token count), compute
+is estimated from accelerator time instead. Each row says which ("method") and
+cites its source. No value is taken from memory of third-party estimates.
 
 Run:  python src/python/make_compute.py
 """
@@ -62,6 +64,20 @@ ALEXNET = {
                "33% utilisation is an ASSUMPTION"),
 }
 
+# Mistral Large 4 "Le Chonk" (a mixture-of-experts model whose report gives GPU-hours, MFU and goodput but no
+# token count, so 6ND is not possible) - GPU-time estimate in which every factor is stated by a primary source.
+MISTRAL_LARGE_4 = {
+    "name": "Mistral Large 4", "label": "Le Chonk", "year": 2026, "org": "Mistral AI",
+    "gpuHours": 4.15e6, "peakFlopPerS": 2.5e15, "mfu": 0.36, "goodput": 0.941,
+    "params": 1e12, "active": 52e9,
+    "source": ("Mistral AI 2026, 'Mistral Large 4' technical report, sec. 2.3: pretrained on 3,840 NVIDIA GB200 GPUs "
+               "for 45 days, 'about 4.15 million GPU-hours', MFU 36% 'against peak hardware BF16 FLOP/s', goodput "
+               "94.1%; GB200 peak BF16 = 10 PFLOPS sparse per 2-GPU superchip, dense = half -> 2.5e15 FLOP/s per GPU "
+               "(NVIDIA GB200 NVL72 spec); 1T total / 52B active parameters (mixture-of-experts); 'Unofficially ML4, "
+               "very officially: le Chonk' (mistral.ai/news/mistral-large-4, 6 Oct 2026). Pretraining only; the "
+               "training token count is not reported"),
+}
+
 
 def fallback_rows():
     rows = []
@@ -81,6 +97,13 @@ def fallback_rows():
             "params": N, "tokens": D,
             "source": src,
         })
+    m = MISTRAL_LARGE_4
+    est = m["gpuHours"] * 3600 * m["peakFlopPerS"] * m["mfu"] * m["goodput"]
+    rows.append({"name": m["name"], "label": m["label"], "year": m["year"], "org": m["org"], "flop": est,
+                 "method": "estimate", "params": m["params"], "active": m["active"], "tokens": None,
+                 "formula": ("GPU-hours x 3,600 s x peak BF16 FLOP/s x MFU x goodput "
+                             "= 4.15e6 x 3,600 x 2.5e15 x 0.36 x 0.941"),
+                 "source": m["source"]})
     return rows
 
 

@@ -1,6 +1,6 @@
 /* =====================================================================
    Chapters 1–3 demos: the AI zoo, an 80-year timeline, why-now compute
-   chart, the technology stack and the journey of "hi"
+   chart and the technology stack (the journey of "hi" is in journey.js)
    ===================================================================== */
 (function () {
   'use strict';
@@ -119,7 +119,7 @@
       ctx.fillStyle = C.bg; ctx.fillRect(0, 0, w, h);
       // era bands
       ERAS.forEach(([a, b, name, col]) => { const X0 = this.sx(a), X1 = this.sx(Math.min(b, 2027)); ctx.fillStyle = U.rgba(col, 0.05); ctx.fillRect(X0, 30, X1 - X0, h - 150); U.text(ctx, name, (X0 + X1) / 2, h - 96, { size: 17, color: U.rgba(col === C.muted ? C.text : col, 0.75), align: 'center' }); });
-      WINTERS.forEach(([a, b, name]) => { const X0 = this.sx(a), X1 = this.sx(b), cx = (X0 + X1) / 2; ctx.fillStyle = 'rgba(88,196,221,0.10)'; ctx.fillRect(X0, 30, X1 - X0, h - 150); const [w1, ...rest] = name.split(' '); U.text(ctx, '❄ ' + w1, cx, 54, { size: 17, color: C.blue, align: 'center' }); U.text(ctx, rest.join(' '), cx, 76, { size: 17, color: C.blue, align: 'center' }); });
+      WINTERS.forEach(([a, b, name]) => { const X0 = this.sx(a), X1 = this.sx(b), cx = (X0 + X1) / 2; ctx.fillStyle = U.rgba(C.gblue, 0.10); ctx.fillRect(X0, 30, X1 - X0, h - 150); const [w1, ...rest] = name.split(' '); U.text(ctx, '❄ ' + w1, cx, 54, { size: 17, color: C.blue, align: 'center' }); U.text(ctx, rest.join(' '), cx, 76, { size: 17, color: C.blue, align: 'center' }); });
       // axis
       ctx.strokeStyle = C.line; ctx.lineWidth = 2; ctx.beginPath(); ctx.moveTo(this.sx(1940), h - 120); ctx.lineTo(this.sx(2027), h - 120); ctx.stroke();
       [1940, 1950, 1960, 1970, 1980, 1990, 2000, 2010, 2015, 2020, 2025].forEach(y => { const X = this.sx(y); ctx.beginPath(); ctx.moveTo(X, h - 120); ctx.lineTo(X, h - 112); ctx.stroke(); U.text(ctx, String(y), X, h - 64, { size: 17, color: C.dim, align: 'center', family: FONT.mono }); });
@@ -173,7 +173,7 @@
       const ly = (Math.log10(flop) - 17) / (26 - 17), lin = flop / 4e25;
       return bot - (bot - top) * lerp(lin, ly, this.t);
     },
-    xOf(year) { const { w } = this.cv; return 110 + (w - 150) * (year - 2011) / (2026 - 2011); },
+    xOf(year) { const { w } = this.cv; return 110 + (w - 150) * (year - 2011) / (2027 - 2011); },   // a spare year on the right so 2026 models aren't on the edge
     draw() {
       if (!this.D) return;
       const { ctx, w, h } = this.cv; ctx.fillStyle = C.bg; ctx.fillRect(0, 0, w, h);
@@ -191,8 +191,8 @@
         ctx.beginPath(); ctx.rect(left, top - 10, right - left, bot - top + 10); ctx.clip();
         const y0 = 2020.4, f0 = 3.14e23;
         ctx.fillStyle = U.rgba(C.purple, 0.13); ctx.beginPath();
-        for (let y = 2012; y <= 2026; y += 0.25) ctx.lineTo(this.xOf(y), this.yOf(f0 * Math.pow(4, y - y0)));
-        for (let y = 2026; y >= 2012; y -= 0.25) ctx.lineTo(this.xOf(y), this.yOf(f0 * Math.pow(5, y - y0)));
+        for (let y = 2012; y <= 2027; y += 0.25) ctx.lineTo(this.xOf(y), this.yOf(f0 * Math.pow(4, y - y0)));
+        for (let y = 2027; y >= 2012; y -= 0.25) ctx.lineTo(this.xOf(y), this.yOf(f0 * Math.pow(5, y - y0)));
         ctx.closePath(); ctx.fill();
         U.text(ctx, '×4–5 every year (Epoch AI)', this.xOf(2013.2), this.yOf(f0 * Math.pow(4.5, 2014.5 - y0)) - 30, { size: 20, color: C.purple });
         ctx.restore();
@@ -211,7 +211,7 @@
       const cost = b => placed.reduce((s, p) => s + overlap(b, p), 0);
       this.pts.slice().sort((a, b) => b[2].flop - a[2].flop).forEach(([X, Y, m]) => {
         if (this.t < 0.5 && m.flop < 1e25) return;              // linear view: only label what rises off the floor
-        const label = m.name.replace(' (big)', ''), tw = ctx.measureText(label).width, th = 20;
+        const label = (m.label || m.name).replace(' (big)', ''), tw = ctx.measureText(label).width, th = 20;
         const cands = [];
         [-26, 6, -46, 26, -66, 46].forEach(dy => { cands.push([X + 13, Y + dy]); cands.push([X - 13 - tw, Y + dy]); });
         const ok = cands.filter(([x, y]) => x > left && x + tw < w - 4 && y > 0 && y + th < bot + 20);
@@ -225,7 +225,7 @@
     onMove(m) {
       let best = null, bd = 18;
       (this.pts || []).forEach(([X, Y, d]) => { const dd = Math.hypot(m.x - X, m.y - Y); if (dd < bd) { bd = dd; best = d; } });
-      if (best) this.tipper.show(`<b>${U.esc(best.name)}</b> (${best.year}, ${U.esc(best.org || '')})<br>${U.fmtSci(best.flop, 2)} FLOP · <span class="muted">${best.method}</span>${best.params ? `<br>${U.fmtBig(best.params)} parameters` : ''}${best.tokens ? ` · ${U.fmtBig(best.tokens)} tokens` : ''}`, m.x, m.y);
+      if (best) this.tipper.show(`<b>${U.esc(best.name)}${best.label ? ` “${U.esc(best.label)}”` : ''}</b> <span style="white-space:nowrap">(${best.year}, ${U.esc(best.org || '')})</span><br>${U.fmtSci(best.flop, 2)} FLOP · <span class="muted">${best.method}</span>${best.params ? `<br>${U.fmtBig(best.params)} parameters${best.active ? ` (${U.fmtBig(best.active)} active)` : ''}` : ''}${best.tokens ? ` · ${U.fmtBig(best.tokens)} tokens` : ''}`, m.x, m.y);
       else this.tipper.hide();
     }
   });
@@ -271,66 +271,11 @@
     }
   });
 
-  // ======================================================================
-  // JOURNEY of "hi"
-  // ======================================================================
-  const STOPS = [
-    ['📱', 'Your device', 'Keystrokes become Unicode, then bytes: <b class="mono">h → 0x68, i → 0x69</b>.'],
-    ['🌐', 'The internet', 'DNS finds Google; <b>TLS 1.3</b> encrypts; packets ride fibre (maybe a subsea cable).'],
-    ['🏢', 'Google front door', 'Load balancing, sign-in, abuse checks, then routing to a model server.'],
-    ['🗂️', 'The Gemini app', 'Adds hidden instructions, chat history and tool definitions, then wraps it all in a <b>chat template</b>.'],
-    ['🔤', 'Tokenizer', '<b class="mono">hi → #2202</b>. The full prompt becomes <b>10 tokens</b> (Gemma’s template).'],
-    ['🧠', 'Transformer on TPUs', '10 vectors × 640 numbers flow through 18 layers of attention + MLP (Gemma 3 270M). Gemini: a sparse mixture-of-experts.'],
-    ['🎲', 'Decoding', '<b>262,144</b> scores → softmax → <b class="c-yellow">“Hi” 93%</b> → pick → append → repeat, one token at a time.'],
-    ['🛡️', 'Guardrails', 'Safety filters check the output; SynthID nudges word choices to leave an invisible watermark.'],
-    ['💬', 'Back to you', 'Tokens stream back and render: <b class="c-yellow">“Hi there! How can I help you today?”</b>']
-  ];
-  Deck.register('journey', {
-    init(slide) {
-      this.cv = U.canvas(slide.querySelector('[data-role=line]'), { onresize: () => this.draw() });
-      this.card = slide.querySelector('[data-role=card]');
-      this.pos = 0; this.target = 0;
-      this.cv.canvas.addEventListener('click', e => { const m = this.cv.toLocal(e); const k = this.stopAt(m); if (k >= 0) this.go(k); });
-      this.draw(); this.showCard();
-    },
-    enter(slide) { if (slide._stepPos === 0) { this.pos = 0; this.target = 0; this.draw(); this.showCard(); } },
-    onStep(a, vis, elx) { if (a.startsWith('stop:')) { const k = +a.slice(5); this.go(vis ? k : Math.max(0, k - 1)); } },
-    pt(k) { const { w, h } = this.cv, n = STOPS.length; return [90 + (w - 180) * k / (n - 1), h * 0.55]; },
-    stopAt(m) { for (let k = 0; k < STOPS.length; k++) { const [x, y] = this.pt(k); if (Math.hypot(m.x - x, m.y - y) < 54) return k; } return -1; },
-    go(k) {
-      this.target = k; const p0 = this.pos; cancelAnimationFrame(this._raf); const t0 = performance.now(), dur = 500 + 250 * Math.abs(k - p0);
-      const tick = now => { const t = Math.min(1, (now - t0) / dur); this.pos = lerp(p0, k, U.ease(t)); this.draw(); if (t < 1) this._raf = requestAnimationFrame(tick); else this.showCard(); };
-      this._raf = requestAnimationFrame(tick);
-    },
-    showCard() { const s = STOPS[Math.round(this.pos)]; if (this.card) this.card.innerHTML = `<span style="font-size:64px">${s[0]}</span><div><div class="kicker">stop ${Math.round(this.pos) + 1} of 9</div><b style="font-size:40px;font-weight:500">${s[1]}</b><p style="font-size:32px;margin-top:8px">${s[2]}</p></div>`; },
-    draw() {
-      const { ctx, w, h } = this.cv; ctx.fillStyle = C.bg; ctx.fillRect(0, 0, w, h);
-      const n = STOPS.length, [x0, y0] = this.pt(0), [x1] = this.pt(n - 1);
-      ctx.strokeStyle = C.line; ctx.lineWidth = 10; ctx.lineCap = 'round'; ctx.beginPath(); ctx.moveTo(x0, y0); ctx.lineTo(x1, y0); ctx.stroke();
-      const px = lerp(x0, x1, this.pos / (n - 1));
-      const grad = ctx.createLinearGradient(x0, 0, x1, 0); grad.addColorStop(0, C.blue); grad.addColorStop(0.65, C.purple); grad.addColorStop(1, C.yellow);
-      ctx.strokeStyle = grad; ctx.beginPath(); ctx.moveTo(x0, y0); ctx.lineTo(px, y0); ctx.stroke();
-      STOPS.forEach((s, k) => {
-        const [x, y] = this.pt(k), reached = k <= this.pos + 0.01, cur = Math.abs(k - this.pos) < 0.5;
-        ctx.save(); if (cur) { ctx.shadowColor = C.text; ctx.shadowBlur = 16; }
-        U.circle(ctx, x, y, cur ? 48 : 40, reached ? '#1b2029' : C.bg, reached ? C.text : C.line, cur ? 4 : 2.5); ctx.restore();
-        U.text(ctx, s[0], x, y + 14, { size: 40, align: 'center', alpha: reached ? 1 : 0.4 });
-        U.text(ctx, s[1], x, y + (k % 2 ? 94 : -66), { size: 24, color: reached ? C.text : C.dim, align: 'center' });
-      });
-      // the travelling message (above the upper label row)
-      const back = this.pos > 6.5, label = back ? 'Hi there!' : this.pos > 4.5 && this.pos <= 6.5 ? '[2202]' : '“hi”';
-      const bw = 170, bh = 56, by = y0 - 168;
-      ctx.save(); ctx.shadowColor = back ? C.yellow : C.blue; ctx.shadowBlur = 22;
-      U.roundRect(ctx, px - bw / 2, by, bw, bh, 28); ctx.fillStyle = back ? U.rgba(C.yellow, 0.2) : U.rgba(C.blue, 0.2); ctx.fill(); ctx.strokeStyle = back ? C.yellow : C.blue; ctx.lineWidth = 2.5; ctx.stroke(); ctx.restore();
-      U.text(ctx, label, px, by + 38, { size: 28, color: C.text, align: 'center', family: FONT.mono });
-    }
-  });
-
   document.head.appendChild(Object.assign(document.createElement('style'), {
     textContent: `
-    .st-layer{display:flex;align-items:center;gap:18px;padding:14px 22px;margin:8px 0;border-radius:14px;border:1px solid var(--line);background:rgba(255,255,255,.02);cursor:pointer;transition:transform .2s,border-color .2s,background .2s;font-size:30px}
+    .st-layer{display:flex;align-items:center;gap:18px;padding:14px 22px;margin:8px 0;border-radius:14px;border:1px solid var(--line);background:var(--bg-2);box-shadow:0 1px 2px rgba(60,64,67,.06);cursor:pointer;transition:transform .2s,border-color .2s,background .2s;font-size:30px}
     .st-layer .st-ic{font-size:36px} .st-layer .st-name{flex:1} .st-layer .st-n{font-family:var(--mono);color:var(--dim);font-size:22px}
-    .st-layer.on{border-color:var(--c);background:color-mix(in srgb, var(--c) 14%, transparent);transform:translateX(18px)}
+    .st-layer.on{border-color:var(--c);background:color-mix(in srgb, var(--c) 11%, #ffffff);transform:translateX(18px)}
     `
   }));
 })();
